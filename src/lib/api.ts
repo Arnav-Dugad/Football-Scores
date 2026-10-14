@@ -159,7 +159,7 @@ function sideFromHeader(c: any): Side {
     score: c?.score === undefined || c?.score === "" ? null : Number(c.score),
     shootout: c?.shootoutScore ?? null,
     winner: !!c?.winner,
-    form: c?.form ?? "",
+    form: c?.form || t?.form || "",
     record: c?.record?.[0]?.summary ?? "",
   };
 }

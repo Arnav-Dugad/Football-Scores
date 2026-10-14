@@ -576,7 +576,8 @@ export class LeagueStore extends DurableObject<Env> {
       }
     }
 
-    const shots = extractShots(d.commentary ?? [], homeName, awayName);
+    const names = (c: any) => [fixText(c?.team?.displayName ?? ""), fixText(c?.team?.shortDisplayName ?? ""), c?.team?.abbreviation ?? ""].filter(Boolean);
+    const shots = extractShots(d.commentary ?? [], names(home), names(away));
     const hx = shots.filter((s) => s.side === "home").reduce((a, s) => a + s.xg, 0);
     const ax = shots.filter((s) => s.side === "away").reduce((a, s) => a + s.xg, 0);
     const hasShots = shots.length > 0;

@@ -91,19 +91,60 @@ function situationOf(type: string, text: string): Situation {
   return "open";
 }
 
-function sameTeam(a: string | undefined, b: string): boolean {
-  if (!a) return false;
-  const n = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
-  return n(a) === n(b);
+const normName = (s: string | undefined | null) =>
+  String(s ?? "")
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "");
+
+/**
+ * Commentary team names don't always match the header exactly
+ * ("Deportivo" vs "Deportivo de A Coruña"): match exactly first, then by containment.
+ */
+function teamMatcher(home: string | string[], away: string | string[]) {
+  const vs = (x: string | string[]) => (Array.isArray(x) ? x : [x]).map(normName).filter((v) => v.length > 1);
+  const hv = vs(home);
+  const av = vs(away);
+  return (name: string | undefined): "home" | "away" | null => {
+    const n = normName(name);
+    if (!n) return null;
+    if (hv.includes(n)) return "home";
+    if (av.includes(n)) return "away";
+    const loose = (list: string[]) => list.some((v) => v.length >= 4 && n.length >= 4 && (v.includes(n) || n.includes(v)));
+    const h = loose(hv);
+    const a = loose(av);
+    return h && !a ? "home" : a && !h ? "away" : null;
+  };
 }
 
-/** Extract located attempts from an ESPN summary `commentary` array. */
-export function extractShots(commentary: any[], homeName: string, awayName: string): Shot[] {
+/**
+ * Current feeds use a 0–100 pitch grid; older matches use a 0–1 scale with a
+ * different origin. Only trust locations on the 0–100 grid.
+ */
+export function hasPitchGrid(commentary: any[]): boolean {
+  for (const c of commentary ?? []) {
+    const p = c?.play;
+    if (!p || Number(p.period?.number ?? 0) >= 5) continue;
+    if (typeof p.fieldPositionX === "number" && p.fieldPositionX > 1.5) return true;
+  }
+  return false;
+}
+
+/**
+ * Extract located attempts from an ESPN summary `commentary` array.
+ * Team names may be a list of variants (display name, short name, abbreviation).
+ * Shoot-out kicks are excluded.
+ */
+export function extractShots(commentary: any[], homeName: string | string[], awayName: string | string[]): Shot[] {
   const out: Shot[] = [];
   const seen = new Set<string>();
+  if (!hasPitchGrid(commentary)) return out;
+  const sideOf = teamMatcher(homeName, awayName);
   for (const c of commentary ?? []) {
     const p = c?.play;
     if (!p || typeof p.fieldPositionX !== "number" || typeof p.fieldPositionY !== "number") continue;
+    if (Number(p.period?.number ?? 0) >= 5 || p.shootout) continue;
     const type: string = p.type?.type ?? "";
     const text: string = fixText(p.text ?? c.text ?? "");
     const outcome = classify(type, text);
@@ -111,8 +152,7 @@ export function extractShots(commentary: any[], homeName: string, awayName: stri
     const id = String(p.id ?? `${p.clock?.value}-${text.slice(0, 20)}`);
     if (seen.has(id)) continue;
     seen.add(id);
-    const teamName: string | undefined = p.team?.displayName;
-    const side = sameTeam(teamName, homeName) ? "home" : sameTeam(teamName, awayName) ? "away" : null;
+    const side = sideOf(p.team?.displayName);
     if (!side) continue;
     const body = bodyOf(text);
     const situation = situationOf(type, text);
