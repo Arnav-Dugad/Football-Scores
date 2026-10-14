@@ -117,22 +117,36 @@ async function api(request: Request, env: Env, ctx: ExecutionContext): Promise<R
     // Only known competitions get a Durable Object (and a background sync).
     if (!LEAGUES.includes(slug)) return json({ error: "unknown league" }, 0, 404);
     const stub = league(env, slug);
-    switch (m[1]) {
-      case "season":
-        return json(await stub.season(slug), 60);
-      case "people":
-        return json(await stub.people(slug), 300);
-      case "shots": {
-        const t = url.searchParams.get("team");
-        const pl = url.searchParams.get("player");
-        return json(await stub.shots(slug, t && /^\d+$/.test(t) ? t : null, pl ? pl.slice(0, 80) : null), 600);
+    try {
+      switch (m[1]) {
+        case "season":
+          return json(await stub.season(slug), 60);
+        case "people":
+          return json(await stub.people(slug), 300);
+        case "shots": {
+          const t = url.searchParams.get("team");
+          const pl = url.searchParams.get("player");
+          return json(await stub.shots(slug, t && /^\d+$/.test(t) ? t : null, pl ? pl.slice(0, 80) : null), 600);
+        }
+        case "h2h":
+          return json(await stub.h2h(slug, url.searchParams.get("a") ?? "", url.searchParams.get("b") ?? ""), 3600);
+        case "match":
+          return json(await stub.match(slug, (url.searchParams.get("id") ?? "").replace(/\D/g, "")), 60);
+        case "lineup":
+          return json(await stub.lastLineup(slug, (url.searchParams.get("team") ?? "").replace(/\D/g, "")), 900);
       }
-      case "h2h":
-        return json(await stub.h2h(slug, url.searchParams.get("a") ?? "", url.searchParams.get("b") ?? ""), 3600);
-      case "match":
-        return json(await stub.match(slug, (url.searchParams.get("id") ?? "").replace(/\D/g, "")), 60);
-      case "lineup":
-        return json(await stub.lastLineup(slug, (url.searchParams.get("team") ?? "").replace(/\D/g, "")), 900);
+    } catch (err) {
+      // The league store can be temporarily unavailable (e.g. the Free plan's daily
+      // write quota). Answer with an empty, still-building dataset instead of an error.
+      console.error("league store unavailable", slug, String(err));
+      const now = Date.now();
+      const empty: Record<string, unknown> = {
+        season: { league: slug, season: null, teams: [], matches: [], events: [], seed: {}, progress: { dates: 1, datesDone: 0, details: 0, detailsDone: 0 }, updated: now },
+        people: { league: slug, players: [], updated: now },
+        shots: { league: slug, shots: [] },
+        h2h: { games: [] },
+      };
+      return json(empty[m[1]] ?? null, 30);
     }
   }
 
