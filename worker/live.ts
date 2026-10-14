@@ -181,7 +181,8 @@ export class LiveHub extends DurableObject<Env> {
       }
     }
     this.snap = current;
-    await this.ctx.storage.put("snap", [...current.values()]);
+    // Persist only when something changed — every write counts against the daily quota.
+    if (changed.length || current.size !== prev.size) await this.ctx.storage.put("snap", [...current.values()]);
     // Live boards changed: drop any aggregated responses that include today.
     if (changed.length) for (const k of [...this.cache.keys()]) if (k.startsWith("s:")) this.cache.delete(k);
 
