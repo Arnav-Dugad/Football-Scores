@@ -155,7 +155,7 @@ export function FormDots({ form, max = 5 }: { form: string; max?: number }) {
     <span className="form-dots" aria-label={t("Form: {form}", { form: letters.join(" ") })}>
       {letters.map((l, i) => (
         <span key={i} className={`form-dot ${l}`}>
-          {l}
+          {l === "W" ? t("form::W") : l === "D" ? t("form::D") : t("form::L")}
         </span>
       ))}
     </span>

@@ -149,7 +149,7 @@ export function DisciplineView({ data }: { data: LeagueData }) {
                     {t("Referee")}
                   </th>
                   <th scope="col" title={t("Games")}>
-                    {t("G")}
+                    {t("games::G")}
                   </th>
                   <th scope="col">{t("Yellows / game")}</th>
                   <th scope="col">{t("Reds / game")}</th>

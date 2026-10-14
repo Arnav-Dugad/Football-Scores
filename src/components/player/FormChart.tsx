@@ -7,6 +7,8 @@ import { Crest } from "../ui";
 import { ChartCard, ChartTip, TipRow, intTicks, useWidth } from "./chart";
 import type { GameRow } from "./data";
 
+const formKey = (r: string) => (r === "W" ? "form::W" : r === "D" ? "form::D" : r === "L" ? "form::L" : r);
+
 /* Form: goals + assists in each of the last five matches (ESPN game log),
    with a participation strip (started / off the bench / unused). */
 
@@ -15,7 +17,7 @@ const TOP = 22;
 const BOTTOM = 10;
 
 const roleLabel = (g: GameRow) =>
-  g.role === "started" ? t("Started") : g.role === "sub" ? t("Off the bench") : g.role === "played" ? t("Played") : t("Unused");
+  g.role === "started" ? t("Started") : g.role === "sub" ? t("Off the bench") : g.role === "played" ? t("role::Played") : t("Unused");
 
 const scoreLine = (g: GameRow) => (g.us != null && g.them != null ? `${g.us}–${g.them}` : "");
 
@@ -62,10 +64,10 @@ export function FormChart({ games, keeper = false }: { games: GameRow[]; keeper?
           ) : (
             <>
               <th scope="col">
-                <abbr title={t("Goals")}>{t("G")}</abbr>
+                <abbr title={t("Goals")}>{t("goals::G")}</abbr>
               </th>
               <th scope="col">
-                <abbr title={t("Assists")}>{t("A")}</abbr>
+                <abbr title={t("Assists")}>{t("assists::A")}</abbr>
               </th>
               <th scope="col">
                 <abbr title={t("Shots")}>{t("Sh")}</abbr>
@@ -83,7 +85,7 @@ export function FormChart({ games, keeper = false }: { games: GameRow[]; keeper?
                 {oppLabel(g)}
               </Link>
             </th>
-            <td>{[g.result ? t(g.result) : "", scoreLine(g)].filter(Boolean).join(" ") || "–"}</td>
+            <td>{[g.result ? t(formKey(g.result)) : "", scoreLine(g)].filter(Boolean).join(" ") || "–"}</td>
             <td>{roleLabel(g)}</td>
             {keeper ? (
               <td className="num">{g.them == null ? "–" : fmtNum(g.them)}</td>
@@ -203,7 +205,7 @@ export function FormChart({ games, keeper = false }: { games: GameRow[]; keeper?
                   {hg.sh != null && <TipRow label={t("Shots")} value={fmtNum(hg.sh)} />}
                 </>
               )}
-              <TipRow label={t("Result")} value={[hg.result ? t(hg.result) : "", scoreLine(hg)].filter(Boolean).join(" ") || "–"} />
+              <TipRow label={t("Result")} value={[hg.result ? t(formKey(hg.result)) : "", scoreLine(hg)].filter(Boolean).join(" ") || "–"} />
             </ChartTip>
           )}
         </div>
@@ -221,7 +223,7 @@ export function FormChart({ games, keeper = false }: { games: GameRow[]; keeper?
               >
                 <Crest src={g.opponent.logo} size={22} alt="" />
                 <span className="pl-strip-res">
-                  {g.result && <span className={`pl-res ${g.result}`}>{t(g.result)}</span>}
+                  {g.result && <span className={`pl-res ${g.result}`}>{t(formKey(g.result))}</span>}
                   <span className="num">{scoreLine(g)}</span>
                 </span>
                 <span className={`pl-part ${g.role}`} />

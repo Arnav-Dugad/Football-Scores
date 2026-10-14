@@ -43,7 +43,9 @@ export function currentLang(): Lang {
 }
 
 export function t(source: string, vars?: Record<string, string | number>): string {
-  let out = dict[source] || source;
+  // "context::Text" keys disambiguate identical English words ("assists::A" vs "A" for Away);
+  // English shows the text after "::".
+  let out = dict[source] || (source.includes("::") ? source.slice(source.indexOf("::") + 2) : source);
   if (vars) {
     for (const [k, v] of Object.entries(vars)) out = out.split(`{${k}}`).join(String(v));
   }

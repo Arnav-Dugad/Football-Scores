@@ -177,12 +177,12 @@ export function ShootoutCard({ kicks, s }: { kicks: Kick[]; s: SummaryData }) {
               {Array.from({ length: rounds }, (_, i) => {
                 const k = per[side][i];
                 return (
-                  <li key={i} className={k ? (k.scored ? "in" : "out") : "none"} title={k ? `${k.taker} · ${k.scored ? t("Scored") : t("Missed")}` : t("Not taken")}>
+                  <li key={i} className={k ? (k.scored ? "in" : "out") : "none"} title={k ? `${k.taker} · ${k.scored ? t("kick::Scored") : t("kick::Missed")}` : t("Not taken")}>
                     <span className="mark" aria-hidden>
                       {k ? (k.scored ? "✓" : "✕") : ""}
                     </span>
                     <span className="sr-only">
-                      {k ? `${t("Kick {n}", { n: i + 1 })}: ${k.taker}, ${k.scored ? t("Scored") : t("Missed")}` : t("Kick {n}: not taken", { n: i + 1 })}
+                      {k ? `${t("Kick {n}", { n: i + 1 })}: ${k.taker}, ${k.scored ? t("kick::Scored") : t("kick::Missed")}` : t("Kick {n}: not taken", { n: i + 1 })}
                     </span>
                     {k && <small aria-hidden>{k.taker.split(" ").slice(-1)[0]}</small>}
                   </li>

@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { t } from "../i18n";
+import { LEAGUE_BY_SLUG } from "../lib/leagues";
 import type { Match, Side } from "../lib/api";
 import { endpoints } from "../lib/api";
 import { fmtDayShort, fmtTime, relativeDayLabel, teamTint } from "../lib/format";
@@ -25,7 +27,7 @@ export function MatchHero({ m, link = true, form }: { m: Match; link?: boolean; 
       <div className="hero-top">
         <span className="league">
           <LeagueBadge slug={m.league.slug} src={m.league.logo} size={26} />
-          <span>{m.note || m.league.name}</span>
+          <span>{m.note && m.note !== m.league.name ? m.note : t(LEAGUE_BY_SLUG[m.league.slug]?.name ?? m.league.name)}</span>
         </span>
         <StatusBadge m={m} big />
       </div>
@@ -60,13 +62,17 @@ export function MatchHero({ m, link = true, form }: { m: Match; link?: boolean; 
         <div className="hero-scorers">
           <div>
             {hs.map((s) => (
-              <span key={s}>{s}</span>
+              <span key={s}>
+                <bdi>{s}</bdi>
+              </span>
             ))}
           </div>
           <span />
           <div>
             {as.map((s) => (
-              <span key={s}>{s}</span>
+              <span key={s}>
+                <bdi>{s}</bdi>
+              </span>
             ))}
           </div>
         </div>

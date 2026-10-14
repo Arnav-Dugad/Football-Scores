@@ -1,25 +1,568 @@
 {
+  "(opens in a new tab)": [
+    "src/components/club/ClubInfo.tsx",
+    "src/pages/Stadium.tsx"
+  ],
+  "{a} of {b} shots": [
+    "src/components/player/Tiles.tsx"
+  ],
+  "{a} vs {b}": [
+    "src/pages/Compare.tsx"
+  ],
+  "{apps} appearances, {g} goals, {a} assists": [
+    "src/components/club/Squad.tsx"
+  ],
+  "{bin} minutes": [
+    "src/components/charts/MinuteChart.tsx"
+  ],
+  "{bin} minutes: {s} goals": [
+    "src/components/charts/MinuteChart.tsx"
+  ],
+  "{bin} minutes: {s} scored, {c} conceded": [
+    "src/components/charts/MinuteChart.tsx"
+  ],
+  "{club} · conceded / game": [
+    "src/components/league/Overview.tsx"
+  ],
+  "{club} · goals / game": [
+    "src/components/league/Overview.tsx"
+  ],
+  "{club} {ha} {opp}: difficulty {d} of 5, win probability {p}": [
+    "src/components/charts/Grids.tsx"
+  ],
+  "{club} {kit} kit": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "{club} lead with {pts} points.": [
+    "src/components/league/RaceView.tsx"
+  ],
+  "{club} rating trend": [
+    "src/components/league/RatingsView.tsx"
+  ],
+  "{club}: {pts} points. Activate to highlight.": [
+    "src/components/charts/RaceChart.tsx"
+  ],
+  "{club}: {y} yellow cards, {r} red cards in {n} games": [
+    "src/components/charts/Bars.tsx"
+  ],
+  "{club}: most likely to finish {pos} ({p}), average finish {avg}": [
+    "src/components/charts/Grids.tsx"
+  ],
+  "{club}: position {now}, best {best}, worst {worst}": [
+    "src/components/charts/BumpChart.tsx"
+  ],
+  "{f} scored · {a} conceded": [
+    "src/components/club/Overview.tsx"
+  ],
+  "{g} conceded from {x} expected": [
+    "src/components/club/Overview.tsx"
+  ],
+  "{g} G · {a} A": [
+    "src/components/league/PlayersView.tsx",
+    "src/components/player/Picker.tsx"
+  ],
+  "{g} goals, {a} assists": [
+    "src/components/player/Picker.tsx"
+  ],
+  "{g} scored from {x} expected": [
+    "src/components/club/Overview.tsx"
+  ],
+  "{h}–{a} on penalties": [
+    "src/pages/Widget.tsx"
+  ],
+  "{home} {hs}–{as} {away}": [
+    "src/interaction/toasts.tsx"
+  ],
+  "{home} {hs}, {away} {as}": [
+    "src/components/match.tsx"
+  ],
+  "{home} {hs}, {away} {as} · {minute}": [
+    "src/interaction/ticker.tsx"
+  ],
+  "{home} v {away}": [
+    "src/components/match.tsx",
+    "src/interaction/peek.tsx",
+    "src/pages/Match.tsx"
+  ],
+  "{home} won {w}, {d} drawn, {away} won {l}": [
+    "src/components/matchcentre/H2H.tsx"
+  ],
+  "{k}: {v}, league average {avg}": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "{label}: {w} wins, {d} draws, {l} losses": [
+    "src/components/club/charts.tsx"
+  ],
+  "{league} has no fixtures on this day.": [
+    "src/pages/Scores.tsx"
+  ],
+  "{league} hasn’t played enough matches this season for analytics.": [
+    "src/components/league/Overview.tsx"
+  ],
+  "{league} hasn’t published standings for this stage.": [
+    "src/pages/Standings.tsx"
+  ],
+  "{league} news": [
+    "src/pages/News.tsx"
+  ],
+  "{league} season": [
+    "src/pages/Player.tsx"
+  ],
+  "{league} stats": [
+    "src/pages/Analytics.tsx"
+  ],
+  "{league} table": [
+    "src/pages/Standings.tsx"
+  ],
+  "{min} played": [
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "{min}, {n} minutes of added time": [
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "{min}+ (added time)": [
+    "src/components/matchcentre/Momentum.tsx"
+  ],
+  "{n} app": [
+    "src/components/club/Overview.tsx",
+    "src/components/player/Career.tsx"
+  ],
+  "{n} apps": [
+    "src/components/club/Overview.tsx",
+    "src/components/league/Overview.tsx",
+    "src/components/player/Career.tsx"
+  ],
+  "{n} assist": [
+    "src/components/club/Overview.tsx"
+  ],
+  "{n} assists": [
+    "src/components/club/Overview.tsx"
+  ],
+  "{n} attendance": [
+    "src/pages/Stadium.tsx"
+  ],
+  "{n} fewer goals than xG": [
+    "src/components/player/Tiles.tsx"
+  ],
+  "{n} game this season": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "{n} games this season": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "{n} goal": [
+    "src/components/club/Overview.tsx",
+    "src/components/lineup.tsx",
+    "src/components/player/Career.tsx"
+  ],
+  "{n} goals": [
+    "src/components/club/Overview.tsx",
+    "src/components/lineup.tsx",
+    "src/components/player/Career.tsx"
+  ],
+  "{n} goals above expected — clinical finishing.": [
+    "src/components/player/ShotMap.tsx"
+  ],
+  "{n} goals below expected from these chances.": [
+    "src/components/player/ShotMap.tsx"
+  ],
+  "{n} live": [
+    "src/pages/Scores.tsx",
+    "src/pages/Widget.tsx"
+  ],
+  "{n} located actions": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "{n} m": [
+    "src/components/player/ShotMap.tsx"
+  ],
   "{n} match": [
-    "src/i18n/index.ts"
+    "src/i18n/index.ts",
+    "src/pages/Scores.tsx"
+  ],
+  "{n} match in progress": [
+    "src/interaction/ticker.tsx"
+  ],
+  "{n} match live": [
+    "src/pages/Standings.tsx"
+  ],
+  "{n} match live — show live only": [
+    "src/pages/Scores.tsx"
   ],
   "{n} matches": [
-    "src/i18n/index.ts"
+    "src/i18n/index.ts",
+    "src/pages/Leagues.tsx",
+    "src/pages/Scores.tsx"
+  ],
+  "{n} matches in progress": [
+    "src/interaction/ticker.tsx"
+  ],
+  "{n} matches live": [
+    "src/pages/Standings.tsx"
+  ],
+  "{n} matches live — show live only": [
+    "src/pages/Scores.tsx"
+  ],
+  "{n} matching players": [
+    "src/components/player/Picker.tsx"
+  ],
+  "{n} more goals than xG": [
+    "src/components/player/Tiles.tsx"
+  ],
+  "{n} off the bench": [
+    "src/components/player/Tiles.tsx"
+  ],
+  "{n} per game": [
+    "src/components/club/Overview.tsx",
+    "src/components/club/Stats.tsx",
+    "src/components/player/CompareCharts.tsx",
+    "src/components/player/Tiles.tsx"
+  ],
+  "{n} pt": [
+    "src/components/club/Stats.tsx"
+  ],
+  "{n} pts": [
+    "src/components/club/Stats.tsx"
+  ],
+  "{n} red card": [
+    "src/components/match.tsx"
+  ],
+  "{n} red cards": [
+    "src/components/match.tsx",
+    "src/components/player/Tiles.tsx"
+  ],
+  "{n} result": [
+    "src/interaction/search.tsx"
+  ],
+  "{n} results": [
+    "src/interaction/search.tsx"
+  ],
+  "{n} rows": [
+    "src/components/charts/core.tsx"
+  ],
+  "{n} seats": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "{n} start": [
+    "src/components/club/Squad.tsx",
+    "src/components/league/PlayersView.tsx"
+  ],
+  "{n} starts": [
+    "src/components/club/Squad.tsx",
+    "src/components/league/PlayersView.tsx"
+  ],
+  "{n} still to come": [
+    "src/pages/Stadium.tsx"
+  ],
+  "{n} trophies": [
+    "src/components/player/Career.tsx"
+  ],
+  "{n} trophy": [
+    "src/components/player/Career.tsx"
+  ],
+  "{n} year ago": [
+    "src/pages/Stadium.tsx"
+  ],
+  "{n} years": [
+    "src/components/player/Hero.tsx"
+  ],
+  "{n} years ago": [
+    "src/pages/Stadium.tsx"
+  ],
+  "{n} yellow cards": [
+    "src/components/player/Tiles.tsx"
+  ],
+  "{n} yr": [
+    "src/components/club/Squad.tsx"
+  ],
+  "{n} yrs": [
+    "src/components/club/Squad.tsx"
+  ],
+  "{n}% of appearances": [
+    "src/components/player/Tiles.tsx"
+  ],
+  "{n}% rain": [
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "{name} came on for {out}, {min}": [
+    "src/components/lineup.tsx"
+  ],
+  "{name}, {team}: {g} goals, {a} assists": [
+    "src/components/charts/Scatter.tsx"
+  ],
+  "{opp}, {date}: {g} goals, {a} assists. Open match": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "{opp}, {date}: conceded {c}. Open match": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "{p} full on average": [
+    "src/pages/Stadium.tsx"
+  ],
+  "{p} of all goals arrive after the 75th minute.": [
+    "src/components/league/Overview.tsx"
+  ],
+  "{p} win chance": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "{pct} win rate": [
+    "src/components/club/Overview.tsx"
+  ],
+  "{ppg} per game": [
+    "src/components/club/Stats.tsx"
+  ],
+  "{ppg} per game · {n} played": [
+    "src/components/club/Overview.tsx"
+  ],
+  "{range} min": [
+    "src/components/club/charts.tsx"
+  ],
+  "{range}: scored {s}, conceded {c}": [
+    "src/components/club/charts.tsx"
+  ],
+  "{result} {score} against {team} ({where}), {when}": [
+    "src/components/club/ui.tsx"
+  ],
+  "{season} season": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "{sims} simulations of the {n} remaining fixtures.": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "{team} ({where}), {when}": [
+    "src/components/club/ui.tsx"
+  ],
+  "{team} ({where}), {when}, postponed": [
+    "src/components/club/ui.tsx"
+  ],
+  "{team} had {pct} of the pressure": [
+    "src/components/matchcentre/Momentum.tsx"
+  ],
+  "{team} penalties": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "{team} score": [
+    "src/interaction/toasts.tsx"
+  ],
+  "{team} scorers": [
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "{team} substitutes": [
+    "src/components/lineup.tsx"
+  ],
+  "{team} win": [
+    "src/components/matchcentre/H2H.tsx"
+  ],
+  "{team} wins": [
+    "src/components/matchcentre/H2H.tsx"
+  ],
+  "{team}: {on} on target, {off} off target, {blocked} blocked": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "{time} local": [
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "{title}. Use left and right arrow keys to move between matchdays.": [
+    "src/components/club/charts.tsx"
+  ],
+  "{v} per start": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "{y} yellow, {r} red": [
+    "src/components/club/Stats.tsx",
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "#{n}": [
+    "src/components/club/charts.tsx"
+  ],
+  "+{n} more": [
+    "src/components/club/Squad.tsx"
+  ],
+  "0–0": [
+    "src/pages/Leagues.tsx"
+  ],
+  "1st": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "30 days": [
+    "src/pages/Insights.tsx"
+  ],
+  "7 days": [
+    "src/pages/Insights.tsx"
+  ],
+  "90 days": [
+    "src/pages/Insights.tsx"
+  ],
+  "A": [
+    "src/components/PlayerSheet.tsx",
+    "src/components/charts/Grids.tsx",
+    "src/components/club/Fixtures.tsx",
+    "src/components/club/Stats.tsx"
   ],
   "A light tap on goals and actions": [
     "src/pages/Settings.tsx"
   ],
+  "A new version of Pitch is ready.": [
+    "src/platform/UpdateToast.tsx"
+  ],
+  "Abandoned": [
+    "src/components/match.tsx"
+  ],
   "About": [
+    "src/pages/Player.tsx",
     "src/pages/Settings.tsx"
+  ],
+  "About {club}": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "About the stadium": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Access key": [
+    "src/pages/Insights.tsx"
+  ],
+  "Accurate passes": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Across {n} competitions": [
+    "src/pages/Leagues.tsx"
+  ],
+  "action": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Action map": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Action map by zone": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Action map for {team}: {n} located actions. Use arrow keys to step through zones.": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "actions": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Actual goal difference in the same matches": [
+    "src/components/table.tsx"
   ],
   "Add clubs": [
     "src/pages/Settings.tsx"
   ],
+  "Added time": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
   "Adds textures so charts don’t rely on colour": [
     "src/pages/Settings.tsx"
+  ],
+  "After {n} games": [
+    "src/components/charts/RaceChart.tsx"
+  ],
+  "After extra time": [
+    "src/components/match.tsx"
+  ],
+  "Age": [
+    "src/components/PlayerSheet.tsx",
+    "src/components/league/PlayersView.tsx"
+  ],
+  "Age {n}": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "All": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "All competitions": [
+    "src/pages/Scores.tsx"
+  ],
+  "All leagues": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Also known as {name}": [
+    "src/pages/Stadium.tsx"
+  ],
+  "App": [
+    "src/platform/install.tsx"
   ],
   "Appearance": [
     "src/App.tsx",
     "src/pages/Settings.tsx"
+  ],
+  "Appearances": [
+    "src/components/charts/Scatter.tsx",
+    "src/components/player/CompareCharts.tsx",
+    "src/components/player/Tiles.tsx"
+  ],
+  "Apps": [
+    "src/components/PlayerSheet.tsx",
+    "src/components/charts/Scatter.tsx",
+    "src/components/club/Squad.tsx",
+    "src/components/league/PlayersView.tsx"
+  ],
+  "Assist": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Assist: {name}": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Assists": [
+    "src/components/PlayerSheet.tsx",
+    "src/components/charts/Scatter.tsx",
+    "src/components/league/Overview.tsx",
+    "src/components/league/PlayersView.tsx",
+    "src/components/player/CompareCharts.tsx",
+    "src/components/player/FormChart.tsx",
+    "src/components/player/Tiles.tsx"
+  ],
+  "Assists per game": [
+    "src/components/player/CompareCharts.tsx"
+  ],
+  "assists::A": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Ast": [
+    "src/components/club/Squad.tsx"
+  ],
+  "at": [
+    "src/components/charts/Grids.tsx",
+    "src/components/player/Hero.tsx",
+    "src/pages/Widget.tsx"
+  ],
+  "at {team}": [
+    "src/components/player/FormChart.tsx",
+    "src/components/player/ShotMap.tsx"
+  ],
+  "At the stadium": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "At the time of building": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Attack": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Attack vs defence": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Attacking →": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Attacking ↑": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Attacking midfield": [
+    "src/components/club/Squad.tsx"
+  ],
+  "Attacking Midfielder": [
+    "extra.json"
+  ],
+  "Attacking Midfielder Left": [
+    "extra.json"
+  ],
+  "Attacking Midfielder Right": [
+    "extra.json"
+  ],
+  "Attendance": [
+    "src/components/matchcentre/Summary.tsx"
   ],
   "Auto": [
     "src/pages/Settings.tsx"
@@ -27,23 +570,275 @@
   "Automatic": [
     "src/App.tsx"
   ],
+  "Available": [
+    "src/components/player/Hero.tsx"
+  ],
+  "Average attendance": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Average finish": [
+    "src/components/charts/Grids.tsx"
+  ],
+  "Average finishing position": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Average goals in a match.": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Avg": [
+    "src/components/charts/Grids.tsx",
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Avg finish": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Avg. distance": [
+    "src/components/player/ShotMap.tsx"
+  ],
+  "away": [
+    "src/components/club/ui.tsx"
+  ],
+  "Away": [
+    "src/components/club/ClubInfo.tsx",
+    "src/components/club/Fixtures.tsx",
+    "src/components/club/Stats.tsx",
+    "src/components/league/FormView.tsx",
+    "src/pages/Leagues.tsx",
+    "src/pages/Standings.tsx"
+  ],
+  "Away matches only. Arrows compare with the real table.": [
+    "src/pages/Standings.tsx"
+  ],
+  "Away record": [
+    "src/components/league/FormView.tsx"
+  ],
+  "Away table": [
+    "src/components/league/FormView.tsx"
+  ],
+  "Away win": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Away win %": [
+    "src/pages/Leagues.tsx"
+  ],
   "Back": [
-    "src/components/Onboarding.tsx"
+    "src/components/Onboarding.tsx",
+    "src/pages/Match.tsx",
+    "src/pages/Player.tsx",
+    "src/pages/Stadium.tsx",
+    "src/pages/Team.tsx"
   ],
   "Back to scores": [
     "src/pages/NotFound.tsx"
   ],
+  "Back to the table": [
+    "src/pages/Team.tsx"
+  ],
+  "Back to top: {home} {score} {away}, {status}": [
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "Base": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Based in": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "Based on matches synced so far ({pct}).": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Best": [
+    "src/components/charts/BumpChart.tsx"
+  ],
+  "Best attack": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Best chance": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Best Under-21s": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "Big chances": [
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Biggest wins": [
+    "src/components/club/Stats.tsx"
+  ],
+  "Blocked": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/matchcentre/Stats.tsx",
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Blocked shots": [
+    "src/components/matchcentre/Momentum.tsx"
+  ],
+  "Body part": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Bookmaker odds": [
+    "src/pages/Match.tsx"
+  ],
+  "Born": [
+    "src/components/PlayerSheet.tsx",
+    "src/pages/Player.tsx"
+  ],
+  "Both": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Both feet": [
+    "src/components/player/Hero.tsx"
+  ],
+  "Both teams score": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Both teams score %": [
+    "src/pages/Leagues.tsx"
+  ],
+  "bottom": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Break in play": [
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "Bronze": [
+    "src/components/player/Milestones.tsx"
+  ],
+  "Browse stats": [
+    "src/pages/Player.tsx"
+  ],
+  "Browser": [
+    "src/pages/Insights.tsx"
+  ],
+  "BTTS": [
+    "src/pages/Leagues.tsx"
+  ],
+  "building": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Building season data · {p}": [
+    "src/components/league/chrome.tsx"
+  ],
   "Bundesliga": [
     "extra.json"
   ],
-  "Champions League": [
+  "By competition": [
+    "src/components/player/CompTable.tsx",
+    "src/pages/Player.tsx"
+  ],
+  "Calendar": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "Cancel": [
+    "src/components/player/Picker.tsx",
+    "src/interaction/search.tsx"
+  ],
+  "Cancelled": [
+    "src/components/match.tsx"
+  ],
+  "Capacity": [
+    "src/components/club/ClubInfo.tsx",
+    "src/pages/Stadium.tsx"
+  ],
+  "Card data appears once match details have synced.": [
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "Cards": [
+    "src/components/player/Tiles.tsx"
+  ],
+  "Cards appear once match details have synced.": [
+    "src/components/club/Stats.tsx"
+  ],
+  "Cards per club": [
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "cards per game": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Cards per game": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Cards/G": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Career": [
+    "src/components/player/Career.tsx"
+  ],
+  "carousel": [
+    "src/components/club/Gallery.tsx"
+  ],
+  "Center Defender": [
     "extra.json"
+  ],
+  "Center Forward": [
+    "extra.json"
+  ],
+  "Center Left Defender": [
+    "extra.json"
+  ],
+  "Center Left Midfielder": [
+    "extra.json"
+  ],
+  "Center Midfielder": [
+    "extra.json"
+  ],
+  "Center Right Defender": [
+    "extra.json"
+  ],
+  "Center Right Midfielder": [
+    "extra.json"
+  ],
+  "centre": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Centre": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Champions League": [
+    "extra.json",
+    "src/interaction/search.tsx"
+  ],
+  "Change": [
+    "src/pages/Compare.tsx"
   ],
   "Change country": [
     "src/components/watch.tsx"
   ],
+  "Change first player": [
+    "src/pages/Compare.tsx"
+  ],
+  "Change over the last five games": [
+    "src/components/league/RatingsView.tsx"
+  ],
+  "Change second player": [
+    "src/pages/Compare.tsx"
+  ],
   "Chart patterns": [
     "src/pages/Settings.tsx"
+  ],
+  "Check back soon for the latest from {league}.": [
+    "src/pages/News.tsx"
+  ],
+  "Check the team and league in the widget address.": [
+    "src/pages/Widget.tsx"
+  ],
+  "Choose “Add to Home Screen”, then tap Add": [
+    "src/platform/install.tsx"
+  ],
+  "Choose “Install app”, “Add to Home Screen” or “Add to Dock”": [
+    "src/platform/install.tsx"
+  ],
+  "Choose a day": [
+    "src/pages/Scores.tsx"
+  ],
+  "Choose another": [
+    "src/pages/Compare.tsx"
+  ],
+  "Choose the first player": [
+    "src/pages/Compare.tsx"
+  ],
+  "Choose the second player": [
+    "src/pages/Compare.tsx"
   ],
   "Choose your clubs": [
     "src/pages/Settings.tsx"
@@ -54,27 +849,193 @@
   "Choose your language": [
     "src/components/Onboarding.tsx"
   ],
+  "Chronological": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Clean sheet": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Clean sheets": [
+    "src/components/player/Tiles.tsx"
+  ],
+  "Clear": [
+    "src/interaction/search.tsx"
+  ],
+  "Clear search": [
+    "src/interaction/search.tsx"
+  ],
+  "Clearances": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Close": [
+    "src/components/ui.tsx",
+    "src/interaction/dialog.tsx"
+  ],
+  "Close a sheet or search": [
+    "src/interaction/shortcuts.tsx"
+  ],
+  "Cloudy": [
+    "src/components/matchcentre/venue.tsx"
+  ],
+  "Club": [
+    "src/components/charts/Bars.tsx",
+    "src/components/charts/BumpChart.tsx",
+    "src/components/charts/Grids.tsx",
+    "src/components/charts/RaceChart.tsx",
+    "src/components/charts/Scatter.tsx",
+    "src/components/league/DisciplineView.tsx",
+    "src/components/league/Overview.tsx",
+    "src/components/league/PlayersView.tsx",
+    "src/components/league/ProjectionView.tsx",
+    "src/components/league/RatingsView.tsx",
+    "src/components/table.tsx",
+    "src/interaction/search.tsx",
+    "src/pages/Team.tsx"
+  ],
+  "Club and international, this season": [
+    "src/components/player/CompTable.tsx"
+  ],
+  "Club facts": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "Club not found": [
+    "src/pages/Team.tsx",
+    "src/pages/Widget.tsx"
+  ],
+  "Club sections": [
+    "src/pages/Team.tsx"
+  ],
+  "Clubs": [
+    "src/interaction/search.tsx",
+    "src/pages/Insights.tsx"
+  ],
+  "Clubs, most recent first": [
+    "src/components/player/Career.tsx"
+  ],
+  "Collected without cookies or personal data: no IP addresses, no identifiers, nothing stored about individual visitors. Do Not Track and Global Privacy Control are respected. Days are counted in UTC.": [
+    "src/pages/Insights.tsx"
+  ],
+  "Colour scale: fewer to more actions": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Commentary": [
+    "src/components/matchcentre/Commentary.tsx",
+    "src/pages/Match.tsx"
+  ],
+  "Compare": [
+    "src/components/PlayerSheet.tsx",
+    "src/components/player/Hero.tsx",
+    "src/pages/Compare.tsx",
+    "src/pages/Insights.tsx"
+  ],
+  "Compare {name}": [
+    "src/pages/Compare.tsx"
+  ],
   "Compare leagues": [
+    "src/interaction/search.tsx",
+    "src/pages/Analytics.tsx",
     "src/pages/Leagues.tsx"
   ],
   "Compare players": [
+    "src/interaction/search.tsx",
     "src/pages/Compare.tsx"
   ],
   "Competition": [
-    "src/components/prefs.tsx"
+    "src/components/PlayerSheet.tsx",
+    "src/components/matchcentre/Summary.tsx",
+    "src/components/player/CompTable.tsx",
+    "src/components/player/Picker.tsx",
+    "src/components/prefs.tsx",
+    "src/interaction/search.tsx",
+    "src/pages/Standings.tsx"
+  ],
+  "Competition stats are unavailable right now.": [
+    "src/pages/Player.tsx"
   ],
   "Competitions": [
+    "src/interaction/search.tsx",
+    "src/pages/Scores.tsx",
     "src/pages/Settings.tsx"
+  ],
+  "Completed matches": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Conceded": [
+    "src/components/charts/MinuteChart.tsx",
+    "src/components/club/Overview.tsx",
+    "src/components/club/charts.tsx",
+    "src/components/league/Overview.tsx",
+    "src/components/player/FormChart.tsx"
+  ],
+  "Conceded / game": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Construction cost": [
+    "src/pages/Stadium.tsx"
   ],
   "Continue": [
     "src/components/Onboarding.tsx"
+  ],
+  "Cookie-free, aggregate audience numbers for Pitch. Enter your access key to continue.": [
+    "src/pages/Insights.tsx"
+  ],
+  "Corner": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Corners": [
+    "src/components/matchcentre/Momentum.tsx",
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/matchcentre/Stats.tsx",
+    "src/interaction/peek.tsx"
+  ],
+  "Couldn’t load scores": [
+    "src/pages/Widget.tsx"
+  ],
+  "Couldn’t load this right now": [
+    "src/components/ui.tsx"
+  ],
+  "Couldn’t reach the server. Try again.": [
+    "src/pages/Insights.tsx"
+  ],
+  "Counted from match events in this competition.": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "Countries": [
+    "src/pages/Insights.tsx"
   ],
   "Country": [
     "src/components/prefs.tsx",
     "src/pages/Settings.tsx"
   ],
+  "Crosses": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Cumulative points by games played. The top four and the clubs you follow are highlighted — tap a crest to follow one line.": [
+    "src/components/league/RaceView.tsx"
+  ],
+  "Cumulative points by games played. Use the arrow keys to move between games.": [
+    "src/components/charts/RaceChart.tsx"
+  ],
+  "Cumulative xG": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Cumulative xG: {home} {h}, {away} {a}": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Current club": [
+    "src/components/player/Career.tsx"
+  ],
+  "Current shirt": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "D": [
+    "src/components/club/Squad.tsx",
+    "src/components/club/Stats.tsx",
+    "src/components/table.tsx"
+  ],
   "Dark": [
     "src/App.tsx",
+    "src/pages/Insights.tsx",
     "src/pages/Settings.tsx"
   ],
   "Data": [
@@ -83,11 +1044,161 @@
   "Data: ESPN · Photos: TheSportsDB & Wikimedia Commons · Logos are trademarks of their owners": [
     "src/App.tsx"
   ],
-  "Defenders": [
+  "Date": [
+    "src/components/club/charts.tsx",
+    "src/components/player/FormChart.tsx",
+    "src/pages/Insights.tsx"
+  ],
+  "Dates unknown": [
+    "src/components/player/Career.tsx"
+  ],
+  "day": [
+    "src/components/club/ui.tsx"
+  ],
+  "Day-To-Day": [
     "extra.json"
+  ],
+  "days": [
+    "src/components/club/ui.tsx",
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "Defence": [
+    "src/components/club/Squad.tsx",
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Defender": [
+    "extra.json"
+  ],
+  "Defenders": [
+    "extra.json",
+    "src/components/club/Squad.tsx"
+  ],
+  "Defensive midfield": [
+    "src/components/club/Squad.tsx"
+  ],
+  "Defensive Midfielder": [
+    "extra.json"
+  ],
+  "Defensive Midfielder Left": [
+    "extra.json"
+  ],
+  "Defensive Midfielder Right": [
+    "extra.json"
+  ],
+  "Defensive third": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Delay": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Depth behind {name}": [
+    "src/components/club/Squad.tsx"
+  ],
+  "Depth chart": [
+    "src/components/club/Squad.tsx"
+  ],
+  "Desktop": [
+    "src/pages/Insights.tsx"
+  ],
+  "Devices": [
+    "src/pages/Insights.tsx"
+  ],
+  "Difference": [
+    "src/components/charts/Bars.tsx"
+  ],
+  "Differences are against the league average. Small samples swing a lot — treat referees with few games with care.": [
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "Difficulty": [
+    "src/components/charts/Grids.tsx"
+  ],
+  "Difficulty {n} of 5: {label}": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "Difficulty from Pitch Elo ratings": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "Direct free kick": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Discipline": [
+    "src/components/club/Stats.tsx",
+    "src/components/matchcentre/Stats.tsx",
+    "src/pages/Analytics.tsx"
+  ],
+  "Discipline unavailable": [
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "Dismiss": [
+    "src/interaction/toasts.tsx",
+    "src/platform/UpdateToast.tsx"
+  ],
+  "Distance": [
+    "src/components/player/ShotMap.tsx"
   ],
   "Done": [
     "src/pages/Settings.tsx"
+  ],
+  "Doubtful": [
+    "extra.json",
+    "src/components/player/Hero.tsx"
+  ],
+  "Down {n} {vs}": [
+    "src/components/table.tsx"
+  ],
+  "Draw": [
+    "src/components/club/Fixtures.tsx",
+    "src/components/club/ui.tsx",
+    "src/components/matchcentre/H2H.tsx",
+    "src/components/matchcentre/Hero.tsx",
+    "src/components/matchcentre/Summary.tsx",
+    "src/pages/Leagues.tsx"
+  ],
+  "Draw %": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Drawn": [
+    "src/components/club/Stats.tsx",
+    "src/components/table.tsx"
+  ],
+  "Draws": [
+    "src/components/club/charts.tsx",
+    "src/components/matchcentre/H2H.tsx"
+  ],
+  "Drizzle": [
+    "src/components/matchcentre/venue.tsx"
+  ],
+  "Each club’s last {n} matches. Arrows compare with the real table.": [
+    "src/pages/Standings.tsx"
+  ],
+  "Each club’s next five matches, rated 1 (easiest) to 5 (hardest) from the chance of not winning — opponent strength and venue included.": [
+    "src/components/league/RatingsView.tsx"
+  ],
+  "Early in the season ratings still lean on last season.": [
+    "src/components/league/RatingsView.tsx"
+  ],
+  "Earned in league play this season": [
+    "src/components/player/Milestones.tsx"
+  ],
+  "Easier": [
+    "src/components/charts/Grids.tsx"
+  ],
+  "Easiest": [
+    "src/components/league/RatingsView.tsx"
+  ],
+  "Edit": [
+    "src/interaction/following.tsx"
+  ],
+  "Eliminated": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "End of extra time · {score}": [
+    "src/components/matchcentre/Commentary.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "End of normal time · {score}": [
+    "src/components/matchcentre/Commentary.tsx",
+    "src/components/matchcentre/Summary.tsx"
   ],
   "England": [
     "extra.json"
@@ -95,23 +1206,172 @@
   "Eredivisie": [
     "extra.json"
   ],
+  "Est. {year}": [
+    "src/pages/Team.tsx"
+  ],
+  "ET": [
+    "src/components/matchcentre/Momentum.tsx"
+  ],
   "Europa League": [
     "extra.json"
   ],
   "Europe": [
     "extra.json"
   ],
+  "Even": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "Every club, ranked by goals scored minus goals conceded.": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Every commentary event with a location — shots, fouls, corners, offsides — binned into a 12 × 8 grid. Fouls are placed where the team committed them.": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Every fixture has been played — this is the final table.": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Every metric side by side. Select a column to sort.": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Every shot in the league this season. Bigger marks were better chances.": [
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Expected goal difference": [
+    "src/components/table.tsx"
+  ],
+  "Expected goal difference per game": [
+    "src/components/table.tsx"
+  ],
+  "Expected goals": [
+    "src/components/club/Overview.tsx"
+  ],
+  "Expected goals (xG)": [
+    "src/components/player/CompareCharts.tsx",
+    "src/components/player/Tiles.tsx"
+  ],
+  "Expected goals against": [
+    "src/components/table.tsx"
+  ],
+  "Expected goals appear once match details have synced.": [
+    "src/components/club/Overview.tsx"
+  ],
+  "Expected goals appear once match details with shot data have synced.": [
+    "src/pages/Standings.tsx"
+  ],
+  "Expected goals created and allowed per game — the chances behind the scoreline.": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Expected goals created and allowed, from the Pitch xG model. Sorted by xG difference.": [
+    "src/pages/Standings.tsx"
+  ],
+  "Expected goals created per match (both sides). Leagues with incomplete shot data are left out.": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Expected goals for": [
+    "src/components/table.tsx"
+  ],
+  "Explore": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "Explore {stadium}": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "Extra time": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Extra time, second half": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Extra-time break · {score}": [
+    "src/components/matchcentre/Commentary.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "F": [
+    "src/components/club/Squad.tsx"
+  ],
+  "Fair": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "Favourable": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "Fewer": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Fewer conceded per game": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Filter commentary": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Final third": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
   "Finish": [
     "src/components/Onboarding.tsx"
   ],
+  "Finish {pos}": [
+    "src/components/charts/Grids.tsx"
+  ],
+  "Finishing exactly in line with chance quality.": [
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Finishing position probabilities": [
+    "src/components/charts/Grids.tsx"
+  ],
+  "Finishing positions": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Finishing vs xG": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "First": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "First half": [
+    "src/components/matchcentre/Momentum.tsx"
+  ],
+  "Fixture difficulty": [
+    "src/components/league/RatingsView.tsx"
+  ],
+  "Fixtures": [
+    "src/interaction/search.tsx",
+    "src/pages/Scores.tsx",
+    "src/pages/Team.tsx"
+  ],
+  "Fixtures unavailable right now": [
+    "src/interaction/following.tsx"
+  ],
+  "Fixtures, squad and stats": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Fog": [
+    "src/components/matchcentre/venue.tsx"
+  ],
+  "Follow": [
+    "src/components/club/ui.tsx",
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "Follow {club}": [
+    "src/components/player/Hero.tsx"
+  ],
   "Follow {n} and finish": [
     "src/components/Onboarding.tsx"
+  ],
+  "Follow {team}": [
+    "src/components/matchcentre/Hero.tsx",
+    "src/interaction/peek.tsx"
   ],
   "Followed clubs appear first on Scores and get goal alerts while Pitch is open.": [
     "src/pages/Settings.tsx"
   ],
   "Following": [
-    "src/pages/Settings.tsx"
+    "src/components/club/ui.tsx",
+    "src/components/match.tsx",
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "Following {club}": [
+    "src/components/player/Hero.tsx"
   ],
   "Football, beautifully": [
     "src/lib/hooks.ts"
@@ -119,29 +1379,475 @@
   "Football, beautifully.": [
     "src/components/Onboarding.tsx"
   ],
-  "Forwards": [
+  "Forecast for kick-off from Open-Meteo.": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Form": [
+    "src/components/player/FormChart.tsx",
+    "src/components/table.tsx",
+    "src/pages/Analytics.tsx",
+    "src/pages/Standings.tsx"
+  ],
+  "Form table": [
+    "src/components/league/FormView.tsx"
+  ],
+  "Form tables appear once matches have been played.": [
+    "src/components/league/FormView.tsx"
+  ],
+  "Form: {form}": [
+    "src/components/ui.tsx"
+  ],
+  "form::D": [
+    "src/components/club/charts.tsx",
+    "src/components/club/ui.tsx",
+    "src/components/ui.tsx"
+  ],
+  "form::L": [
+    "src/components/club/charts.tsx",
+    "src/components/club/ui.tsx",
+    "src/components/ui.tsx"
+  ],
+  "form::W": [
+    "src/components/club/charts.tsx",
+    "src/components/club/ui.tsx",
+    "src/components/ui.tsx"
+  ],
+  "Forward": [
     "extra.json"
+  ],
+  "Forwards": [
+    "extra.json",
+    "src/components/club/Squad.tsx"
+  ],
+  "Foul": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Fouls": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Founded": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "Fourth": [
+    "src/components/club/ClubInfo.tsx"
   ],
   "France": [
+    "extra.json",
+    "src/interaction/search.tsx"
+  ],
+  "Free": [
     "extra.json"
+  ],
+  "Free kicks won in the final third": [
+    "src/components/matchcentre/Momentum.tsx"
+  ],
+  "Free transfer": [
+    "src/components/player/Career.tsx"
   ],
   "Free-to-air": [
-    "extra.json"
+    "extra.json",
+    "src/components/watch.tsx"
+  ],
+  "From {n} match": [
+    "src/pages/Stadium.tsx"
+  ],
+  "From {n} match with goal times": [
+    "src/components/club/Stats.tsx"
+  ],
+  "From {n} matches": [
+    "src/pages/Stadium.tsx"
+  ],
+  "From {n} matches with goal times": [
+    "src/components/club/Stats.tsx"
+  ],
+  "From {y}": [
+    "src/components/player/Career.tsx"
+  ],
+  "From each club’s Elo-style rating this season and a Poisson goals model, including home advantage.": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "FT": [
+    "src/components/matchcentre/Hero.tsx",
+    "src/pages/Widget.tsx"
   ],
   "Full time": [
-    "src/i18n/index.ts"
+    "src/components/match.tsx",
+    "src/i18n/index.ts",
+    "src/interaction/peek.tsx",
+    "src/pages/Widget.tsx"
+  ],
+  "Full time · {score}": [
+    "src/components/matchcentre/Commentary.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "G": [
+    "src/components/PlayerSheet.tsx",
+    "src/components/club/Squad.tsx"
+  ],
+  "G{n}": [
+    "src/components/charts/RaceChart.tsx"
+  ],
+  "G+A": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "G−xG": [
+    "src/components/table.tsx"
+  ],
+  "GA": [
+    "src/components/club/Stats.tsx",
+    "src/components/table.tsx"
+  ],
+  "Games": [
+    "src/components/charts/Bars.tsx",
+    "src/components/league/DisciplineView.tsx",
+    "src/components/league/RatingsView.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Games played": [
+    "src/components/charts/RaceChart.tsx"
+  ],
+  "Games with xG": [
+    "src/components/league/Overview.tsx"
+  ],
+  "games::G": [
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "GD": [
+    "src/components/table.tsx"
+  ],
+  "General": [
+    "src/interaction/shortcuts.tsx"
   ],
   "Germany": [
-    "extra.json"
+    "extra.json",
+    "src/interaction/search.tsx"
   ],
   "Get started": [
     "src/components/Onboarding.tsx"
   ],
+  "Getting there": [
+    "src/pages/Stadium.tsx"
+  ],
+  "GF": [
+    "src/components/club/Stats.tsx",
+    "src/components/table.tsx"
+  ],
+  "Go to": [
+    "src/interaction/shortcuts.tsx"
+  ],
+  "Go to {club}": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Goal": [
+    "src/components/match.tsx",
+    "src/components/matchcentre/Commentary.tsx",
+    "src/components/matchcentre/Momentum.tsx",
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/matchcentre/Summary.tsx",
+    "src/components/player/ShotMap.tsx",
+    "src/interaction/peek.tsx",
+    "src/interaction/toasts.tsx"
+  ],
+  "GOAL": [
+    "src/interaction/toasts.tsx"
+  ],
+  "Goal alerts": [
+    "src/interaction/toasts.tsx"
+  ],
+  "Goal difference": [
+    "src/components/club/Overview.tsx",
+    "src/components/league/Overview.tsx",
+    "src/components/table.tsx"
+  ],
+  "Goal involvements (goals + assists), last {n} matches": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Goal involvements, last match": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Goal mouth": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Goal times appear once match details have synced.": [
+    "src/components/club/Stats.tsx",
+    "src/components/league/Overview.tsx"
+  ],
+  "Goalkeeper": [
+    "extra.json",
+    "src/components/club/ClubInfo.tsx",
+    "src/components/club/Squad.tsx"
+  ],
   "Goalkeepers": [
-    "extra.json"
+    "extra.json",
+    "src/components/club/Squad.tsx"
+  ],
+  "Goalless draw %": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Goalless draws": [
+    "src/pages/Leagues.tsx"
+  ],
+  "goals": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Goals": [
+    "src/components/PlayerSheet.tsx",
+    "src/components/charts/MinuteChart.tsx",
+    "src/components/charts/Scatter.tsx",
+    "src/components/club/Squad.tsx",
+    "src/components/league/Overview.tsx",
+    "src/components/league/PlayersView.tsx",
+    "src/components/matchcentre/Momentum.tsx",
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/player/CompareCharts.tsx",
+    "src/components/player/FormChart.tsx",
+    "src/components/player/ShotMap.tsx",
+    "src/components/player/Tiles.tsx"
+  ],
+  "Goals / game": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Goals − xG": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "Goals against": [
+    "src/components/club/Stats.tsx",
+    "src/components/table.tsx"
+  ],
+  "Goals and assists, recent matches": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Goals by minute": [
+    "src/components/charts/MinuteChart.tsx",
+    "src/components/club/Stats.tsx",
+    "src/components/league/Overview.tsx"
+  ],
+  "Goals conceded": [
+    "src/components/player/Tiles.tsx"
+  ],
+  "Goals conceded per match: {list}": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Goals conceded, last {n} matches": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Goals conceded, last match": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Goals conceded, recent matches": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Goals for": [
+    "src/components/club/Stats.tsx",
+    "src/components/table.tsx"
+  ],
+  "goals in {n} games": [
+    "src/components/league/Overview.tsx"
+  ],
+  "goals per game": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Goals per game": [
+    "src/components/matchcentre/H2H.tsx",
+    "src/components/matchcentre/Summary.tsx",
+    "src/components/player/CompareCharts.tsx",
+    "src/pages/Leagues.tsx"
+  ],
+  "Goals per match": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Goals plus assists per match: {list}": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Goals scored": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Goals scored and conceded by minute": [
+    "src/components/club/charts.tsx"
+  ],
+  "Goals scored and conceded per game. Top-right is where the best teams live.": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Goals scored minus expected goals": [
+    "src/components/table.tsx"
+  ],
+  "Goals scored minus expected goals. Above zero: finishing better than the chances suggest.": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "Goals vs assists": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "goals::G": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Goals/G": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Gold": [
+    "src/components/player/Milestones.tsx"
+  ],
+  "Golden Boot leader": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Group {n}": [
+    "src/components/league/chrome.tsx"
+  ],
+  "GS": [
+    "src/components/PlayerSheet.tsx"
+  ],
+  "H": [
+    "src/components/charts/Grids.tsx",
+    "src/components/club/Fixtures.tsx",
+    "src/components/club/Stats.tsx"
+  ],
+  "H2H": [
+    "src/pages/Match.tsx"
+  ],
+  "Half-time": [
+    "src/components/match.tsx",
+    "src/interaction/peek.tsx"
+  ],
+  "Half-time · {score}": [
+    "src/components/matchcentre/Commentary.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Handball": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Handballs": [
+    "src/components/matchcentre/Shots.tsx"
   ],
   "Haptics": [
     "src/pages/Settings.tsx"
+  ],
+  "Hard to beat": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Harder": [
+    "src/components/charts/Grids.tsx"
+  ],
+  "Hardest": [
+    "src/components/league/RatingsView.tsx"
+  ],
+  "Head to head": [
+    "src/components/player/CompareCharts.tsx"
+  ],
+  "Head-to-head numbers need both players to have league appearances this season.": [
+    "src/pages/Compare.tsx"
+  ],
+  "Header": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/player/ShotMap.tsx"
+  ],
+  "heading::Following": [
+    "src/pages/Settings.tsx"
+  ],
+  "Heaviest defeats": [
+    "src/components/club/Stats.tsx"
+  ],
+  "Height": [
+    "src/components/PlayerSheet.tsx",
+    "src/pages/Player.tsx"
+  ],
+  "Height is approximate, taken from the commentary description (top, centre or bottom of the goal).": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Hide data": [
+    "src/components/charts/core.tsx",
+    "src/components/matchcentre/charts.tsx"
+  ],
+  "Highlighted clubs": [
+    "src/components/charts/RaceChart.tsx"
+  ],
+  "Hit the woodwork": [
+    "src/components/matchcentre/Commentary.tsx",
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/player/ShotMap.tsx"
+  ],
+  "home": [
+    "src/components/club/ui.tsx"
+  ],
+  "Home": [
+    "src/components/club/ClubInfo.tsx",
+    "src/components/club/Fixtures.tsx",
+    "src/components/club/Stats.tsx",
+    "src/components/league/FormView.tsx",
+    "src/pages/Leagues.tsx",
+    "src/pages/Standings.tsx"
+  ],
+  "Home and away": [
+    "src/components/club/Stats.tsx"
+  ],
+  "Home ground": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "Home matches only. Arrows compare with the real table.": [
+    "src/pages/Standings.tsx"
+  ],
+  "Home of {club}": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Home record": [
+    "src/components/league/FormView.tsx",
+    "src/pages/Stadium.tsx"
+  ],
+  "Home table": [
+    "src/components/league/FormView.tsx"
+  ],
+  "Home vs away": [
+    "src/components/league/FormView.tsx"
+  ],
+  "Home win": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Home win %": [
+    "src/components/league/DisciplineView.tsx",
+    "src/pages/Leagues.tsx"
+  ],
+  "home wins": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Home wins": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Home wins, draws and away wins as a share of all matches, sorted by home wins.": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Honours": [
+    "src/components/player/Career.tsx"
+  ],
+  "How matches end": [
+    "src/pages/Leagues.tsx"
+  ],
+  "How often each club finished in each place across {sims} simulated seasons. Darker means more likely.": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "How the rating works": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "hrs": [
+    "src/components/club/ui.tsx",
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "HT": [
+    "src/components/matchcentre/Hero.tsx",
+    "src/components/matchcentre/Momentum.tsx",
+    "src/interaction/ticker.tsx",
+    "src/pages/Widget.tsx"
+  ],
+  "Implied by the bookmaker’s pre-match moneyline odds, with the margin removed.": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "In": [
+    "src/components/lineup.tsx"
+  ],
+  "in {n} match": [
+    "src/components/club/Stats.tsx"
+  ],
+  "in {n} matches": [
+    "src/components/club/Stats.tsx",
+    "src/components/league/Overview.tsx"
   ],
   "Increase contrast": [
     "src/pages/Settings.tsx"
@@ -152,17 +1858,99 @@
   "Indian Super League": [
     "extra.json"
   ],
+  "Injured": [
+    "extra.json",
+    "src/components/player/Hero.tsx"
+  ],
+  "injury::Out": [
+    "src/components/club/Squad.tsx"
+  ],
   "Insights": [
     "src/pages/Insights.tsx"
   ],
+  "Insights aren’t switched on for this site yet. Set the INSIGHTS_KEY secret, then come back.": [
+    "src/pages/Insights.tsx"
+  ],
+  "Install Pitch": [
+    "src/platform/install.tsx"
+  ],
+  "Installed": [
+    "src/platform/install.tsx"
+  ],
+  "Installed app": [
+    "src/pages/Insights.tsx"
+  ],
+  "Interceptions": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
   "ISL": [
-    "extra.json"
+    "extra.json",
+    "src/interaction/search.tsx"
+  ],
+  "It’s a quiet day across the competitions we follow.": [
+    "src/pages/Scores.tsx"
   ],
   "Italy": [
-    "extra.json"
+    "extra.json",
+    "src/interaction/search.tsx"
+  ],
+  "Jump to": [
+    "src/interaction/search.tsx"
   ],
   "Just now": [
     "src/lib/format.ts"
+  ],
+  "Key events": [
+    "src/interaction/peek.tsx"
+  ],
+  "Key moments": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Keyboard shortcuts": [
+    "src/interaction/shortcuts.tsx"
+  ],
+  "Kick {n}": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Kick {n}: not taken": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Kick-off": [
+    "src/components/club/ui.tsx",
+    "src/components/matchcentre/Commentary.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Kick-off {date}. Key events will appear here live.": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Kick-off at the stadium": [
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "Kick-off imminent": [
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "Kick-off in {d} days, {h} hours and {m} minutes": [
+    "src/components/club/ui.tsx",
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "Kick-off in {h} hours and {m} minutes": [
+    "src/components/club/ui.tsx"
+  ],
+  "kick::Missed": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "kick::Scored": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Kit": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "Kits": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "L": [
+    "src/components/club/Stats.tsx",
+    "src/components/table.tsx"
   ],
   "LaLiga": [
     "extra.json"
@@ -171,69 +1959,1152 @@
     "src/components/prefs.tsx",
     "src/pages/Settings.tsx"
   ],
+  "Languages": [
+    "src/pages/Insights.tsx"
+  ],
+  "Last": [
+    "src/pages/Widget.tsx"
+  ],
+  "Last {n} days": [
+    "src/pages/Insights.tsx"
+  ],
+  "Last {n} meeting": [
+    "src/components/matchcentre/H2H.tsx"
+  ],
+  "Last {n} meetings": [
+    "src/components/matchcentre/H2H.tsx"
+  ],
+  "Last {n} results": [
+    "src/components/club/Overview.tsx"
+  ],
+  "Last 10": [
+    "src/components/league/FormView.tsx",
+    "src/pages/Standings.tsx"
+  ],
+  "Last 5": [
+    "src/components/league/FormView.tsx",
+    "src/components/league/RatingsView.tsx",
+    "src/pages/Standings.tsx"
+  ],
+  "Last result": [
+    "src/components/club/ui.tsx"
+  ],
+  "Latest": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "League": [
+    "src/components/charts/Bars.tsx",
+    "src/pages/Leagues.tsx"
+  ],
+  "League {pct}": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "league average": [
+    "src/components/league/Overview.tsx"
+  ],
+  "League average": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "League average: {y} yellows and {r} reds per game; home sides win {h}.": [
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "League comparisons": [
+    "src/pages/Leagues.tsx"
+  ],
+  "League hub sections": [
+    "src/components/league/chrome.tsx"
+  ],
+  "League position after each matchday": [
+    "src/components/charts/BumpChart.tsx"
+  ],
+  "League position by matchday": [
+    "src/components/club/Overview.tsx"
+  ],
+  "League position over time": [
+    "src/components/league/RaceView.tsx"
+  ],
+  "League season": [
+    "src/components/PlayerSheet.tsx",
+    "src/pages/Player.tsx"
+  ],
+  "League stats": [
+    "src/pages/Leagues.tsx"
+  ],
+  "League summaries appear as soon as the first matches have synced.": [
+    "src/pages/Leagues.tsx"
+  ],
+  "League totals this season. The leader in each row is in bold.": [
+    "src/components/player/CompareCharts.tsx"
+  ],
+  "Leagues": [
+    "src/pages/Insights.tsx"
+  ],
+  "left": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Left Back": [
+    "extra.json"
+  ],
+  "left channel": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Left channel": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Left foot": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/player/Hero.tsx",
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Left Forward": [
+    "extra.json"
+  ],
+  "Left Midfielder": [
+    "extra.json"
+  ],
+  "Left Wing Back": [
+    "extra.json"
+  ],
+  "Legend": [
+    "src/components/charts/core.tsx"
+  ],
+  "Less likely": [
+    "src/components/charts/Grids.tsx"
+  ],
+  "Less xG against per game": [
+    "src/components/league/Overview.tsx"
+  ],
   "Liga Portugal": [
     "extra.json"
   ],
   "Light": [
     "src/App.tsx",
+    "src/pages/Insights.tsx",
     "src/pages/Settings.tsx"
   ],
   "Ligue 1": [
     "extra.json"
   ],
+  "Likely starting eleven, ordered by starts, with depth behind each position": [
+    "src/components/club/Squad.tsx"
+  ],
+  "Lineups": [
+    "src/pages/Match.tsx"
+  ],
+  "List": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "Live": [
+    "src/components/club/Fixtures.tsx",
+    "src/components/club/ui.tsx",
+    "src/components/match.tsx",
+    "src/interaction/search.tsx",
+    "src/interaction/ticker.tsx",
+    "src/pages/Match.tsx",
+    "src/pages/Scores.tsx",
+    "src/pages/Stadium.tsx",
+    "src/pages/Widget.tsx"
+  ],
+  "Live — updates automatically": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
   "Live football scores & analytics": [
     "src/App.tsx"
+  ],
+  "Live matches": [
+    "src/interaction/ticker.tsx"
+  ],
+  "Live now": [
+    "src/components/club/ui.tsx",
+    "src/interaction/following.tsx",
+    "src/pages/Stadium.tsx"
+  ],
+  "Live scores appear here the moment a match kicks off.": [
+    "src/pages/Scores.tsx"
   ],
   "Live scores, lineups, deep analytics and where to watch — for the competitions you love.": [
     "src/components/Onboarding.tsx"
   ],
-  "Midfielders": [
+  "Live table — positions update as goals go in. Arrows show movement since kick-off.": [
+    "src/pages/Standings.tsx"
+  ],
+  "Live updates on": [
+    "src/interaction/ticker.tsx"
+  ],
+  "Live: {score} against {opp}, {clock}": [
+    "src/components/table.tsx"
+  ],
+  "Loading": [
+    "src/pages/Widget.tsx"
+  ],
+  "Loading match": [
+    "src/pages/Match.tsx"
+  ],
+  "Loading matches…": [
+    "src/interaction/skeletons.tsx"
+  ],
+  "Loading player": [
+    "src/components/player/Hero.tsx"
+  ],
+  "Loading players…": [
+    "src/components/player/Picker.tsx"
+  ],
+  "Loading stories…": [
+    "src/interaction/skeletons.tsx"
+  ],
+  "Loading…": [
+    "src/interaction/skeletons.tsx"
+  ],
+  "Loan": [
+    "extra.json",
+    "src/components/player/Career.tsx"
+  ],
+  "Location": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Lock": [
+    "src/pages/Insights.tsx"
+  ],
+  "Long balls": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Looking up the home ground…": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Loss": [
+    "src/components/club/Fixtures.tsx",
+    "src/components/club/ui.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Losses": [
+    "src/components/club/charts.tsx"
+  ],
+  "Lost": [
+    "src/components/club/Stats.tsx",
+    "src/components/table.tsx"
+  ],
+  "M": [
+    "src/components/club/Squad.tsx"
+  ],
+  "Map of {stadium}": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Map preview unavailable": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Match": [
+    "src/components/matchcentre/Hero.tsx",
+    "src/components/player/ShotMap.tsx",
+    "src/pages/Match.tsx"
+  ],
+  "Match centre": [
+    "src/pages/Insights.tsx"
+  ],
+  "Match info": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Match sections": [
+    "src/pages/Match.tsx"
+  ],
+  "match::Suspended": [
+    "src/components/match.tsx"
+  ],
+  "Matchday": [
+    "src/components/charts/BumpChart.tsx",
+    "src/components/club/charts.tsx"
+  ],
+  "Matchday {n}": [
+    "src/components/charts/BumpChart.tsx",
+    "src/components/club/charts.tsx"
+  ],
+  "Matchday {n} · {date}": [
+    "src/components/charts/BumpChart.tsx"
+  ],
+  "Matches": [
+    "src/pages/Leagues.tsx",
+    "src/pages/Scores.tsx"
+  ],
+  "Matches in {month}": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "Matches played": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Matches with xG data": [
+    "src/components/table.tsx"
+  ],
+  "max {n} per zone": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "MD{n}": [
+    "src/components/charts/BumpChart.tsx"
+  ],
+  "Meanest defence": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Meetings": [
+    "src/components/matchcentre/H2H.tsx"
+  ],
+  "Method: each remaining match is simulated 10,000 times. Expected goals for both sides come from the Pitch Elo ratings and the league’s scoring rate, and scorelines are drawn from Poisson distributions. Ties are split by goal difference, then goals scored.": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Method: World Football Elo. Every club starts from last season’s points per game (promoted or new clubs start below average); each result moves ratings by K = {k} × a goal-margin multiplier × (result − expected result), with {ha} points of home advantage.": [
+    "src/components/league/RatingsView.tsx"
+  ],
+  "Metric": [
+    "src/components/player/CompareCharts.tsx"
+  ],
+  "middle": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Middle third": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Midfield": [
+    "src/components/club/Squad.tsx"
+  ],
+  "Midfielder": [
     "extra.json"
+  ],
+  "Midfielders": [
+    "extra.json",
+    "src/components/club/Squad.tsx"
+  ],
+  "Milestones": [
+    "src/components/player/Milestones.tsx"
+  ],
+  "Milestones appear as this season’s matches are processed.": [
+    "src/components/player/Milestones.tsx"
+  ],
+  "min": [
+    "src/components/club/ui.tsx",
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "Minute": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Minutes": [
+    "src/components/charts/MinuteChart.tsx",
+    "src/components/club/charts.tsx",
+    "src/components/matchcentre/Momentum.tsx"
   ],
   "MLS": [
     "extra.json"
   ],
+  "Mobile": [
+    "src/pages/Insights.tsx"
+  ],
+  "Momentum": [
+    "src/components/matchcentre/Momentum.tsx"
+  ],
+  "Momentum chart. {summary}": [
+    "src/components/matchcentre/Momentum.tsx"
+  ],
+  "More": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "More likely": [
+    "src/components/charts/Grids.tsx"
+  ],
+  "Most booked players": [
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "Most cards": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Most goals": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Nation": [
+    "src/components/PlayerSheet.tsx"
+  ],
+  "Nationality": [
+    "src/pages/Player.tsx"
+  ],
+  "Negative": [
+    "src/components/league/Overview.tsx"
+  ],
   "Netherlands": [
-    "extra.json"
+    "extra.json",
+    "src/interaction/search.tsx"
+  ],
+  "Newest first": [
+    "src/components/matchcentre/Commentary.tsx"
   ],
   "News": [
-    "extra.json"
+    "extra.json",
+    "src/App.tsx",
+    "src/interaction/search.tsx",
+    "src/interaction/shortcuts.tsx",
+    "src/pages/Insights.tsx",
+    "src/pages/News.tsx"
+  ],
+  "Next": [
+    "src/pages/Widget.tsx"
+  ],
+  "Next {n}": [
+    "src/components/charts/Grids.tsx"
+  ],
+  "Next day": [
+    "src/interaction/shortcuts.tsx"
+  ],
+  "Next five": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "Next kick-off at {time}: {home} v {away}.": [
+    "src/pages/Scores.tsx"
+  ],
+  "Next match": [
+    "src/components/club/ui.tsx",
+    "src/components/player/Hero.tsx",
+    "src/interaction/following.tsx"
+  ],
+  "Next match here": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Next matchday · {day}": [
+    "src/pages/Scores.tsx"
+  ],
+  "Next month": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "Next photo": [
+    "src/components/club/Gallery.tsx"
+  ],
+  "Next: {home} v {away}, {when}": [
+    "src/interaction/following.tsx"
+  ],
+  "No biography available.": [
+    "src/pages/Player.tsx"
+  ],
+  "No career history is available for this player yet.": [
+    "src/components/player/Career.tsx"
+  ],
+  "No change": [
+    "src/components/table.tsx",
+    "src/pages/Insights.tsx"
+  ],
+  "No club history is available yet.": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "No club profile yet": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "No competition stats yet this season.": [
+    "src/components/player/CompTable.tsx"
+  ],
+  "No completed matches yet: {list}.": [
+    "src/pages/Leagues.tsx"
+  ],
+  "No data yet": [
+    "src/pages/Insights.tsx"
+  ],
+  "No earlier data": [
+    "src/pages/Insights.tsx"
+  ],
+  "No external referrers yet. Direct visits aren’t listed.": [
+    "src/pages/Insights.tsx"
+  ],
+  "No fixtures scheduled": [
+    "src/pages/Widget.tsx"
+  ],
+  "No fixtures yet": [
+    "src/components/club/Fixtures.tsx",
+    "src/components/club/Overview.tsx"
+  ],
+  "No form yet": [
+    "src/components/league/FormView.tsx"
+  ],
+  "No goals recorded yet.": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "No injuries or suspensions reported.": [
+    "src/components/club/Squad.tsx"
+  ],
+  "No key events recorded.": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "No league appearances recorded this season yet.": [
+    "src/pages/Player.tsx"
+  ],
+  "No league fixtures left to rate.": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "No league matches scheduled here yet.": [
+    "src/pages/Stadium.tsx"
+  ],
+  "No live matches right now": [
+    "src/pages/Scores.tsx"
+  ],
+  "No major honours on record.": [
+    "src/components/player/Career.tsx"
+  ],
+  "no match": [
+    "src/components/club/Fixtures.tsx"
   ],
   "No matches": [
     "src/components/prefs.tsx"
   ],
+  "No matches have been played yet this season.": [
+    "src/components/league/RaceView.tsx"
+  ],
+  "No matches on {day}": [
+    "src/pages/Scores.tsx"
+  ],
+  "No matches this month.": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "No matches today": [
+    "src/pages/Scores.tsx"
+  ],
+  "No matches today. Check back on match day.": [
+    "src/pages/Widget.tsx"
+  ],
+  "No milestones yet this season.": [
+    "src/components/player/Milestones.tsx"
+  ],
+  "No one has registered yet this season.": [
+    "src/components/club/Overview.tsx"
+  ],
+  "No peer data": [
+    "src/components/player/CompareCharts.tsx"
+  ],
+  "No players match “{q}”.": [
+    "src/components/player/Picker.tsx"
+  ],
+  "No previous meetings": [
+    "src/components/matchcentre/H2H.tsx"
+  ],
+  "No recent matches to show.": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "No referee data yet.": [
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "No refereeing record for this season yet.": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "No results for “{q}”": [
+    "src/interaction/search.tsx"
+  ],
+  "No shots on target yet.": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "No shots recorded in league matches yet.": [
+    "src/components/player/ShotMap.tsx"
+  ],
+  "No squad listed": [
+    "src/components/club/Squad.tsx"
+  ],
+  "No stadium details yet": [
+    "src/pages/Stadium.tsx"
+  ],
+  "No statistics yet": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "No stats yet": [
+    "src/components/club/Stats.tsx",
+    "src/components/league/Overview.tsx"
+  ],
+  "No stories right now": [
+    "src/pages/News.tsx"
+  ],
+  "No substitutes listed": [
+    "src/components/lineup.tsx"
+  ],
+  "No table for this competition": [
+    "src/pages/Match.tsx"
+  ],
+  "No Under-21 players have featured yet.": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "No upcoming fixtures are scheduled.": [
+    "src/components/league/RatingsView.tsx"
+  ],
+  "No upcoming fixtures scheduled": [
+    "src/interaction/following.tsx"
+  ],
+  "No verified details yet.": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "No wins yet this season.": [
+    "src/components/club/Stats.tsx"
+  ],
+  "No. {n}": [
+    "src/components/player/Hero.tsx"
+  ],
+  "Not available": [
+    "src/components/player/Tiles.tsx"
+  ],
+  "Not enough data to project this season yet.": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Not enough league data yet to rank these players.": [
+    "src/components/player/CompareCharts.tsx"
+  ],
+  "Not enough match details yet.": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Not played yet": [
+    "src/components/club/Stats.tsx"
+  ],
+  "Not reported yet": [
+    "src/pages/Stadium.tsx"
+  ],
   "Not set": [
     "src/components/prefs.tsx"
+  ],
+  "Not taken": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Nothing here yet.": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "now": [
+    "src/components/player/Career.tsx"
+  ],
+  "O2.5": [
+    "src/pages/Leagues.tsx"
+  ],
+  "of visits": [
+    "src/pages/Insights.tsx"
+  ],
+  "Off target": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/matchcentre/Stats.tsx",
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Off the bench": [
+    "src/components/player/FormChart.tsx"
   ],
   "Off the pitch": [
     "src/pages/NotFound.tsx"
   ],
+  "Off: {name}": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Offside": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Offsides": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "og": [
+    "src/components/match.tsx",
+    "src/interaction/peek.tsx"
+  ],
+  "On {min}": [
+    "src/components/lineup.tsx"
+  ],
+  "On {min} for {name}": [
+    "src/components/lineup.tsx"
+  ],
+  "On target": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/matchcentre/Stats.tsx",
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Open {club}": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Open {player}": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Open games": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Open in Apple Maps": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Open in Google Maps": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Open match": [
+    "src/interaction/peek.tsx",
+    "src/interaction/toasts.tsx"
+  ],
+  "Open Pitch": [
+    "src/pages/Widget.tsx"
+  ],
+  "Open play": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Open your browser’s menu": [
+    "src/platform/install.tsx"
+  ],
+  "Opened": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Opens full screen in a tap, launches instantly and keeps your latest scores available offline.": [
+    "src/platform/install.tsx"
+  ],
+  "Opens in a new tab": [
+    "src/components/news.tsx"
+  ],
+  "Opponent": [
+    "src/components/club/Fixtures.tsx",
+    "src/components/club/Stats.tsx",
+    "src/components/player/FormChart.tsx"
+  ],
+  "or": [
+    "src/interaction/shortcuts.tsx"
+  ],
+  "Other": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/player/ShotMap.tsx",
+    "src/pages/Insights.tsx"
+  ],
+  "Other kits": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "Out": [
+    "extra.json",
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Outcome": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Outperforming xG": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "Over 2.5 goals": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Over 2.5 goals %": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Overall": [
+    "src/pages/Standings.tsx"
+  ],
+  "Overcast": [
+    "src/components/matchcentre/venue.tsx"
+  ],
+  "Overview": [
+    "src/pages/Analytics.tsx",
+    "src/pages/Team.tsx"
+  ],
+  "Own goal": [
+    "src/components/matchcentre/Commentary.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "P": [
+    "src/components/club/Stats.tsx",
+    "src/components/table.tsx"
+  ],
+  "Page": [
+    "src/interaction/search.tsx"
+  ],
   "Page not found": [
     "src/pages/NotFound.tsx"
+  ],
+  "Page views": [
+    "src/pages/Insights.tsx"
+  ],
+  "Pages": [
+    "src/interaction/search.tsx"
+  ],
+  "Pages per visit": [
+    "src/pages/Insights.tsx"
+  ],
+  "Partly cloudy": [
+    "src/components/matchcentre/venue.tsx"
+  ],
+  "Pass accuracy": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Passing": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Pause slideshow": [
+    "src/components/club/Gallery.tsx"
+  ],
+  "pen": [
+    "src/components/match.tsx",
+    "src/interaction/peek.tsx"
+  ],
+  "Penalties": [
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Penalties {h}–{a}": [
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "Penalty": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Penalty missed": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Penalty scored": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Penalty shoot-out": [
+    "src/components/matchcentre/Commentary.tsx",
+    "src/components/matchcentre/Hero.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Pens": [
+    "src/components/matchcentre/Commentary.tsx",
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "Per game": [
+    "src/components/charts/Bars.tsx",
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "Per-game output ranked against league peers with {n}+ appearances. 100 is the best in the league.": [
+    "src/components/player/CompareCharts.tsx"
+  ],
+  "Percentile {n}": [
+    "src/components/player/CompareCharts.tsx"
+  ],
+  "Percentile profile": [
+    "src/components/player/CompareCharts.tsx"
+  ],
+  "Permanent": [
+    "extra.json"
+  ],
+  "Photo {i} of {n}": [
+    "src/components/club/Gallery.tsx"
+  ],
+  "Photo and biography: TheSportsDB": [
+    "src/pages/Player.tsx"
+  ],
+  "Photo and biography: Wikimedia Commons": [
+    "src/pages/Player.tsx"
+  ],
+  "Photo via TheSportsDB": [
+    "src/components/PlayerSheet.tsx"
+  ],
+  "Photo via Wikimedia Commons": [
+    "src/components/PlayerSheet.tsx"
+  ],
+  "Photos of {stadium}": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Pick a second player to see them head to head.": [
+    "src/pages/Compare.tsx"
   ],
   "Pick your clubs": [
     "src/components/Onboarding.tsx"
   ],
+  "Pitch Elo ratings": [
+    "src/components/league/RatingsView.tsx"
+  ],
+  "Pitch for your Home Screen": [
+    "src/platform/install.tsx"
+  ],
   "Pitch home": [
     "src/App.tsx"
   ],
+  "Pitch is on your device": [
+    "src/platform/install.tsx"
+  ],
+  "Pitch model": [
+    "src/pages/Match.tsx"
+  ],
+  "Pitch xG": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Pitch xG — our shot-quality model from distance and angle.": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Pitch xG is our own expected-goals model. Each attempt is scored from its distance to goal and the angle the goal mouth presents, with adjustments for headers, direct free kicks and set pieces; penalties are worth 0.76. It is an estimate of chance quality, not a prediction.": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Pitch xG model · {n} match with shot data": [
+    "src/components/club/Overview.tsx"
+  ],
+  "Pitch xG model · {n} matches with shot data": [
+    "src/components/club/Overview.tsx"
+  ],
+  "Pitch xG model from shot locations and types; only matches with shot data are included.": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Placement": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Places above (▲) or below (▼) the real table": [
+    "src/components/table.tsx"
+  ],
+  "Play slideshow": [
+    "src/components/club/Gallery.tsx"
+  ],
+  "Played": [
+    "src/components/club/Stats.tsx",
+    "src/components/league/Overview.tsx",
+    "src/components/table.tsx"
+  ],
   "Player": [
+    "src/components/PlayerSheet.tsx",
+    "src/components/charts/Scatter.tsx",
+    "src/components/league/DisciplineView.tsx",
+    "src/components/league/PlayersView.tsx",
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/player/Hero.tsx",
+    "src/interaction/search.tsx",
     "src/pages/Player.tsx"
+  ],
+  "Player data is on its way": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "Player details": [
+    "src/components/player/Hero.tsx"
+  ],
+  "Player not found": [
+    "src/pages/Compare.tsx",
+    "src/pages/Player.tsx"
+  ],
+  "Player of the match": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Players": [
+    "src/interaction/search.tsx",
+    "src/pages/Analytics.tsx",
+    "src/pages/Compare.tsx",
+    "src/pages/Insights.tsx"
+  ],
+  "Players aged 20 or younger, ranked by goals plus assists. Starts stand in for minutes played.": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "Players being compared": [
+    "src/pages/Compare.tsx"
+  ],
+  "Players with at least five shots or 1.0 xG. Pitch xG model from shot location and type.": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "Players without league appearances in Pitch’s season data can’t be ranked yet.": [
+    "src/components/player/CompareCharts.tsx"
+  ],
+  "Points": [
+    "src/components/club/Overview.tsx",
+    "src/components/club/Stats.tsx",
+    "src/components/club/charts.tsx",
+    "src/components/league/Overview.tsx",
+    "src/components/league/ProjectionView.tsx",
+    "src/components/table.tsx"
+  ],
+  "Points after each block of games": [
+    "src/components/charts/RaceChart.tsx"
+  ],
+  "Points now": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Points per game at home and on the road.": [
+    "src/components/league/FormView.tsx"
+  ],
+  "Points per game at home and on the road. Home sides have won {h} matches, away sides {a}.": [
+    "src/components/league/FormView.tsx"
+  ],
+  "Points race": [
+    "src/components/league/RaceView.tsx"
   ],
   "Portugal": [
     "extra.json"
   ],
+  "Pos": [
+    "src/components/charts/Grids.tsx"
+  ],
+  "Position": [
+    "src/components/PlayerSheet.tsx",
+    "src/components/club/Overview.tsx",
+    "src/components/club/charts.tsx",
+    "src/pages/Player.tsx"
+  ],
+  "Position (of {n})": [
+    "src/components/club/charts.tsx"
+  ],
+  "Position after every matchday. Hover or focus a club to follow its path; first place is at the top.": [
+    "src/components/league/RaceView.tsx"
+  ],
+  "Positions appear after the second matchday.": [
+    "src/components/league/RaceView.tsx"
+  ],
+  "Positive": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Possession": [
+    "src/components/matchcentre/Stats.tsx",
+    "src/interaction/peek.tsx"
+  ],
+  "Possession: {home} {h}%, {away} {a}%": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Postponed": [
+    "src/components/club/Fixtures.tsx",
+    "src/components/match.tsx",
+    "src/pages/Stadium.tsx",
+    "src/pages/Widget.tsx"
+  ],
+  "PP": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "PPD": [
+    "src/pages/Widget.tsx"
+  ],
+  "Pre-match win probability": [
+    "src/pages/Match.tsx"
+  ],
+  "Preferred foot": [
+    "src/pages/Player.tsx"
+  ],
   "Premier League": [
     "extra.json"
+  ],
+  "Pressure index per five minutes: goal 5, shot on target 3, off target 1.5, blocked 1, corner 1, free kick won in the final third 0.5.": [
+    "src/components/matchcentre/Momentum.tsx"
+  ],
+  "Preview the focused match": [
+    "src/interaction/shortcuts.tsx"
+  ],
+  "Previous day": [
+    "src/interaction/shortcuts.tsx"
+  ],
+  "Previous month": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "Previous photo": [
+    "src/components/club/Gallery.tsx"
   ],
   "Primary": [
     "src/App.tsx"
   ],
+  "Primeira Liga": [
+    "src/interaction/search.tsx"
+  ],
+  "Private insights": [
+    "src/pages/Insights.tsx"
+  ],
+  "Proj": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Projected": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Projected final points": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Projection": [
+    "src/pages/Analytics.tsx"
+  ],
+  "Projection unavailable": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Pts": [
+    "src/components/club/Stats.tsx",
+    "src/components/league/ProjectionView.tsx",
+    "src/components/table.tsx"
+  ],
+  "Questionable": [
+    "extra.json"
+  ],
+  "Quick look at {name}": [
+    "src/components/club/Squad.tsx"
+  ],
+  "Quick stats": [
+    "src/interaction/peek.tsx"
+  ],
+  "Race": [
+    "src/pages/Analytics.tsx"
+  ],
+  "Radar chart of percentiles. Use the arrow keys to read each metric.": [
+    "src/components/player/CompareCharts.tsx"
+  ],
+  "Rain": [
+    "src/components/matchcentre/Summary.tsx",
+    "src/components/matchcentre/venue.tsx"
+  ],
+  "Ranked by cards, with a red worth three yellows.": [
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "Rating": [
+    "src/components/league/RatingsView.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Rating {r} out of 10": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Ratings": [
+    "src/pages/Analytics.tsx"
+  ],
+  "Ratings unavailable": [
+    "src/components/league/RatingsView.tsx"
+  ],
+  "Recent": [
+    "src/interaction/search.tsx"
+  ],
+  "Recent form": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Recent games": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Record attendance": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Red": [
+    "src/components/charts/Bars.tsx",
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "Red card": [
+    "src/components/lineup.tsx",
+    "src/components/matchcentre/Commentary.tsx",
+    "src/components/matchcentre/Summary.tsx",
+    "src/interaction/peek.tsx"
+  ],
+  "Red cards": [
+    "src/components/charts/Bars.tsx",
+    "src/components/club/Stats.tsx",
+    "src/components/matchcentre/Stats.tsx",
+    "src/components/player/CompareCharts.tsx"
+  ],
+  "Red cards per game": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Reds / game": [
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "Referee": [
+    "src/components/league/DisciplineView.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Referee {name}": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Referee assignments appear once match details have synced.": [
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "Referees": [
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "Referrers": [
+    "src/pages/Insights.tsx"
+  ],
+  "Refresh": [
+    "src/platform/UpdateToast.tsx"
+  ],
+  "Refreshing…": [
+    "src/interaction/ptr.tsx",
+    "src/platform/UpdateToast.tsx"
+  ],
   "Region": [
     "src/pages/Settings.tsx"
   ],
+  "Rel": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Relegation": [
+    "src/components/league/ProjectionView.tsx"
+  ],
   "Remove": [
+    "src/pages/Compare.tsx",
     "src/pages/Settings.tsx"
+  ],
+  "Remove {name}": [
+    "src/pages/Compare.tsx"
   ],
   "Reset all settings": [
     "src/pages/Settings.tsx"
@@ -241,30 +3112,321 @@
   "Reset all settings and followed clubs on this device?": [
     "src/pages/Settings.tsx"
   ],
+  "Result": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Results": [
+    "src/interaction/search.tsx",
+    "src/pages/Scores.tsx"
+  ],
+  "Retry": [
+    "src/pages/Insights.tsx"
+  ],
+  "right": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Right Back": [
+    "extra.json"
+  ],
+  "right channel": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Right channel": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Right foot": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/player/Hero.tsx",
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Right Forward": [
+    "extra.json"
+  ],
+  "Right Midfielder": [
+    "extra.json"
+  ],
+  "Right Wing Back": [
+    "extra.json"
+  ],
   "Rights for the {season} season. Coverage can vary by match.": [
     "src/components/watch.tsx"
   ],
+  "Role": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "role::Played": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Running total": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Save": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Saved": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Saves": [
+    "src/components/matchcentre/Stats.tsx",
+    "src/components/player/Tiles.tsx"
+  ],
+  "Scored": [
+    "src/components/charts/MinuteChart.tsx",
+    "src/components/club/Overview.tsx",
+    "src/components/club/charts.tsx",
+    "src/components/league/Overview.tsx"
+  ],
+  "Scored / game": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Scored per game": [
+    "src/components/league/Overview.tsx"
+  ],
   "Scores": [
-    "extra.json"
+    "extra.json",
+    "src/App.tsx",
+    "src/interaction/search.tsx",
+    "src/interaction/shortcuts.tsx",
+    "src/pages/Insights.tsx",
+    "src/pages/Scores.tsx"
   ],
   "Scores, events and stats from ESPN. Photos from TheSportsDB and Wikimedia Commons. Pitch xG is our own model based on shot location.": [
     "src/pages/Settings.tsx"
   ],
+  "Scoring in line with xG": [
+    "src/components/player/Tiles.tsx"
+  ],
+  "Search": [
+    "src/interaction/search.tsx",
+    "src/interaction/shortcuts.tsx"
+  ],
+  "Search clubs, players, competitions…": [
+    "src/interaction/search.tsx"
+  ],
   "Search countries": [
     "src/components/prefs.tsx"
   ],
+  "Search players": [
+    "src/components/player/Picker.tsx"
+  ],
+  "Search results": [
+    "src/interaction/search.tsx"
+  ],
+  "Searching more clubs and players…": [
+    "src/interaction/search.tsx"
+  ],
+  "Searching…": [
+    "src/interaction/search.tsx"
+  ],
+  "Season": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "Season at a glance": [
+    "src/components/club/Overview.tsx"
+  ],
+  "Season data for this competition hasn’t loaded yet.": [
+    "src/components/league/DisciplineView.tsx",
+    "src/components/league/ProjectionView.tsx",
+    "src/components/league/RatingsView.tsx",
+    "src/pages/Standings.tsx"
+  ],
+  "Season data is still building": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Season data is still syncing — check back in a minute.": [
+    "src/components/league/RaceView.tsx"
+  ],
+  "Season data is still syncing ({p}) — figures will fill in shortly.": [
+    "src/components/league/chrome.tsx"
+  ],
+  "Season data is still syncing ({pct}). Check back shortly.": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Season data progress": [
+    "src/components/club/ui.tsx"
+  ],
+  "Season projection": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Season statistics are only available for league clubs.": [
+    "src/components/club/Stats.tsx"
+  ],
+  "Seats": [
+    "src/pages/Stadium.tsx"
+  ],
+  "sec": [
+    "src/components/club/ui.tsx",
+    "src/components/matchcentre/Hero.tsx"
+  ],
+  "Second half": [
+    "src/components/matchcentre/Commentary.tsx",
+    "src/components/matchcentre/Momentum.tsx"
+  ],
+  "Second yellow card": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Second yellows are counted as reds.": [
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "See all": [
+    "src/pages/Scores.tsx"
+  ],
   "Serie A": [
     "extra.json"
+  ],
+  "Set piece": [
+    "src/components/matchcentre/Shots.tsx"
   ],
   "Set your country": [
     "src/components/watch.tsx"
   ],
   "Settings": [
     "src/App.tsx",
+    "src/interaction/search.tsx",
+    "src/pages/Insights.tsx",
     "src/pages/Settings.tsx"
+  ],
+  "Sh": [
+    "src/components/PlayerSheet.tsx",
+    "src/components/player/FormChart.tsx"
+  ],
+  "Share": [
+    "src/components/charts/MinuteChart.tsx"
+  ],
+  "Share of matches that finish 0–0.": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Share of matches where both sides find the net.": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Share of matches with three or more goals.": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Shirt": [
+    "src/components/PlayerSheet.tsx"
+  ],
+  "Shoot-out over": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Shooting summary": [
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Shortcuts are paused while you type in a field.": [
+    "src/interaction/shortcuts.tsx"
+  ],
+  "Shot": [
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Shot accuracy": [
+    "src/components/player/CompareCharts.tsx"
+  ],
+  "Shot blocked": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Shot data hasn’t synced for enough matches yet.": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "Shot locations appear as this season’s matches are processed. Check back shortly.": [
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Shot map": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Shot map: {home} {hs} shots, {away} {as} shots. Use arrow keys to step through shots.": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Shot map: {n} shots, {g} goals, {xg} xG. Use the arrow keys to step through shots.": [
+    "src/components/player/ShotMap.tsx"
+  ],
+  "Shot off target": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Shot on target": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Shot saved": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Shots": [
+    "src/components/PlayerSheet.tsx",
+    "src/components/league/PlayersView.tsx",
+    "src/components/matchcentre/Commentary.tsx",
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/matchcentre/Stats.tsx",
+    "src/components/player/CompareCharts.tsx",
+    "src/components/player/FormChart.tsx",
+    "src/components/player/ShotMap.tsx",
+    "src/components/player/Tiles.tsx",
+    "src/interaction/peek.tsx",
+    "src/pages/Match.tsx"
+  ],
+  "Shots off target": [
+    "src/components/matchcentre/Momentum.tsx"
+  ],
+  "Shots on target": [
+    "src/components/matchcentre/Momentum.tsx",
+    "src/components/matchcentre/Stats.tsx",
+    "src/components/player/CompareCharts.tsx",
+    "src/components/player/Tiles.tsx",
+    "src/interaction/peek.tsx"
+  ],
+  "Show all {n} meetings": [
+    "src/components/matchcentre/H2H.tsx"
+  ],
+  "Show all matches": [
+    "src/pages/Scores.tsx"
+  ],
+  "Show changes": [
+    "src/pages/Match.tsx"
+  ],
+  "Show chart": [
+    "src/components/player/chart.tsx",
+    "src/pages/Insights.tsx"
+  ],
+  "Show data": [
+    "src/components/charts/core.tsx",
+    "src/components/club/charts.tsx",
+    "src/components/matchcentre/charts.tsx",
+    "src/components/player/chart.tsx"
+  ],
+  "Show fewer": [
+    "src/components/matchcentre/H2H.tsx"
+  ],
+  "Show table": [
+    "src/pages/Insights.tsx"
   ],
   "Show welcome tour again": [
     "src/pages/Settings.tsx"
+  ],
+  "Showers": [
+    "src/components/matchcentre/venue.tsx"
+  ],
+  "Showing chronological order. Switch to newest first": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Showing newest first. Switch to chronological order": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Silver": [
+    "src/components/player/Milestones.tsx"
+  ],
+  "Simulating 10,000 seasons…": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Simulating the rest of the season…": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "since kick-off": [
+    "src/components/table.tsx"
+  ],
+  "Situation": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Size = xG": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/player/ShotMap.tsx"
   ],
   "Skip": [
     "src/components/Onboarding.tsx"
@@ -272,26 +3434,200 @@
   "Skip to content": [
     "src/App.tsx"
   ],
+  "Snow": [
+    "src/components/matchcentre/venue.tsx"
+  ],
   "Solid surfaces and stronger borders": [
     "src/pages/Settings.tsx"
   ],
-  "Spain": [
-    "extra.json"
+  "Source: ESPN": [
+    "src/pages/Player.tsx"
   ],
-  "Squad": [
-    "extra.json"
-  ],
-  "Stadium": [
+  "Source: TheSportsDB": [
+    "src/components/club/ClubInfo.tsx",
     "src/pages/Stadium.tsx"
   ],
+  "Spain": [
+    "extra.json",
+    "src/interaction/search.tsx"
+  ],
+  "Squad": [
+    "extra.json",
+    "src/components/club/Squad.tsx",
+    "src/pages/Team.tsx"
+  ],
+  "Squads and match details are still syncing for this competition.": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "Squads for this competition are still loading. Try again in a minute.": [
+    "src/components/player/Picker.tsx"
+  ],
+  "Stadium": [
+    "src/components/club/ClubInfo.tsx",
+    "src/pages/Stadium.tsx"
+  ],
+  "Stadium not found": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Stadiums": [
+    "src/pages/Insights.tsx"
+  ],
+  "Started": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Starters ranked by league starts this season; the small number is each player’s starts.": [
+    "src/components/club/Squad.tsx"
+  ],
+  "Starting line-ups on the pitch": [
+    "src/components/lineup.tsx"
+  ],
+  "Starts": [
+    "src/components/PlayerSheet.tsx",
+    "src/components/league/PlayersView.tsx",
+    "src/components/player/CompareCharts.tsx",
+    "src/components/player/Tiles.tsx"
+  ],
+  "Statistic": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Statistics appear after this club’s first league match.": [
+    "src/components/club/Stats.tsx"
+  ],
   "Stats": [
-    "extra.json"
+    "extra.json",
+    "src/App.tsx",
+    "src/interaction/search.tsx",
+    "src/interaction/shortcuts.tsx",
+    "src/pages/Analytics.tsx",
+    "src/pages/Insights.tsx",
+    "src/pages/Match.tsx",
+    "src/pages/Team.tsx"
+  ],
+  "status::Penalties": [
+    "src/components/match.tsx"
+  ],
+  "Still building": [
+    "src/pages/Leagues.tsx"
   ],
   "Streaming": [
+    "extra.json",
+    "src/components/watch.tsx"
+  ],
+  "Strength ratings that move after every result — beating a strong side away earns more than beating a weak one at home.": [
+    "src/components/league/RatingsView.tsx"
+  ],
+  "Striker": [
     "extra.json"
   ],
-  "Tables": [
+  "Strong both ends": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Strongest home advantage": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Struggling": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Substitute": [
+    "extra.json",
+    "src/components/lineup.tsx"
+  ],
+  "Substituted {min}": [
+    "src/components/lineup.tsx"
+  ],
+  "Substitutes": [
+    "src/components/lineup.tsx"
+  ],
+  "Substitution": [
+    "src/components/matchcentre/Commentary.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Summary": [
+    "src/pages/Match.tsx"
+  ],
+  "Suspended": [
+    "extra.json",
+    "src/components/player/Hero.tsx"
+  ],
+  "Swap": [
+    "src/pages/Compare.tsx"
+  ],
+  "Swap players": [
+    "src/pages/Compare.tsx"
+  ],
+  "Sweeper": [
     "extra.json"
+  ],
+  "Syncing this season’s match data": [
+    "src/components/club/ui.tsx"
+  ],
+  "Table": [
+    "src/components/league/RatingsView.tsx",
+    "src/pages/Match.tsx",
+    "src/pages/Scores.tsx"
+  ],
+  "Table not available yet": [
+    "src/pages/Standings.tsx"
+  ],
+  "Table position appears once the season is under way.": [
+    "src/components/club/Overview.tsx"
+  ],
+  "Tables": [
+    "extra.json",
+    "src/App.tsx",
+    "src/interaction/search.tsx",
+    "src/interaction/shortcuts.tsx",
+    "src/pages/Insights.tsx",
+    "src/pages/Standings.tsx"
+  ],
+  "Tablet": [
+    "src/pages/Insights.tsx"
+  ],
+  "Tackles": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Tap the Share button in Safari’s toolbar": [
+    "src/platform/install.tsx"
+  ],
+  "Team": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Team statistics": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Team statistics appear once the match is under way.": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "That key didn’t work. Check it and try again.": [
+    "src/pages/Insights.tsx"
+  ],
+  "The data provider didn’t respond. Check your connection and try again.": [
+    "src/components/ui.tsx"
+  ],
+  "The depth chart appears once this season’s lineups have synced.": [
+    "src/components/club/Squad.tsx"
+  ],
+  "The key is kept for this tab only and never stored on the server.": [
+    "src/pages/Insights.tsx"
+  ],
+  "The position trail appears after two matchdays.": [
+    "src/components/club/Overview.tsx"
+  ],
+  "The provider’s shot data is incomplete here, so expected goals would be misleading.": [
+    "src/pages/Standings.tsx"
+  ],
+  "The race hasn’t started": [
+    "src/components/league/RaceView.tsx"
+  ],
+  "The schedule for this club hasn’t been published.": [
+    "src/components/club/Fixtures.tsx",
+    "src/components/club/Overview.tsx"
+  ],
+  "The table over each club’s last {n} matches. Arrows show how far above or below their real position they sit.": [
+    "src/components/league/FormView.tsx"
+  ],
+  "The top {n} goal contributors. Finishers sit right, creators sit high — the best do both.": [
+    "src/components/league/PlayersView.tsx"
   ],
   "Their matches appear first, with goal alerts while Pitch is open.": [
     "src/components/Onboarding.tsx"
@@ -299,29 +3635,176 @@
   "Theme": [
     "src/pages/Settings.tsx"
   ],
+  "Themes": [
+    "src/pages/Insights.tsx"
+  ],
+  "Third": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "This club’s squad hasn’t been published yet.": [
+    "src/components/club/Squad.tsx"
+  ],
   "This match": [
     "src/components/watch.tsx"
   ],
   "This page doesn’t exist, or the link has moved.": [
     "src/pages/NotFound.tsx"
   ],
+  "This season": [
+    "src/components/PlayerSheet.tsx",
+    "src/pages/Player.tsx"
+  ],
+  "This season here": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Thunderstorms": [
+    "src/components/matchcentre/venue.tsx"
+  ],
   "Time format": [
     "src/pages/Settings.tsx"
   ],
+  "Timeline": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Title": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Title race": [
+    "src/components/league/RaceView.tsx"
+  ],
+  "to close": [
+    "src/interaction/search.tsx"
+  ],
+  "to navigate": [
+    "src/interaction/search.tsx"
+  ],
+  "to open": [
+    "src/interaction/search.tsx"
+  ],
   "Today": [
-    "src/lib/format.ts"
+    "src/lib/format.ts",
+    "src/pages/Scores.tsx",
+    "src/pages/Widget.tsx"
   ],
   "Tomorrow": [
     "src/lib/format.ts"
   ],
+  "Too many attempts. Please wait a few minutes.": [
+    "src/pages/Insights.tsx"
+  ],
+  "top": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Top {n}": [
+    "src/components/league/ProjectionView.tsx"
+  ],
+  "Top assists": [
+    "src/components/club/Overview.tsx",
+    "src/components/league/Overview.tsx"
+  ],
+  "Top competitions": [
+    "src/pages/Insights.tsx"
+  ],
+  "Top performer": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Top performers — or type a name": [
+    "src/components/player/Picker.tsx"
+  ],
+  "Top scorers": [
+    "src/components/club/Overview.tsx",
+    "src/components/league/Overview.tsx"
+  ],
+  "Top sections": [
+    "src/pages/Insights.tsx"
+  ],
+  "Top stories": [
+    "src/pages/Scores.tsx"
+  ],
+  "Top story": [
+    "src/components/news.tsx"
+  ],
+  "Total": [
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "Total goals": [
+    "src/components/matchcentre/H2H.tsx"
+  ],
+  "Tough": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "Transfer": [
+    "src/components/player/Career.tsx"
+  ],
+  "Trend": [
+    "src/components/league/RatingsView.tsx"
+  ],
+  "Try a club, a player or a competition — spelling doesn’t need to be perfect.": [
+    "src/interaction/search.tsx"
+  ],
+  "Try again": [
+    "src/components/ui.tsx"
+  ],
   "TV": [
-    "extra.json"
+    "extra.json",
+    "src/components/watch.tsx"
   ],
   "UCL": [
-    "extra.json"
+    "extra.json",
+    "src/interaction/search.tsx"
+  ],
+  "UEFA league phase: only the eight league-phase matches count.": [
+    "src/components/league/ProjectionView.tsx"
   ],
   "UEL": [
+    "extra.json",
+    "src/interaction/search.tsx"
+  ],
+  "Unavailable": [
+    "src/components/club/Squad.tsx"
+  ],
+  "Unbeaten so far this season.": [
+    "src/components/club/Stats.tsx"
+  ],
+  "Underperforming xG": [
+    "src/components/league/PlayersView.tsx"
+  ],
+  "Undisclosed": [
     "extra.json"
+  ],
+  "Unfollow {team}": [
+    "src/components/matchcentre/Hero.tsx",
+    "src/interaction/peek.tsx"
+  ],
+  "Unlock": [
+    "src/pages/Insights.tsx"
+  ],
+  "Until {y}": [
+    "src/components/player/Career.tsx"
+  ],
+  "Unused": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Up {n} {vs}": [
+    "src/components/table.tsx"
+  ],
+  "Up to {min}": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Upcoming": [
+    "src/components/match.tsx"
+  ],
+  "Update available": [
+    "src/platform/UpdateToast.tsx"
+  ],
+  "Updated": [
+    "src/interaction/ptr.tsx"
+  ],
+  "Updated {time}": [
+    "src/pages/Insights.tsx"
+  ],
+  "Updating…": [
+    "src/pages/Insights.tsx"
   ],
   "USA & Canada": [
     "extra.json"
@@ -329,8 +3812,85 @@
   "Used for where-to-watch listings. Kick-off times always follow your device’s time zone.": [
     "src/pages/Settings.tsx"
   ],
+  "Usual shape {shape}": [
+    "src/components/club/Squad.tsx"
+  ],
+  "v": [
+    "src/components/matchcentre/Hero.tsx",
+    "src/interaction/following.tsx"
+  ],
+  "VAR": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "VAR review": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Venue": [
+    "src/components/club/Stats.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Versus the table": [
+    "src/components/table.tsx"
+  ],
+  "Very tough": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "View": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "View full profile": [
+    "src/components/PlayerSheet.tsx"
+  ],
+  "Visits": [
+    "src/pages/Insights.tsx"
+  ],
+  "Visits and page views": [
+    "src/pages/Insights.tsx"
+  ],
+  "Visits and page views per day": [
+    "src/pages/Insights.tsx"
+  ],
+  "vs": [
+    "src/components/charts/Grids.tsx",
+    "src/components/player/Hero.tsx",
+    "src/pages/Compare.tsx",
+    "src/pages/Stadium.tsx",
+    "src/pages/Widget.tsx"
+  ],
+  "vs {team}": [
+    "src/components/player/FormChart.tsx",
+    "src/components/player/ShotMap.tsx"
+  ],
+  "vs previous period": [
+    "src/pages/Insights.tsx"
+  ],
+  "vs the table": [
+    "src/components/table.tsx"
+  ],
+  "W": [
+    "src/components/club/Stats.tsx",
+    "src/components/table.tsx"
+  ],
   "Watch": [
     "src/components/watch.tsx"
+  ],
+  "We couldn’t find a verified home ground for {club}.": [
+    "src/pages/Stadium.tsx"
+  ],
+  "We couldn’t find a verified profile for {club}.": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "We couldn’t find earlier games between these clubs in recent seasons.": [
+    "src/components/matchcentre/H2H.tsx"
+  ],
+  "We couldn’t find this club. It may have moved competition.": [
+    "src/pages/Team.tsx"
+  ],
+  "We couldn’t find this club’s home ground.": [
+    "src/pages/Stadium.tsx"
+  ],
+  "We couldn’t find this player. They may have left the competition, or the link is incomplete.": [
+    "src/pages/Player.tsx"
   ],
   "We don’t have a confirmed broadcaster for this competition in your country. Check local listings.": [
     "src/components/watch.tsx"
@@ -338,8 +3898,26 @@
   "We’ll show the broadcasters and streaming services available in your country.": [
     "src/components/Onboarding.tsx"
   ],
+  "We’ll try again in a moment.": [
+    "src/pages/Widget.tsx"
+  ],
+  "weather::Clear": [
+    "src/components/matchcentre/venue.tsx"
+  ],
+  "Website": [
+    "src/components/club/ClubInfo.tsx"
+  ],
   "Welcome to Pitch": [
     "src/components/Onboarding.tsx"
+  ],
+  "When {club} score and concede, in 15-minute blocks (stoppage time counts in the block it extends).": [
+    "src/components/league/Overview.tsx"
+  ],
+  "When goals arrive, in 15-minute blocks.": [
+    "src/components/league/Overview.tsx"
+  ],
+  "Where {n} shots on target crossed the goal line, seen from behind the shooter.": [
+    "src/components/matchcentre/Shots.tsx"
   ],
   "Where are you watching from?": [
     "src/components/Onboarding.tsx"
@@ -348,13 +3926,162 @@
     "src/components/watch.tsx",
     "src/pages/Settings.tsx"
   ],
+  "Whole league": [
+    "src/components/league/Overview.tsx"
+  ],
   "Widget": [
-    "src/pages/Widget.tsx"
+    "src/pages/Insights.tsx"
+  ],
+  "Win": [
+    "src/components/club/Fixtures.tsx",
+    "src/components/club/ui.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Win probabilities come from the Elo ratings above and a Poisson goals model.": [
+    "src/components/league/RatingsView.tsx"
+  ],
+  "Win probability": [
+    "src/components/charts/Grids.tsx",
+    "src/pages/Match.tsx"
+  ],
+  "Win probability: {home} {h}, draw {d}, {away} {a}": [
+    "src/components/matchcentre/Hero.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Wind": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Wins": [
+    "src/components/club/charts.tsx"
+  ],
+  "Won": [
+    "src/components/club/Stats.tsx",
+    "src/components/table.tsx"
+  ],
+  "Won · Drawn · Lost": [
+    "src/components/club/Overview.tsx",
+    "src/pages/Stadium.tsx"
+  ],
+  "Won {n} times": [
+    "src/components/player/Career.tsx"
+  ],
+  "Won once": [
+    "src/components/player/Career.tsx"
+  ],
+  "Worst": [
+    "src/components/charts/BumpChart.tsx"
+  ],
+  "xG": [
+    "src/components/PlayerSheet.tsx",
+    "src/components/charts/Scatter.tsx",
+    "src/components/club/Overview.tsx",
+    "src/components/league/Overview.tsx",
+    "src/components/league/PlayersView.tsx",
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/player/ShotMap.tsx",
+    "src/pages/Standings.tsx"
+  ],
+  "xG against": [
+    "src/components/club/Overview.tsx"
+  ],
+  "xG against / game": [
+    "src/components/league/Overview.tsx"
+  ],
+  "xG appears once match details have synced for most games.": [
+    "src/components/league/Overview.tsx"
+  ],
+  "xG for": [
+    "src/components/club/Overview.tsx"
+  ],
+  "xG for / game": [
+    "src/components/league/Overview.tsx"
+  ],
+  "xG for per game": [
+    "src/components/league/Overview.tsx"
+  ],
+  "xG is hidden for this competition: the provider’s shot data is incomplete, so expected goals would be misleading.": [
+    "src/components/league/Overview.tsx",
+    "src/components/league/PlayersView.tsx"
+  ],
+  "xG isn’t available for this competition": [
+    "src/pages/Standings.tsx"
+  ],
+  "xG isn’t available yet": [
+    "src/pages/Standings.tsx"
+  ],
+  "xG per game": [
+    "src/pages/Leagues.tsx"
+  ],
+  "xG per shot": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/player/ShotMap.tsx"
+  ],
+  "xG/G": [
+    "src/pages/Leagues.tsx"
+  ],
+  "xGA": [
+    "src/components/table.tsx"
+  ],
+  "xGD": [
+    "src/components/table.tsx"
+  ],
+  "xGD/G": [
+    "src/components/table.tsx"
+  ],
+  "xGF": [
+    "src/components/table.tsx"
+  ],
+  "YC": [
+    "src/components/PlayerSheet.tsx"
+  ],
+  "Yellow": [
+    "src/components/charts/Bars.tsx",
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "Yellow and red cards in this competition. A red counts three times when ranking.": [
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "Yellow and red cards shown per match.": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Yellow card": [
+    "src/components/lineup.tsx",
+    "src/components/matchcentre/Commentary.tsx",
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Yellow cards": [
+    "src/components/PlayerSheet.tsx",
+    "src/components/charts/Bars.tsx",
+    "src/components/club/Stats.tsx",
+    "src/components/matchcentre/Stats.tsx",
+    "src/components/player/CompareCharts.tsx"
+  ],
+  "Yellow cards per game": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Yellows / game": [
+    "src/components/league/DisciplineView.tsx"
   ],
   "Yesterday": [
     "src/lib/format.ts"
   ],
+  "Yet to feature": [
+    "src/components/club/Squad.tsx"
+  ],
+  "You’re using the installed app. Updates arrive automatically.": [
+    "src/platform/install.tsx"
+  ],
+  "Your clubs": [
+    "src/interaction/following.tsx"
+  ],
   "Your country": [
     "src/pages/Settings.tsx"
+  ],
+  "Your time": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Youth": [
+    "extra.json",
+    "src/components/player/Career.tsx"
   ]
 }

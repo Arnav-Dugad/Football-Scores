@@ -418,7 +418,7 @@ function SquadCard({ p, league, team, hero, index, onOpen, stats }: { p: SquadMe
           {p.injury && (
             <span className="cl-inj-badge" title={p.injury}>
               <IconCross width={10} height={10} />
-              <span>{t("Out")}</span>
+              <span>{t("injury::Out")}</span>
             </span>
           )}
         </div>

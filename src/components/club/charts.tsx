@@ -360,7 +360,7 @@ export function RecordBar({ w, d, l, label }: { w: number; d: number; l: number;
         {drawn && n / total >= 0.14 && (
           <b>
             {fmtNum(n)}
-            {k === "W" ? t("W") : k === "D" ? t("D") : t("L")}
+            {k === "W" ? t("form::W") : k === "D" ? t("form::D") : t("form::L")}
           </b>
         )}
       </span>

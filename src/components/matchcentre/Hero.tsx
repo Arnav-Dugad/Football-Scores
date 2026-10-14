@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
+import { LEAGUE_BY_SLUG } from "../../lib/leagues";
 import { t } from "../../i18n";
 import type { Match, Side } from "../../lib/api";
 import { fmtDayShort, fmtNum, fmtPct, fmtTime, relativeDayLabel, teamTint } from "../../lib/format";
@@ -86,7 +87,7 @@ export function MatchCentreHero({
       <div className="hero-top">
         <Link to={`/tables/${m.league.slug}`} className="league mc-league">
           <LeagueBadge slug={m.league.slug} src={m.league.logo} size={26} />
-          <span>{m.note || m.league.name}</span>
+          <span>{m.note && m.note !== m.league.name ? m.note : t(LEAGUE_BY_SLUG[m.league.slug]?.name ?? m.league.name)}</span>
         </Link>
         <StatusBadge m={m} big />
       </div>
@@ -121,13 +122,17 @@ export function MatchCentreHero({
         <div className="hero-scorers mc-scorers">
           <ul aria-label={t("{team} scorers", { team: m.home.short })}>
             {hs.map((s) => (
-              <li key={s}>{s}</li>
+              <li key={s}>
+                <bdi>{s}</bdi>
+              </li>
             ))}
           </ul>
           <span className="mc-scorers-ball" aria-hidden />
           <ul aria-label={t("{team} scorers", { team: m.away.short })}>
             {as.map((s) => (
-              <li key={s}>{s}</li>
+              <li key={s}>
+                <bdi>{s}</bdi>
+              </li>
             ))}
           </ul>
         </div>

@@ -179,7 +179,7 @@ export function resultWord(r: "W" | "D" | "L"): string {
   return r === "W" ? t("Win") : r === "D" ? t("Draw") : t("Loss");
 }
 export function resultLetter(r: "W" | "D" | "L"): string {
-  return r === "W" ? t("W") : r === "D" ? t("D") : t("L");
+  return r === "W" ? t("form::W") : r === "D" ? t("form::D") : t("form::L");
 }
 
 export function ResultBadge({ r, size }: { r: "W" | "D" | "L"; size?: "sm" }) {

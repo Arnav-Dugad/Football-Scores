@@ -1,0 +1,365 @@
+{
+  "{n} red card": [
+    "src/components/match.tsx"
+  ],
+  "{n} result": [
+    "src/interaction/search.tsx"
+  ],
+  "{n} results": [
+    "src/interaction/search.tsx"
+  ],
+  "Accurate passes": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Added time": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "assists::A": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Attack": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Attacking midfield": [
+    "src/components/club/Squad.tsx"
+  ],
+  "Attacking Midfielder": [
+    "extra.json"
+  ],
+  "Attacking Midfielder Left": [
+    "extra.json"
+  ],
+  "Attacking Midfielder Right": [
+    "extra.json"
+  ],
+  "Blocked shots": [
+    "src/components/matchcentre/Momentum.tsx"
+  ],
+  "Bronze": [
+    "src/components/player/Milestones.tsx"
+  ],
+  "Center Defender": [
+    "extra.json"
+  ],
+  "Center Forward": [
+    "extra.json"
+  ],
+  "Center Left Defender": [
+    "extra.json"
+  ],
+  "Center Left Midfielder": [
+    "extra.json"
+  ],
+  "Center Midfielder": [
+    "extra.json"
+  ],
+  "Center Right Defender": [
+    "extra.json"
+  ],
+  "Center Right Midfielder": [
+    "extra.json"
+  ],
+  "Clearances": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Clubs": [
+    "src/interaction/search.tsx",
+    "src/pages/Insights.tsx"
+  ],
+  "Corner": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Corners": [
+    "src/components/matchcentre/Momentum.tsx",
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/matchcentre/Stats.tsx",
+    "src/interaction/peek.tsx"
+  ],
+  "Crosses": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Day-To-Day": [
+    "extra.json"
+  ],
+  "Defence": [
+    "src/components/club/Squad.tsx",
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Defender": [
+    "extra.json"
+  ],
+  "Defensive midfield": [
+    "src/components/club/Squad.tsx"
+  ],
+  "Defensive Midfielder": [
+    "extra.json"
+  ],
+  "Defensive Midfielder Left": [
+    "extra.json"
+  ],
+  "Defensive Midfielder Right": [
+    "extra.json"
+  ],
+  "Delay": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Desktop": [
+    "src/pages/Insights.tsx"
+  ],
+  "Direct free kick": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Even": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "F": [
+    "src/components/club/Squad.tsx"
+  ],
+  "Fair": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "Favourable": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "form::D": [
+    "src/components/club/charts.tsx",
+    "src/components/club/ui.tsx",
+    "src/components/ui.tsx"
+  ],
+  "form::L": [
+    "src/components/club/charts.tsx",
+    "src/components/club/ui.tsx",
+    "src/components/ui.tsx"
+  ],
+  "form::W": [
+    "src/components/club/charts.tsx",
+    "src/components/club/ui.tsx",
+    "src/components/ui.tsx"
+  ],
+  "Forward": [
+    "extra.json"
+  ],
+  "Foul": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Fouls": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Free": [
+    "extra.json"
+  ],
+  "Free kicks won in the final third": [
+    "src/components/matchcentre/Momentum.tsx"
+  ],
+  "Free transfer": [
+    "src/components/player/Career.tsx"
+  ],
+  "games::G": [
+    "src/components/league/DisciplineView.tsx"
+  ],
+  "Goals conceded per match: {list}": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Goals plus assists per match: {list}": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "goals::G": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Gold": [
+    "src/components/player/Milestones.tsx"
+  ],
+  "GS": [
+    "src/components/PlayerSheet.tsx"
+  ],
+  "Handball": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Handballs": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Header": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/player/ShotMap.tsx"
+  ],
+  "heading::Following": [
+    "src/pages/Settings.tsx"
+  ],
+  "Hit the woodwork": [
+    "src/components/matchcentre/Commentary.tsx",
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/player/ShotMap.tsx"
+  ],
+  "injury::Out": [
+    "src/components/club/Squad.tsx"
+  ],
+  "Interceptions": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "kick::Missed": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "kick::Scored": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Leagues": [
+    "src/pages/Insights.tsx"
+  ],
+  "Left Back": [
+    "extra.json"
+  ],
+  "Left Forward": [
+    "extra.json"
+  ],
+  "Left Midfielder": [
+    "extra.json"
+  ],
+  "Left Wing Back": [
+    "extra.json"
+  ],
+  "Loan": [
+    "extra.json",
+    "src/components/player/Career.tsx"
+  ],
+  "Long balls": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "M": [
+    "src/components/club/Squad.tsx"
+  ],
+  "Match centre": [
+    "src/pages/Insights.tsx"
+  ],
+  "match::Suspended": [
+    "src/components/match.tsx"
+  ],
+  "Midfield": [
+    "src/components/club/Squad.tsx"
+  ],
+  "Midfielder": [
+    "extra.json"
+  ],
+  "Mobile": [
+    "src/pages/Insights.tsx"
+  ],
+  "Offside": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Offsides": [
+    "src/components/matchcentre/Shots.tsx",
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Open play": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Pages": [
+    "src/interaction/search.tsx"
+  ],
+  "Pass accuracy": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Passing": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Penalty missed": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Penalty scored": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Permanent": [
+    "extra.json"
+  ],
+  "Primeira Liga": [
+    "src/interaction/search.tsx"
+  ],
+  "Questionable": [
+    "extra.json"
+  ],
+  "Right Back": [
+    "extra.json"
+  ],
+  "Right Forward": [
+    "extra.json"
+  ],
+  "Right Midfielder": [
+    "extra.json"
+  ],
+  "Right Wing Back": [
+    "extra.json"
+  ],
+  "role::Played": [
+    "src/components/player/FormChart.tsx"
+  ],
+  "Save": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Set piece": [
+    "src/components/matchcentre/Shots.tsx"
+  ],
+  "Shot blocked": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Shot off target": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Shot on target": [
+    "src/components/matchcentre/Summary.tsx"
+  ],
+  "Shot saved": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Shots off target": [
+    "src/components/matchcentre/Momentum.tsx"
+  ],
+  "Silver": [
+    "src/components/player/Milestones.tsx"
+  ],
+  "Stadiums": [
+    "src/pages/Insights.tsx"
+  ],
+  "status::Penalties": [
+    "src/components/match.tsx"
+  ],
+  "Striker": [
+    "extra.json"
+  ],
+  "Sweeper": [
+    "extra.json"
+  ],
+  "Tablet": [
+    "src/pages/Insights.tsx"
+  ],
+  "Tackles": [
+    "src/components/matchcentre/Stats.tsx"
+  ],
+  "Tough": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "Transfer": [
+    "src/components/player/Career.tsx"
+  ],
+  "Undisclosed": [
+    "extra.json"
+  ],
+  "VAR": [
+    "src/components/matchcentre/Commentary.tsx"
+  ],
+  "Very tough": [
+    "src/components/club/Fixtures.tsx"
+  ],
+  "weather::Clear": [
+    "src/components/matchcentre/venue.tsx"
+  ],
+  "Widget": [
+    "src/pages/Insights.tsx"
+  ],
+  "YC": [
+    "src/components/PlayerSheet.tsx"
+  ],
+  "Youth": [
+    "extra.json",
+    "src/components/player/Career.tsx"
+  ]
+}

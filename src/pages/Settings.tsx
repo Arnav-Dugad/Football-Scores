@@ -93,7 +93,7 @@ export default function SettingsPage() {
         </div>
 
         <div>
-          <Group title={t("Following")} footer={t("Followed clubs appear first on Scores and get goal alerts while Pitch is open.")}>
+          <Group title={t("heading::Following")} footer={t("Followed clubs appear first on Scores and get goal alerts while Pitch is open.")}>
             {s.teams.map((tm) => (
               <PrefRow key={tm.id} icon={<Crest src={tm.logo} size={22} alt="" />} tint="#fff" label={<Link to={`/team/${tm.league}/${tm.id}`}>{tm.name}</Link>}>
                 <button type="button" className="text-btn danger" onClick={() => toggleFollow(tm)}>

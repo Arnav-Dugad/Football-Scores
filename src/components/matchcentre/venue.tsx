@@ -151,7 +151,7 @@ export function stadiumTime(iso: string, tz: string | null): string | null {
 /* ------------------------------------------------------------- weather -- */
 
 export function weatherLabel(code: number): string {
-  if (code === 0) return t("Clear");
+  if (code === 0) return t("weather::Clear");
   if (code <= 2) return t("Partly cloudy");
   if (code === 3) return t("Overcast");
   if (code === 45 || code === 48) return t("Fog");

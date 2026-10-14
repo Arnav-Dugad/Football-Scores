@@ -35,9 +35,9 @@ function postLabel(m: Match): string {
   if (/POSTPONED/.test(n)) return t("Postponed");
   if (/CANCELED|CANCELLED/.test(n)) return t("Cancelled");
   if (/ABANDONED/.test(n)) return t("Abandoned");
-  if (/SUSPENDED/.test(n)) return t("Suspended");
+  if (/SUSPENDED/.test(n)) return t("match::Suspended");
   if (/FINAL_AET|AET/.test(n) || /^AET$/i.test(m.status)) return t("After extra time");
-  if (/PEN/.test(n) || /pens/i.test(m.status)) return t("Penalties");
+  if (/PEN/.test(n) || /pens/i.test(m.status)) return t("status::Penalties");
   if (!m.status || /^FT$/i.test(m.status) || n === "STATUS_FULL_TIME" || n === "STATUS_FINAL") return t("Full time");
   return m.status;
 }
