@@ -1457,13 +1457,13 @@ body {
   -webkit-user-select: none;
   user-select: none;
 }
-.mc-body {
+.match-card .mc-body {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-rows: auto auto;
   column-gap: 12px;
 }
-.mc-team {
+.match-card .mc-team {
   grid-column: 1;
   display: grid;
   grid-template-columns: 30px minmax(0, 1fr);
@@ -1471,31 +1471,31 @@ body {
   gap: 12px;
   min-height: 38px;
 }
-.mc-team + .mc-team {
+.match-card .mc-team + .mc-team {
   grid-row: 2;
 }
-.mc-crest {
+.match-card .mc-crest {
   display: grid;
   place-items: center;
   width: 30px;
   height: 30px;
 }
-.mc-name {
+.match-card .mc-name {
   min-width: 0;
 }
-.mc-name-text {
+.match-card .mc-name-text {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.mc-team.winner .mc-name {
+.match-card .mc-team.winner .mc-name {
   font-weight: 650;
 }
-.mc-team.loser .mc-name {
+.match-card .mc-team.loser .mc-name {
   color: var(--ink-3);
 }
-.mc-scores {
+.match-card .mc-scores {
   grid-column: 2;
   grid-row: 1 / span 2;
   display: grid;
@@ -1504,33 +1504,33 @@ body {
   justify-items: end;
   min-width: 24px;
 }
-.mc-score {
+.match-card .mc-score {
   text-align: end;
   display: inline-block;
 }
-.mc-score.loser {
+.match-card .mc-score.loser {
   color: var(--ink-3);
   font-weight: 500;
 }
-.mc-follow {
+.match-card .mc-follow {
   flex: none;
   display: inline-grid;
   color: #ff9f0a;
 }
-.mc-scorers {
+.match-card .mc-scorers {
   margin: 2px 0 0;
   margin-inline-start: 42px;
 }
-.mc-foot-end {
+.match-card .mc-foot-end {
   display: flex;
   align-items: center;
   gap: 10px;
   min-width: 0;
 }
-.mc-foot-end .venue {
+.match-card .mc-foot-end .venue {
   min-width: 0;
 }
-.mc-foot-end .watch-strip {
+.match-card .mc-foot-end .watch-strip {
   flex: none;
 }
 .match-card.followed::after {
@@ -1551,7 +1551,7 @@ body {
     0 0 0 1.5px color-mix(in srgb, var(--good) 60%, transparent),
     0 0 28px -6px color-mix(in srgb, var(--good) 60%, transparent);
 }
-.mc-sweep {
+.match-card .mc-sweep {
   position: absolute;
   inset: 0;
   z-index: -1;
@@ -1883,7 +1883,7 @@ a.ix-next:active {
 /* -------------------------------------------------------- reduced motion -- */
 
 @media (prefers-reduced-motion: reduce) {
-  .mc-sweep {
+  .match-card .mc-sweep {
     display: none;
   }
   .ix-ticker-track {
