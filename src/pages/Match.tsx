@@ -1,350 +1,395 @@
-import { useMemo, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import { IconBall, IconChevronLeft, IconPeople, IconPin, IconStats, IconSub, IconWhistle } from "../components/Icons";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { Commentary } from "../components/matchcentre/Commentary";
+import {
+  hasPlayerStats,
+  momentum,
+  parseOdds,
+  parsePlays,
+  parseReferee,
+  parseRosters,
+  parseShootout,
+  parseShots,
+  periodsFor,
+  rate,
+  substitutions,
+  timeAxis,
+  type RosterPlayer,
+} from "../components/matchcentre/data";
+import { h2hGames, H2HTab, type H2HGame } from "../components/matchcentre/H2H";
+import { LiveChip, MatchCentreHero, type Probs } from "../components/matchcentre/Hero";
+import { MomentumStrip } from "../components/matchcentre/Momentum";
+import { ShotsTab } from "../components/matchcentre/Shots";
+import { hasTeamStats, StatsTab } from "../components/matchcentre/Stats";
+import {
+  FormPanel,
+  KickoffCard,
+  MatchInfo,
+  PotmCard,
+  refereeFor,
+  RefereeSheet,
+  ShootoutCard,
+  Timeline,
+  Watch,
+  WinProbCard,
+} from "../components/matchcentre/Summary";
+import { TabBar, type TabDef } from "../components/matchcentre/Tabs";
+import { useVenueContext } from "../components/matchcentre/venue";
+import { IconChevronLeft, IconStats } from "../components/Icons";
 import { Bench, Pitch } from "../components/lineup";
-import { MatchHero } from "../components/hero";
 import { PlayerSheet, type PlayerRef } from "../components/PlayerSheet";
 import { StandingsTable } from "../components/table";
-import { Crest, Empty, ErrorState, Segmented, Skeleton } from "../components/ui";
-import {
-  endpoints,
-  normaliseStandings,
-  normaliseSummary,
-  type KeyEvent,
-  type LineupPlayer,
-  type Side,
-  type SummaryData,
-} from "../lib/api";
-import { fmtDayShort } from "../lib/format";
+import { Empty, ErrorState, Skeleton } from "../components/ui";
+import { t } from "../i18n";
+import { elo, matchProbs, oddsToProbs } from "../lib/analytics";
+import { endpoints, normaliseStandings, normaliseSummary, type LineupPlayer, type Side, type SummaryData } from "../lib/api";
+import { useAccent } from "../lib/accent";
 import { useApi, useDocumentTitle } from "../lib/hooks";
+import { onPatch } from "../lib/live";
+import { useSeason } from "../lib/season";
+import { useSwipe } from "../lib/gestures";
 
-type Tab = "summary" | "stats" | "lineups" | "table";
+type Tab = "summary" | "commentary" | "stats" | "shots" | "lineups" | "h2h" | "table";
+const ORDER: Tab[] = ["summary", "commentary", "stats", "shots", "lineups", "h2h", "table"];
 
 export default function MatchPage() {
   const { league = "eng.1", id = "" } = useParams();
   const nav = useNavigate();
+  const [params, setParams] = useSearchParams();
   const [live, setLive] = useState(false);
   const q = useApi<any>(endpoints.summary(league, id), { refresh: live ? 20_000 : 120_000 });
-  const s = useMemo(() => (q.data ? normaliseSummary(q.data, league) : null), [q.data, league]);
-  if (s && (s.match.state === "in") !== live) setLive(s.match.state === "in");
+  const raw = q.data;
+  const s = useMemo<SummaryData | null>(() => {
+    if (!raw?.header) return null;
+    try {
+      return normaliseSummary(raw, league);
+    } catch {
+      return null;
+    }
+  }, [raw, league]);
+  // useApi keeps the previous match visible while the next one loads — never show the wrong match.
+  const current = s && String(s.match.id) === String(id) ? s : null;
+  const isLive = current?.match.state === "in";
+  if (current && isLive !== live) setLive(isLive);
 
-  const [tab, setTab] = useState<Tab>("summary");
+  // Live: re-fetch the summary as soon as the hub reports a change to this match.
+  const reload = q.reload;
+  useEffect(() => {
+    let timer: number | undefined;
+    const off = onPatch((ms) => {
+      if (!ms.some((m) => String(m.id) === String(id))) return;
+      window.clearTimeout(timer);
+      timer = window.setTimeout(reload, 1200);
+    });
+    return () => {
+      off();
+      window.clearTimeout(timer);
+    };
+  }, [id, reload]);
+
+  const x = useMemo(() => {
+    if (!current || !raw) return null;
+    const { home, away } = current.match;
+    const plays = parsePlays(raw, home, away);
+    const rosters = parseRosters(raw, home, away);
+    const periods = periodsFor(plays, current.match);
+    return {
+      plays,
+      shots: parseShots(raw, home, away),
+      rosters,
+      subs: substitutions(raw, rosters),
+      kicks: parseShootout(raw, plays, home, away),
+      odds: parseOdds(raw),
+      referee: parseReferee(raw) ?? current.officials[0] ?? null,
+      bins: momentum(plays, current.match),
+      axis: timeAxis(periods, plays, current.match),
+      ratings: hasPlayerStats(rosters) && current.match.state !== "pre" ? rate(rosters, current.match) : [],
+      country: String(raw.gameInfo?.venue?.address?.country ?? ""),
+      hasStandings: !!raw.standings?.groups?.some((g: any) => g?.standings?.entries?.length),
+      // The header's competitor form is often empty; the team object carries it.
+      form: Object.fromEntries(
+        ((raw.header?.competitions?.[0]?.competitors ?? []) as any[]).map((c) => [String(c?.team?.id ?? ""), String(c?.form || c?.team?.form || "")]),
+      ) as Record<string, string>,
+      narrative: plays.filter((p) => p.kind !== "start" && p.kind !== "end" && !/lineups are announced/i.test(p.text)).length,
+    };
+  }, [current, raw]);
+
+  const m = current?.match ?? null;
+  const heroMatch = useMemo(
+    () =>
+      m && x
+        ? {
+            ...m,
+            home: { ...m.home, form: m.home.form || x.form[m.home.id] || "" },
+            away: { ...m.away, form: m.away.form || x.form[m.away.id] || "" },
+          }
+        : null,
+    [m, x],
+  );
+  useAccent(m ? [m.home.color, m.away.color] : null);
+  useDocumentTitle(
+    m
+      ? m.state === "pre"
+        ? t("{home} v {away}", { home: m.home.short, away: m.away.short })
+        : `${m.home.short} ${m.home.score ?? 0}–${m.away.score ?? 0} ${m.away.short}`
+      : t("Match"),
+  );
+
+  /* ---- tabs ---- */
+  const [tabState, setTabState] = useState<Tab>(() => (ORDER.includes(params.get("tab") as Tab) ? (params.get("tab") as Tab) : "summary"));
+  const [dir, setDir] = useState<"next" | "prev" | "none">("none");
+  const tabParam = params.get("tab");
+  useEffect(() => {
+    // A different match (e.g. from H2H or form) starts on its own tab.
+    setTabState(ORDER.includes(tabParam as Tab) ? (tabParam as Tab) : "summary");
+    setDir("none");
+  }, [id]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  /* ---- win probability ---- */
+  const oddsProbs = useMemo<Probs | null>(() => {
+    if (!x?.odds) return null;
+    const p = oddsToProbs(x.odds.home, x.odds.draw, x.odds.away);
+    return p ? { ...p, source: x.odds.provider || t("Bookmaker odds"), kind: "odds" } : null;
+  }, [x?.odds]);
+  const needModel = !!m && !oddsProbs && m.state === "pre";
+  const needSeason = !!m && (needModel || (tabState === "summary" && !!x?.referee));
+  const season = useSeason(needSeason ? league : null);
+  const modelProbs = useMemo<Probs | null>(() => {
+    const sd = season.data;
+    if (!needModel || !sd || !m) return null;
+    const ids = new Set(sd.teams.map((tm) => tm.id));
+    if (!ids.has(m.home.id) || !ids.has(m.away.id)) return null;
+    try {
+      const p = matchProbs(sd, elo(sd), m.home.id, m.away.id);
+      return [p.h, p.d, p.a].every(Number.isFinite) ? { h: p.h, d: p.d, a: p.a, source: t("Pitch model"), kind: "model" } : null;
+    } catch {
+      return null;
+    }
+  }, [season.data, needModel, m]);
+  const probs = oddsProbs ?? modelProbs;
+  const refRecord = useMemo(() => refereeFor(season.data, x?.referee ?? null), [season.data, x?.referee]);
+
+  /* ---- head to head ---- */
+  const h2h = useApi<{ games?: H2HGame[] }>(m ? endpoints.h2h(league, m.home.id, m.away.id) : null);
+  const games = useMemo(() => (m ? h2hGames(h2h.data, m) : []), [h2h.data, m]);
+
+  /* ---- stadium context ---- */
+  const venue = useVenueContext(current, x?.country ?? "", { backdrop: isLive });
+
+  const hasLineups = !!current && current.lineups.some((l) => l.players.some((p) => p.starter));
+  const tabs: TabDef<Tab>[] = useMemo(() => {
+    if (!current || !x) return [];
+    const list: TabDef<Tab>[] = [{ value: "summary", label: t("Summary") }];
+    if (x.narrative > 0) list.push({ value: "commentary", label: t("Commentary"), badge: isLive ? t("Live") : null });
+    if (current.match.state !== "pre" && hasTeamStats(current)) list.push({ value: "stats", label: t("Stats") });
+    if (x.shots.length || x.plays.some((p) => p.x !== null && p.side)) list.push({ value: "shots", label: t("Shots") });
+    if (hasLineups) list.push({ value: "lineups", label: t("Lineups") });
+    if (games.length) list.push({ value: "h2h", label: t("H2H") });
+    if (x.hasStandings) list.push({ value: "table", label: t("Table") });
+    return list;
+  }, [current, x, isLive, hasLineups, games.length]);
+  const tab: Tab = tabs.some((tb) => tb.value === tabState) ? tabState : "summary";
+
+  const go = (next: Tab) => {
+    if (next === tab) return;
+    const a = tabs.findIndex((tb) => tb.value === tab);
+    const b = tabs.findIndex((tb) => tb.value === next);
+    setDir(b > a ? "next" : "prev");
+    setTabState(next);
+    const p = new URLSearchParams(params);
+    if (next === "summary") p.delete("tab");
+    else p.set("tab", next);
+    setParams(p, { replace: true, preventScrollReset: true });
+  };
+  const swipeRef = useSwipe<HTMLDivElement>(
+    (d) => {
+      const i = tabs.findIndex((tb) => tb.value === tab);
+      const n = tabs[i + (d === -1 ? 1 : -1)];
+      if (n) go(n.value);
+    },
+    { enabled: tabs.length > 1 },
+  );
+
+  /* ---- player sheet & referee ---- */
   const [player, setPlayer] = useState<PlayerRef | null>(null);
-
-  useDocumentTitle(s ? `${s.match.home.short} ${s.match.home.score ?? ""}–${s.match.away.score ?? ""} ${s.match.away.short}`.replace(" –", " v") : "Match");
-
-  const hasStats = !!s && Object.values(s.stats).some((v) => v.length > 0);
-  const hasLineups = !!s && s.lineups.some((l) => l.players.some((p) => p.starter));
-
-  const tabs: { value: Tab; label: string }[] = [
-    { value: "summary", label: "Summary" },
-    ...(hasStats ? [{ value: "stats" as Tab, label: "Stats" }] : []),
-    ...(hasLineups ? [{ value: "lineups" as Tab, label: "Lineups" }] : []),
-    { value: "table", label: "Table" },
-  ];
-  const activeTab = tabs.some((t) => t.value === tab) ? tab : "summary";
-
+  const [refOpen, setRefOpen] = useState(false);
   const pick = (p: LineupPlayer, side: Side) =>
     setPlayer({ name: p.name, id: p.id, jersey: p.jersey, position: p.posName, league, team: { name: side.name, logo: side.logo, color: side.color } });
+  const pickRated = (p: RosterPlayer) => {
+    const side = p.side === "home" ? m!.home : m!.away;
+    setPlayer({ name: p.name, id: p.id, jersey: p.jersey, position: p.posName, league, team: { name: side.name, logo: side.logo, color: side.color } });
+  };
+
+  const heroRef = useRef<HTMLElement>(null);
 
   return (
-    <div className="page">
+    <div className="page mc-page">
       <button className="back" onClick={() => (window.history.length > 1 ? nav(-1) : nav("/"))}>
         <IconChevronLeft />
-        Back
+        {t("Back")}
       </button>
 
-      {q.loading ? (
-        <>
-          <Skeleton h={330} r={32} />
-          <Skeleton h={44} r={14} style={{ margin: "22px auto", maxWidth: 520 }} />
-          <Skeleton h={420} />
-        </>
-      ) : q.error && !s ? (
+      {!current && q.error ? (
         <ErrorState onRetry={q.reload} />
-      ) : s ? (
+      ) : !current || !x || !m ? (
+        <MatchSkeleton />
+      ) : (
         <>
-          <MatchHero m={s.match} link={false} />
-          <div className="tabs-row">
-            <Segmented options={tabs} value={activeTab} onChange={setTab} />
-          </div>
-          {activeTab === "summary" && <Summary s={s} />}
-          {activeTab === "stats" && <Stats s={s} />}
-          {activeTab === "lineups" && (
-            <div className="lineup-wrap">
-              <Bench side={s.match.home} lineup={s.lineups.find((l) => l.teamId === s.match.home.id)} onPick={pick} cls="home" />
-              <Pitch home={s.match.home} away={s.match.away} lineups={s.lineups} onPick={pick} />
-              <Bench side={s.match.away} lineup={s.lineups.find((l) => l.teamId === s.match.away.id)} onPick={pick} cls="away" />
+          <MatchCentreHero
+            key={m.id}
+            m={heroMatch ?? m}
+            heroRef={heroRef}
+            probs={probs}
+            weather={venue.weather}
+            timezone={venue.timezone}
+            backdrop={venue.photo}
+          />
+          {m.state !== "pre" && x.bins.length > 0 && <MomentumStrip bins={x.bins} m={m} />}
+
+          <TabBar tabs={tabs} value={tab} onChange={go} label={t("Match sections")} idPrefix="mc" />
+
+          <div
+            ref={swipeRef}
+            className={`mc-pane-wrap${q.stale ? " refreshing" : ""}`}
+            id="mc-panel"
+            role="tabpanel"
+            aria-labelledby={`mc-tab-${tab}`}
+          >
+            <div key={tab} className={`mc-pane ${dir}`}>
+              {tab === "summary" && (
+                <SummaryTab
+                  s={current}
+                  x={x}
+                  probs={probs}
+                  venue={venue}
+                  refAvailable={!!refRecord}
+                  onReferee={() => setRefOpen(true)}
+                  onPickRated={pickRated}
+                />
+              )}
+              {tab === "commentary" && <Commentary plays={x.plays} m={m} />}
+              {tab === "stats" && <StatsTab s={current} shots={x.shots} />}
+              {tab === "shots" && <ShotsTab m={m} shots={x.shots} plays={x.plays} axis={x.axis} />}
+              {tab === "lineups" && <LineupsTab s={current} subs={x.subs} onPick={pick} />}
+              {tab === "h2h" && <H2HTab m={m} games={games} />}
+              {tab === "table" && <MatchTable league={league} ids={[m.home.id, m.away.id]} />}
             </div>
-          )}
-          {activeTab === "table" && <MatchTable league={league} ids={[s.match.home.id, s.match.away.id]} />}
+          </div>
+
+          <LiveChip m={m} heroRef={heroRef} />
         </>
-      ) : null}
+      )}
 
       {player && <PlayerSheet p={player} onClose={() => setPlayer(null)} />}
+      {refOpen && x?.referee && (
+        <RefereeSheet
+          name={x.referee}
+          season={season.data}
+          building={season.building}
+          progress={season.progress}
+          league={league}
+          onClose={() => setRefOpen(false)}
+        />
+      )}
     </div>
   );
 }
 
 /* ------------------------------------------------------------ Summary -- */
 
-function Summary({ s }: { s: SummaryData }) {
-  const { home, away } = s.match;
-  const events = s.events.filter((e) =>
-    /goal|penalty---scored|card|substitution|halftime|end-regular-time|kickoff|end-extra|shootout/.test(e.type) || e.scoring,
-  );
+function SummaryTab({
+  s,
+  x,
+  probs,
+  venue,
+  refAvailable,
+  onReferee,
+  onPickRated,
+}: {
+  s: SummaryData;
+  x: {
+    kicks: ReturnType<typeof parseShootout>;
+    ratings: ReturnType<typeof rate>;
+    referee: string | null;
+  };
+  probs: Probs | null;
+  venue: ReturnType<typeof useVenueContext>;
+  refAvailable: boolean;
+  onReferee: () => void;
+  onPickRated: (p: RosterPlayer) => void;
+}) {
+  const m = s.match;
+  const pre = m.state === "pre";
+  const top = x.ratings[0];
+  const showPotm = !!top && (m.state === "post" || m.state === "in") && (top.rating > 6 || top.chips.length > 0);
+  const info = <MatchInfo s={s} referee={x.referee} refAvailable={refAvailable} onReferee={onReferee} />;
 
-  let h = 0;
-  let a = 0;
-
-  return (
-    <div className="grid-2" style={{ alignItems: "start" }}>
-      <div className="panel glass">
-        <p className="panel-title">Timeline</p>
-        {events.length === 0 ? (
-          <p className="muted" style={{ margin: 0 }}>
-            {s.match.state === "pre" ? `Kick-off ${fmtDayShort(s.match.date)}. Events will appear here live.` : "No key events recorded."}
-          </p>
-        ) : (
-          <div className="timeline">
-            {events.map((e, i) => {
-              if (e.scoring) {
-                if (e.teamId === home.id) h++;
-                else if (e.teamId === away.id) a++;
-              }
-              if (e.type === "kickoff") return <Divider key={e.id} label="Kick-off" />;
-              if (e.type === "halftime") return <Divider key={e.id} label={`Half-time · ${h}–${a}`} />;
-              if (e.type === "end-regular-time") return <Divider key={e.id} label={`Full time · ${h}–${a}`} />;
-              if (/end-extra|shootout/.test(e.type) && !e.teamId) return <Divider key={e.id} label={e.text || "Extra time"} />;
-              if (!e.teamId) return null;
-              const isHome = e.teamId === home.id;
-              return <EventRow key={e.id} e={e} home={isHome} delay={i * 25} score={e.scoring ? `${h}–${a}` : null} />;
-            })}
-          </div>
-        )}
-      </div>
-
-      <div>
-        <FormPanel s={s} />
-        <div className="panel glass">
-          <p className="panel-title">Match info</p>
-          <InfoRow icon={<IconPin />} k="Venue" v={[s.venue, s.city].filter(Boolean).join(", ") || "—"} />
-          {s.attendance > 0 && <InfoRow icon={<IconPeople />} k="Attendance" v={s.attendance.toLocaleString()} />}
-          {s.officials[0] && <InfoRow icon={<IconWhistle />} k="Referee" v={s.officials[0]} />}
-          <InfoRow icon={<IconStats />} k="Competition" v={s.match.note || s.match.league.name} />
+  if (pre) {
+    return (
+      <div className="mc-summary">
+        <div className="mc-grid-2">
+          {probs ? <WinProbCard s={s} p={probs} title={t("Win probability")} /> : null}
+          <KickoffCard s={s} weather={venue.weather} loading={venue.weatherLoading} timezone={venue.timezone} />
+        </div>
+        <Watch s={s} />
+        <div className="mc-grid-2">
+          <FormPanel s={s} />
+          {info}
         </div>
       </div>
-    </div>
-  );
-}
-
-function Divider({ label }: { label: string }) {
-  return (
-    <div className="tl-divider">
-      <span>{label}</span>
-    </div>
-  );
-}
-
-function EventRow({ e, home, delay, score }: { e: KeyEvent; home: boolean; delay: number; score: string | null }) {
-  const [p1, p2] = e.players;
-  let icon: JSX.Element;
-  let title = p1?.name ?? e.text;
-  let sub = "";
-  if (e.scoring) {
-    icon = (
-      <span className="tl-icon goal">
-        <IconBall />
-      </span>
     );
-    sub = [score, e.ownGoal ? "Own goal" : e.penalty ? "Penalty" : p2 ? `Assist: ${p2.name}` : "Goal"].filter(Boolean).join(" · ");
-  } else if (e.type.includes("yellow")) {
-    icon = (
-      <span className="tl-icon">
-        <i className="card-y" />
-      </span>
-    );
-    sub = "Yellow card";
-  } else if (e.type.includes("red")) {
-    icon = (
-      <span className="tl-icon">
-        <i className="card-r" />
-      </span>
-    );
-    sub = "Red card";
-  } else if (e.type === "substitution") {
-    icon = (
-      <span className="tl-icon">
-        <IconSub />
-      </span>
-    );
-    title = p1?.name ?? "Substitution";
-    sub = p2 ? `Off: ${p2.name}` : "Substitution";
-  } else {
-    icon = <span className="tl-icon" />;
-    sub = e.text;
-  }
-  const body = (
-    <span className="who">
-      <b>{title}</b>
-      <small>{sub}</small>
-    </span>
-  );
-  return (
-    <div className="tl-row" style={{ animationDelay: `${Math.min(delay, 600)}ms` }}>
-      <div className="tl-ev home">{home && <>{body}{icon}</>}</div>
-      <span className="tl-min">{e.clock.replace(/'\+(\d+)'/, "+$1'")}</span>
-      <div className="tl-ev away">{!home && <>{icon}{body}</>}</div>
-    </div>
-  );
-}
-
-function InfoRow({ icon, k, v }: { icon: JSX.Element; k: string; v: string }) {
-  return (
-    <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 0", borderTop: "0.5px solid var(--hairline)" }}>
-      <span style={{ width: 30, height: 30, borderRadius: 10, background: "var(--fill-2)", display: "grid", placeItems: "center", color: "var(--ink-2)", flex: "none" }}>
-        {icon && <span style={{ width: 16, height: 16, display: "grid" }}>{icon}</span>}
-      </span>
-      <span className="muted" style={{ fontSize: 14, width: 96, flex: "none" }}>
-        {k}
-      </span>
-      <span style={{ fontWeight: 550, fontSize: 14.5, minWidth: 0 }}>{v}</span>
-    </div>
-  );
-}
-
-function FormPanel({ s }: { s: SummaryData }) {
-  const sides = [s.match.home, s.match.away].filter((t) => s.form[t.id]?.length);
-  if (!sides.length) return null;
-  return (
-    <div className="panel glass">
-      <p className="panel-title">Recent form</p>
-      <div className="grid-2" style={{ gap: 18 }}>
-        {sides.map((t) => (
-          <div key={t.id}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, fontWeight: 600, marginBottom: 6 }}>
-              <Crest src={t.logo} size={22} alt={t.name} />
-              {t.short}
-            </div>
-            {s.form[t.id].map((g) => (
-              <Link
-                key={g.id}
-                to={`/match/${s.match.league.slug}/${g.id}`}
-                style={{ display: "flex", alignItems: "center", gap: 10, padding: "7px 0", borderTop: "0.5px solid var(--hairline)", fontSize: 14 }}
-              >
-                <span className={`form-dot ${g.result}`}>{g.result}</span>
-                <Crest src={g.opponentLogo} size={20} alt={g.opponent} />
-                <span style={{ flex: 1, minWidth: 0, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{g.opponent}</span>
-                <span className="num muted">{g.score}</span>
-              </Link>
-            ))}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-/* -------------------------------------------------------------- Stats -- */
-
-const STAT_ROWS: { key: string; label: string; pct?: boolean }[] = [
-  { key: "totalShots", label: "Shots" },
-  { key: "shotsOnTarget", label: "Shots on target" },
-  { key: "blockedShots", label: "Blocked shots" },
-  { key: "wonCorners", label: "Corners" },
-  { key: "accuratePasses", label: "Accurate passes" },
-  { key: "passAccuracy", label: "Pass accuracy", pct: true },
-  { key: "totalCrosses", label: "Crosses" },
-  { key: "totalLongBalls", label: "Long balls" },
-  { key: "totalTackles", label: "Tackles" },
-  { key: "interceptions", label: "Interceptions" },
-  { key: "effectiveClearance", label: "Clearances" },
-  { key: "saves", label: "Saves" },
-  { key: "foulsCommitted", label: "Fouls" },
-  { key: "offsides", label: "Offsides" },
-  { key: "yellowCards", label: "Yellow cards" },
-  { key: "redCards", label: "Red cards" },
-];
-
-function statMap(list: { name: string; value: string }[] = []) {
-  const m: Record<string, number> = {};
-  for (const s of list) {
-    const n = parseFloat(s.value);
-    if (!Number.isNaN(n)) m[s.name] = n;
-  }
-  if (m.totalPasses) m.passAccuracy = Math.round(((m.accuratePasses ?? 0) / m.totalPasses) * 100);
-  return m;
-}
-
-function Stats({ s }: { s: SummaryData }) {
-  const { home, away } = s.match;
-  const H = statMap(s.stats[home.id]);
-  const A = statMap(s.stats[away.id]);
-  const hp = H.possessionPct ?? 0;
-  const ap = A.possessionPct ?? 0;
-  const rows = STAT_ROWS.filter((r) => H[r.key] !== undefined || A[r.key] !== undefined);
-
-  if (!rows.length && !hp) {
-    return <Empty icon={<IconStats />} title="No statistics yet">Team statistics appear once the match is under way.</Empty>;
   }
 
   return (
-    <div className="panel glass" style={{ maxWidth: 760, margin: "0 auto" }}>
-      <div className="legend-row">
-        <span className="legend-team">
-          <span className="key home" />
-          <Crest src={home.logo} size={26} alt={home.name} />
-          <span>{home.short}</span>
-        </span>
-        <span className="legend-team away">
-          <span className="key away" />
-          <Crest src={away.logo} size={26} alt={away.name} />
-          <span>{away.short}</span>
-        </span>
-      </div>
-
-      {hp + ap > 0 && (
-        <div className="possession">
-          <div className="vals">
-            <span>{Math.round(hp)}%</span>
-            <span>{Math.round(ap)}%</span>
-          </div>
-          <div className="label">Possession</div>
-          <div className="split-bar" role="img" aria-label={`Possession ${home.short} ${Math.round(hp)}%, ${away.short} ${Math.round(ap)}%`}>
-            <div className="h" style={{ flexGrow: hp }} title={`${home.short} ${hp}%`} />
-            <div className="a" style={{ flexGrow: ap }} title={`${away.short} ${ap}%`} />
-          </div>
+    <div className="mc-summary">
+      {(showPotm || x.kicks.length > 0) && (
+        <div className={x.kicks.length > 0 && showPotm ? "mc-grid-2" : ""}>
+          {showPotm && <PotmCard r={top} s={s} live={m.state === "in"} onOpen={() => onPickRated(top.player)} />}
+          {x.kicks.length > 0 && <ShootoutCard kicks={x.kicks} s={s} />}
         </div>
       )}
+      <div className="mc-grid-2 mc-summary-main">
+        <Timeline s={s} />
+        <div className="mc-stack">
+          <FormPanel s={s} />
+          {info}
+          {probs && <WinProbCard s={s} p={probs} title={t("Pre-match win probability")} />}
+          <Watch s={s} />
+        </div>
+      </div>
+    </div>
+  );
+}
 
-      {rows.map((r) => {
-        const hv = H[r.key] ?? 0;
-        const av = A[r.key] ?? 0;
-        const max = r.pct ? 100 : Math.max(hv, av, 1);
-        return (
-          <div className="cmp-row" key={r.key} title={`${r.label}: ${home.short} ${hv}${r.pct ? "%" : ""}, ${away.short} ${av}${r.pct ? "%" : ""}`}>
-            <div className="cmp-head">
-              <span className={`v${hv > av ? " lead" : ""}`}>
-                {hv}
-                {r.pct ? "%" : ""}
-              </span>
-              <span className="l">{r.label}</span>
-              <span className={`v${av > hv ? " lead" : ""}`}>
-                {av}
-                {r.pct ? "%" : ""}
-              </span>
-            </div>
-            <div className="cmp-bars">
-              <div className="cmp-track home">
-                <div className={`cmp-fill${hv < av ? " dim" : ""}`} style={{ width: `${(hv / max) * 100}%` }} />
-              </div>
-              <div className="cmp-track away">
-                <div className={`cmp-fill${av < hv ? " dim" : ""}`} style={{ width: `${(av / max) * 100}%` }} />
-              </div>
-            </div>
-          </div>
-        );
-      })}
+/* ------------------------------------------------------------ Lineups -- */
+
+function LineupsTab({ s, subs, onPick }: { s: SummaryData; subs: Map<string, { id: string; name: string; jersey: string; minute: string }>; onPick: (p: LineupPlayer, side: Side) => void }) {
+  const { home, away } = s.match;
+  const anySubs = s.lineups.some((l) => l.players.some((p) => p.subbedOut));
+  const [show, setShow] = useState(s.match.state !== "pre");
+  const replaced = useMemo(() => {
+    const names = new Map(s.lineups.flatMap((l) => l.players.map((p) => [p.id, p.name] as const)));
+    const out = new Map<string, string>();
+    for (const [outId, inc] of subs) out.set(inc.id, names.get(outId) ?? "");
+    return out;
+  }, [s.lineups, subs]);
+  return (
+    <div className="mc-lineups">
+      {anySubs && (
+        <div className="mc-lineup-bar">
+          <button type="button" className={`mc-switch${show ? " on" : ""}`} role="switch" aria-checked={show} onClick={() => setShow((v) => !v)}>
+            <span className="mc-switch-track" aria-hidden>
+              <span className="mc-switch-knob" />
+            </span>
+            {t("Show changes")}
+          </button>
+        </div>
+      )}
+      <div className="lineup-wrap">
+        <Bench side={home} lineup={s.lineups.find((l) => l.teamId === home.id)} onPick={onPick} cls="home" replaced={replaced} />
+        <Pitch home={home} away={away} lineups={s.lineups} onPick={onPick} changes={subs} showChanges={show && anySubs} />
+        <Bench side={away} lineup={s.lineups.find((l) => l.teamId === away.id)} onPick={onPick} cls="away" replaced={replaced} />
+      </div>
     </div>
   );
 }
@@ -354,12 +399,12 @@ function Stats({ s }: { s: SummaryData }) {
 function MatchTable({ league, ids }: { league: string; ids: string[] }) {
   const q = useApi<any>(endpoints.standings(league));
   const data = useMemo(() => (q.data ? normaliseStandings(q.data) : null), [q.data]);
-  if (q.loading) return <Skeleton h={520} />;
+  if (q.loading) return <TableSkeleton />;
   const groups = data?.groups.filter((g) => g.rows.length) ?? [];
-  if (!groups.length) return <Empty icon={<IconStats />} title="No table for this competition" />;
+  if (!groups.length) return <Empty icon={<IconStats />} title={t("No table for this competition")} />;
   const relevant = groups.filter((g) => g.rows.some((r) => ids.includes(r.team.id)));
   return (
-    <div style={{ display: "grid", gap: 14, maxWidth: 860, margin: "0 auto" }}>
+    <div className="mc-table">
       {(relevant.length ? relevant : groups).map((g) => (
         <StandingsTable key={g.name} group={g} league={league} highlight={ids} compact showTitle={groups.length > 1} />
       ))}
@@ -367,3 +412,63 @@ function MatchTable({ league, ids }: { league: string; ids: string[] }) {
   );
 }
 
+/* ---------------------------------------------------------- skeletons -- */
+
+function MatchSkeleton() {
+  return (
+    <div className="mc-skeleton" aria-busy="true" aria-label={t("Loading match")}>
+      <div className="mc-sk-hero glass">
+        <div className="mc-sk-top">
+          <Skeleton h={26} r={13} style={{ width: 160 }} />
+          <Skeleton h={26} r={13} style={{ width: 80 }} />
+        </div>
+        <div className="mc-sk-body">
+          <div className="mc-sk-team">
+            <Skeleton h={80} r={40} style={{ width: 80 }} />
+            <Skeleton h={16} r={8} style={{ width: 110 }} />
+          </div>
+          <Skeleton h={64} r={18} style={{ width: 150 }} />
+          <div className="mc-sk-team">
+            <Skeleton h={80} r={40} style={{ width: 80 }} />
+            <Skeleton h={16} r={8} style={{ width: 110 }} />
+          </div>
+        </div>
+        <Skeleton h={14} r={7} style={{ width: 240, margin: "0 auto" }} />
+      </div>
+      <Skeleton h={50} r={18} style={{ margin: "18px 0" }} />
+      <div className="mc-grid-2">
+        <div className="panel glass mc-sk-panel">
+          {Array.from({ length: 7 }, (_, i) => (
+            <div key={i} className="mc-sk-row">
+              <Skeleton h={12} r={6} style={{ width: `${40 + ((i * 17) % 35)}%` }} />
+              <Skeleton h={24} r={12} style={{ width: 44 }} />
+              <Skeleton h={12} r={6} style={{ width: `${30 + ((i * 23) % 40)}%` }} />
+            </div>
+          ))}
+        </div>
+        <div className="panel glass mc-sk-panel">
+          {Array.from({ length: 5 }, (_, i) => (
+            <div key={i} className="mc-sk-line">
+              <Skeleton h={30} r={10} style={{ width: 30 }} />
+              <Skeleton h={12} r={6} style={{ width: `${45 + ((i * 13) % 40)}%` }} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TableSkeleton() {
+  return (
+    <div className="table-card glass mc-sk-table" aria-busy="true">
+      {Array.from({ length: 10 }, (_, i) => (
+        <div key={i} className="mc-sk-line">
+          <Skeleton h={12} r={6} style={{ width: 18 }} />
+          <Skeleton h={26} r={13} style={{ width: 26 }} />
+          <Skeleton h={12} r={6} style={{ width: `${30 + ((i * 19) % 30)}%` }} />
+        </div>
+      ))}
+    </div>
+  );
+}
