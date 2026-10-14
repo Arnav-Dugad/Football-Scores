@@ -2,7 +2,7 @@ import { NavLink, Outlet, ScrollRestoration, useLocation } from "react-router-do
 import { IconAuto, IconBrand, IconGear, IconMoon, IconNews, IconScores, IconStats, IconSun, IconTable } from "./components/Icons";
 import { Onboarding } from "./components/Onboarding";
 import { t } from "./i18n";
-import { InteractionLayer, LiveTicker, SearchButton } from "./interaction";
+import { InteractionLayer, LiveDot, LiveTicker, NavTitle, SearchButton } from "./interaction";
 import { useTheme } from "./lib/hooks";
 import { useLiveChannel } from "./lib/live";
 import { useSettings } from "./lib/settings";
@@ -69,9 +69,11 @@ export default function App() {
               aria-current={tab.match(pathname) ? "page" : undefined}
             >
               {t(tab.label)}
+              {tab.to === "/" && <LiveDot />}
             </NavLink>
           ))}
         </nav>
+        <NavTitle />
         <div className="nav-actions">
           <SearchButton />
           <ThemeToggle />
@@ -102,6 +104,7 @@ export default function App() {
           >
             <tab.icon />
             {t(tab.label)}
+            {tab.to === "/" && <LiveDot />}
           </NavLink>
         ))}
       </nav>
