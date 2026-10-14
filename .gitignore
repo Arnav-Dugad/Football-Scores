@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.worker-build/
+.vercel/
+.wrangler/
+.env
+.env.*
+!.env.example
+.dev.vars
+playwright-report/
+test-results/
+artifacts/

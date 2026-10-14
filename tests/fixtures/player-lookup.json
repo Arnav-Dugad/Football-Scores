@@ -1,0 +1,13 @@
+{
+  "player": [
+    {
+      "idPlayer": "34146370",
+      "strPlayer": "Lionel Messi",
+      "strSport": "Soccer",
+      "strTeam": "Inter Miami",
+      "strNationality": "Argentina",
+      "strPosition": "Right Winger",
+      "dateBorn": "1987-06-24"
+    }
+  ]
+}
