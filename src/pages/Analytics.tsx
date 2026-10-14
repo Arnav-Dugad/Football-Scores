@@ -1,344 +1,436 @@
-import { useState } from "react";
-import { useApp } from "../lib/state";
-import { shortName, outcomes, type Match, type Team } from "../../shared/model";
-import {
-  Title,
-  DataGate,
-  SectionHead,
-  Metrics,
-  Crest,
-  Empty,
-} from "../components/UI";
-function Trend({ matches, teams }: { matches: Match[]; teams: Team[] }) {
-  const lines = teams.map((t) => {
-    let p = 0;
-    return {
-      team: t,
-      values: outcomes(matches, t.id).map((m, i) => ({
-        round: i + 1,
-        date: m.date,
-        points: (p += m.points),
-      })),
-    };
-  });
-  const max = Math.max(
-    1,
-    ...lines.flatMap((l) => l.values.map((v) => v.points)),
-  );
-  const games = Math.max(1, ...lines.map((l) => l.values.length));
-  const colors = ["#ae8bff", "#54c9ae"];
+import { useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { IconStats } from "../components/Icons";
+import { PlayerSheet, type PlayerRef } from "../components/PlayerSheet";
+import { Crest, Empty, ErrorState, PlayerAvatar, Skeleton, tsdbSize } from "../components/ui";
+import { endpoints, normaliseLeaders, normaliseStandings, sized, type Leader, type TableRow } from "../lib/api";
+import { useApi, useDocumentTitle, usePlayer } from "../lib/hooks";
+import { LEAGUE_BY_SLUG } from "../lib/leagues";
+import { LeaguePicker, useLeagueParam } from "./Standings";
+
+export default function Analytics() {
+  const league = useLeagueParam();
+  const meta = LEAGUE_BY_SLUG[league];
+  useDocumentTitle(`${meta.name} stats`);
+  const st = useApi<any>(endpoints.standings(league));
+  const ld = useApi<any>(endpoints.leaders(league));
+  const rows = useMemo(() => (st.data ? normaliseStandings(st.data).groups.flatMap((g) => g.rows) : []), [st.data]);
+  const leaders = useMemo(() => (ld.data ? normaliseLeaders(ld.data) : { goals: [], assists: [] }), [ld.data]);
+  const [player, setPlayer] = useState<PlayerRef | null>(null);
+
+  const open = (l: Leader) =>
+    setPlayer({ name: l.name, id: l.id, league, team: { name: l.team.name, logo: l.team.logo } });
+
+  const played = rows.filter((r) => r.gp > 0);
+  const totals = useMemo(() => {
+    if (!played.length) return null;
+    const goals = played.reduce((a, r) => a + r.gf, 0);
+    const games = played.reduce((a, r) => a + r.gp, 0) / 2;
+    const attack = [...played].sort((a, b) => b.gf / b.gp - a.gf / a.gp)[0];
+    const defence = [...played].sort((a, b) => a.ga / a.gp - b.ga / b.gp)[0];
+    return { goals, games, attack, defence };
+  }, [played]);
+
   return (
-    <>
-      <div className="chart-legend">
-        {lines.map((l, i) => (
-          <span key={l.team.id}>
-            <i style={{ background: colors[i] }} />
-            {shortName(l.team.name)}
-          </span>
+    <div className="page">
+      <div className="page-head">
+        <div>
+          <p className="eyebrow">{meta.name}</p>
+          <h1 className="large-title">Stats</h1>
+        </div>
+      </div>
+      <LeaguePicker value={league} base="/stats" />
+
+      {st.loading && ld.loading ? (
+        <div style={{ display: "grid", gap: 14 }}>
+          <div className="tiles">
+            {[0, 1, 2, 3].map((i) => (
+              <Skeleton key={i} h={118} />
+            ))}
+          </div>
+          <Skeleton h={260} r={32} />
+          <Skeleton h={480} />
+        </div>
+      ) : st.error && ld.error ? (
+        <ErrorState onRetry={() => (st.reload(), ld.reload())} />
+      ) : (
+        <>
+          {totals && (
+            <div className="tiles">
+              <div className="tile glass">
+                <div className="k">Goals scored</div>
+                <div className="v">{totals.goals.toLocaleString()}</div>
+                <div className="s">in {Math.round(totals.games)} matches</div>
+              </div>
+              <div className="tile glass" style={{ animationDelay: "40ms" }}>
+                <div className="k">Goals per match</div>
+                <div className="v">{totals.games ? (totals.goals / totals.games).toFixed(2) : "–"}</div>
+                <div className="s">league average</div>
+              </div>
+              <div className="tile glass" style={{ animationDelay: "80ms" }}>
+                <div className="k">Best attack</div>
+                <div className="v">{(totals.attack.gf / totals.attack.gp).toFixed(2)}</div>
+                <div className="s">
+                  <Crest src={totals.attack.team.logo} size={18} alt="" />
+                  {totals.attack.team.short} · goals / game
+                </div>
+              </div>
+              <div className="tile glass" style={{ animationDelay: "120ms" }}>
+                <div className="k">Meanest defence</div>
+                <div className="v">{(totals.defence.ga / totals.defence.gp).toFixed(2)}</div>
+                <div className="s">
+                  <Crest src={totals.defence.team.logo} size={18} alt="" />
+                  {totals.defence.team.short} · conceded / game
+                </div>
+              </div>
+            </div>
+          )}
+
+          {leaders.goals[0] && (
+            <section className="section">
+              <LeaderHero l={leaders.goals[0]} label="Golden Boot leader" unit="goals" tint={meta.tint} onOpen={open} />
+            </section>
+          )}
+
+          {(leaders.goals.length > 0 || leaders.assists.length > 0) && (
+            <section className="section grid-2" style={{ alignItems: "start" }}>
+              <LeaderList title="Top scorers" list={leaders.goals} unit="Goals" onOpen={open} />
+              <LeaderList title="Top assists" list={leaders.assists} unit="Assists" onOpen={open} />
+            </section>
+          )}
+
+          {played.length >= 4 && (
+            <section className="section">
+              <div className="section-head">
+                <div>
+                  <h2 className="section-title">Attack vs defence</h2>
+                  <p className="muted" style={{ margin: "4px 0 0", fontSize: 14 }}>
+                    Goals scored and conceded per game. Top-right is where the best teams live.
+                  </p>
+                </div>
+              </div>
+              <div className="panel glass">
+                <Scatter rows={played} league={league} />
+              </div>
+            </section>
+          )}
+
+          {played.length >= 4 && (
+            <section className="section">
+              <div className="section-head">
+                <div>
+                  <h2 className="section-title">Goal difference</h2>
+                  <p className="muted" style={{ margin: "4px 0 0", fontSize: 14 }}>
+                    Every club, ranked by goals scored minus goals conceded.
+                  </p>
+                </div>
+              </div>
+              <div className="panel glass">
+                <GoalDiff rows={played} league={league} />
+              </div>
+            </section>
+          )}
+
+          {!played.length && !leaders.goals.length && (
+            <Empty icon={<IconStats />} title="No stats yet">
+              {meta.name} hasn’t played enough matches this season for analytics.
+            </Empty>
+          )}
+        </>
+      )}
+      {player && <PlayerSheet p={player} onClose={() => setPlayer(null)} />}
+    </div>
+  );
+}
+
+/* ---------------------------------------------------------- Leaders ---- */
+
+function LeaderHero({
+  l,
+  label,
+  unit,
+  tint,
+  onOpen,
+}: {
+  l: Leader;
+  label: string;
+  unit: string;
+  tint: string;
+  onOpen: (l: Leader) => void;
+}) {
+  const { info } = usePlayer(l.name, l.team.name);
+  const cut = tsdbSize(info?.cutout, "medium");
+  const photo = !cut ? tsdbSize(info?.photo, "medium") : null;
+  return (
+    <button className="leader-hero glass" style={{ width: "100%", textAlign: "left" }} onClick={() => onOpen(l)}>
+      <div
+        className="glow"
+        style={{ background: `radial-gradient(50% 60% at 85% 60%, ${tint}, transparent 70%), radial-gradient(40% 50% at 10% 10%, var(--series-1), transparent 70%)` }}
+      />
+      <div className="info">
+        <div>
+          <div className="rank">{label}</div>
+          <div className="pname">{l.name}</div>
+          <div className="team">
+            <Crest src={l.team.logo} size={22} alt="" />
+            {l.team.name}
+          </div>
+        </div>
+        <div className="value num">
+          {l.value}
+          <small>
+            {unit}
+            {l.matches ? ` in ${l.matches} games` : ""}
+          </small>
+        </div>
+      </div>
+      <div className="cut">
+        {cut ? (
+          <img src={cut} alt={l.name} />
+        ) : photo ? (
+          <img src={photo} alt={l.name} style={{ objectFit: "cover", borderRadius: "24px 0 0 0", height: "100%" }} />
+        ) : null}
+      </div>
+    </button>
+  );
+}
+
+function LeaderList({ title, list, unit, onOpen }: { title: string; list: Leader[]; unit: string; onOpen: (l: Leader) => void }) {
+  if (!list.length) return null;
+  const top = list.slice(0, 10);
+  const max = Math.max(...top.map((l) => l.value), 1);
+  return (
+    <div>
+      <div className="section-head">
+        <h2 className="section-title">{title}</h2>
+        <span className="subtle" style={{ fontSize: 13 }}>
+          {unit}
+        </span>
+      </div>
+      <div className="list glass">
+        {top.map((l, i) => (
+          <div
+            key={l.id}
+            className="bar-row"
+            role="button"
+            tabIndex={0}
+            style={{ cursor: "pointer" }}
+            onClick={() => onOpen(l)}
+            onKeyDown={(e) => e.key === "Enter" && onOpen(l)}
+          >
+            <span className="rk">{i + 1}</span>
+            <PlayerAvatar name={l.name} team={l.team.name} size={44} color="var(--series-1)" />
+            <div style={{ minWidth: 0 }}>
+              <div className="top">
+                <b>{l.name}</b>
+                <span className="val">{l.value}</span>
+              </div>
+              <div className="sub">
+                <Crest src={l.team.logo} size={14} alt="" />
+                {l.team.name}
+                {l.matches ? ` · ${l.matches} apps` : ""}
+              </div>
+              <div className="track">
+                <div style={{ width: `${(l.value / max) * 100}%` }} />
+              </div>
+            </div>
+          </div>
         ))}
       </div>
-      <svg
-        className="trend-chart"
-        viewBox="0 0 680 280"
-        role="img"
-        aria-labelledby="trend-title trend-desc"
-      >
-        <title id="trend-title">Cumulative points by completed match</title>
-        <desc id="trend-desc">
-          {lines
-            .map(
-              (l) =>
-                `${l.team.name}: ${l.values.at(-1)?.points ?? 0} points from ${l.values.length} recorded matches.`,
-            )
-            .join(" ")}{" "}
-          Exact values are available in the data table below.
-        </desc>
-        {[0, 0.25, 0.5, 0.75, 1].map((f) => (
-          <g key={f}>
-            <line
-              x1="38"
-              x2="665"
-              y1={240 - f * 210}
-              y2={240 - f * 210}
-              className="grid-line"
-            />
-            <text x="28" y={244 - f * 210} textAnchor="end">
-              {Math.round(max * f)}
+    </div>
+  );
+}
+
+/* ---------------------------------------------------------- Scatter ---- */
+
+const tick = (t: number) => t.toFixed(2).replace(/0$/, "");
+
+function Scatter({ rows, league }: { rows: TableRow[]; league: string }) {
+  const W = 760;
+  const H = 460;
+  const m = { t: 24, r: 24, b: 48, l: 52 };
+  const pts = rows.map((r) => ({ r, x: r.gf / r.gp, y: r.ga / r.gp }));
+  const xs = pts.map((p) => p.x);
+  const ys = pts.map((p) => p.y);
+  const pad = (lo: number, hi: number) => {
+    const span = Math.max(hi - lo, 0.5);
+    return [Math.max(0, lo - span * 0.12), hi + span * 0.12];
+  };
+  const [x0, x1] = pad(Math.min(...xs), Math.max(...xs));
+  const [y0, y1] = pad(Math.min(...ys), Math.max(...ys));
+  const sx = (v: number) => m.l + ((v - x0) / (x1 - x0)) * (W - m.l - m.r);
+  // Fewer goals conceded is better, so the y-axis runs low → high from the top.
+  const sy = (v: number) => m.t + ((v - y0) / (y1 - y0)) * (H - m.t - m.b);
+  const med = (a: number[]) => {
+    const s = [...a].sort((p, q) => p - q);
+    const k = Math.floor(s.length / 2);
+    return s.length % 2 ? s[k] : (s[k - 1] + s[k]) / 2;
+  };
+  const mx = med(xs);
+  const my = med(ys);
+  const ticks = (lo: number, hi: number) => {
+    const step = hi - lo > 2.4 ? 0.5 : hi - lo > 1.2 ? 0.25 : 0.2;
+    const out: number[] = [];
+    for (let v = Math.ceil(lo / step) * step; v <= hi + 1e-9; v += step) out.push(+v.toFixed(2));
+    return out;
+  };
+  const size = rows.length > 24 ? 22 : 28;
+  const [hover, setHover] = useState<number | null>(null);
+  const box = useRef<HTMLDivElement>(null);
+  const hp = hover != null ? pts[hover] : null;
+
+  return (
+    <div className="chart" ref={box} onPointerLeave={() => setHover(null)}>
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Scatter plot of goals scored per game against goals conceded per game">
+        {ticks(x0, x1).map((t) => (
+          <g key={`x${t}`}>
+            <line className="gridline" x1={sx(t)} x2={sx(t)} y1={m.t} y2={H - m.b} />
+            <text className="axis-label" x={sx(t)} y={H - m.b + 18} textAnchor="middle">
+              {tick(t)}
             </text>
           </g>
         ))}
-        {lines.map((l, i) => (
-          <polyline
-            key={l.team.id}
-            fill="none"
-            stroke={colors[i]}
-            strokeWidth="3"
-            strokeLinejoin="round"
-            points={[
-              [38, 240],
-              ...l.values.map((v) => [
-                38 + (v.round / games) * 627,
-                240 - (v.points / max) * 210,
-              ]),
-            ]
-              .map((p) => p.join(","))
-              .join(" ")}
-          />
+        {ticks(y0, y1).map((t) => (
+          <g key={`y${t}`}>
+            <line className="gridline" x1={m.l} x2={W - m.r} y1={sy(t)} y2={sy(t)} />
+            <text className="axis-label" x={m.l - 10} y={sy(t) + 4} textAnchor="end">
+              {tick(t)}
+            </text>
+          </g>
         ))}
-        <text x="38" y="267">
-          Start
+        <line className="median" x1={sx(mx)} x2={sx(mx)} y1={m.t} y2={H - m.b} />
+        <line className="median" x1={m.l} x2={W - m.r} y1={sy(my)} y2={sy(my)} />
+        <text className="quad" x={W - m.r - 8} y={m.t + 16} textAnchor="end">
+          Strong both ends
         </text>
-        <text x="665" y="267" textAnchor="end">
-          {games} recorded matches
+        <text className="quad" x={m.l + 8} y={m.t + 16}>
+          Hard to beat
         </text>
+        <text className="quad" x={W - m.r - 8} y={H - m.b - 10} textAnchor="end">
+          Open games
+        </text>
+        <text className="quad" x={m.l + 8} y={H - m.b - 10}>
+          Struggling
+        </text>
+        <text className="axis-title" x={(m.l + W - m.r) / 2} y={H - 6} textAnchor="middle">
+          Goals scored per game →
+        </text>
+        <text className="axis-title" transform={`translate(14 ${(m.t + H - m.b) / 2}) rotate(-90)`} textAnchor="middle">
+          ← Fewer conceded per game
+        </text>
+        {pts.map((p, i) => (
+          <Link
+            key={p.r.team.id}
+            to={`/team/${league}/${p.r.team.id}`}
+            onPointerEnter={() => setHover(i)}
+            onFocus={() => setHover(i)}
+            onBlur={() => setHover(null)}
+            aria-label={`${p.r.team.name}: ${p.x.toFixed(2)} scored, ${p.y.toFixed(2)} conceded per game`}
+          >
+            <circle className="dot-hit" cx={sx(p.x)} cy={sy(p.y)} r={18} />
+            <image
+              className={`crest-mark${hover === i ? " on" : hover != null ? " dim" : ""}`}
+              href={sized(p.r.team.logo, 64)}
+              x={sx(p.x) - size / 2}
+              y={sy(p.y) - size / 2}
+              width={size}
+              height={size}
+            />
+          </Link>
+        ))}
       </svg>
-      <details className="chart-data">
-        <summary>View accessible chart data</summary>
-        {lines.map((l) => (
-          <div key={l.team.id}>
-            <h3>{shortName(l.team.name)}</h3>
-            <table>
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Match</th>
-                  <th>Cumulative points</th>
-                </tr>
-              </thead>
-              <tbody>
-                {l.values.map((v) => (
-                  <tr key={v.round}>
-                    <td>{v.date}</td>
-                    <td>{v.round}</td>
-                    <td>{v.points}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+      {hp && (
+        <div
+          className="tooltip glass-strong"
+          style={{ left: `${(sx(hp.x) / W) * 100}%`, top: `${(sy(hp.y) / H) * 100}%` }}
+        >
+          <div className="tt-head">
+            <Crest src={hp.r.team.logo} size={20} alt="" />
+            {hp.r.team.name}
           </div>
-        ))}
+          <div className="tt-row">
+            Scored / game <b>{hp.x.toFixed(2)}</b>
+          </div>
+          <div className="tt-row">
+            Conceded / game <b>{hp.y.toFixed(2)}</b>
+          </div>
+          <div className="tt-row">
+            Points <b>{hp.r.pts}</b>
+          </div>
+        </div>
+      )}
+      <details style={{ marginTop: 10, fontSize: 13 }}>
+        <summary className="muted" style={{ cursor: "pointer" }}>
+          Show data table
+        </summary>
+        <table className="mini-table">
+          <thead>
+            <tr>
+              <th>Club</th>
+              <th>GP</th>
+              <th>GF / game</th>
+              <th>GA / game</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[...pts].sort((a, b) => b.x - a.x).map((p) => (
+              <tr key={p.r.team.id}>
+                <td>{p.r.team.name}</td>
+                <td>{p.r.gp}</td>
+                <td>{p.x.toFixed(2)}</td>
+                <td>{p.y.toFixed(2)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </details>
-    </>
+    </div>
   );
 }
-export default function Analytics() {
-  const { data } = useApp();
-  const [first, setFirst] = useState("");
-  const [second, setSecond] = useState("");
-  const [location, setLocation] = useState("all");
-  const rows = data?.standings ?? [];
-  const a = rows.find((r) => r.team.id === first) ?? rows[0];
-  const b =
-    rows.find((r) => r.team.id === second) ??
-    rows.find((r) => r.team.id !== a?.team.id);
-  const completed = data?.matches.filter((m) => m.status === "finished") ?? [];
-  const total = completed.reduce(
-    (s, m) => s + (m.score?.[0] ?? 0) + (m.score?.[1] ?? 0),
-    0,
-  );
-  const wins = completed.filter((m) => m.score![0] > m.score![1]).length,
-    draws = completed.filter((m) => m.score![0] === m.score![1]).length,
-    away = completed.length - wins - draws;
+
+/* ---------------------------------------------------- Goal difference -- */
+
+function GoalDiff({ rows, league }: { rows: TableRow[]; league: string }) {
+  const sorted = [...rows].sort((a, b) => b.gd - a.gd || b.gf - a.gf);
+  const max = Math.max(...sorted.map((r) => Math.abs(r.gd)), 1);
   return (
-    <>
-      <Title
-        eyebrow="FIND THE STORY IN THE NUMBERS"
-        title="Analytics studio"
-        description="Real results. Clear definitions. A deeper view of the season."
-      />
-      <DataGate>
-        <Metrics
-          items={[
-            { label: "Recorded games", value: completed.length },
-            { label: "Total goals", value: total },
-            {
-              label: "Goals per game",
-              value: completed.length
-                ? (total / completed.length).toFixed(2)
-                : "–",
-            },
-            {
-              label: "Draw rate",
-              value: completed.length
-                ? `${((draws / completed.length) * 100).toFixed(1)}%`
-                : "–",
-            },
-          ]}
-        />
-        {a && b ? (
-          <>
-            <SectionHead
-              title="Two clubs. One conversation."
-              subtitle="Compare results within the selected competition and season."
-            />
-            <div className="panel comparison">
-              <div className="compare-controls">
-                <label>
-                  First club
-                  <select
-                    aria-label="First comparison club"
-                    value={a.team.id}
-                    onChange={(e) => setFirst(e.target.value)}
-                  >
-                    {rows.map((r) => (
-                      <option key={r.team.id} value={r.team.id}>
-                        {shortName(r.team.name)}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <span>VS</span>
-                <label>
-                  Second club
-                  <select
-                    aria-label="Second comparison club"
-                    value={b.team.id}
-                    onChange={(e) => setSecond(e.target.value)}
-                  >
-                    {rows.map((r) => (
-                      <option key={r.team.id} value={r.team.id}>
-                        {shortName(r.team.name)}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label>
-                  Venue
-                  <select
-                    aria-label="Comparison venue"
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                  >
-                    <option value="all">Home & away</option>
-                    <option value="home">Home</option>
-                    <option value="away">Away</option>
-                  </select>
-                </label>
-              </div>
-              <div className="compare-head">
-                <span>
-                  <Crest team={a.team} />
-                  {shortName(a.team.name)}
-                </span>
-                <span>
-                  <Crest team={b.team} />
-                  {shortName(b.team.name)}
-                </span>
-              </div>
-              {[
-                "Recorded matches",
-                "Points",
-                "Goals scored",
-                "Goals conceded",
-                "Wins",
-              ].map((label, i) => {
-                const get = (id: string) => {
-                  const list = outcomes(completed, id).filter(
-                    (m) =>
-                      location === "all" || m.home === (location === "home"),
-                  );
-                  return [
-                    list.length,
-                    list.reduce((s, m) => s + m.points, 0),
-                    list.reduce((s, m) => s + m.gf, 0),
-                    list.reduce((s, m) => s + m.ga, 0),
-                    list.filter((m) => m.points === 3).length,
-                  ][i];
-                };
-                const av = get(a.team.id),
-                  bv = get(b.team.id),
-                  sum = av + bv;
-                return (
-                  <div className="compare-row" key={label}>
-                    <div>
-                      <strong>{av}</strong>
-                      <span>{label}</span>
-                      <strong>{bv}</strong>
-                    </div>
-                    <div className="compare-bar">
-                      <i style={{ width: `${sum ? (av / sum) * 100 : 50}%` }} />
-                      <i style={{ width: `${sum ? (bv / sum) * 100 : 50}%` }} />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-            <SectionHead
-              title="The points journey"
-              subtitle="Cumulative points, by each club’s recorded completed matches. All venues."
-            />
-            <div className="panel chart-panel">
-              <Trend matches={completed} teams={[a.team, b.team]} />
-            </div>
-          </>
-        ) : (
-          <Empty title="More results needed">
-            Club comparisons require two clubs in the selected dataset.
-          </Empty>
-        )}
-        <div className="two-column">
-          <section>
-            <SectionHead
-              title="How games are won"
-              subtitle="Match outcome distribution"
-            />
-            <div className="panel distribution">
-              {[
-                ["Home win", wins],
-                ["Draw", draws],
-                ["Away win", away],
-              ].map(([label, count], i) => (
-                <div className="distribution-row" key={label as string}>
-                  <div>
-                    <span>{label}</span>
-                    <strong>
-                      {completed.length
-                        ? `${((Number(count) / completed.length) * 100).toFixed(1)}%`
-                        : "–"}
-                      <small>{count} games</small>
-                    </strong>
-                  </div>
-                  <div className="distribution-bar">
-                    <i
-                      style={{
-                        width: `${completed.length ? (Number(count) / completed.length) * 100 : 0}%`,
-                        background: ["#ae8bff", "#7797bb", "#54c9ae"][i],
-                      }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-          <section>
-            <SectionHead
-              title="Attacking output"
-              subtitle="Total goals from recorded results"
-            />
-            <div className="panel goal-ranking">
-              {[...rows]
-                .sort((a, b) => b.gf - a.gf)
-                .slice(0, 6)
-                .map((r) => (
-                  <div key={r.team.id}>
-                    <Crest team={r.team} />
-                    <span>{shortName(r.team.name)}</span>
-                    <strong>{r.gf}</strong>
-                  </div>
-                ))}
-            </div>
-          </section>
-        </div>
-        <div className="methodology panel">
-          <h3>Measured, never imagined.</h3>
-          <p>
-            Every metric on this page is calculated from the recorded final
-            scores. Three points for a win, one for a draw. No predictions,
-            expected goals, shot maps or invented performance ratings are shown.
-            Records may be incomplete; calculated points exclude deductions.
-          </p>
-        </div>
-      </DataGate>
-    </>
+    <div role="list" aria-label="Goal difference by club">
+      <div style={{ display: "flex", gap: 16, fontSize: 12.5, marginBottom: 10 }} className="muted">
+        <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+          <i style={{ width: 10, height: 10, borderRadius: 3, background: "var(--series-1)" }} /> Positive
+        </span>
+        <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+          <i style={{ width: 10, height: 10, borderRadius: 3, background: "var(--series-neg)" }} /> Negative
+        </span>
+      </div>
+      {sorted.map((r, i) => {
+        const w = (Math.abs(r.gd) / max) * 46;
+        return (
+          <Link to={`/team/${league}/${r.team.id}`} key={r.team.id} className="gd-row" role="listitem" title={`${r.team.name}: ${r.gd > 0 ? "+" : ""}${r.gd}`}>
+            <span className="subtle num" style={{ textAlign: "right" }}>
+              {i + 1}
+            </span>
+            <span className="nm">
+              <Crest src={r.team.logo} size={18} alt="" />
+              <span>{r.team.short}</span>
+            </span>
+            <span className="gd-bar">
+              <span className="zero" />
+              {r.gd !== 0 && <span className={`b ${r.gd > 0 ? "pos" : "neg"}`} style={{ width: `${w}%` }} />}
+              <span
+                className="t num"
+                style={
+                  r.gd >= 0
+                    ? { left: `calc(50% + ${w}% + 6px)` }
+                    : { right: `calc(50% + ${w}% + 6px)` }
+                }
+              >
+                {r.gd > 0 ? `+${r.gd}` : r.gd}
+              </span>
+            </span>
+          </Link>
+        );
+      })}
+    </div>
   );
 }

@@ -1,81 +1,48 @@
-# Football Scores
+# Pitch — Football, beautifully
 
-A mobile-first football dashboard with original glass surfaces, carefully tuned typography and honest football data. React 19, TypeScript, Vite, TanStack Query, React Router, Radix Dialog and Lucide. No account, paid database or API key is required for the default experience.
+Live football scores, lineups, tables and analytics in a glassy, Apple-inspired interface. Built for phones first, and just as good on a desktop.
 
-## Run
+**Competitions:** Premier League · LaLiga · Serie A · Bundesliga · Ligue 1 · Champions League · Europa League · MLS · Eredivisie · Liga Portugal · Indian Super League
+
+## Features
+
+- **Scores:** a date strip with match-day markers, a featured match hero, live minute and pulse, goal scorers and red cards, and 30-second auto-refresh.
+- **Match centre:** a timeline (goals, assists, cards, subs), recent form, venue and referee, possession and 16 head-to-head stats, lineups on a pitch with real player photos, and the league table with both clubs highlighted.
+- **Tables:** every competition with qualification and relegation zones; MLS conferences and the UCL league phase are supported.
+- **Stats:** league KPIs, the Golden Boot leader with a player cutout, top scorers and assists, an attack-vs-defence scatter of club crests, and a goal-difference chart.
+- **Clubs:** a hero with real club photography, season tiles, fixtures and results, and the full squad with photos, ages and nationalities.
+- **Player cards:** photo, age, nation, height, shirt number, a per-competition season breakdown, and a short bio.
+- **News:** the latest stories with photography for each league.
+- **Design:** frosted glass, ambient light, spring motion, light and dark themes (automatic or manual), safe-area aware, honours `prefers-reduced-motion`.
+
+## Data and imagery
+
+| What | Source |
+|---|---|
+| Scores, events, lineups, stats, tables, news, club crests, league logos, flags | ESPN public site API (`site.api.espn.com`) |
+| Player cutouts and photos, club fan art, stadium photos | TheSportsDB (free tier) |
+| Player photo fallback | Wikipedia / Wikimedia Commons |
+
+All third-party calls go through the Cloudflare Worker in [`worker/index.ts`](worker/index.ts). It allow-lists ESPN paths, normalises and merges scoreboards, trims heavy payloads, and caches at three levels: isolate memory, the Cache API, and Workers KV for player and club lookups. That last cache keeps the site well inside TheSportsDB's rate limit.
+
+## Stack
+
+- React 18 + TypeScript + Vite
+- No UI framework, just a hand-built design system in [`src/styles/global.css`](src/styles/global.css)
+- Cloudflare Workers with static assets and a KV namespace (`PITCH_CACHE`)
+
+## Develop
 
 ```bash
-npm ci
-npm run dev
+npm install
+npm run build && npx wrangler dev   # app + API on http://127.0.0.1:8787
+# or, for hot reload: run `npx wrangler dev` and `npm run dev` side by side (Vite proxies /api)
 ```
-
-Open http://localhost:4173. Node.js 22+ is recommended. `npm run dev` includes the shared API middleware; plain `vite preview` serves only the frontend and will use labelled saved snapshots when API routes are absent.
-
-## Included
-
-- Current and two historical seasons for Premier League, La Liga, Bundesliga, Serie A and Ligue 1.
-- Score calendar, status/date/saved filters, season explorer and full match deep links.
-- Match scoreboards, available half-time scores, selected-season H2H and team form.
-- Calculated standings with sorting and responsive columns.
-- Club profiles, recorded season totals and home/away splits.
-- Analytics: club comparisons, venue filters, cumulative-points charts, outcome distribution and attacking output. Accessible chart data tables are included.
-- Global search for clubs, competitions and recorded matches, plus TheSportsDB player name lookup and directory profiles.
-- Persistent favourites across competitions and seasons, recent searches and three appearance settings (system, dark, light).
-- Floating mobile navigation, accessible full-screen mobile search, reduced-motion support, route splitting, locally hosted Inter font and installable PWA shell.
-- Shared Web API server code, separate Cloudflare Worker and Vercel Edge adapters, API validation, timeout/retry, request deduplication and caching.
-- Timestamped genuine data snapshots for outage fallback. An outage snapshot is explicitly labelled; it is never represented as a live response.
-
-## Coverage is deliberately honest
-
-The default OpenFootball source is community-maintained and **has no live feed**. Tables are calculated from recorded results and are **not official tables**: point deductions and competition-specific tie-breaks are excluded. Source dates and latest recorded results are visible. Unverified kickoff times are omitted.
-
-The optional football-data.org free provider supplies **delayed scores**, not real-time live scores. Enable it by configuring all three server secrets in `.env.example`. A shared Redis budget caps upstream calls to eight in a rolling minute across platforms. Without its distributed budget the provider remains disabled. OpenFootball continues to work without Redis.
-
-Free data does not supply all match events, lineups, shot statistics, career statistics or xG. Those features are omitted or clearly marked unavailable. TheSportsDB returns a limited player-directory lookup; it is not a career statistics service. Europa League, international competitions and competitions without verified data are not advertised.
-
-Club initials and the pitch illustration are original fallback graphics. API access does not grant rights to third-party club crests or player photographs, so unverified images are excluded. See [data and attribution](docs/DATA.md).
 
 ## Deploy
 
-- [Cloudflare Workers / Pages and Vercel instructions](docs/DEPLOYMENT.md)
-- [API contracts and cache behavior](docs/API.md)
-- [Sources, licensing, definitions and limitations](docs/DATA.md)
-- [Validation evidence](docs/QA.md)
-
 ```bash
-npm run build:cloudflare  # TypeScript + Vite + Wrangler dry-run
-npm run build:vercel      # TypeScript + Vite + Build Output API package
+npm run deploy   # vite build + wrangler deploy
 ```
 
-Both are build checks, not deployments. To deploy to Cloudflare after login: `npx wrangler deploy`. To deploy to Vercel: import this GitHub repository as a Vite project, or use Vercel CLI. Production credentials and project access must be configured in your own hosting account.
-
-## Checks
-
-```bash
-npm run lint
-npm run typecheck
-npm run test
-npx playwright install --with-deps chromium
-npm run test:e2e
-npm audit --omit=dev
-```
-
-Playwright uses actual checked-in OpenFootball snapshots for deterministic UI checks. Unit tests normalize all 15 downloaded files and verify record counts, scores, standings invariants, error boundaries and provider contracts. Browser tests cover the core routes in both themes at 320, 375, 390, 430, 768, 1024 and 1440px, plus search, favourites, dates, filters, player lookup, fallback, accessible charts and axe accessibility checks. `CHROMIUM_PATH` can select an existing compatible Chromium executable. `BASE_URL` can select an existing test server. Screenshots and machine-readable results go to ignored `artifacts/`.
-
-To refresh fallback snapshots, run `node scripts/sync-data.mjs`, review the source changes and commit the timestamped records. The live community provider is separately cached for one hour. Do not run the sync script as an unreviewed production build hook.
-
-## Structure
-
-```text
-src/             React pages, design system, query and device state
-shared/          Normalized types, validation and result calculations
-server/          Provider adapters, request budgets, cache and API handler
-worker/          Cloudflare Workers adapter
-api/             Vercel Edge adapter
-public/data/     Timestamped genuine OpenFootball snapshots
-scripts/         Snapshot sync and Vercel packaging
-tests/           Data/API tests and Playwright tests
-docs/            Deployment, attribution, contracts and QA
-```
-
-Code is MIT licensed. Data and font licences remain separate. No performance score or live deployment is claimed without measurement or verified publication.
+Logos, crests and photographs are the property of their respective owners and are used here for identification.

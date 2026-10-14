@@ -1,12 +1,6 @@
-node_modules/
-dist/
-.worker-build/
-.vercel/
-.wrangler/
-.env
-.env.*
-!.env.example
+node_modules
+dist
+.wrangler
 .dev.vars
-playwright-report/
-test-results/
-artifacts/
+*.log
+.DS_Store
