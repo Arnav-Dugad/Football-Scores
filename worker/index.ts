@@ -101,7 +101,8 @@ async function api(request: Request, env: Env, ctx: ExecutionContext): Promise<R
   const m = /^\/api\/(season|people|shots|h2h|match)\/([a-z0-9._]+)$/.exec(p);
   if (m) {
     const slug = m[2];
-    if (!LEAGUE_RE.test(slug)) return json({ error: "league" }, 0, 400);
+    // Only known competitions get a Durable Object (and a background sync).
+    if (!LEAGUES.includes(slug)) return json({ error: "unknown league" }, 0, 404);
     const stub = league(env, slug);
     switch (m[1]) {
       case "season":

@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { darkVariant, sized } from "../lib/api";
+import { t } from "../i18n";
 import { initials, onColor } from "../lib/format";
 import { useInView, usePlayer, useTheme } from "../lib/hooks";
 import { leagueLogo } from "../lib/leagues";
@@ -151,7 +152,7 @@ export function FormDots({ form, max = 5 }: { form: string; max?: number }) {
   const letters = form.replace(/[^WDL]/g, "").slice(-max).split("");
   if (!letters.length) return null;
   return (
-    <span className="form-dots" aria-label={`Form: ${letters.join(" ")}`}>
+    <span className="form-dots" aria-label={t("Form: {form}", { form: letters.join(" ") })}>
       {letters.map((l, i) => (
         <span key={i} className={`form-dot ${l}`}>
           {l}
@@ -178,7 +179,7 @@ export function Sheet({ onClose, children, label }: { onClose: () => void; child
     <div className="sheet-backdrop" onClick={onClose}>
       <div className="sheet glass-strong" role="dialog" aria-modal="true" aria-label={label} onClick={(e) => e.stopPropagation()}>
         <span className="grabber" />
-        <button className="sheet-close" onClick={onClose} aria-label="Close">
+        <button className="sheet-close" onClick={onClose} aria-label={t("Close")}>
           <IconClose />
         </button>
         {children}
@@ -218,11 +219,11 @@ export function SkeletonGrid({ n = 6, h = 132 }: { n?: number; h?: number }) {
 export function ErrorState({ onRetry }: { onRetry?: () => void }) {
   return (
     <div className="empty glass">
-      <h3>Couldn’t load this right now</h3>
-      <p>The data provider didn’t respond. Check your connection and try again.</p>
+      <h3>{t("Couldn’t load this right now")}</h3>
+      <p>{t("The data provider didn’t respond. Check your connection and try again.")}</p>
       {onRetry && (
         <button className="btn" onClick={onRetry}>
-          Try again
+          {t("Try again")}
         </button>
       )}
     </div>

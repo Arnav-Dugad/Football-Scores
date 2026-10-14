@@ -62,6 +62,7 @@ export const endpoints = {
   results: (league: string, id: string) => `/api/espn/site/${league}/teams/${id}/schedule`,
   fixtures: (league: string, id: string) => `/api/espn/site/${league}/teams/${id}/schedule?fixture=true`,
   athlete: (league: string, id: string) => `/api/espn/web/${league}/athletes/${id}/overview`,
+  athleteBio: (league: string, id: string) => `/api/espn/web/${league}/athletes/${id}`,
   player: (name: string, team?: string, full = false) =>
     `/api/player?name=${encodeURIComponent(name)}${team ? `&team=${encodeURIComponent(team)}` : ""}${full ? "&full=1" : ""}`,
   teamInfo: (id: string, name: string) => `/api/team?id=${id}&name=${encodeURIComponent(name)}`,
