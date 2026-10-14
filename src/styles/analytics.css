@@ -220,6 +220,29 @@
   margin: 0 0 6px;
   display: flex;
   pointer-events: none;
+  isolation: isolate;
+}
+/* Once stuck, a full-width frosted band sits behind the pills so content scrolls cleanly beneath. */
+.an-nav::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: calc(var(--an-subnav-top) * -1);
+  bottom: -16px;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  -webkit-backdrop-filter: saturate(180%) blur(28px);
+  backdrop-filter: saturate(180%) blur(28px);
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 16px), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 16px), transparent);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+  pointer-events: none;
+}
+.an-nav.stuck::before {
+  opacity: 1;
 }
 .an-nav-inner {
   pointer-events: auto;
