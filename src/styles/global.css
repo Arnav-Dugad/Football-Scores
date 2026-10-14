@@ -2384,6 +2384,8 @@ table.standings {
   position: fixed;
   inset: 0;
   z-index: 100;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
   background: rgba(0, 0, 0, 0.35);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
@@ -2410,6 +2412,7 @@ table.standings {
 @media (max-width: 640px) {
   .sheet-backdrop {
     place-items: end stretch;
+    justify-items: stretch;
     padding: 0;
   }
   .sheet {

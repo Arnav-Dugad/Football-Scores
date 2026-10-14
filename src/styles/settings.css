@@ -382,6 +382,8 @@
   inset: 0;
   z-index: 150;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
   place-items: center;
   padding: 20px;
   background: rgba(0, 0, 0, 0.42);
@@ -403,6 +405,7 @@
   .onboard-backdrop {
     padding: 0;
     place-items: end stretch;
+    justify-items: stretch;
   }
   .onboard {
     width: 100%;
