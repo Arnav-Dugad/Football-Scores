@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Analytics from "./pages/Analytics";
 import Compare from "./pages/Compare";
+import Digest from "./pages/Digest";
+import Rivalry from "./pages/Rivalry";
 import Insights from "./pages/Insights";
 import Leagues from "./pages/Leagues";
 import MatchPage from "./pages/Match";
@@ -33,6 +35,8 @@ export const router = createBrowserRouter([
       { path: "stadium/:league/:id", element: <Stadium /> },
       { path: "player/:league/:id", element: <Player /> },
       { path: "compare", element: <Compare /> },
+      { path: "digest", element: <Digest /> },
+      { path: "rivalry/:league/:a/:b", element: <Rivalry /> },
       { path: "news", element: <News /> },
       { path: "news/:league", element: <News /> },
       { path: "settings", element: <SettingsPage /> },

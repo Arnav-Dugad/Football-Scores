@@ -14,6 +14,7 @@ import { CrestScatter } from "../charts/Scatter";
 import { IconStats } from "../Icons";
 import { Crest, Empty, PlayerAvatar, Segmented, Skeleton, tsdbSize } from "../ui";
 import { PartialNote } from "./chrome";
+import { StorySoFar } from "./StorySoFar";
 import { derive, teamOf, type LeagueData } from "./data";
 import { xgReliable } from "./scope";
 
@@ -68,6 +69,8 @@ export function Overview({ data }: { data: LeagueData }) {
   return (
     <>
       <Kpis clubs={clubs} teams={teams} league={league} />
+
+      <StorySoFar season={season} teams={teams} league={league} />
 
       {leaders.goals[0] && (
         <section className="section">

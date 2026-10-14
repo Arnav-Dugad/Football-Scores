@@ -6,6 +6,8 @@ export interface League {
   logoId: number;
   /** Table zones are labelled by ESPN; this is just for the stats hero tint. */
   tint: string;
+  /** Knockout cups have no league table or season analytics. */
+  kind?: "league" | "cup";
 }
 
 export const LEAGUES: League[] = [
@@ -20,7 +22,18 @@ export const LEAGUES: League[] = [
   { slug: "ned.1", name: "Eredivisie", short: "Eredivisie", region: "Netherlands", logoId: 11, tint: "#e30613" },
   { slug: "por.1", name: "Liga Portugal", short: "Liga Portugal", region: "Portugal", logoId: 14, tint: "#00a859" },
   { slug: "ind.1", name: "Indian Super League", short: "ISL", region: "India", logoId: 2334, tint: "#e94e1b" },
+  { slug: "ksa.1", name: "Saudi Pro League", short: "Saudi Pro League", region: "Saudi Arabia", logoId: 2488, tint: "#0a7a3b" },
+  { slug: "mex.1", name: "Liga MX", short: "Liga MX", region: "Mexico", logoId: 22, tint: "#1d1d1b" },
+  { slug: "aus.1", name: "A-League Men", short: "A-League", region: "Australia", logoId: 1308, tint: "#e1251b" },
+  { slug: "eng.fa", name: "FA Cup", short: "FA Cup", region: "England", logoId: 40, tint: "#1b3f8f", kind: "cup" },
+  { slug: "esp.copa_del_rey", name: "Copa del Rey", short: "Copa del Rey", region: "Spain", logoId: 80, tint: "#c8102e", kind: "cup" },
+  { slug: "ita.coppa_italia", name: "Coppa Italia", short: "Coppa Italia", region: "Italy", logoId: 2192, tint: "#0067b1", kind: "cup" },
+  { slug: "ger.dfb_pokal", name: "DFB-Pokal", short: "DFB-Pokal", region: "Germany", logoId: 2061, tint: "#5b5b5b", kind: "cup" },
 ];
+
+/** Competitions with a league table (tables, stats, projections, club pickers). */
+export const TABLE_LEAGUES = LEAGUES.filter((l) => l.kind !== "cup");
+export const isCup = (slug: string) => LEAGUE_BY_SLUG[slug]?.kind === "cup";
 
 export const LEAGUE_BY_SLUG = Object.fromEntries(LEAGUES.map((l) => [l.slug, l])) as Record<string, League>;
 

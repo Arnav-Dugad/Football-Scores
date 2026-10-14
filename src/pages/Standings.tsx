@@ -13,7 +13,7 @@ import { t, tn } from "../i18n";
 import { table, teamXg } from "../lib/analytics";
 import { endpoints } from "../lib/api";
 import { useApi, useDocumentTitle, useStored } from "../lib/hooks";
-import { DEFAULT_LEAGUE, LEAGUES, LEAGUE_BY_SLUG, leagueLogo } from "../lib/leagues";
+import { DEFAULT_LEAGUE, LEAGUES, LEAGUE_BY_SLUG, TABLE_LEAGUES, leagueLogo } from "../lib/leagues";
 
 export function LeaguePicker({ value, base, keepSearch }: { value: string; base: string; keepSearch?: boolean }) {
   const nav = useNavigate();
@@ -21,7 +21,7 @@ export function LeaguePicker({ value, base, keepSearch }: { value: string; base:
   const [, setLast] = useStored<string>("pitch.league", DEFAULT_LEAGUE);
   return (
     <div className="chips" style={{ marginBottom: 22 }} role="group" aria-label={t("Competition")}>
-      {LEAGUES.map((l) => (
+      {(base === "/news" ? LEAGUES : TABLE_LEAGUES).map((l) => (
         <button
           key={l.slug}
           type="button"
@@ -44,8 +44,11 @@ export function LeaguePicker({ value, base, keepSearch }: { value: string; base:
 
 export function useLeagueParam(): string {
   const { league } = useParams();
+  const { pathname } = useLocation();
   const [last] = useStored<string>("pitch.league", DEFAULT_LEAGUE);
-  return league && LEAGUE_BY_SLUG[league] ? league : LEAGUE_BY_SLUG[last] ? last : DEFAULT_LEAGUE;
+  // Cups have news but no table or season analytics.
+  const ok = (slug: string | undefined) => !!slug && !!LEAGUE_BY_SLUG[slug] && (pathname.startsWith("/news") || LEAGUE_BY_SLUG[slug].kind !== "cup");
+  return ok(league) ? league! : ok(last) ? last : DEFAULT_LEAGUE;
 }
 
 type View = "overall" | "form" | "home" | "away" | "xg";

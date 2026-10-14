@@ -48,6 +48,7 @@ import { useApi, useDocumentTitle } from "../lib/hooks";
 import { onPatch } from "../lib/live";
 import { useSeason } from "../lib/season";
 import { useSwipe } from "../lib/gestures";
+import { Highlights, LiveWinProb, ProjectedLineups, parseClips, useProjectedLineups } from "../components/matchcentre/Extras";
 
 type Tab = "summary" | "commentary" | "stats" | "shots" | "lineups" | "h2h" | "table";
 const ORDER: Tab[] = ["summary", "commentary", "stats", "shots", "lineups", "h2h", "table"];
@@ -111,6 +112,7 @@ export default function MatchPage() {
         ((raw.header?.competitions?.[0]?.competitors ?? []) as any[]).map((c) => [String(c?.team?.id ?? ""), String(c?.form || c?.team?.form || "")]),
       ) as Record<string, string>,
       narrative: plays.filter((p) => p.kind !== "start" && p.kind !== "end" && !/lineups are announced/i.test(p.text)).length,
+      clips: parseClips(raw),
     };
   }, [current, raw]);
 
@@ -177,17 +179,19 @@ export default function MatchPage() {
   const venue = useVenueContext(current, x?.country ?? "", { backdrop: isLive });
 
   const hasLineups = !!current && current.lineups.some((l) => l.players.some((p) => p.starter));
+  const proj = useProjectedLineups(league, m?.home ?? null, m?.away ?? null, !!m && m.state === "pre" && !hasLineups);
+  const hasProjected = !hasLineups && !!(proj.home || proj.away);
   const tabs: TabDef<Tab>[] = useMemo(() => {
     if (!current || !x) return [];
     const list: TabDef<Tab>[] = [{ value: "summary", label: t("Summary") }];
     if (x.narrative > 0) list.push({ value: "commentary", label: t("Commentary"), badge: isLive ? t("Live") : null });
     if (current.match.state !== "pre" && hasTeamStats(current)) list.push({ value: "stats", label: t("Stats") });
     if (x.shots.length || x.plays.some((p) => p.x !== null && p.side)) list.push({ value: "shots", label: t("Shots") });
-    if (hasLineups) list.push({ value: "lineups", label: t("Lineups") });
+    if (hasLineups || hasProjected) list.push({ value: "lineups", label: t("Lineups"), badge: hasProjected ? t("Projected") : null });
     if (games.length) list.push({ value: "h2h", label: t("H2H") });
     if (x.hasStandings) list.push({ value: "table", label: t("Table") });
     return list;
-  }, [current, x, isLive, hasLineups, games.length]);
+  }, [current, x, isLive, hasLineups, hasProjected, games.length]);
   const tab: Tab = tabs.some((tb) => tb.value === tabState) ? tabState : "summary";
 
   const go = (next: Tab) => {
@@ -270,7 +274,12 @@ export default function MatchPage() {
               {tab === "commentary" && <Commentary plays={x.plays} m={m} />}
               {tab === "stats" && <StatsTab s={current} shots={x.shots} />}
               {tab === "shots" && <ShotsTab m={m} shots={x.shots} plays={x.plays} axis={x.axis} />}
-              {tab === "lineups" && <LineupsTab s={current} subs={x.subs} onPick={pick} />}
+              {tab === "lineups" &&
+                (hasLineups ? (
+                  <LineupsTab s={current} subs={x.subs} onPick={pick} />
+                ) : (
+                  <ProjectedLineups home={m.home} away={m.away} hl={proj.home} al={proj.away} onPick={pick} />
+                ))}
               {tab === "h2h" && <H2HTab m={m} games={games} />}
               {tab === "table" && <MatchTable league={league} ids={[m.home.id, m.away.id]} />}
             </div>
@@ -311,6 +320,7 @@ function SummaryTab({
     kicks: ReturnType<typeof parseShootout>;
     ratings: ReturnType<typeof rate>;
     referee: string | null;
+    clips: ReturnType<typeof parseClips>;
   };
   probs: Probs | null;
   venue: ReturnType<typeof useVenueContext>;
@@ -342,6 +352,7 @@ function SummaryTab({
 
   return (
     <div className="mc-summary">
+      <LiveWinProb s={s} pre={probs} />
       {(showPotm || x.kicks.length > 0) && (
         <div className={x.kicks.length > 0 && showPotm ? "mc-grid-2" : ""}>
           {showPotm && <PotmCard r={top} s={s} live={m.state === "in"} onOpen={() => onPickRated(top.player)} />}
@@ -357,6 +368,7 @@ function SummaryTab({
           <Watch s={s} />
         </div>
       </div>
+      <Highlights clips={x.clips} />
     </div>
   );
 }

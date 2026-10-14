@@ -1,3 +1,4 @@
+import { derbiesOf, rivalryHref } from "../../lib/rivals";
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { t } from "../../i18n";
@@ -72,6 +73,20 @@ export function ClubInfo({
             )}
             {about.length > 0 && <p className="subtle cl-foot">{t("Source: TheSportsDB")}</p>}
           </section>
+          {derbiesOf(teamId).length > 0 && (
+            <section className="panel glass" aria-labelledby="cl-rivals">
+              <p className="panel-title" id="cl-rivals">
+                {t("Rivalries")}
+              </p>
+              <div className="cl-rivals">
+                {derbiesOf(teamId).map((d) => (
+                  <Link key={d.name} to={rivalryHref(d.league, teamId, d.a === teamId ? d.b : d.a)} className="chip text-only">
+                    {t(d.name)}
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
           <section className="panel glass" aria-labelledby="cl-facts">
             <p className="panel-title" id="cl-facts">
               {t("Club facts")}

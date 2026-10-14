@@ -111,7 +111,7 @@ function pageItems(): Item[] {
 const loaded = new Map<string, { data: unknown; at: number }>();
 const FRESH = 10 * 60_000;
 
-const DOMESTIC_FIRST = [...LEAGUES].sort((a, b) => Number(a.slug.startsWith("uefa.")) - Number(b.slug.startsWith("uefa.")));
+const DOMESTIC_FIRST = [...LEAGUES].filter((l) => l.kind !== "cup").sort((a, b) => Number(a.slug.startsWith("uefa.")) - Number(b.slug.startsWith("uefa.")));
 
 function Loader({ path, onData }: { path: string; onData: (p: string, d: unknown) => void }) {
   const q = useApi<unknown>(path);

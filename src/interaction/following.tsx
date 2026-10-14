@@ -24,6 +24,10 @@ export function YourClubs({ matches, teams, featuredId }: { matches: Match[]; te
           <IconStarFill />
         </span>
         <h2 id="yours-title">{t("Your clubs")}</h2>
+        <Link to="/digest" className="link">
+          {t("Your digest")}
+          <IconChevronRight width={14} height={14} />
+        </Link>
         <Link to="/settings" className="link">
           {t("Edit")}
           <IconChevronRight width={14} height={14} />

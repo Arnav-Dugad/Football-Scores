@@ -1,3 +1,4 @@
+import { derbyFor, rivalryHref } from "../../lib/rivals";
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { t, tn } from "../../i18n";
@@ -63,9 +64,15 @@ export function H2HTab({ m, games }: { m: Match; games: H2HGame[] }) {
   return (
     <div className="mc-h2h" ref={ref}>
       <section className="panel glass mc-h2h-sum" aria-labelledby="mc-h2h-t">
-        <p className="panel-title" id="mc-h2h-t">
-          {tn(rec.n, "Last {n} meeting", "Last {n} meetings")}
-        </p>
+        <div className="mc-h2h-headrow">
+          <p className="panel-title" id="mc-h2h-t">
+            {tn(rec.n, "Last {n} meeting", "Last {n} meetings")}
+          </p>
+          <Link to={rivalryHref(m.league.slug, m.home.id, m.away.id)} className="link">
+            {derbyFor(m.home.id, m.away.id) ? t(derbyFor(m.home.id, m.away.id)!.name) : t("Rivalry page")}
+            <IconChevronRight width={14} height={14} />
+          </Link>
+        </div>
         <div className="mc-h2h-tiles">
           <div className="mc-h2h-tile">
             <Crest src={m.home.logo} size={40} alt="" />

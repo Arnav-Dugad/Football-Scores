@@ -9,6 +9,9 @@
   "{a} vs {b}": [
     "src/pages/Compare.tsx"
   ],
+  "{a} wins, {d} draws, {b} wins": [
+    "src/pages/Rivalry.tsx"
+  ],
   "{apps} appearances, {g} goals, {a} assists": [
     "src/components/club/Squad.tsx"
   ],
@@ -82,7 +85,8 @@
   "{home} v {away}": [
     "src/components/match.tsx",
     "src/interaction/peek.tsx",
-    "src/pages/Match.tsx"
+    "src/pages/Match.tsx",
+    "src/pages/Rivalry.tsx"
   ],
   "{home} won {w}, {d} drawn, {away} won {l}": [
     "src/components/matchcentre/H2H.tsx"
@@ -141,6 +145,12 @@
   "{n} attendance": [
     "src/pages/Stadium.tsx"
   ],
+  "{n} draw in a row": [
+    "src/pages/Rivalry.tsx"
+  ],
+  "{n} draws in a row": [
+    "src/pages/Rivalry.tsx"
+  ],
   "{n} fewer goals than xG": [
     "src/components/player/Tiles.tsx"
   ],
@@ -165,6 +175,12 @@
   ],
   "{n} goals below expected from these chances.": [
     "src/components/player/ShotMap.tsx"
+  ],
+  "{n} league meeting since {date}": [
+    "src/pages/Rivalry.tsx"
+  ],
+  "{n} league meetings since {date}": [
+    "src/pages/Rivalry.tsx"
   ],
   "{n} live": [
     "src/pages/Scores.tsx",
@@ -290,6 +306,9 @@
   "{name}, {team}: {g} goals, {a} assists": [
     "src/components/charts/Scatter.tsx"
   ],
+  "{now} per game this season, {then} last season": [
+    "src/components/league/StorySoFar.tsx"
+  ],
   "{opp}, {date}: {g} goals, {a} assists. Open match": [
     "src/components/player/FormChart.tsx"
   ],
@@ -308,6 +327,12 @@
   "{pct} win rate": [
     "src/components/club/Overview.tsx"
   ],
+  "{player} has {n} goal": [
+    "src/components/league/StorySoFar.tsx"
+  ],
+  "{player} has {n} goals": [
+    "src/components/league/StorySoFar.tsx"
+  ],
   "{ppg} per game": [
     "src/components/club/Stats.tsx"
   ],
@@ -323,6 +348,9 @@
   "{result} {score} against {team} ({where}), {when}": [
     "src/components/club/ui.tsx"
   ],
+  "{score} · {date} · {p} chance before kick-off": [
+    "src/components/league/StorySoFar.tsx"
+  ],
   "{season} season": [
     "src/components/club/ClubInfo.tsx"
   ],
@@ -335,8 +363,23 @@
   "{team} ({where}), {when}, postponed": [
     "src/components/club/ui.tsx"
   ],
+  "{team} are unbeaten in {n}": [
+    "src/components/league/StorySoFar.tsx"
+  ],
+  "{team} are up {x} points a game": [
+    "src/components/league/StorySoFar.tsx"
+  ],
   "{team} had {pct} of the pressure": [
     "src/components/matchcentre/Momentum.tsx"
+  ],
+  "{team} have conceded {n} goal": [
+    "src/components/league/StorySoFar.tsx"
+  ],
+  "{team} have conceded {n} goals": [
+    "src/components/league/StorySoFar.tsx"
+  ],
+  "{team} have won {n} in a row": [
+    "src/components/league/StorySoFar.tsx"
   ],
   "{team} penalties": [
     "src/components/matchcentre/Summary.tsx"
@@ -350,14 +393,24 @@
   "{team} substitutes": [
     "src/components/lineup.tsx"
   ],
+  "{team} unbeaten in {n}": [
+    "src/pages/Rivalry.tsx"
+  ],
   "{team} win": [
     "src/components/matchcentre/H2H.tsx"
   ],
   "{team} wins": [
-    "src/components/matchcentre/H2H.tsx"
+    "src/components/matchcentre/H2H.tsx",
+    "src/pages/Rivalry.tsx"
+  ],
+  "{team} without a win in {n}": [
+    "src/components/league/StorySoFar.tsx"
   ],
   "{team}: {on} on target, {off} off target, {blocked} blocked": [
     "src/components/matchcentre/Stats.tsx"
+  ],
+  "{team}: last XI vs {opponent}, {date}": [
+    "src/components/matchcentre/Extras.tsx"
   ],
   "{time} local": [
     "src/components/matchcentre/Hero.tsx"
@@ -367,6 +420,9 @@
   ],
   "{v} per start": [
     "src/components/league/PlayersView.tsx"
+  ],
+  "{winner} stunned {loser}": [
+    "src/components/league/StorySoFar.tsx"
   ],
   "{y} yellow, {r} red": [
     "src/components/club/Stats.tsx",
@@ -525,6 +581,7 @@
   "at": [
     "src/components/charts/Grids.tsx",
     "src/components/player/Hero.tsx",
+    "src/pages/Digest.tsx",
     "src/pages/Widget.tsx"
   ],
   "at {team}": [
@@ -625,6 +682,7 @@
     "src/components/Onboarding.tsx",
     "src/pages/Match.tsx",
     "src/pages/Player.tsx",
+    "src/pages/Rivalry.tsx",
     "src/pages/Stadium.tsx",
     "src/pages/Team.tsx"
   ],
@@ -643,6 +701,9 @@
   "Based in": [
     "src/components/club/ClubInfo.tsx"
   ],
+  "Based on each club’s most recent starting XI. Official lineups appear about an hour before kick-off.": [
+    "src/components/matchcentre/Extras.tsx"
+  ],
   "Based on matches synced so far ({pct}).": [
     "src/components/matchcentre/Summary.tsx"
   ],
@@ -660,6 +721,12 @@
   ],
   "Big chances": [
     "src/components/player/ShotMap.tsx"
+  ],
+  "Biggest {team} win": [
+    "src/pages/Rivalry.tsx"
+  ],
+  "Biggest upset": [
+    "src/components/league/StorySoFar.tsx"
   ],
   "Biggest wins": [
     "src/components/club/Stats.tsx"
@@ -841,6 +908,7 @@
     "src/pages/Compare.tsx"
   ],
   "Choose your clubs": [
+    "src/pages/Digest.tsx",
     "src/pages/Settings.tsx"
   ],
   "Choose your country in Settings to see broadcasters near you.": [
@@ -1025,6 +1093,9 @@
   "Current club": [
     "src/components/player/Career.tsx"
   ],
+  "Current run": [
+    "src/pages/Rivalry.tsx"
+  ],
   "Current shirt": [
     "src/components/club/ClubInfo.tsx"
   ],
@@ -1137,6 +1208,7 @@
     "src/components/player/ShotMap.tsx"
   ],
   "Done": [
+    "src/pages/Digest.tsx",
     "src/pages/Settings.tsx"
   ],
   "Doubtful": [
@@ -1149,6 +1221,7 @@
   "Draw": [
     "src/components/club/Fixtures.tsx",
     "src/components/club/ui.tsx",
+    "src/components/matchcentre/Extras.tsx",
     "src/components/matchcentre/H2H.tsx",
     "src/components/matchcentre/Hero.tsx",
     "src/components/matchcentre/Summary.tsx",
@@ -1163,7 +1236,8 @@
   ],
   "Draws": [
     "src/components/club/charts.tsx",
-    "src/components/matchcentre/H2H.tsx"
+    "src/components/matchcentre/H2H.tsx",
+    "src/pages/Rivalry.tsx"
   ],
   "Drizzle": [
     "src/components/matchcentre/venue.tsx"
@@ -1188,6 +1262,9 @@
   ],
   "Edit": [
     "src/interaction/following.tsx"
+  ],
+  "Edit clubs": [
+    "src/pages/Digest.tsx"
   ],
   "Eliminated": [
     "src/components/league/ProjectionView.tsx"
@@ -1229,6 +1306,9 @@
   ],
   "Every fixture has been played — this is the final table.": [
     "src/components/league/ProjectionView.tsx"
+  ],
+  "Every meeting": [
+    "src/pages/Rivalry.tsx"
   ],
   "Every metric side by side. Select a column to sort.": [
     "src/pages/Leagues.tsx"
@@ -1331,6 +1411,9 @@
   "First half": [
     "src/components/matchcentre/Momentum.tsx"
   ],
+  "Fitness doubts: {list}": [
+    "src/components/matchcentre/Extras.tsx"
+  ],
   "Fixture difficulty": [
     "src/components/league/RatingsView.tsx"
   ],
@@ -1361,6 +1444,9 @@
   "Follow {team}": [
     "src/components/matchcentre/Hero.tsx",
     "src/interaction/peek.tsx"
+  ],
+  "Follow your clubs": [
+    "src/pages/Digest.tsx"
   ],
   "Followed clubs appear first on Scores and get goal alerts while Pitch is open.": [
     "src/pages/Settings.tsx"
@@ -1393,6 +1479,9 @@
   ],
   "Form tables appear once matches have been played.": [
     "src/components/league/FormView.tsx"
+  ],
+  "Form team": [
+    "src/components/league/StorySoFar.tsx"
   ],
   "Form: {form}": [
     "src/components/ui.tsx"
@@ -1473,6 +1562,7 @@
   ],
   "Full time": [
     "src/components/match.tsx",
+    "src/components/matchcentre/Extras.tsx",
     "src/i18n/index.ts",
     "src/interaction/peek.tsx",
     "src/pages/Widget.tsx"
@@ -1572,6 +1662,9 @@
   "Goal times appear once match details have synced.": [
     "src/components/club/Stats.tsx",
     "src/components/league/Overview.tsx"
+  ],
+  "Goal-fest": [
+    "src/components/league/StorySoFar.tsx"
   ],
   "Goalkeeper": [
     "extra.json",
@@ -1678,6 +1771,9 @@
   "Goals vs assists": [
     "src/components/league/PlayersView.tsx"
   ],
+  "Goals: {a} – {b} · {avg} per game": [
+    "src/pages/Rivalry.tsx"
+  ],
   "goals::G": [
     "src/components/player/FormChart.tsx"
   ],
@@ -1757,8 +1853,14 @@
     "src/components/charts/core.tsx",
     "src/components/matchcentre/charts.tsx"
   ],
+  "Highest-scoring meeting": [
+    "src/pages/Rivalry.tsx"
+  ],
   "Highlighted clubs": [
     "src/components/charts/RaceChart.tsx"
+  ],
+  "Highlights": [
+    "src/components/matchcentre/Extras.tsx"
   ],
   "Hit the woodwork": [
     "src/components/matchcentre/Commentary.tsx",
@@ -1826,11 +1928,15 @@
   "How the rating works": [
     "src/components/matchcentre/Summary.tsx"
   ],
+  "How the win probability moved": [
+    "src/components/matchcentre/Extras.tsx"
+  ],
   "hrs": [
     "src/components/club/ui.tsx",
     "src/components/matchcentre/Hero.tsx"
   ],
   "HT": [
+    "src/components/matchcentre/Extras.tsx",
     "src/components/matchcentre/Hero.tsx",
     "src/components/matchcentre/Momentum.tsx",
     "src/interaction/ticker.tsx",
@@ -1841,6 +1947,12 @@
   ],
   "In": [
     "src/components/lineup.tsx"
+  ],
+  "In {n} game": [
+    "src/components/league/StorySoFar.tsx"
+  ],
+  "In {n} games": [
+    "src/components/league/StorySoFar.tsx"
   ],
   "in {n} match": [
     "src/components/club/Stats.tsx"
@@ -1987,10 +2099,14 @@
     "src/pages/Standings.tsx"
   ],
   "Last result": [
-    "src/components/club/ui.tsx"
+    "src/components/club/ui.tsx",
+    "src/pages/Digest.tsx"
   ],
   "Latest": [
     "src/components/club/ClubInfo.tsx"
+  ],
+  "Leading scorer": [
+    "src/components/league/StorySoFar.tsx"
   ],
   "League": [
     "src/components/charts/Bars.tsx",
@@ -2131,6 +2247,9 @@
   "Live updates on": [
     "src/interaction/ticker.tsx"
   ],
+  "Live win probability": [
+    "src/components/matchcentre/Extras.tsx"
+  ],
   "Live: {score} against {opp}, {clock}": [
     "src/components/table.tsx"
   ],
@@ -2240,7 +2359,8 @@
     "src/components/charts/BumpChart.tsx"
   ],
   "Meanest defence": [
-    "src/components/league/Overview.tsx"
+    "src/components/league/Overview.tsx",
+    "src/components/league/StorySoFar.tsx"
   ],
   "Meetings": [
     "src/components/matchcentre/H2H.tsx"
@@ -2316,6 +2436,9 @@
   "Most goals": [
     "src/pages/Leagues.tsx"
   ],
+  "Most improved": [
+    "src/components/league/StorySoFar.tsx"
+  ],
   "Nation": [
     "src/components/PlayerSheet.tsx"
   ],
@@ -2341,6 +2464,7 @@
     "src/pages/News.tsx"
   ],
   "Next": [
+    "src/pages/Digest.tsx",
     "src/pages/Widget.tsx"
   ],
   "Next {n}": [
@@ -2365,6 +2489,9 @@
   ],
   "Next matchday · {day}": [
     "src/pages/Scores.tsx"
+  ],
+  "Next meeting": [
+    "src/pages/Rivalry.tsx"
   ],
   "Next month": [
     "src/components/club/Fixtures.tsx"
@@ -2479,6 +2606,9 @@
   "No recent matches to show.": [
     "src/components/player/FormChart.tsx"
   ],
+  "No recent meetings": [
+    "src/pages/Rivalry.tsx"
+  ],
   "No referee data yet.": [
     "src/components/league/DisciplineView.tsx"
   ],
@@ -2487,6 +2617,9 @@
   ],
   "No results for “{q}”": [
     "src/interaction/search.tsx"
+  ],
+  "No results yet this season.": [
+    "src/pages/Digest.tsx"
   ],
   "No shots on target yet.": [
     "src/components/matchcentre/Shots.tsx"
@@ -2508,6 +2641,7 @@
     "src/components/league/Overview.tsx"
   ],
   "No stories right now": [
+    "src/pages/Digest.tsx",
     "src/pages/News.tsx"
   ],
   "No substitutes listed": [
@@ -2515,6 +2649,9 @@
   ],
   "No table for this competition": [
     "src/pages/Match.tsx"
+  ],
+  "No transfer news about your clubs right now.": [
+    "src/pages/Digest.tsx"
   ],
   "No Under-21 players have featured yet.": [
     "src/components/league/PlayersView.tsx"
@@ -2524,6 +2661,9 @@
   ],
   "No upcoming fixtures scheduled": [
     "src/interaction/following.tsx"
+  ],
+  "No upcoming fixtures scheduled.": [
+    "src/pages/Digest.tsx"
   ],
   "No verified details yet.": [
     "src/components/club/ClubInfo.tsx"
@@ -2563,6 +2703,9 @@
   ],
   "now": [
     "src/components/player/Career.tsx"
+  ],
+  "Now": [
+    "src/components/matchcentre/Extras.tsx"
   ],
   "O2.5": [
     "src/pages/Leagues.tsx"
@@ -2642,6 +2785,9 @@
   ],
   "Opens in a new tab": [
     "src/components/news.tsx"
+  ],
+  "Opens on ESPN · availability depends on your region": [
+    "src/components/matchcentre/Extras.tsx"
   ],
   "Opponent": [
     "src/components/club/Fixtures.tsx",
@@ -2982,10 +3128,14 @@
     "src/components/league/ProjectionView.tsx"
   ],
   "Projected": [
-    "src/components/league/ProjectionView.tsx"
+    "src/components/league/ProjectionView.tsx",
+    "src/pages/Match.tsx"
   ],
   "Projected final points": [
     "src/components/league/ProjectionView.tsx"
+  ],
+  "Projected lineups": [
+    "src/components/matchcentre/Extras.tsx"
   ],
   "Projection": [
     "src/pages/Analytics.tsx"
@@ -3150,6 +3300,15 @@
   ],
   "Rights for the {season} season. Coverage can vary by match.": [
     "src/components/watch.tsx"
+  ],
+  "Rivalries": [
+    "src/components/club/ClubInfo.tsx"
+  ],
+  "Rivalry": [
+    "src/pages/Rivalry.tsx"
+  ],
+  "Rivalry page": [
+    "src/components/matchcentre/H2H.tsx"
   ],
   "Role": [
     "src/components/player/FormChart.tsx"
@@ -3487,6 +3646,12 @@
     "src/components/player/CompareCharts.tsx",
     "src/components/player/Tiles.tsx"
   ],
+  "Starts from {source} and updates with every goal and red card.": [
+    "src/components/matchcentre/Extras.tsx"
+  ],
+  "Starts from league-average scoring and updates with every goal and red card.": [
+    "src/components/matchcentre/Extras.tsx"
+  ],
   "Statistic": [
     "src/components/matchcentre/Stats.tsx"
   ],
@@ -3555,6 +3720,9 @@
   "Swap players": [
     "src/pages/Compare.tsx"
   ],
+  "Swap sides": [
+    "src/pages/Rivalry.tsx"
+  ],
   "Sweeper": [
     "extra.json"
   ],
@@ -3607,8 +3775,20 @@
   "The depth chart appears once this season’s lineups have synced.": [
     "src/components/club/Squad.tsx"
   ],
+  "The highest-scoring game so far · {date}": [
+    "src/components/league/StorySoFar.tsx"
+  ],
   "The key is kept for this tab only and never stored on the server.": [
     "src/pages/Insights.tsx"
+  ],
+  "The longest unbeaten run in the league right now": [
+    "src/components/league/StorySoFar.tsx"
+  ],
+  "The longest winless run in the league right now": [
+    "src/components/league/StorySoFar.tsx"
+  ],
+  "The longest winning run in the league right now": [
+    "src/components/league/StorySoFar.tsx"
   ],
   "The position trail appears after two matchdays.": [
     "src/components/club/Overview.tsx"
@@ -3622,6 +3802,9 @@
   "The schedule for this club hasn’t been published.": [
     "src/components/club/Fixtures.tsx",
     "src/components/club/Overview.tsx"
+  ],
+  "The story so far": [
+    "src/components/league/StorySoFar.tsx"
   ],
   "The table over each club’s last {n} matches. Arrows show how far above or below their real position they sit.": [
     "src/components/league/FormView.tsx"
@@ -3637,6 +3820,9 @@
   ],
   "Themes": [
     "src/pages/Insights.tsx"
+  ],
+  "These clubs haven’t met in this competition in recent seasons.": [
+    "src/pages/Rivalry.tsx"
   ],
   "Third": [
     "src/components/club/ClubInfo.tsx"
@@ -3721,6 +3907,9 @@
   "Top stories": [
     "src/pages/Scores.tsx"
   ],
+  "Top stories for you": [
+    "src/pages/Digest.tsx"
+  ],
   "Top story": [
     "src/components/news.tsx"
   ],
@@ -3735,6 +3924,9 @@
   ],
   "Transfer": [
     "src/components/player/Career.tsx"
+  ],
+  "Transfer talk": [
+    "src/pages/Digest.tsx"
   ],
   "Trend": [
     "src/components/league/RatingsView.tsx"
@@ -3765,6 +3957,9 @@
   ],
   "Unbeaten so far this season.": [
     "src/components/club/Stats.tsx"
+  ],
+  "Under pressure": [
+    "src/components/league/StorySoFar.tsx"
   ],
   "Underperforming xG": [
     "src/components/league/PlayersView.tsx"
@@ -3854,6 +4049,7 @@
     "src/components/charts/Grids.tsx",
     "src/components/player/Hero.tsx",
     "src/pages/Compare.tsx",
+    "src/pages/Digest.tsx",
     "src/pages/Stadium.tsx",
     "src/pages/Widget.tsx"
   ],
@@ -3943,6 +4139,9 @@
   "Win probability": [
     "src/components/charts/Grids.tsx",
     "src/pages/Match.tsx"
+  ],
+  "Win probability now: {home} {h}, draw {d}, {away} {a}": [
+    "src/components/matchcentre/Extras.tsx"
   ],
   "Win probability: {home} {h}, draw {d}, {away} {a}": [
     "src/components/matchcentre/Hero.tsx",
@@ -4076,6 +4275,13 @@
   ],
   "Your country": [
     "src/pages/Settings.tsx"
+  ],
+  "Your digest": [
+    "src/interaction/following.tsx",
+    "src/pages/Digest.tsx"
+  ],
+  "Your digest brings together results, fixtures, transfer talk and news for the clubs you follow.": [
+    "src/pages/Digest.tsx"
   ],
   "Your time": [
     "src/components/matchcentre/Summary.tsx"

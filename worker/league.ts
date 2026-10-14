@@ -54,6 +54,7 @@ export class LeagueStore extends DurableObject<Env> {
       CREATE TABLE IF NOT EXISTS lineups (m TEXT, t TEXT, pid TEXT, n TEXT, pos TEXT, starter INTEGER, sub_in INTEGER, PRIMARY KEY (m, pid));
       CREATE TABLE IF NOT EXISTS players (id TEXT PRIMARY KEY, n TEXT, t TEXT, pos TEXT, posName TEXT, age INTEGER, dob TEXT, nat TEXT, flag TEXT, j TEXT, inj TEXT, updated INTEGER);
       CREATE TABLE IF NOT EXISTS h2h (k TEXT PRIMARY KEY, at INTEGER, v TEXT);
+      CREATE TABLE IF NOT EXISTS formations (m TEXT, t TEXT, f TEXT, PRIMARY KEY (m, t));
     `);
   }
 
@@ -131,6 +132,46 @@ export class LeagueStore extends DurableObject<Env> {
       )
       .toArray()[0];
     return JSON.stringify(r ?? null);
+  }
+
+  /** A club's most recent starting XI (with formation) — the basis for projected lineups. */
+  async lastLineup(slug: string, team: string): Promise<string> {
+    await this.ensure(slug);
+    if (!/^\d+$/.test(team)) return JSON.stringify(null);
+    const last = this.sql
+      .exec<{ m: string; d: string; h: string; a: string }>(
+        `SELECT m.id AS m, m.d AS d, m.h AS h, m.a AS a FROM matches m
+         WHERE (m.h = ?1 OR m.a = ?1) AND m.det = 1 AND EXISTS (SELECT 1 FROM lineups l WHERE l.m = m.id AND l.t = ?1 AND l.starter = 1)
+         ORDER BY m.d DESC LIMIT 1`,
+        team,
+      )
+      .toArray()[0];
+    if (!last) return JSON.stringify(null);
+    let formation = this.sql.exec<{ f: string }>("SELECT f FROM formations WHERE m = ? AND t = ?", last.m, team).toArray()[0]?.f ?? null;
+    if (!formation) {
+      // Matches synced before formations were stored: read it once from the summary.
+      try {
+        const d = await upstream<any>(`${ESPN_SITE}/${slug}/summary?event=${last.m}`);
+        for (const r of d.rosters ?? []) {
+          if (r.formation) this.sql.exec("INSERT OR REPLACE INTO formations (m, t, f) VALUES (?, ?, ?)", last.m, String(r.team?.id ?? ""), String(r.formation));
+        }
+        formation = this.sql.exec<{ f: string }>("SELECT f FROM formations WHERE m = ? AND t = ?", last.m, team).toArray()[0]?.f ?? null;
+      } catch {
+        /* formation stays unknown */
+      }
+    }
+    const players = this.sql
+      .exec<Row>(
+        `SELECT l.pid, l.n, l.pos, p.j, p.inj, p.posName FROM lineups l LEFT JOIN players p ON p.id = l.pid
+         WHERE l.m = ? AND l.t = ? AND l.starter = 1`,
+        last.m,
+        team,
+      )
+      .toArray()
+      .map((r) => ({ id: String(r.pid), name: String(r.n), pos: String(r.pos ?? ""), jersey: String(r.j ?? ""), inj: (r.inj as string) ?? null, posName: String(r.posName ?? "") }));
+    const opp = last.h === team ? last.a : last.h;
+    const oppName = this.sql.exec<{ n: string }>("SELECT n FROM teams WHERE id = ?", opp).toArray()[0]?.n ?? "";
+    return JSON.stringify({ match: last.m, date: last.d, opponent: oppName, formation, players });
   }
 
   async h2h(slug: string, a: string, b: string): Promise<string> {
@@ -599,6 +640,7 @@ export class LeagueStore extends DurableObject<Env> {
       this.sql.exec("DELETE FROM lineups WHERE m = ?", id);
       for (const r of d.rosters ?? []) {
         const t = String(r.team?.id ?? "");
+        if (r.formation) this.sql.exec("INSERT OR REPLACE INTO formations (m, t, f) VALUES (?, ?, ?)", id, t, String(r.formation));
         for (const p of r.roster ?? []) {
           const pid = p.athlete?.id ? String(p.athlete.id) : null;
           if (!pid) continue;

@@ -69,6 +69,8 @@ export const endpoints = {
   career: (tsdbId: string) => `/api/player/career?id=${tsdbId}`,
   venue: (tsdbVenueId: string) => `/api/venue?id=${tsdbVenueId}`,
   h2h: (league: string, a: string, b: string) => `/api/h2h/${league}?a=${a}&b=${b}`,
+  lineup: (league: string, team: string) => `/api/lineup/${league}?team=${team}`,
+  teamNews: (league: string, team: string) => `/api/espn/site/${league}/news?team=${team}&limit=25`,
   snapshot: () => `/api/live/snapshot`,
   geo: () => `/api/geo`,
 };

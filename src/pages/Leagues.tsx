@@ -9,7 +9,7 @@ import { t } from "../i18n";
 import { leagueSummary, type LeagueSummary, type SeasonData } from "../lib/analytics";
 import { fmtNum, fmtPct } from "../lib/format";
 import { useDocumentTitle } from "../lib/hooks";
-import { LEAGUES, leagueLogo, type League } from "../lib/leagues";
+import { TABLE_LEAGUES as LEAGUES, leagueLogo, type League } from "../lib/leagues";
 import { useSeason } from "../lib/season";
 
 interface Entry {

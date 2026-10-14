@@ -2127,3 +2127,62 @@ th[aria-sort="descending"] .an-sort {
 .an-pending {
   margin-top: 18px;
 }
+
+/* ------------------------------------------------------ story so far ---- */
+
+.an-story-rail {
+  grid-auto-columns: minmax(250px, 290px);
+}
+.an-story-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 176px;
+  padding: 18px 18px 16px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.35s var(--spring), background 0.3s;
+  animation: rise 0.55s var(--ease) both;
+}
+.an-story-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.16;
+  background: radial-gradient(120% 90% at 100% 0%, var(--story-tint, var(--accent)), transparent 60%);
+}
+.an-story-card.tone-good {
+  --story-tint: var(--good);
+}
+.an-story-card.tone-bad {
+  --story-tint: var(--bad);
+}
+.an-story-card:hover {
+  transform: translateY(-3px);
+}
+.an-story-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.an-story-crests {
+  display: flex;
+  gap: 6px;
+  margin: 4px 0 2px;
+}
+.an-story-title {
+  font-size: 18px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.an-story-sub {
+  margin-top: auto;
+  font-size: 13px;
+  color: var(--ink-2);
+}

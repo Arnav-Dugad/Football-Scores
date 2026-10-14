@@ -3,7 +3,7 @@ import { t } from "../i18n";
 import { endpoints, normaliseStandings } from "../lib/api";
 import { countryName, flagUrl, sortedCountries } from "../lib/countries";
 import { useApi } from "../lib/hooks";
-import { LEAGUES, leagueLogo } from "../lib/leagues";
+import { TABLE_LEAGUES as LEAGUES, leagueLogo } from "../lib/leagues";
 import { LANGS, type FollowTeam, type Lang } from "../lib/settings";
 import { IconCheck, IconSearch } from "./Icons";
 import { Crest, Skeleton } from "./ui";

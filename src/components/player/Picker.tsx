@@ -1,7 +1,7 @@
 import { useId, useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { t } from "../../i18n";
 import { fmtNum, teamTint } from "../../lib/format";
-import { LEAGUES, LEAGUE_BY_SLUG } from "../../lib/leagues";
+import { TABLE_LEAGUES as LEAGUES, LEAGUE_BY_SLUG } from "../../lib/leagues";
 import { usePeople, useSeason } from "../../lib/season";
 import { LANGS, useSettings } from "../../lib/settings";
 import { IconSearch } from "../Icons";

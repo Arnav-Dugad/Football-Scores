@@ -46,7 +46,7 @@ async function espnProxy(path: string, url: URL) {
   const target = espnTarget(path);
   if (!target) return json({ error: "not allowed" }, 0, 400);
   const qs = new URLSearchParams();
-  for (const k of ["event", "dates", "season", "limit", "level", "region", "lang", "contentorigin", "fixture"]) {
+  for (const k of ["event", "dates", "season", "limit", "level", "region", "lang", "contentorigin", "fixture", "team"]) {
     const v = url.searchParams.get(k);
     if (v && /^[a-z0-9,._-]{1,40}$/i.test(v)) qs.set(k, v);
   }
@@ -89,7 +89,18 @@ async function api(request: Request, env: Env, ctx: ExecutionContext): Promise<R
   if (platform) return platform;
 
   if (p === "/api/scores") {
-    const body = await hub(env).scores(list(url.searchParams.get("dates")), list(url.searchParams.get("leagues")));
+    // Each Durable Object request may make ~50 upstream fetches, so large
+    // league × date requests are split into parallel chunks and merged.
+    const dates = list(url.searchParams.get("dates")).slice(0, 3);
+    const leagues = list(url.searchParams.get("leagues")).filter((l) => LEAGUES.includes(l));
+    const per = Math.max(1, Math.floor(40 / Math.max(1, dates.length || 1)));
+    const chunks: string[][] = [];
+    for (let i = 0; i < leagues.length; i += per) chunks.push(leagues.slice(i, i + per));
+    const parts = await Promise.all(chunks.map((c) => hub(env).scores(dates, c)));
+    const body =
+      parts.length === 1
+        ? parts[0]
+        : JSON.stringify({ events: parts.flatMap((s) => (JSON.parse(s) as { events: unknown[] }).events), updated: new Date().toISOString() });
     const live = body.includes('"state":"in"');
     return json(body, live ? 10 : 30);
   }
@@ -100,7 +111,7 @@ async function api(request: Request, env: Env, ctx: ExecutionContext): Promise<R
     return json({ country: cf?.country ?? null, timezone: cf?.timezone ?? null }, 0);
   }
 
-  const m = /^\/api\/(season|people|shots|h2h|match)\/([a-z0-9._]+)$/.exec(p);
+  const m = /^\/api\/(season|people|shots|h2h|match|lineup)\/([a-z0-9._]+)$/.exec(p);
   if (m) {
     const slug = m[2];
     // Only known competitions get a Durable Object (and a background sync).
@@ -120,6 +131,8 @@ async function api(request: Request, env: Env, ctx: ExecutionContext): Promise<R
         return json(await stub.h2h(slug, url.searchParams.get("a") ?? "", url.searchParams.get("b") ?? ""), 3600);
       case "match":
         return json(await stub.match(slug, (url.searchParams.get("id") ?? "").replace(/\D/g, "")), 60);
+      case "lineup":
+        return json(await stub.lastLineup(slug, (url.searchParams.get("team") ?? "").replace(/\D/g, "")), 900);
     }
   }
 

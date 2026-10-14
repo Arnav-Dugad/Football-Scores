@@ -31,6 +31,13 @@ export const LEAGUES = [
   "ned.1",
   "por.1",
   "ind.1",
+  "ksa.1",
+  "mex.1",
+  "aus.1",
+  "eng.fa",
+  "esp.copa_del_rey",
+  "ita.coppa_italia",
+  "ger.dfb_pokal",
 ];
 export const LEAGUE_RE = /^[a-z]{2,6}\.[a-z0-9_]{1,20}$/;
 

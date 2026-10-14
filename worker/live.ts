@@ -37,7 +37,7 @@ export class LiveHub extends DurableObject<Env> {
 
   async scores(dates: string[], leagues: string[]): Promise<string> {
     const ds = dates.filter((d) => /^\d{8}$/.test(d)).slice(0, 3);
-    const ls = leagues.filter((l) => LEAGUE_RE.test(l)).slice(0, 14);
+    const ls = leagues.filter((l) => LEAGUE_RE.test(l)).slice(0, 24);
     const key = `s:${ds.join(",")}:${ls.join(",")}`;
     const yesterday = ymdIn("America/New_York", Date.now() - 36 * 3600e3);
     const past = ds.length > 0 && ds.every((d) => d < yesterday);
@@ -53,7 +53,7 @@ export class LiveHub extends DurableObject<Env> {
   }
 
   async calendar(leagues: string[]): Promise<string> {
-    const ls = leagues.filter((l) => LEAGUE_RE.test(l)).slice(0, 14);
+    const ls = leagues.filter((l) => LEAGUE_RE.test(l)).slice(0, 24);
     return this.memo(`c:${ls.join(",")}`, 3 * 3600, async () => {
       const out: Record<string, string[]> = {};
       await pool(ls, 8, async (l) => {

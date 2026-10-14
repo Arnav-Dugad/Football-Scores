@@ -13,6 +13,7 @@ import "./styles/club.css";
 import "./styles/platform.css";
 import "./styles/interaction.css";
 import "./styles/settings.css";
+import "./styles/extras.css";
 
 /** Remount the whole tree when the language changes so every string re-renders. */
 function Root() {
