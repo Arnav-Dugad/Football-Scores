@@ -1,0 +1,703 @@
+{
+  "leagues": [
+    "usa.1"
+  ],
+  "season": "2026",
+  "countries": {
+    "US": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      },
+      {
+        "name": "FOX",
+        "url": "https://www.foxsports.com/soccer/mls",
+        "type": "tv",
+        "domain": "foxsports.com",
+        "note": "34 matches on FOX/FS1"
+      },
+      {
+        "name": "FOX Deportes",
+        "url": "https://www.foxdeportes.com",
+        "type": "tv",
+        "domain": "foxdeportes.com",
+        "note": "Spanish; FOX-broadcast matches"
+      }
+    ],
+    "CA": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      },
+      {
+        "name": "TSN",
+        "url": "https://www.tsn.ca/soccer/mls",
+        "type": "tv",
+        "domain": "tsn.ca",
+        "note": "Selected matches; English"
+      },
+      {
+        "name": "RDS",
+        "url": "https://www.rds.ca/soccer/mls",
+        "type": "tv",
+        "domain": "rds.ca",
+        "note": "Selected matches; French"
+      }
+    ],
+    "MX": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "BR": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "AR": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "CO": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "CL": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "GB": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "IE": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "ES": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "PT": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "FR": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "DE": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "AT": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "CH": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "IT": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "NL": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "BE": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "DK": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "SE": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "NO": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "FI": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "PL": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "TR": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "GR": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "IN": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "PK": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "LK": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "AU": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "NZ": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "JP": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "KR": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "HK": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "SG": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "MY": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "ID": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "TH": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "VN": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "PH": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "AE": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "SA": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "QA": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "EG": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "NG": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "ZA": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "KE": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ],
+    "GH": [
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/mls",
+        "type": "streaming",
+        "domain": "tv.apple.com",
+        "note": "All matches; Apple TV subscription"
+      }
+    ]
+  },
+  "sources": {
+    "US": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205",
+      "https://www.mlssoccer.com/news/mls-unveils-2026-regular-season-schedule"
+    ],
+    "CA": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205",
+      "https://www.mlssoccer.com/news/mls-announces-tsn-and-rds-broadcast-schedules-for-the-2026-mls-regular-season",
+      "https://www.mlssoccer.com/news/mls-unveils-2026-regular-season-schedule"
+    ],
+    "MX": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "BR": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "AR": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "CO": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "CL": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "GB": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "IE": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "ES": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "PT": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "FR": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "DE": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "AT": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "CH": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "IT": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "NL": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "BE": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "DK": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "SE": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "NO": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "FI": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "PL": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "TR": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "GR": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "IN": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "PK": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "LK": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "AU": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "NZ": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "JP": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "KR": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "HK": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "SG": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "MY": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "ID": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "TH": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "VN": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "PH": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "AE": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "SA": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "QA": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "EG": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "NG": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "ZA": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "KE": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ],
+    "GH": [
+      "https://www.apple.com/newsroom/2025/11/major-league-soccer-is-coming-to-apple-tv-starting-in-2026/",
+      "https://support.apple.com/en-us/111113",
+      "https://support.apple.com/en-us/118205"
+    ]
+  },
+  "unverified": [
+    "BD",
+    "CN"
+  ]
+}

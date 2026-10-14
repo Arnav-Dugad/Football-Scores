@@ -1,0 +1,773 @@
+{
+  "leagues": [
+    "ita.1"
+  ],
+  "season": "2026-27",
+  "countries": {
+    "US": [
+      {
+        "name": "Paramount+",
+        "url": "https://www.paramountplus.com/",
+        "type": "streaming",
+        "domain": "paramountplus.com",
+        "note": "Most matches, English"
+      },
+      {
+        "name": "CBS",
+        "url": "https://www.cbssports.com/soccer/serie-a/",
+        "type": "free-tv",
+        "domain": "cbssports.com",
+        "note": "Select matches"
+      },
+      {
+        "name": "Telemundo",
+        "url": "https://www.telemundo.com/",
+        "type": "free-tv",
+        "domain": "telemundo.com",
+        "note": "Spanish-language"
+      },
+      {
+        "name": "Peacock",
+        "url": "https://www.peacocktv.com/",
+        "type": "streaming",
+        "domain": "peacocktv.com",
+        "note": "Spanish-language"
+      }
+    ],
+    "CA": [
+      {
+        "name": "Fubo",
+        "url": "https://www.fubo.tv/stream/canada/",
+        "type": "streaming",
+        "domain": "fubo.tv",
+        "note": "All matches"
+      },
+      {
+        "name": "TLN",
+        "url": "https://www.tln.ca/",
+        "type": "tv",
+        "domain": "tln.ca",
+        "note": "Select matches, Italian"
+      }
+    ],
+    "MX": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.com.mx/",
+        "type": "tv",
+        "domain": "espn.com.mx",
+        "note": ""
+      },
+      {
+        "name": "Disney+",
+        "url": "https://www.disneyplus.com/",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": ""
+      }
+    ],
+    "BR": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.com.br/",
+        "type": "tv",
+        "domain": "espn.com.br",
+        "note": ""
+      },
+      {
+        "name": "Disney+",
+        "url": "https://www.disneyplus.com/",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": ""
+      },
+      {
+        "name": "CazéTV",
+        "url": "https://www.youtube.com/cazetv",
+        "type": "free-tv",
+        "domain": "youtube.com",
+        "note": "One match per round"
+      }
+    ],
+    "AR": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.com.ar/",
+        "type": "tv",
+        "domain": "espn.com.ar",
+        "note": ""
+      },
+      {
+        "name": "Disney+",
+        "url": "https://www.disneyplus.com/",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": ""
+      }
+    ],
+    "CO": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.com.co/",
+        "type": "tv",
+        "domain": "espn.com.co",
+        "note": ""
+      },
+      {
+        "name": "Disney+",
+        "url": "https://www.disneyplus.com/",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": ""
+      }
+    ],
+    "CL": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.cl/",
+        "type": "tv",
+        "domain": "espn.cl",
+        "note": ""
+      },
+      {
+        "name": "Disney+",
+        "url": "https://www.disneyplus.com/",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": ""
+      }
+    ],
+    "GB": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/en-GB/home",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": "All matches"
+      },
+      {
+        "name": "TNT Sports",
+        "url": "https://www.tntsports.co.uk/",
+        "type": "tv",
+        "domain": "tntsports.co.uk",
+        "note": "Select matches"
+      },
+      {
+        "name": "BBC iPlayer",
+        "url": "https://www.bbc.co.uk/iplayer",
+        "type": "free-tv",
+        "domain": "bbc.co.uk",
+        "note": "38 matches, with BBC ALBA"
+      }
+    ],
+    "IE": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/en-IE/home",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": "All matches"
+      },
+      {
+        "name": "TNT Sports",
+        "url": "https://www.tntsports.co.uk/",
+        "type": "tv",
+        "domain": "tntsports.co.uk",
+        "note": "Select matches"
+      }
+    ],
+    "ES": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/es-ES/home",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      }
+    ],
+    "PT": [
+      {
+        "name": "Sport TV",
+        "url": "https://www.sporttv.pt/",
+        "type": "tv",
+        "domain": "sporttv.pt",
+        "note": ""
+      }
+    ],
+    "FR": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/fr-FR/home",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      }
+    ],
+    "DE": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/de-DE/home",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      }
+    ],
+    "AT": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/de-AT/home",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      }
+    ],
+    "CH": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/de-CH/home",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      }
+    ],
+    "IT": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/it-IT/l/serie-a/",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": "All 380 matches"
+      },
+      {
+        "name": "Sky",
+        "url": "https://www.sky.it/",
+        "type": "tv",
+        "domain": "sky.it",
+        "note": "3 matches per round"
+      }
+    ],
+    "NL": [
+      {
+        "name": "Ziggo Sport",
+        "url": "https://www.ziggosport.nl/",
+        "type": "tv",
+        "domain": "ziggosport.nl",
+        "note": ""
+      }
+    ],
+    "DK": [
+      {
+        "name": "TV 2 Play",
+        "url": "https://play.tv2.dk/",
+        "type": "streaming",
+        "domain": "tv2.dk",
+        "note": ""
+      }
+    ],
+    "SE": [
+      {
+        "name": "TV4 Play",
+        "url": "https://www.tv4play.se/",
+        "type": "streaming",
+        "domain": "tv4play.se",
+        "note": ""
+      }
+    ],
+    "NO": [
+      {
+        "name": "VG+",
+        "url": "https://www.vg.no/",
+        "type": "streaming",
+        "domain": "vg.no",
+        "note": ""
+      }
+    ],
+    "FI": [
+      {
+        "name": "MTV",
+        "url": "https://www.mtv.fi/",
+        "type": "streaming",
+        "domain": "mtv.fi",
+        "note": ""
+      }
+    ],
+    "PL": [
+      {
+        "name": "Eleven Sports",
+        "url": "https://www.elevensports.pl/",
+        "type": "tv",
+        "domain": "elevensports.pl",
+        "note": "All matches"
+      },
+      {
+        "name": "Polsat Sport",
+        "url": "https://www.polsatsport.pl/",
+        "type": "tv",
+        "domain": "polsatsport.pl",
+        "note": "2 matches per round"
+      }
+    ],
+    "TR": [
+      {
+        "name": "S Sport",
+        "url": "https://ssport.tv/",
+        "type": "tv",
+        "domain": "ssport.tv",
+        "note": ""
+      },
+      {
+        "name": "Tivibu",
+        "url": "https://www.tivibu.com.tr/",
+        "type": "tv",
+        "domain": "tivibu.com.tr",
+        "note": ""
+      }
+    ],
+    "GR": [
+      {
+        "name": "Magenta TV",
+        "url": "https://www.magentatv.gr/",
+        "type": "tv",
+        "domain": "magentatv.gr",
+        "note": "Formerly Cosmote TV"
+      }
+    ],
+    "IN": [
+      {
+        "name": "ZEE5",
+        "url": "https://www.zee5.com/",
+        "type": "streaming",
+        "domain": "zee5.com",
+        "note": ""
+      },
+      {
+        "name": "Unite8 Sports",
+        "url": "https://unite8sports.live/",
+        "type": "tv",
+        "domain": "unite8sports.live",
+        "note": ""
+      }
+    ],
+    "PK": [
+      {
+        "name": "Begin",
+        "url": "https://www.begin.watch/",
+        "type": "streaming",
+        "domain": "begin.watch",
+        "note": ""
+      }
+    ],
+    "BD": [
+      {
+        "name": "ZEE5",
+        "url": "https://www.zee5.com/",
+        "type": "streaming",
+        "domain": "zee5.com",
+        "note": ""
+      },
+      {
+        "name": "Unite8 Sports",
+        "url": "https://unite8sports.live/",
+        "type": "tv",
+        "domain": "unite8sports.live",
+        "note": ""
+      }
+    ],
+    "LK": [
+      {
+        "name": "ZEE5",
+        "url": "https://www.zee5.com/",
+        "type": "streaming",
+        "domain": "zee5.com",
+        "note": ""
+      },
+      {
+        "name": "Unite8 Sports",
+        "url": "https://unite8sports.live/",
+        "type": "tv",
+        "domain": "unite8sports.live",
+        "note": ""
+      }
+    ],
+    "AU": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://connect-au.beinsports.com/",
+        "type": "streaming",
+        "domain": "beinsports.com",
+        "note": "All matches"
+      }
+    ],
+    "NZ": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://connect-nz.beinsports.com/",
+        "type": "streaming",
+        "domain": "beinsports.com",
+        "note": "All matches"
+      }
+    ],
+    "KR": [
+      {
+        "name": "SPOTV NOW",
+        "url": "https://www.spotvnow.co.kr/",
+        "type": "streaming",
+        "domain": "spotvnow.co.kr",
+        "note": ""
+      }
+    ],
+    "CN": [
+      {
+        "name": "Migu Video",
+        "url": "https://www.miguvideo.com/",
+        "type": "streaming",
+        "domain": "miguvideo.com",
+        "note": ""
+      }
+    ],
+    "HK": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://connect.beinsports.com/",
+        "type": "streaming",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "MY": [
+      {
+        "name": "Astro",
+        "url": "https://www.astro.com.my/",
+        "type": "tv",
+        "domain": "astro.com.my",
+        "note": ""
+      }
+    ],
+    "ID": [
+      {
+        "name": "Vidio",
+        "url": "https://www.vidio.com/",
+        "type": "streaming",
+        "domain": "vidio.com",
+        "note": ""
+      }
+    ],
+    "TH": [
+      {
+        "name": "TrueVisions",
+        "url": "https://truevisions.co.th/",
+        "type": "tv",
+        "domain": "truevisions.co.th",
+        "note": ""
+      }
+    ],
+    "AE": [
+      {
+        "name": "STARZPLAY",
+        "url": "https://starzplay.com/",
+        "type": "streaming",
+        "domain": "starzplay.com",
+        "note": ""
+      }
+    ],
+    "SA": [
+      {
+        "name": "STARZPLAY",
+        "url": "https://starzplay.com/",
+        "type": "streaming",
+        "domain": "starzplay.com",
+        "note": ""
+      }
+    ],
+    "QA": [
+      {
+        "name": "STARZPLAY",
+        "url": "https://starzplay.com/",
+        "type": "streaming",
+        "domain": "starzplay.com",
+        "note": ""
+      }
+    ],
+    "EG": [
+      {
+        "name": "STARZPLAY",
+        "url": "https://starzplay.com/",
+        "type": "streaming",
+        "domain": "starzplay.com",
+        "note": ""
+      }
+    ],
+    "NG": [
+      {
+        "name": "SuperSport",
+        "url": "https://supersport.com/",
+        "type": "tv",
+        "domain": "supersport.com",
+        "note": ""
+      },
+      {
+        "name": "SportyTV",
+        "url": "https://sporty.com/",
+        "type": "streaming",
+        "domain": "sporty.com",
+        "note": ""
+      }
+    ],
+    "ZA": [
+      {
+        "name": "SuperSport",
+        "url": "https://supersport.com/",
+        "type": "tv",
+        "domain": "supersport.com",
+        "note": ""
+      },
+      {
+        "name": "SportyTV",
+        "url": "https://sporty.com/",
+        "type": "streaming",
+        "domain": "sporty.com",
+        "note": ""
+      }
+    ],
+    "KE": [
+      {
+        "name": "SuperSport",
+        "url": "https://supersport.com/",
+        "type": "tv",
+        "domain": "supersport.com",
+        "note": ""
+      },
+      {
+        "name": "Azam TV",
+        "url": "https://www.azamtv.co.tz/",
+        "type": "tv",
+        "domain": "azamtv.co.tz",
+        "note": ""
+      },
+      {
+        "name": "SportyTV",
+        "url": "https://sporty.com/",
+        "type": "streaming",
+        "domain": "sporty.com",
+        "note": ""
+      }
+    ],
+    "GH": [
+      {
+        "name": "SuperSport",
+        "url": "https://supersport.com/",
+        "type": "tv",
+        "domain": "supersport.com",
+        "note": ""
+      },
+      {
+        "name": "SportyTV",
+        "url": "https://sporty.com/",
+        "type": "streaming",
+        "domain": "sporty.com",
+        "note": ""
+      }
+    ]
+  },
+  "sources": {
+    "US": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.marketscale.com/industries/sports-entertainment/serie-a-stays-with-cbs-one-more-year-before-testing-the-us-market-again",
+      "https://nbcuniversalnewsgroup.com/telemundo/2026/09/01/telemundo-acquires-exclusive-u-s-spanish-language-rights-to-the-serie-a-championship-coppa-italia-and-supercoppa-italiana/"
+    ],
+    "CA": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://sports.yahoo.com/articles/watch-serie-live-streams-tv-090002673.html",
+      "https://www.fubo.tv/news/canada/inter-milan-vs-parma-live-stream-how-to-watch-italian-serie-a-in-canada-oct-10-2026/"
+    ],
+    "MX": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://es.digitaltrends.com/deportes/derechos-transmision-ligas-europeas-2026-27-america-latina/",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/mexico/"
+    ],
+    "BR": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://trivela.com.br/italia/serie-a/campeonato-italiano-temporada-assistir-cenario/",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/brazil/"
+    ],
+    "AR": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://es.digitaltrends.com/deportes/derechos-transmision-ligas-europeas-2026-27-america-latina/",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/argentina/"
+    ],
+    "CO": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://es.digitaltrends.com/deportes/derechos-transmision-ligas-europeas-2026-27-america-latina/",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/colombia/"
+    ],
+    "CL": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://es.digitaltrends.com/deportes/derechos-transmision-ligas-europeas-2026-27-america-latina/",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/chile/"
+    ],
+    "GB": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://ibc.org/production/news/dazn-renews-serie-a-rights-in-uk-and-ireland-for-2026-27-season/22794",
+      "https://www.sportcal.com/media/serie-a-extends-with-tnt-sports-in-uk-through-2026-27/",
+      "https://www.sportcal.com/news/bbc-returns-for-another-expanded-slate-of-serie-a-coverage-across-2026-27/"
+    ],
+    "IE": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://ibc.org/production/news/dazn-renews-serie-a-rights-in-uk-and-ireland-for-2026-27-season/22794",
+      "https://www.sportcal.com/media/serie-a-extends-with-tnt-sports-in-uk-through-2026-27/"
+    ],
+    "ES": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.sportcal.com/newsletters/dazn-adds-serie-a-to-soccer-portfolio-in-spain",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/spain/"
+    ],
+    "PT": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://ministryofsport.com/sport-tv-secures-serie-a-broadcasting-rights-in-portugal-until-2026-27-season/"
+    ],
+    "FR": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.sportcal.com/news/dazn-extends-french-deal-for-serie-a-through-2028-29/"
+    ],
+    "DE": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.sportcal.com/media/dazn-extends-serie-a-rights-across-germany-austria-switzerland/"
+    ],
+    "AT": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.sportcal.com/media/dazn-extends-serie-a-rights-across-germany-austria-switzerland/"
+    ],
+    "CH": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.sportcal.com/media/dazn-extends-serie-a-rights-across-germany-austria-switzerland/"
+    ],
+    "IT": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.calcioefinanza.it/2026/06/20/partite-in-tv-2026-2027-dove-vederle/"
+    ],
+    "NL": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/netherlands/",
+      "https://www.ziggo.nl/entertainment/sport/voetbal/serie-a/stand"
+    ],
+    "DK": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/denmark/"
+    ],
+    "SE": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/sweden/"
+    ],
+    "NO": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/norway/"
+    ],
+    "FI": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/finland/"
+    ],
+    "PL": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://satkurier.pl/news/250876/serie-a-na-dluzej-eleven-sports-5-potwierdzony.html",
+      "https://satkurier.pl/news/252170/gdzie-ogladac-pilke-nozna-w-sezonie-202627-pelny-wykaz.html"
+    ],
+    "TR": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/turkey/"
+    ],
+    "GR": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/greece/"
+    ],
+    "IN": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.wionews.com/sports/ee5-unite8-sports-secures-serie-a-media-rights-india-1785927228641",
+      "https://bestmediainfo.com/mediainfo/television/zee-secures-five-year-media-rights-for-serie-a-and-italian-cup-competitions-12232474"
+    ],
+    "PK": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/pakistan/"
+    ],
+    "BD": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.wionews.com/sports/ee5-unite8-sports-secures-serie-a-media-rights-india-1785927228641",
+      "https://bestmediainfo.com/mediainfo/television/zee-secures-five-year-media-rights-for-serie-a-and-italian-cup-competitions-12232474"
+    ],
+    "LK": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.wionews.com/sports/ee5-unite8-sports-secures-serie-a-media-rights-india-1785927228641",
+      "https://bestmediainfo.com/mediainfo/television/zee-secures-five-year-media-rights-for-serie-a-and-italian-cup-competitions-12232474"
+    ],
+    "AU": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.beinsports.com/en-au/football/serie-a/articles-video/how-to-watch-serie-a-in-australia-2026-08-21"
+    ],
+    "NZ": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.beinsports.com/en-au/football/serie-a/articles-video/how-to-watch-serie-a-in-australia-2026-08-21"
+    ],
+    "KR": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/south-korea/"
+    ],
+    "CN": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/china/"
+    ],
+    "HK": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.beinsports.com/en-asia/football/serie-a/articles/serie-a-championship-returns-to-bein-sports-in-hong-kong"
+    ],
+    "MY": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/malaysia/"
+    ],
+    "ID": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/indonesia/"
+    ],
+    "TH": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/thailand/"
+    ],
+    "AE": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.sportcal.com/media/starzplay-retains-serie-a-rights-exclusively-in-mena-until-2028/"
+    ],
+    "SA": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.sportcal.com/media/starzplay-retains-serie-a-rights-exclusively-in-mena-until-2028/"
+    ],
+    "QA": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.sportcal.com/media/starzplay-retains-serie-a-rights-exclusively-in-mena-until-2028/"
+    ],
+    "EG": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.sportcal.com/media/starzplay-retains-serie-a-rights-exclusively-in-mena-until-2028/"
+    ],
+    "NG": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/nigeria/"
+    ],
+    "ZA": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/south-africa/"
+    ],
+    "KE": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/kenya/"
+    ],
+    "GH": [
+      "https://en.legaseriea.it/serie-a/broadcasters",
+      "https://www.livesoccertv.com/competitions/italy/serie-a/watch/ghana/"
+    ]
+  },
+  "unverified": [
+    "BE",
+    "JP",
+    "SG",
+    "VN",
+    "PH"
+  ]
+}

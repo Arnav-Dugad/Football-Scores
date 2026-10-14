@@ -1,0 +1,539 @@
+{
+  "leagues": [
+    "ned.1"
+  ],
+  "season": "2026-27",
+  "countries": {
+    "US": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.com/watch/",
+        "type": "streaming",
+        "domain": "espn.com",
+        "note": "ESPN app / ESPN+"
+      }
+    ],
+    "CA": [
+      {
+        "name": "Sportsnet",
+        "url": "https://watch.sportsnet.ca/",
+        "type": "tv",
+        "domain": "sportsnet.ca",
+        "note": "Sportsnet World / Sportsnet+"
+      }
+    ],
+    "MX": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.com.mx/",
+        "type": "tv",
+        "domain": "espn.com.mx",
+        "note": ""
+      },
+      {
+        "name": "Disney+",
+        "url": "https://www.disneyplus.com",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": "ESPN on Disney+ Premium"
+      }
+    ],
+    "BR": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.com.br/",
+        "type": "tv",
+        "domain": "espn.com.br",
+        "note": ""
+      },
+      {
+        "name": "Disney+",
+        "url": "https://www.disneyplus.com",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": "ESPN on Disney+ Premium"
+      }
+    ],
+    "AR": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.com.ar/",
+        "type": "tv",
+        "domain": "espn.com.ar",
+        "note": ""
+      },
+      {
+        "name": "Disney+",
+        "url": "https://www.disneyplus.com",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": "ESPN on Disney+ Premium"
+      }
+    ],
+    "CO": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.com.co/",
+        "type": "tv",
+        "domain": "espn.com.co",
+        "note": ""
+      },
+      {
+        "name": "Disney+",
+        "url": "https://www.disneyplus.com",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": "ESPN on Disney+ Premium"
+      }
+    ],
+    "CL": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.cl/",
+        "type": "tv",
+        "domain": "espn.cl",
+        "note": ""
+      },
+      {
+        "name": "Disney+",
+        "url": "https://www.disneyplus.com",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": "ESPN on Disney+ Premium"
+      }
+    ],
+    "GB": [
+      {
+        "name": "Premier Sports",
+        "url": "https://www.premiersports.com",
+        "type": "tv",
+        "domain": "premiersports.com",
+        "note": "Two matches per round"
+      },
+      {
+        "name": "TrillerTV",
+        "url": "https://www.trillertv.com/",
+        "type": "streaming",
+        "domain": "trillertv.com",
+        "note": "TrillerTV+"
+      }
+    ],
+    "IE": [
+      {
+        "name": "Premier Sports",
+        "url": "https://www.premiersports.com",
+        "type": "tv",
+        "domain": "premiersports.com",
+        "note": "Two matches per round"
+      },
+      {
+        "name": "TrillerTV",
+        "url": "https://www.trillertv.com/",
+        "type": "streaming",
+        "domain": "trillertv.com",
+        "note": "TrillerTV+"
+      }
+    ],
+    "ES": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/es-ES/welcome",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      }
+    ],
+    "PT": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/pt-PT/welcome",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      }
+    ],
+    "FR": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/fr-FR/welcome",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      }
+    ],
+    "DE": [
+      {
+        "name": "sportdigital FUSSBALL",
+        "url": "https://start.sportdigital.de",
+        "type": "tv",
+        "domain": "sportdigital.de",
+        "note": "Also on sportdigital+"
+      }
+    ],
+    "AT": [
+      {
+        "name": "sportdigital FUSSBALL",
+        "url": "https://start.sportdigital.de",
+        "type": "tv",
+        "domain": "sportdigital.de",
+        "note": "Also on sportdigital+"
+      }
+    ],
+    "CH": [
+      {
+        "name": "sportdigital FUSSBALL",
+        "url": "https://start.sportdigital.de",
+        "type": "tv",
+        "domain": "sportdigital.de",
+        "note": "Also on sportdigital+"
+      }
+    ],
+    "IT": [
+      {
+        "name": "Como TV",
+        "url": "https://tv.comofootball.com/",
+        "type": "streaming",
+        "domain": "comofootball.com",
+        "note": "Successor to Mola TV"
+      }
+    ],
+    "NL": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.nl/watch",
+        "type": "tv",
+        "domain": "espn.nl",
+        "note": "All matches"
+      }
+    ],
+    "BE": [
+      {
+        "name": "Play Sports",
+        "url": "https://www.playsports.be/",
+        "type": "tv",
+        "domain": "playsports.be",
+        "note": "Telenet"
+      }
+    ],
+    "PL": [
+      {
+        "name": "Polsat Sport",
+        "url": "https://www.polsatsport.pl/",
+        "type": "tv",
+        "domain": "polsatsport.pl",
+        "note": ""
+      }
+    ],
+    "GR": [
+      {
+        "name": "Novasports",
+        "url": "https://www.novasports.gr/",
+        "type": "tv",
+        "domain": "novasports.gr",
+        "note": ""
+      }
+    ],
+    "AU": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.com.au/watch",
+        "type": "tv",
+        "domain": "espn.com.au",
+        "note": "Via Foxtel / Kayo"
+      },
+      {
+        "name": "Kayo Sports",
+        "url": "https://kayosports.com.au/",
+        "type": "streaming",
+        "domain": "kayosports.com.au",
+        "note": ""
+      }
+    ],
+    "NZ": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.com.au/",
+        "type": "tv",
+        "domain": "espn.com.au",
+        "note": ""
+      }
+    ],
+    "JP": [
+      {
+        "name": "U-NEXT",
+        "url": "https://video.unext.jp/",
+        "type": "streaming",
+        "domain": "unext.jp",
+        "note": ""
+      }
+    ],
+    "HK": [
+      {
+        "name": "myTV SUPER",
+        "url": "https://www.mytvsuper.com/",
+        "type": "streaming",
+        "domain": "mytvsuper.com",
+        "note": ""
+      }
+    ],
+    "ID": [
+      {
+        "name": "Vidio",
+        "url": "https://www.vidio.com/",
+        "type": "streaming",
+        "domain": "vidio.com",
+        "note": "Incl. Champions TV"
+      },
+      {
+        "name": "Kompas TV",
+        "url": "https://www.kompas.tv/",
+        "type": "free-tv",
+        "domain": "kompas.tv",
+        "note": ""
+      }
+    ],
+    "TH": [
+      {
+        "name": "MONOMAX",
+        "url": "https://www.monomax.me/",
+        "type": "streaming",
+        "domain": "monomax.me",
+        "note": ""
+      }
+    ],
+    "AE": [
+      {
+        "name": "Dubai Sports",
+        "url": "https://www.dubaisports.ae/content/dubaisports/home.html",
+        "type": "free-tv",
+        "domain": "dubaisports.ae",
+        "note": ""
+      }
+    ],
+    "SA": [
+      {
+        "name": "Dubai Sports",
+        "url": "https://www.dubaisports.ae/content/dubaisports/home.html",
+        "type": "free-tv",
+        "domain": "dubaisports.ae",
+        "note": ""
+      }
+    ],
+    "QA": [
+      {
+        "name": "Dubai Sports",
+        "url": "https://www.dubaisports.ae/content/dubaisports/home.html",
+        "type": "free-tv",
+        "domain": "dubaisports.ae",
+        "note": ""
+      }
+    ],
+    "EG": [
+      {
+        "name": "Dubai Sports",
+        "url": "https://www.dubaisports.ae/content/dubaisports/home.html",
+        "type": "free-tv",
+        "domain": "dubaisports.ae",
+        "note": ""
+      }
+    ],
+    "NG": [
+      {
+        "name": "ESPN Africa",
+        "url": "https://africa.espn.com/",
+        "type": "tv",
+        "domain": "espn.com",
+        "note": "Via DStv"
+      }
+    ],
+    "ZA": [
+      {
+        "name": "ESPN Africa",
+        "url": "https://africa.espn.com/",
+        "type": "tv",
+        "domain": "espn.com",
+        "note": "Via DStv"
+      }
+    ],
+    "KE": [
+      {
+        "name": "ESPN Africa",
+        "url": "https://africa.espn.com/",
+        "type": "tv",
+        "domain": "espn.com",
+        "note": "Via DStv"
+      }
+    ],
+    "GH": [
+      {
+        "name": "ESPN Africa",
+        "url": "https://africa.espn.com/",
+        "type": "tv",
+        "domain": "espn.com",
+        "note": "Via DStv"
+      }
+    ]
+  },
+  "sources": {
+    "US": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/usa/"
+    ],
+    "CA": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/canada/"
+    ],
+    "MX": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "BR": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "AR": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "CO": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "CL": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "GB": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/",
+      "https://www.broadcastnow.co.uk/broadcasting/premier-sports-will-screen-800-live-football-matches-this-season/5208051.article"
+    ],
+    "IE": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "ES": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/",
+      "https://www.sportcal.com/news/dazn-continues-to-bolster-soccer-portfolio-in-spain-with-eredivisie-rights/"
+    ],
+    "PT": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/portugal/"
+    ],
+    "FR": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/france/"
+    ],
+    "DE": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/germany/"
+    ],
+    "AT": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "CH": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "IT": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/italy/",
+      "https://www.calcioefinanza.it/?p=199782"
+    ],
+    "NL": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "BE": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/belgium/"
+    ],
+    "PL": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "GR": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "AU": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/australia/"
+    ],
+    "NZ": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "JP": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "HK": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "ID": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "TH": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "AE": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/",
+      "https://eredivisie.com/news/dubaisports-broadcast-across-mena/"
+    ],
+    "SA": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/",
+      "https://eredivisie.com/news/dubaisports-broadcast-across-mena/"
+    ],
+    "QA": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/",
+      "https://eredivisie.com/news/dubaisports-broadcast-across-mena/"
+    ],
+    "EG": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/",
+      "https://eredivisie.com/news/dubaisports-broadcast-across-mena/"
+    ],
+    "NG": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "ZA": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "KE": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ],
+    "GH": [
+      "https://eredivisie.com/broadcasters/",
+      "https://www.livesoccertv.com/competitions/netherlands/eredivisie/watch/united-kingdom/"
+    ]
+  },
+  "unverified": [
+    "DK",
+    "SE",
+    "NO",
+    "FI",
+    "TR",
+    "IN",
+    "PK",
+    "BD",
+    "LK",
+    "KR",
+    "CN",
+    "SG",
+    "MY",
+    "VN",
+    "PH"
+  ]
+}

@@ -1,0 +1,857 @@
+{
+  "leagues": [
+    "ger.1"
+  ],
+  "season": "2026-27",
+  "countries": {
+    "US": [
+      {
+        "name": "USA Network",
+        "url": "https://www.usanetwork.com/",
+        "type": "tv",
+        "domain": "usanetwork.com",
+        "note": "30+ matches, English"
+      },
+      {
+        "name": "Fandango",
+        "url": "https://athome.fandango.com/",
+        "type": "streaming",
+        "domain": "fandango.com",
+        "note": "Free; remaining English matches"
+      },
+      {
+        "name": "Telemundo",
+        "url": "https://www.telemundo.com/deportes",
+        "type": "tv",
+        "domain": "telemundo.com",
+        "note": "100+ matches, Spanish; Universo"
+      },
+      {
+        "name": "Peacock",
+        "url": "https://www.peacocktv.com/",
+        "type": "streaming",
+        "domain": "peacocktv.com",
+        "note": "All matches, Spanish"
+      }
+    ],
+    "CA": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/en-CA/welcome",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": "All matches"
+      },
+      {
+        "name": "OneSoccer",
+        "url": "https://onesoccer.ca/",
+        "type": "streaming",
+        "domain": "onesoccer.ca",
+        "note": "Every Bayern match"
+      }
+    ],
+    "MX": [
+      {
+        "name": "FOX One",
+        "url": "https://www.foxone.mx/",
+        "type": "streaming",
+        "domain": "foxone.mx",
+        "note": "Also FOX pay-TV, Tubi"
+      }
+    ],
+    "BR": [
+      {
+        "name": "sportv",
+        "url": "https://globoplay.globo.com/canais/sportv/",
+        "type": "tv",
+        "domain": "globo.com",
+        "note": "2 matches per matchday"
+      },
+      {
+        "name": "CazéTV",
+        "url": "https://www.youtube.com/@CazeTV",
+        "type": "streaming",
+        "domain": "youtube.com",
+        "note": "Free; 2 matches per matchday"
+      },
+      {
+        "name": "SportyNet",
+        "url": "https://www.sportynet.com.br/",
+        "type": "tv",
+        "domain": "sportynet.com.br",
+        "note": "3 matches per matchday"
+      },
+      {
+        "name": "OneFootball",
+        "url": "https://onefootball.com/en/home",
+        "type": "streaming",
+        "domain": "onefootball.com",
+        "note": "Pay-per-view; all matches"
+      },
+      {
+        "name": "Canal GOAT",
+        "url": "https://www.youtube.com/@canalgoatbr",
+        "type": "streaming",
+        "domain": "youtube.com",
+        "note": "Free; 4 matches per matchday"
+      },
+      {
+        "name": "XSports",
+        "url": "https://www.xsports.com.br/",
+        "type": "free-tv",
+        "domain": "xsports.com.br",
+        "note": "2 matches per matchday"
+      },
+      {
+        "name": "Jovem Pan",
+        "url": "https://www.youtube.com/jovempanesportes",
+        "type": "streaming",
+        "domain": "youtube.com",
+        "note": "Free; 1 match per matchday"
+      },
+      {
+        "name": "RomárioTV",
+        "url": "https://www.youtube.com/@RomarioTVoficial",
+        "type": "streaming",
+        "domain": "youtube.com",
+        "note": "Free; 1 match per matchday"
+      }
+    ],
+    "AR": [
+      {
+        "name": "Disney+ Premium",
+        "url": "https://www.disneyplus.com",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": "ESPN coverage"
+      }
+    ],
+    "CO": [
+      {
+        "name": "Disney+ Premium",
+        "url": "https://www.disneyplus.com",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": "ESPN coverage"
+      }
+    ],
+    "CL": [
+      {
+        "name": "Disney+ Premium",
+        "url": "https://www.disneyplus.com",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": "ESPN coverage"
+      }
+    ],
+    "GB": [
+      {
+        "name": "Sky Sports",
+        "url": "https://www.skysports.com",
+        "type": "tv",
+        "domain": "skysports.com",
+        "note": "Saturday top matches"
+      },
+      {
+        "name": "Amazon Prime Video",
+        "url": "https://www.amazon.co.uk/primevideo",
+        "type": "streaming",
+        "domain": "amazon.co.uk",
+        "note": "Sunday matches, pay-per-view"
+      },
+      {
+        "name": "BBC iPlayer",
+        "url": "https://www.bbc.co.uk/iplayer",
+        "type": "free-tv",
+        "domain": "bbc.co.uk",
+        "note": "Friday night matches"
+      },
+      {
+        "name": "Samsung TV Plus",
+        "url": "https://www.samsung.com/uk/tvs/smart-tv/samsung-tv-plus/",
+        "type": "streaming",
+        "domain": "samsung.com",
+        "note": "Free Bundesliga channel; Fridays"
+      },
+      {
+        "name": "That's Football",
+        "url": "https://www.youtube.com/@thatsfootball",
+        "type": "streaming",
+        "domain": "youtube.com",
+        "note": "Free; 15 Friday watch-alongs"
+      },
+      {
+        "name": "Jamie Vardy's Having a Party",
+        "url": "https://www.youtube.com/@thevardyparty",
+        "type": "streaming",
+        "domain": "youtube.com",
+        "note": "Free; 7 Friday watch-alongs"
+      }
+    ],
+    "IE": [
+      {
+        "name": "Sky Sports",
+        "url": "https://www.skysports.com",
+        "type": "tv",
+        "domain": "skysports.com",
+        "note": "Saturday top matches"
+      },
+      {
+        "name": "That's Football",
+        "url": "https://www.youtube.com/@thatsfootball",
+        "type": "streaming",
+        "domain": "youtube.com",
+        "note": "Free; 15 Friday watch-alongs"
+      },
+      {
+        "name": "Jamie Vardy's Having a Party",
+        "url": "https://www.youtube.com/@thevardyparty",
+        "type": "streaming",
+        "domain": "youtube.com",
+        "note": "Free; 7 Friday watch-alongs"
+      }
+    ],
+    "ES": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/es-ES/welcome",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      }
+    ],
+    "PT": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/pt-PT/welcome",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      }
+    ],
+    "FR": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://www.beinsports.com/fr-fr",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "DE": [
+      {
+        "name": "Sky Sport",
+        "url": "https://www.sky.de/",
+        "type": "tv",
+        "domain": "sky.de",
+        "note": "Friday and Saturday matches"
+      },
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/de-DE/welcome",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": "Saturday conference, Sunday matches"
+      },
+      {
+        "name": "WOW",
+        "url": "https://www.wowtv.de/live-sport",
+        "type": "streaming",
+        "domain": "wowtv.de",
+        "note": "Sky's streaming service"
+      },
+      {
+        "name": "Sat.1",
+        "url": "https://www.ran.de/",
+        "type": "free-tv",
+        "domain": "ran.de",
+        "note": "3 free Friday matches"
+      },
+      {
+        "name": "RTL",
+        "url": "https://www.rtl.de/sport/",
+        "type": "free-tv",
+        "domain": "rtl.de",
+        "note": "10 free matches per season"
+      }
+    ],
+    "AT": [
+      {
+        "name": "Sky",
+        "url": "https://www.sky.at/bestellung/pakete-produkte/sky-fussball-bundesliga-paket-169352",
+        "type": "tv",
+        "domain": "sky.at",
+        "note": "Friday and Saturday matches"
+      },
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/de-AT/welcome",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      },
+      {
+        "name": "WOW",
+        "url": "https://www.wowtv.de/at",
+        "type": "streaming",
+        "domain": "wowtv.de",
+        "note": "Sky's streaming service"
+      }
+    ],
+    "CH": [
+      {
+        "name": "Sky Switzerland",
+        "url": "https://sport.sky.ch/de/sp/competition/1",
+        "type": "streaming",
+        "domain": "sky.ch",
+        "note": "Friday and Saturday matches"
+      },
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/de-CH/welcome",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": "Saturday conference, Sunday matches"
+      }
+    ],
+    "IT": [
+      {
+        "name": "Sky Sport",
+        "url": "https://sport.sky.it/calcio/bundesliga",
+        "type": "tv",
+        "domain": "sky.it",
+        "note": ""
+      }
+    ],
+    "NL": [
+      {
+        "name": "Viaplay",
+        "url": "https://viaplay.com/nl-nl/sport/voetbal/bundesliga",
+        "type": "streaming",
+        "domain": "viaplay.com",
+        "note": ""
+      }
+    ],
+    "BE": [
+      {
+        "name": "Play Sports",
+        "url": "https://www2.telenet.be/residential/nl/producten/telenet-tv/play-sports.html",
+        "type": "tv",
+        "domain": "telenet.be",
+        "note": ""
+      }
+    ],
+    "DK": [
+      {
+        "name": "Viaplay",
+        "url": "https://viaplay.dk/sport/fodbold/bundesliga",
+        "type": "streaming",
+        "domain": "viaplay.dk",
+        "note": ""
+      }
+    ],
+    "SE": [
+      {
+        "name": "Viaplay",
+        "url": "https://viaplay.se/sport/fotboll/bundesliga",
+        "type": "streaming",
+        "domain": "viaplay.se",
+        "note": ""
+      }
+    ],
+    "NO": [
+      {
+        "name": "Viaplay",
+        "url": "https://viaplay.no/sport/fotball/bundesliga",
+        "type": "streaming",
+        "domain": "viaplay.no",
+        "note": ""
+      }
+    ],
+    "FI": [
+      {
+        "name": "Viaplay",
+        "url": "https://viaplay.fi/urheilu/jalkapallo/bundesliiga",
+        "type": "streaming",
+        "domain": "viaplay.fi",
+        "note": ""
+      }
+    ],
+    "PL": [
+      {
+        "name": "Eleven Sports",
+        "url": "https://www.elevensports.pl",
+        "type": "tv",
+        "domain": "elevensports.pl",
+        "note": ""
+      }
+    ],
+    "TR": [
+      {
+        "name": "S Sport Plus",
+        "url": "https://www.ssportplus.com/bundesliga/",
+        "type": "streaming",
+        "domain": "ssportplus.com",
+        "note": "Also S Sport TV"
+      }
+    ],
+    "GR": [
+      {
+        "name": "Nova Sports",
+        "url": "https://www.novasports.gr/sport/podosfairo/event/bundesliga/news/",
+        "type": "tv",
+        "domain": "novasports.gr",
+        "note": ""
+      }
+    ],
+    "IN": [
+      {
+        "name": "ZEE5",
+        "url": "https://www.zee5.com/",
+        "type": "streaming",
+        "domain": "zee5.com",
+        "note": "Also Unite8 Sports TV"
+      }
+    ],
+    "AU": [
+      {
+        "name": "beIN SPORTS CONNECT",
+        "url": "https://connect-au.beinsports.com/en/competition/bundesliga",
+        "type": "streaming",
+        "domain": "beinsports.com",
+        "note": "All matches"
+      }
+    ],
+    "NZ": [
+      {
+        "name": "beIN SPORTS CONNECT",
+        "url": "https://connect-nz.beinsports.com/en/competition/bundesliga",
+        "type": "streaming",
+        "domain": "beinsports.com",
+        "note": "All matches"
+      }
+    ],
+    "JP": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/ja-JP/welcome",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": "All matches"
+      },
+      {
+        "name": "ABEMA",
+        "url": "https://abema.tv/",
+        "type": "streaming",
+        "domain": "abema.tv",
+        "note": "Free; 2 matches per matchday"
+      }
+    ],
+    "KR": [
+      {
+        "name": "Coupang Play",
+        "url": "https://www.coupangplay.com/",
+        "type": "streaming",
+        "domain": "coupangplay.com",
+        "note": ""
+      }
+    ],
+    "CN": [
+      {
+        "name": "CCTV",
+        "url": "https://sports.cctv.com/",
+        "type": "tv",
+        "domain": "cctv.com",
+        "note": ""
+      },
+      {
+        "name": "Migu",
+        "url": "https://www.miguvideo.com/",
+        "type": "streaming",
+        "domain": "miguvideo.com",
+        "note": ""
+      }
+    ],
+    "HK": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://connect-hk.beinsports.com/en/competition/bundesliga",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "SG": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://connect-sg.beinsports.com/en/competition/bundesliga",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "MY": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://connect-my.beinsports.com/en/competition/bundesliga",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "PH": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://connect-ph.beinsports.com/en/competition/bundesliga",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "ID": [
+      {
+        "name": "Vision+",
+        "url": "https://www.visionplus.id/",
+        "type": "streaming",
+        "domain": "visionplus.id",
+        "note": "All matches"
+      },
+      {
+        "name": "RCTI",
+        "url": "https://www.rcti.tv/",
+        "type": "free-tv",
+        "domain": "rcti.tv",
+        "note": "Selected free matches"
+      },
+      {
+        "name": "iNews",
+        "url": "https://www.inews.id/sport",
+        "type": "free-tv",
+        "domain": "inews.id",
+        "note": "Selected free matches"
+      },
+      {
+        "name": "K-Vision",
+        "url": "https://www.k-vision.tv/",
+        "type": "tv",
+        "domain": "k-vision.tv",
+        "note": ""
+      },
+      {
+        "name": "MNC Vision",
+        "url": "https://www.mncvision.id/",
+        "type": "tv",
+        "domain": "mncvision.id",
+        "note": ""
+      },
+      {
+        "name": "IndiHome TV",
+        "url": "https://www.telkomsel.com/indihome",
+        "type": "tv",
+        "domain": "telkomsel.com",
+        "note": "AllPlay Sports channel"
+      }
+    ],
+    "TH": [
+      {
+        "name": "AIS PLAY",
+        "url": "https://aisplay.ais.th/",
+        "type": "streaming",
+        "domain": "ais.th",
+        "note": "All matches"
+      }
+    ],
+    "VN": [
+      {
+        "name": "TV360",
+        "url": "https://tv360.vn/",
+        "type": "streaming",
+        "domain": "tv360.vn",
+        "note": "All matches"
+      }
+    ],
+    "AE": [
+      {
+        "name": "Shahid",
+        "url": "https://shahid.mbc.net/en",
+        "type": "streaming",
+        "domain": "mbc.net",
+        "note": "All matches"
+      },
+      {
+        "name": "MBC Action",
+        "url": "https://www.mbc.net/en",
+        "type": "free-tv",
+        "domain": "mbc.net",
+        "note": "3 free matches weekly"
+      }
+    ],
+    "SA": [
+      {
+        "name": "Shahid",
+        "url": "https://shahid.mbc.net/en",
+        "type": "streaming",
+        "domain": "mbc.net",
+        "note": "All matches"
+      },
+      {
+        "name": "MBC Action",
+        "url": "https://www.mbc.net/en",
+        "type": "free-tv",
+        "domain": "mbc.net",
+        "note": "3 free matches weekly"
+      }
+    ],
+    "QA": [
+      {
+        "name": "Shahid",
+        "url": "https://shahid.mbc.net/en",
+        "type": "streaming",
+        "domain": "mbc.net",
+        "note": "All matches"
+      },
+      {
+        "name": "MBC Action",
+        "url": "https://www.mbc.net/en",
+        "type": "free-tv",
+        "domain": "mbc.net",
+        "note": "3 free matches weekly"
+      }
+    ],
+    "EG": [
+      {
+        "name": "Shahid",
+        "url": "https://shahid.mbc.net/en",
+        "type": "streaming",
+        "domain": "mbc.net",
+        "note": "All matches"
+      },
+      {
+        "name": "MBC Action",
+        "url": "https://www.mbc.net/en",
+        "type": "free-tv",
+        "domain": "mbc.net",
+        "note": "3 free matches weekly"
+      }
+    ],
+    "NG": [
+      {
+        "name": "StarTimes",
+        "url": "https://www.startimestv.com/",
+        "type": "tv",
+        "domain": "startimestv.com",
+        "note": ""
+      }
+    ],
+    "ZA": [
+      {
+        "name": "StarTimes",
+        "url": "https://www.startimestv.com/",
+        "type": "tv",
+        "domain": "startimestv.com",
+        "note": ""
+      },
+      {
+        "name": "SABC Sport",
+        "url": "https://www.sabcsport.com/",
+        "type": "free-tv",
+        "domain": "sabcsport.com",
+        "note": "Selected free matches"
+      }
+    ],
+    "KE": [
+      {
+        "name": "StarTimes",
+        "url": "https://www.startimestv.com/",
+        "type": "tv",
+        "domain": "startimestv.com",
+        "note": ""
+      },
+      {
+        "name": "Azam TV",
+        "url": "https://www.azamtv.co.tz/",
+        "type": "tv",
+        "domain": "azamtv.co.tz",
+        "note": ""
+      }
+    ],
+    "GH": [
+      {
+        "name": "StarTimes",
+        "url": "https://www.startimestv.com/",
+        "type": "tv",
+        "domain": "startimestv.com",
+        "note": ""
+      }
+    ]
+  },
+  "sources": {
+    "US": [
+      "https://www.bundesliga.com/en/bundesliga/news/bundesliga-broadens-broadcast-accessibility-for-fans-in-us-with-new-deals-with-versants-usa-sports-and-nbcuniversals-telemundo-38268",
+      "https://www.01net.it/usa-sports-and-bundesliga-announce-exclusive-multi-year-u-s-media-rights-agreement/",
+      "https://worldsoccertalk.com/bundesliga-tv-schedule/"
+    ],
+    "CA": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-agrees-rights-deal-with-canadian-soccer-business-to-add-onesoccer-to-media-landscape/",
+      "https://www.sportcal.com/media/three-years-of-bundesliga-coverage-secured-in-canada-by-dazn/",
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters"
+    ],
+    "MX": [
+      "https://www.bundesliga-group.com/news/fox-strengthens-its-football-leadership-in-mexico-and-central-america-with-the-bundesliga/",
+      "https://www.dazn.com/es-MX/news/f%C3%BAtbol/como-ver-augsburg-vs-bayern-munich-vivo-canales-streaming-horarios-bundesliga/12rqj2l3zb8i61exmz5wuoli9l"
+    ],
+    "BR": [
+      "https://www.bundesliga-group.com/news/bundesliga-builds-on-multi-platform-distribution-in-brazil-to-deliver-comprehensive-coverage-for-the-2026-27-season/"
+    ],
+    "AR": [
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters",
+      "https://www.dazn.com/es-MX/news/f%C3%BAtbol/como-ver-augsburg-vs-bayern-munich-vivo-canales-streaming-horarios-bundesliga/12rqj2l3zb8i61exmz5wuoli9l"
+    ],
+    "CO": [
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters",
+      "https://www.eltiempo.com/deportes/futbol-internacional/bayern-munich-vuelve-a-la-accion-en-la-bundesliga-con-luis-diaz-hora-y-donde-ver-en-vivo-por-tv-el-partido-contra-augsburgo-3592537"
+    ],
+    "CL": [
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters",
+      "https://www.dazn.com/es-MX/news/f%C3%BAtbol/como-ver-augsburg-vs-bayern-munich-vivo-canales-streaming-horarios-bundesliga/12rqj2l3zb8i61exmz5wuoli9l"
+    ],
+    "GB": [
+      "https://www.bundesliga.com/en/bundesliga/news/bundesliga-media-expands-pioneering-uk-and-ireland-youtube-watch-along-coverage-with-jamie-vardy-partnership-goldbridge-2026-27-38838",
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters"
+    ],
+    "IE": [
+      "https://www.bundesliga.com/en/bundesliga/news/bundesliga-media-expands-pioneering-uk-and-ireland-youtube-watch-along-coverage-with-jamie-vardy-partnership-goldbridge-2026-27-38838",
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters"
+    ],
+    "ES": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-to-partner-with-dazn-in-spain-for-next-broadcast-rights-cycle/"
+    ],
+    "PT": [
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters"
+    ],
+    "FR": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-and-bein-sports-sign-new-four-year-broadcasting-deal/"
+    ],
+    "DE": [
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters",
+      "https://en.wikipedia.org/wiki/Bundesliga#Media_coverage"
+    ],
+    "AT": [
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters",
+      "https://www.sky.at/bestellung/pakete-produkte/sky-fussball-bundesliga-paket-169352"
+    ],
+    "CH": [
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters",
+      "https://sport.sky.ch/de/sp/competition/1"
+    ],
+    "IT": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-and-sky-italia-agree-four-year-extension-to-prolong-broadcast-rights-agreement/"
+    ],
+    "NL": [
+      "https://www.bundesliga-group.com/news/nent-group-secure-rights-to-bundesliga-and-bundesliga-2-in-the-netherlands-as-additional-two-cycle-deal/",
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters"
+    ],
+    "BE": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-signs-four-year-deal-with-belgian-broadcaster-telenet/"
+    ],
+    "DK": [
+      "https://www.bundesliga-group.com/news/nent-group-and-bundesliga-agree-nine-market-deal-until-2029/"
+    ],
+    "SE": [
+      "https://www.bundesliga-group.com/news/nent-group-and-bundesliga-agree-nine-market-deal-until-2029/"
+    ],
+    "NO": [
+      "https://www.bundesliga-group.com/news/nent-group-and-bundesliga-agree-nine-market-deal-until-2029/"
+    ],
+    "FI": [
+      "https://www.bundesliga-group.com/news/nent-group-and-bundesliga-agree-nine-market-deal-until-2029/"
+    ],
+    "PL": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-grants-polish-broadcasting-rights-to-eleven-sports/"
+    ],
+    "TR": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-signs-four-year-deal-with-turkish-broadcaster-saran-media-group/"
+    ],
+    "GR": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-signs-four-year-extension-with-united-media-in-balkans-greece-cyprus-bulgaria/",
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters"
+    ],
+    "IN": [
+      "https://www.bundesliga-group.com/news/z-secures-exclusive-rights-for-bundesliga-in-india/"
+    ],
+    "AU": [
+      "https://www.beinsports.com/en-au/football/bundesliga/articles/how-to-watch-the-bundesliga-in-australia-2026-08-24"
+    ],
+    "NZ": [
+      "https://www.beinsports.com/en-au/football/bundesliga/articles/how-to-watch-the-bundesliga-in-australia-2026-08-24"
+    ],
+    "JP": [
+      "https://prtimes.jp/main/html/rd/p/000000004.000163513.html",
+      "https://www.bundesliga-group.com/news/bundesliga-signs-three-year-deal-for-japan-with-broadcast-powerhouse-dazn/"
+    ],
+    "KR": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-announces-long-term-strategic-cooperation-with-coupang-play-in-korea/",
+      "https://sportbusiness.com/news/coupang-takes-bundesliga-rights-off-cj-enm-in-south-korea"
+    ],
+    "CN": [
+      "https://www.bundesliga-group.com/news/bundesliga-and-china-media-group-mark-30-years-of-cooperation-with-memorandum-of-understanding/",
+      "https://www.sportcal.com/?p=152622",
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters"
+    ],
+    "HK": [
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters"
+    ],
+    "SG": [
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters"
+    ],
+    "MY": [
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters"
+    ],
+    "PH": [
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters"
+    ],
+    "ID": [
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters",
+      "https://www.bundesliga-group.com/news/bundesliga-international-agrees-broadcast-deal-with-mnc-to-show-bundesliga-in-indonesia/",
+      "https://pontianak.tribunnews.com/superball/1183117/jadwal-dan-link-live-streaming-bundesliga-20262027-nonton-resmi-bayern-munich-dortmund"
+    ],
+    "TH": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-signs-partnership-deal-with-ais-thailands-leading-communications-provider/"
+    ],
+    "VN": [
+      "https://www.sportcal.com/newsletters/vietnams-viettel-adds-to-bundesliga-media-rights-partner-stable",
+      "https://vov.gov.vn/tv360-secures-exclusive-bundesliga-broadcasting-right-in-vietnam-for-three-seas-dtnew-1105929"
+    ],
+    "AE": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-lands-historic-three-year-deal-with-mbc-group-for-the-mena-region/"
+    ],
+    "SA": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-lands-historic-three-year-deal-with-mbc-group-for-the-mena-region/"
+    ],
+    "QA": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-lands-historic-three-year-deal-with-mbc-group-for-the-mena-region/"
+    ],
+    "EG": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-lands-historic-three-year-deal-with-mbc-group-for-the-mena-region/"
+    ],
+    "NG": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-strengthens-distribution-network-with-key-partnerships-in-sub-saharan-africa/"
+    ],
+    "ZA": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-strengthens-distribution-network-with-key-partnerships-in-sub-saharan-africa/",
+      "https://www.bundesliga-group.com/news/bundesliga-signs-strategic-mou-with-safa-cementing-position-as-fastest-growing-league-in-south-africa/",
+      "https://www.bundesliga.com/en/bundesliga/info/broadcasters"
+    ],
+    "KE": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-strengthens-distribution-network-with-key-partnerships-in-sub-saharan-africa/"
+    ],
+    "GH": [
+      "https://www.bundesliga-group.com/news/bundesliga-international-strengthens-distribution-network-with-key-partnerships-in-sub-saharan-africa/"
+    ]
+  },
+  "unverified": [
+    "PK",
+    "BD",
+    "LK"
+  ]
+}

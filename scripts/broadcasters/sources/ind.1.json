@@ -1,0 +1,89 @@
+{
+  "leagues": [
+    "ind.1"
+  ],
+  "season": "2026-27",
+  "countries": {
+    "IN": [
+      {
+        "name": "Sony Sports Network",
+        "url": "https://www.sonysportsnetwork.com",
+        "type": "tv",
+        "domain": "sonysportsnetwork.com",
+        "note": ""
+      },
+      {
+        "name": "SonyLIV",
+        "url": "https://www.sonyliv.com",
+        "type": "streaming",
+        "domain": "sonyliv.com",
+        "note": ""
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/c/indiansuperleague",
+        "type": "streaming",
+        "domain": "youtube.com",
+        "note": "Free live stream"
+      }
+    ]
+  },
+  "sources": {
+    "IN": [
+      "https://www.indiansuperleague.com/news/new-season-new-challenges-as-punjab-fc-face-odisha-fc",
+      "https://www.indiansuperleague.com/news/bengaluru-fc-host-sc-delhi-in-mg-isl-season-opener",
+      "https://www.indiansuperleague.com/",
+      "https://www.livesoccertv.com/competitions/india/super-league/watch/india/"
+    ]
+  },
+  "unverified": [
+    "US",
+    "CA",
+    "MX",
+    "BR",
+    "AR",
+    "CO",
+    "CL",
+    "GB",
+    "IE",
+    "ES",
+    "PT",
+    "FR",
+    "DE",
+    "AT",
+    "CH",
+    "IT",
+    "NL",
+    "BE",
+    "DK",
+    "SE",
+    "NO",
+    "FI",
+    "PL",
+    "TR",
+    "GR",
+    "PK",
+    "BD",
+    "LK",
+    "AU",
+    "NZ",
+    "JP",
+    "KR",
+    "CN",
+    "HK",
+    "SG",
+    "MY",
+    "ID",
+    "TH",
+    "VN",
+    "PH",
+    "AE",
+    "SA",
+    "QA",
+    "EG",
+    "NG",
+    "ZA",
+    "KE",
+    "GH"
+  ]
+}

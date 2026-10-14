@@ -1,0 +1,235 @@
+{
+  "leagues": [
+    "por.1"
+  ],
+  "season": "2026-27",
+  "countries": {
+    "PT": [
+      {
+        "name": "Sport TV",
+        "url": "https://www.sporttv.pt/",
+        "type": "tv",
+        "domain": "sporttv.pt",
+        "note": "Most matches"
+      },
+      {
+        "name": "BTV",
+        "url": "https://www.slbenfica.pt/pt-pt/btv",
+        "type": "tv",
+        "domain": "slbenfica.pt",
+        "note": "Benfica home matches"
+      },
+      {
+        "name": "TVI",
+        "url": "https://tviplayer.iol.pt/",
+        "type": "free-tv",
+        "domain": "iol.pt",
+        "note": "Moreirense home matches"
+      }
+    ],
+    "US": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://www.beinsports.com/en-us/soccer/primeira-liga",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": "All matches"
+      },
+      {
+        "name": "beIN SPORTS CONNECT",
+        "url": "https://connect.beinsports.com/",
+        "type": "streaming",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "CA": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://connect.beinsports.com/",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": "beIN SPORTS CONNECT"
+      }
+    ],
+    "BR": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.com.br/",
+        "type": "tv",
+        "domain": "espn.com.br",
+        "note": ""
+      },
+      {
+        "name": "Disney+",
+        "url": "https://www.disneyplus.com",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": "ESPN on Disney+ Premium"
+      }
+    ],
+    "ES": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/es-ES/welcome",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": "Three matches per round"
+      }
+    ],
+    "IT": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/it-IT/welcome",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": "Three matches per round"
+      }
+    ],
+    "BE": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/nl-BE/welcome",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": "Three matches per round"
+      }
+    ],
+    "JP": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/ja-JP/welcome",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": "Three matches per round"
+      }
+    ],
+    "DE": [
+      {
+        "name": "sportdigital FUSSBALL",
+        "url": "https://start.sportdigital.de",
+        "type": "tv",
+        "domain": "sportdigital.de",
+        "note": "Also on sportdigital+"
+      }
+    ],
+    "AT": [
+      {
+        "name": "sportdigital FUSSBALL",
+        "url": "https://start.sportdigital.de",
+        "type": "tv",
+        "domain": "sportdigital.de",
+        "note": "Also on sportdigital+"
+      }
+    ],
+    "CH": [
+      {
+        "name": "sportdigital FUSSBALL",
+        "url": "https://start.sportdigital.de",
+        "type": "tv",
+        "domain": "sportdigital.de",
+        "note": "Also on sportdigital+"
+      }
+    ],
+    "FR": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://www.beinsports.com/fr-fr/football/liga-portugal",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "TR": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://www.beinsports.com.tr/lig/portekiz-ligi",
+        "type": "tv",
+        "domain": "beinsports.com.tr",
+        "note": ""
+      }
+    ]
+  },
+  "sources": {
+    "PT": [
+      "https://www.livesoccertv.com/competitions/portugal/liga-sagres/watch/portugal/"
+    ],
+    "US": [
+      "https://www.beinsports.com/en-us/soccer/primeira-liga",
+      "https://www.livesoccertv.com/competitions/portugal/liga-sagres/watch/usa/"
+    ],
+    "CA": [
+      "https://www.livesoccertv.com/competitions/portugal/liga-sagres/watch/canada/"
+    ],
+    "BR": [
+      "https://www.livesoccertv.com/competitions/portugal/liga-sagres/watch/brazil/"
+    ],
+    "ES": [
+      "https://www.livesoccertv.com/competitions/portugal/liga-sagres/watch/spain/"
+    ],
+    "IT": [
+      "https://www.livesoccertv.com/competitions/portugal/liga-sagres/watch/italy/"
+    ],
+    "BE": [
+      "https://www.livesoccertv.com/competitions/portugal/liga-sagres/watch/belgium/"
+    ],
+    "JP": [
+      "https://www.livesoccertv.com/competitions/portugal/liga-sagres/watch/japan/"
+    ],
+    "DE": [
+      "https://www.livesoccertv.com/competitions/portugal/liga-sagres/watch/germany/"
+    ],
+    "AT": [
+      "https://www.livesoccertv.com/competitions/portugal/liga-sagres/watch/germany/"
+    ],
+    "CH": [
+      "https://www.livesoccertv.com/competitions/portugal/liga-sagres/watch/germany/"
+    ],
+    "FR": [
+      "https://www.beinsports.com/fr-fr/football/liga-portugal",
+      "https://www.livesoccertv.com/competitions/portugal/liga-sagres/watch/france/"
+    ],
+    "TR": [
+      "https://www.beinsports.com.tr/lig/portekiz-ligi",
+      "https://www.livesoccertv.com/competitions/portugal/liga-sagres/watch/turkey/"
+    ]
+  },
+  "unverified": [
+    "MX",
+    "AR",
+    "CO",
+    "CL",
+    "GB",
+    "IE",
+    "NL",
+    "DK",
+    "SE",
+    "NO",
+    "FI",
+    "PL",
+    "GR",
+    "IN",
+    "PK",
+    "BD",
+    "LK",
+    "AU",
+    "NZ",
+    "KR",
+    "CN",
+    "HK",
+    "SG",
+    "MY",
+    "ID",
+    "TH",
+    "VN",
+    "PH",
+    "AE",
+    "SA",
+    "QA",
+    "EG",
+    "NG",
+    "ZA",
+    "KE",
+    "GH"
+  ]
+}

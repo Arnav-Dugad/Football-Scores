@@ -1,0 +1,723 @@
+{
+  "leagues": [
+    "uefa.europa"
+  ],
+  "season": "2026-27",
+  "countries": {
+    "US": [
+      {
+        "name": "Paramount+",
+        "url": "https://www.paramountplus.com/",
+        "type": "streaming",
+        "domain": "paramountplus.com",
+        "note": ""
+      },
+      {
+        "name": "TUDN",
+        "url": "https://www.tudn.com/",
+        "type": "tv",
+        "domain": "tudn.com",
+        "note": "Spanish-language"
+      },
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      }
+    ],
+    "CA": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/en-CA/home",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      },
+      {
+        "name": "OneSoccer",
+        "url": "https://onesoccer.ca/",
+        "type": "streaming",
+        "domain": "onesoccer.ca",
+        "note": ""
+      }
+    ],
+    "MX": [
+      {
+        "name": "Claro Sports",
+        "url": "https://www.clarosports.com/",
+        "type": "streaming",
+        "domain": "clarosports.com",
+        "note": ""
+      },
+      {
+        "name": "ESPN / Disney+",
+        "url": "https://www.disneyplus.com/",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": ""
+      }
+    ],
+    "BR": [
+      {
+        "name": "CazéTV",
+        "url": "https://www.youtube.com/@CazeTV",
+        "type": "streaming",
+        "domain": "youtube.com",
+        "note": "Free on YouTube"
+      }
+    ],
+    "AR": [
+      {
+        "name": "ESPN / Disney+",
+        "url": "https://www.disneyplus.com/",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": ""
+      }
+    ],
+    "CO": [
+      {
+        "name": "ESPN / Disney+",
+        "url": "https://www.disneyplus.com/",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": ""
+      }
+    ],
+    "CL": [
+      {
+        "name": "ESPN / Disney+",
+        "url": "https://www.disneyplus.com/",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": ""
+      }
+    ],
+    "GB": [
+      {
+        "name": "TNT Sports",
+        "url": "https://www.tntsports.co.uk/",
+        "type": "tv",
+        "domain": "tntsports.co.uk",
+        "note": ""
+      }
+    ],
+    "IE": [
+      {
+        "name": "Premier Sports",
+        "url": "https://premiersportsireland.com/",
+        "type": "tv",
+        "domain": "premiersportsireland.com",
+        "note": ""
+      }
+    ],
+    "ES": [
+      {
+        "name": "Movistar Plus+",
+        "url": "https://www.movistarplus.es/",
+        "type": "tv",
+        "domain": "movistarplus.es",
+        "note": ""
+      }
+    ],
+    "PT": [
+      {
+        "name": "Sport TV",
+        "url": "https://www.sporttv.pt/",
+        "type": "tv",
+        "domain": "sporttv.pt",
+        "note": ""
+      },
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      }
+    ],
+    "FR": [
+      {
+        "name": "Canal+",
+        "url": "https://www.canalplus.com/",
+        "type": "tv",
+        "domain": "canalplus.com",
+        "note": ""
+      }
+    ],
+    "DE": [
+      {
+        "name": "RTL+",
+        "url": "https://plus.rtl.de/",
+        "type": "streaming",
+        "domain": "rtl.de",
+        "note": ""
+      },
+      {
+        "name": "Sky",
+        "url": "https://www.sky.de/",
+        "type": "tv",
+        "domain": "sky.de",
+        "note": "Selected matches"
+      }
+    ],
+    "AT": [
+      {
+        "name": "Canal+",
+        "url": "https://www.canalplus.at/",
+        "type": "streaming",
+        "domain": "canalplus.at",
+        "note": ""
+      },
+      {
+        "name": "Sky Austria",
+        "url": "https://www.sky.at/",
+        "type": "tv",
+        "domain": "sky.at",
+        "note": ""
+      },
+      {
+        "name": "ServusTV",
+        "url": "https://www.servustv.com/de/sport",
+        "type": "free-tv",
+        "domain": "servustv.com",
+        "note": "Selected matches"
+      }
+    ],
+    "CH": [
+      {
+        "name": "blue Sport",
+        "url": "https://tv.blue.ch/blueplus/sport",
+        "type": "streaming",
+        "domain": "blue.ch",
+        "note": ""
+      },
+      {
+        "name": "SRF / RTS / RSI",
+        "url": "https://www.srf.ch/sport",
+        "type": "free-tv",
+        "domain": "srgssr.ch",
+        "note": "Selected matches"
+      }
+    ],
+    "IT": [
+      {
+        "name": "Sky Sport",
+        "url": "https://www.sky.it/",
+        "type": "tv",
+        "domain": "sky.it",
+        "note": ""
+      }
+    ],
+    "NL": [
+      {
+        "name": "Ziggo Sport",
+        "url": "https://www.ziggosport.nl/",
+        "type": "tv",
+        "domain": "ziggosport.nl",
+        "note": ""
+      }
+    ],
+    "BE": [
+      {
+        "name": "Play Sports",
+        "url": "https://www.playsports.be/",
+        "type": "tv",
+        "domain": "playsports.be",
+        "note": ""
+      },
+      {
+        "name": "Be tv",
+        "url": "https://www.betv.be/",
+        "type": "tv",
+        "domain": "betv.be",
+        "note": ""
+      },
+      {
+        "name": "RTBF Auvio",
+        "url": "https://auvio.rtbf.be/",
+        "type": "free-tv",
+        "domain": "rtbf.be",
+        "note": "Selected matches"
+      },
+      {
+        "name": "VRT MAX",
+        "url": "https://www.vrt.be/vrtmax/",
+        "type": "free-tv",
+        "domain": "vrt.be",
+        "note": "Selected matches"
+      }
+    ],
+    "DK": [
+      {
+        "name": "Disney+",
+        "url": "https://www.disneyplus.com/",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": ""
+      }
+    ],
+    "SE": [
+      {
+        "name": "Disney+",
+        "url": "https://www.disneyplus.com/",
+        "type": "streaming",
+        "domain": "disneyplus.com",
+        "note": ""
+      }
+    ],
+    "NO": [
+      {
+        "name": "Viaplay",
+        "url": "https://viaplay.no/no-nb/",
+        "type": "streaming",
+        "domain": "viaplay.no",
+        "note": ""
+      }
+    ],
+    "FI": [
+      {
+        "name": "Viaplay",
+        "url": "https://viaplay.fi/fi-fi/",
+        "type": "streaming",
+        "domain": "viaplay.fi",
+        "note": ""
+      }
+    ],
+    "PL": [
+      {
+        "name": "Polsat Sport",
+        "url": "https://www.polsatsport.pl/",
+        "type": "tv",
+        "domain": "polsatsport.pl",
+        "note": ""
+      }
+    ],
+    "TR": [
+      {
+        "name": "TRT",
+        "url": "https://www.trt.net.tr/",
+        "type": "free-tv",
+        "domain": "trt.net.tr",
+        "note": ""
+      }
+    ],
+    "GR": [
+      {
+        "name": "MagentaTV",
+        "url": "https://streaming.magentatv.gr/",
+        "type": "tv",
+        "domain": "magentatv.gr",
+        "note": ""
+      },
+      {
+        "name": "ANT1",
+        "url": "https://www.antenna.gr/",
+        "type": "free-tv",
+        "domain": "antenna.gr",
+        "note": "Selected matches"
+      }
+    ],
+    "IN": [
+      {
+        "name": "Sony Sports Network",
+        "url": "https://www.sonyliv.com/",
+        "type": "tv",
+        "domain": "sonyliv.com",
+        "note": ""
+      }
+    ],
+    "PK": [
+      {
+        "name": "Tapmad",
+        "url": "https://www.tapmad.com/",
+        "type": "streaming",
+        "domain": "tapmad.com",
+        "note": ""
+      },
+      {
+        "name": "Sony Sports Network",
+        "url": "https://www.sonyliv.com/",
+        "type": "tv",
+        "domain": "sonyliv.com",
+        "note": ""
+      }
+    ],
+    "BD": [
+      {
+        "name": "Sony Sports Network",
+        "url": "https://www.sonyliv.com/",
+        "type": "tv",
+        "domain": "sonyliv.com",
+        "note": ""
+      },
+      {
+        "name": "Tapmad",
+        "url": "https://www.tapmad.com/",
+        "type": "streaming",
+        "domain": "tapmad.com",
+        "note": ""
+      }
+    ],
+    "LK": [
+      {
+        "name": "Sony Sports Network",
+        "url": "https://www.sonyliv.com/",
+        "type": "tv",
+        "domain": "sonyliv.com",
+        "note": ""
+      }
+    ],
+    "AU": [
+      {
+        "name": "Stan Sport",
+        "url": "https://www.stan.com.au/sport",
+        "type": "streaming",
+        "domain": "stan.com.au",
+        "note": ""
+      }
+    ],
+    "NZ": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      }
+    ],
+    "JP": [
+      {
+        "name": "WOWOW",
+        "url": "https://wod.wowow.co.jp/",
+        "type": "tv",
+        "domain": "wowow.co.jp",
+        "note": ""
+      }
+    ],
+    "KR": [
+      {
+        "name": "SPOTV",
+        "url": "https://www.spotvnow.co.kr/",
+        "type": "streaming",
+        "domain": "spotvnow.co.kr",
+        "note": ""
+      }
+    ],
+    "CN": [
+      {
+        "name": "iQIYI Sports",
+        "url": "https://sports.iqiyi.com/",
+        "type": "streaming",
+        "domain": "iqiyi.com",
+        "note": ""
+      }
+    ],
+    "HK": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://connect.beinsports.com/",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "SG": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://connect.beinsports.com/",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "MY": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://connect.beinsports.com/",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "ID": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://connect.beinsports.com/",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      },
+      {
+        "name": "SCTV",
+        "url": "https://www.sctv.co.id/",
+        "type": "free-tv",
+        "domain": "sctv.co.id",
+        "note": ""
+      }
+    ],
+    "TH": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://connect.beinsports.com/",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "VN": [
+      {
+        "name": "VTVcab",
+        "url": "https://www.vtvcab.vn/",
+        "type": "tv",
+        "domain": "vtvcab.vn",
+        "note": ""
+      },
+      {
+        "name": "TV360 (Viettel)",
+        "url": "https://tv360.vn/",
+        "type": "streaming",
+        "domain": "tv360.vn",
+        "note": ""
+      }
+    ],
+    "PH": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://connect.beinsports.com/",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "AE": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://www.bein.com/en/",
+        "type": "tv",
+        "domain": "bein.com",
+        "note": ""
+      }
+    ],
+    "SA": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://www.bein.com/en/",
+        "type": "tv",
+        "domain": "bein.com",
+        "note": ""
+      }
+    ],
+    "QA": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://www.bein.com/en/",
+        "type": "tv",
+        "domain": "bein.com",
+        "note": ""
+      }
+    ],
+    "EG": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://www.bein.com/en/",
+        "type": "tv",
+        "domain": "bein.com",
+        "note": ""
+      }
+    ],
+    "NG": [
+      {
+        "name": "SuperSport",
+        "url": "https://supersport.com/",
+        "type": "tv",
+        "domain": "supersport.com",
+        "note": ""
+      }
+    ],
+    "ZA": [
+      {
+        "name": "SuperSport",
+        "url": "https://supersport.com/",
+        "type": "tv",
+        "domain": "supersport.com",
+        "note": ""
+      }
+    ],
+    "KE": [
+      {
+        "name": "SuperSport",
+        "url": "https://supersport.com/",
+        "type": "tv",
+        "domain": "supersport.com",
+        "note": ""
+      }
+    ],
+    "GH": [
+      {
+        "name": "SuperSport",
+        "url": "https://supersport.com/",
+        "type": "tv",
+        "domain": "supersport.com",
+        "note": ""
+      }
+    ]
+  },
+  "sources": {
+    "US": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "CA": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "MX": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "BR": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/",
+      "https://www.sportbusiness.com/news/sbt-ensures-continued-fta-champions-league-in-brazil-cazetv-in-for-europa-league/"
+    ],
+    "AR": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "CO": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "CL": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "GB": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "IE": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "ES": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "PT": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "FR": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "DE": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/",
+      "https://sportbusiness.com/news/rtl-retains-clean-sweep-of-europa-league-conference-league-rights",
+      "https://www.tvmovie.de/news/sky-uebernahme-durch-rtl-das-aendert-sich-bei-bundesliga-dfb-pokal-und-europa-league-157831"
+    ],
+    "AT": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "CH": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "IT": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "NL": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "BE": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "DK": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/",
+      "https://digitaltveurope.com/2024/04/17/disney-swoops-for-europa-league-rights-in-denmark-sweden"
+    ],
+    "SE": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/",
+      "https://digitaltveurope.com/2024/04/17/disney-swoops-for-europa-league-rights-in-denmark-sweden"
+    ],
+    "NO": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "FI": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "PL": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "TR": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "GR": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "IN": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "PK": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "BD": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "LK": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "AU": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "NZ": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "JP": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "KR": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "CN": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "HK": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "SG": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "MY": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "ID": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "TH": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "VN": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "PH": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "AE": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "SA": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "QA": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "EG": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "NG": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "ZA": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "KE": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ],
+    "GH": [
+      "https://www.uefa.com/uefaeuropaleague/news/028d-1ae6d62165d6-69b17b354deb-1000--where-to-watch-the-europa-league-tv-broadcast-partners-li/"
+    ]
+  },
+  "unverified": []
+}

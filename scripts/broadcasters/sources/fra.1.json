@@ -1,0 +1,629 @@
+{
+  "leagues": [
+    "fra.1"
+  ],
+  "season": "2026-27",
+  "countries": {
+    "US": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://www.beinsports.com/en-us",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "CA": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://www.beinsports.com/",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "MX": [
+      {
+        "name": "FOX One",
+        "url": "https://www.foxone.mx/",
+        "type": "streaming",
+        "domain": "foxone.mx",
+        "note": "Also on FOX channel"
+      }
+    ],
+    "BR": [
+      {
+        "name": "CazéTV",
+        "url": "https://www.youtube.com/@cazetv",
+        "type": "streaming",
+        "domain": "youtube.com",
+        "note": "Free on YouTube"
+      },
+      {
+        "name": "XSports",
+        "url": "https://www.xsports.com.br/",
+        "type": "free-tv",
+        "domain": "xsports.com.br",
+        "note": "3 matches per round"
+      }
+    ],
+    "AR": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.com.ar/",
+        "type": "tv",
+        "domain": "espn.com.ar",
+        "note": ""
+      }
+    ],
+    "CO": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.com.co/",
+        "type": "tv",
+        "domain": "espn.com.co",
+        "note": ""
+      }
+    ],
+    "CL": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.cl/",
+        "type": "tv",
+        "domain": "espn.cl",
+        "note": ""
+      }
+    ],
+    "GB": [
+      {
+        "name": "Ligue 1+",
+        "url": "https://plus.ligue1.com/",
+        "type": "streaming",
+        "domain": "ligue1.com",
+        "note": "All matches"
+      },
+      {
+        "name": "Prime Video",
+        "url": "https://www.primevideo.com/",
+        "type": "streaming",
+        "domain": "primevideo.com",
+        "note": "Selected matches, pay-per-view"
+      }
+    ],
+    "IE": [
+      {
+        "name": "Ligue 1+",
+        "url": "https://plus.ligue1.com/",
+        "type": "streaming",
+        "domain": "ligue1.com",
+        "note": ""
+      }
+    ],
+    "ES": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/es-ES/home",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": "All matches"
+      }
+    ],
+    "PT": [
+      {
+        "name": "Sport TV",
+        "url": "https://www.sporttv.pt/",
+        "type": "tv",
+        "domain": "sporttv.pt",
+        "note": ""
+      }
+    ],
+    "FR": [
+      {
+        "name": "Ligue 1+",
+        "url": "https://plus.ligue1.com/",
+        "type": "streaming",
+        "domain": "ligue1.com",
+        "note": "Exclusive, all 9 matches"
+      }
+    ],
+    "DE": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/de-DE/home",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      }
+    ],
+    "AT": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/de-AT/home",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      }
+    ],
+    "CH": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/de-CH/home",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": "All matches"
+      },
+      {
+        "name": "Sky Switzerland",
+        "url": "https://sport.sky.ch/en",
+        "type": "streaming",
+        "domain": "sky.ch",
+        "note": "Selected top matches"
+      }
+    ],
+    "IT": [
+      {
+        "name": "Ligue 1+",
+        "url": "https://plus.ligue1.com/",
+        "type": "streaming",
+        "domain": "ligue1.com",
+        "note": ""
+      }
+    ],
+    "NL": [
+      {
+        "name": "Viaplay",
+        "url": "https://viaplay.com/nl-nl/",
+        "type": "streaming",
+        "domain": "viaplay.com",
+        "note": ""
+      }
+    ],
+    "BE": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/fr-BE/home",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      }
+    ],
+    "DK": [
+      {
+        "name": "Viaplay",
+        "url": "https://viaplay.dk/dk-da/",
+        "type": "streaming",
+        "domain": "viaplay.com",
+        "note": ""
+      }
+    ],
+    "SE": [
+      {
+        "name": "Viaplay",
+        "url": "https://viaplay.se/se-sv/",
+        "type": "streaming",
+        "domain": "viaplay.com",
+        "note": ""
+      }
+    ],
+    "NO": [
+      {
+        "name": "Viaplay",
+        "url": "https://viaplay.no/sport",
+        "type": "streaming",
+        "domain": "viaplay.com",
+        "note": ""
+      }
+    ],
+    "FI": [
+      {
+        "name": "Viaplay",
+        "url": "https://viaplay.fi/fi-fi/",
+        "type": "streaming",
+        "domain": "viaplay.com",
+        "note": ""
+      }
+    ],
+    "PL": [
+      {
+        "name": "Eleven Sports",
+        "url": "https://www.elevensports.pl/start",
+        "type": "streaming",
+        "domain": "elevensports.pl",
+        "note": ""
+      }
+    ],
+    "TR": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://beinsports.com.tr/",
+        "type": "tv",
+        "domain": "beinsports.com.tr",
+        "note": ""
+      }
+    ],
+    "IN": [
+      {
+        "name": "JioHotstar",
+        "url": "https://www.hotstar.com/in/sports/football",
+        "type": "streaming",
+        "domain": "hotstar.com",
+        "note": "4+ matches per round"
+      }
+    ],
+    "PK": [
+      {
+        "name": "Tapmad",
+        "url": "https://www.tapmad.com/",
+        "type": "streaming",
+        "domain": "tapmad.com",
+        "note": ""
+      }
+    ],
+    "BD": [
+      {
+        "name": "Tapmad",
+        "url": "https://www.tapmad.com/",
+        "type": "streaming",
+        "domain": "tapmad.com",
+        "note": ""
+      }
+    ],
+    "JP": [
+      {
+        "name": "DAZN",
+        "url": "https://www.dazn.com/ja-JP/home",
+        "type": "streaming",
+        "domain": "dazn.com",
+        "note": ""
+      }
+    ],
+    "KR": [
+      {
+        "name": "Coupang Play",
+        "url": "https://www.coupangplay.com/",
+        "type": "streaming",
+        "domain": "coupangplay.com",
+        "note": ""
+      }
+    ],
+    "CN": [
+      {
+        "name": "CCTV",
+        "url": "https://sports.cctv.com/",
+        "type": "free-tv",
+        "domain": "cctv.com",
+        "note": ""
+      },
+      {
+        "name": "Migu",
+        "url": "https://www.miguvideo.com/",
+        "type": "streaming",
+        "domain": "miguvideo.com",
+        "note": ""
+      }
+    ],
+    "HK": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://connect.beinsports.com/",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": "Also via Now TV"
+      }
+    ],
+    "ID": [
+      {
+        "name": "Vidio",
+        "url": "https://www.vidio.com/categories/ligue-1",
+        "type": "streaming",
+        "domain": "vidio.com",
+        "note": "All matches"
+      }
+    ],
+    "TH": [
+      {
+        "name": "MONOMAX",
+        "url": "https://www.monomax.me/",
+        "type": "streaming",
+        "domain": "monomax.me",
+        "note": ""
+      }
+    ],
+    "VN": [
+      {
+        "name": "VTVcab",
+        "url": "https://www.vtvcab.vn/",
+        "type": "tv",
+        "domain": "vtvcab.vn",
+        "note": "On Football / On Sports"
+      }
+    ],
+    "AE": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://www.beinsports.com/en-mena",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "SA": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://www.beinsports.com/en-mena",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "QA": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://www.beinsports.com/en-mena",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "EG": [
+      {
+        "name": "beIN SPORTS",
+        "url": "https://www.beinsports.com/en-mena",
+        "type": "tv",
+        "domain": "beinsports.com",
+        "note": ""
+      }
+    ],
+    "NG": [
+      {
+        "name": "SuperSport",
+        "url": "https://supersport.com/",
+        "type": "tv",
+        "domain": "supersport.com",
+        "note": ""
+      },
+      {
+        "name": "Canal+",
+        "url": "https://www.canalplus-afrique.com/",
+        "type": "tv",
+        "domain": "canalplus-afrique.com",
+        "note": ""
+      }
+    ],
+    "ZA": [
+      {
+        "name": "SuperSport",
+        "url": "https://supersport.com/",
+        "type": "tv",
+        "domain": "supersport.com",
+        "note": ""
+      },
+      {
+        "name": "Canal+",
+        "url": "https://www.canalplus-afrique.com/",
+        "type": "tv",
+        "domain": "canalplus-afrique.com",
+        "note": ""
+      }
+    ],
+    "KE": [
+      {
+        "name": "SuperSport",
+        "url": "https://supersport.com/",
+        "type": "tv",
+        "domain": "supersport.com",
+        "note": ""
+      },
+      {
+        "name": "Canal+",
+        "url": "https://www.canalplus-afrique.com/",
+        "type": "tv",
+        "domain": "canalplus-afrique.com",
+        "note": ""
+      }
+    ],
+    "GH": [
+      {
+        "name": "SuperSport",
+        "url": "https://supersport.com/",
+        "type": "tv",
+        "domain": "supersport.com",
+        "note": ""
+      },
+      {
+        "name": "Canal+",
+        "url": "https://www.canalplus-afrique.com/",
+        "type": "tv",
+        "domain": "canalplus-afrique.com",
+        "note": ""
+      }
+    ]
+  },
+  "sources": {
+    "US": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/media/bein-rides-to-ligue-1-rescue-again-with-late-deal-across-27-markets/",
+      "https://www.produ.com/english/noticias/bein-media-group-renewed-its-exclusive-rights-deal-for-the-mcdonalds-ligue-1-and-ligue-2-bkt-championship-in-the-us-canada"
+    ],
+    "CA": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/media/bein-rides-to-ligue-1-rescue-again-with-late-deal-across-27-markets/",
+      "https://www.produ.com/english/noticias/bein-media-group-renewed-its-exclusive-rights-deal-for-the-mcdonalds-ligue-1-and-ligue-2-bkt-championship-in-the-us-canada"
+    ],
+    "MX": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.playbook.la/articulo/ver-todo-el-deporte-en-mexico-en-2026-exige-hasta-6-suscripciones",
+      "https://en.wikipedia.org/wiki/Fox_(Mexico)"
+    ],
+    "BR": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.advanced-television.com/2026/09/02/france-lfp-media-sells-ligue-1-new-rights-in-uk-asia-america/",
+      "https://oantagonista.com.br/ladooa/esportes/cazetv-obteve-o-direito-de-transmissao-da-ligue-1-ate-2027/"
+    ],
+    "AR": [
+      "https://ligue1.com/en/international-broadcasters"
+    ],
+    "CO": [
+      "https://ligue1.com/en/international-broadcasters"
+    ],
+    "CL": [
+      "https://ligue1.com/en/international-broadcasters"
+    ],
+    "GB": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.advanced-television.com/2026/09/02/france-lfp-media-sells-ligue-1-new-rights-in-uk-asia-america/",
+      "https://sports.yahoo.com/article/ligue-1-available-uk-viewers-100100211.html"
+    ],
+    "IE": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.advanced-television.com/2026/09/02/france-lfp-media-sells-ligue-1-new-rights-in-uk-asia-america/"
+    ],
+    "ES": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.advanced-television.com/2026/09/02/france-lfp-media-sells-ligue-1-new-rights-in-uk-asia-america/"
+    ],
+    "PT": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sporttv.pt/"
+    ],
+    "FR": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://ligue1.com/en/broadcasters",
+      "https://m.maxifoot.fr/football/article-65585.htm",
+      "https://lepetitlillois.com/2026/04/30/revenus-droits-tv-clubs-saison-prochaine/"
+    ],
+    "DE": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://dazngroup.com/press-room/dazn-secures-exclusive-ligue-1-and-serie-a-rights-in-switzerland/",
+      "https://dazngroup.com/press-room/nur-auf-dazn-nach-der-serie-a-verlangert-dazn-auch-die-rechte-an-der-franzosischen-ligue-1-bis-2027/"
+    ],
+    "AT": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://dazngroup.com/press-room/dazn-secures-exclusive-ligue-1-and-serie-a-rights-in-switzerland/"
+    ],
+    "CH": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://dazngroup.com/press-room/dazn-secures-exclusive-ligue-1-and-serie-a-rights-in-switzerland/",
+      "https://sport.sky.ch/en",
+      "https://www.swisscom.ch/en/residential/tv-subscription/additional-packages/sky-sport.html"
+    ],
+    "IT": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://simonesalvador.it/televisione/dove-vedere-calcio-2026-27-guida"
+    ],
+    "NL": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/media/viaplay-boosts-ligue-1s-european-coverage-presence/"
+    ],
+    "BE": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sport-flash.com/sports/football/be/events/ligue-1-2026-2027"
+    ],
+    "DK": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/media/viaplay-boosts-ligue-1s-european-coverage-presence/"
+    ],
+    "SE": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/media/viaplay-boosts-ligue-1s-european-coverage-presence/"
+    ],
+    "NO": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/media/viaplay-boosts-ligue-1s-european-coverage-presence/"
+    ],
+    "FI": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/media/viaplay-boosts-ligue-1s-european-coverage-presence/"
+    ],
+    "PL": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/news/eleven-secures-exclusive-ligue-1-broadcast-rights-in-poland/"
+    ],
+    "TR": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/media/bein-rides-to-ligue-1-rescue-again-with-late-deal-across-27-markets/"
+    ],
+    "IN": [
+      "https://www.advanced-television.com/2026/09/02/france-lfp-media-sells-ligue-1-new-rights-in-uk-asia-america/",
+      "https://thebridge.in/football/ligue-1-returns-to-india-jiostar-broadcast-partnership-57466"
+    ],
+    "PK": [
+      "https://www.sportcal.com/news/tapmad-nets-ligue-1-streaming-rights-in-pakistan-bangladesh/"
+    ],
+    "BD": [
+      "https://www.sportcal.com/news/tapmad-nets-ligue-1-streaming-rights-in-pakistan-bangladesh/"
+    ],
+    "JP": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.footballchannel.jp/2026/08/13/post970809/"
+    ],
+    "KR": [
+      "https://ligue1.com/en/international-broadcasters"
+    ],
+    "CN": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/media/lfp-media-strikes-multiple-international-ligue-1-rights-deals/"
+    ],
+    "HK": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.beinsports.com/en-asia/football/ligue-1/articles/ligue-1-mcdonalds-returns-to-bein-sports-in-hong-kong"
+    ],
+    "ID": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.advanced-television.com/2026/09/02/france-lfp-media-sells-ligue-1-new-rights-in-uk-asia-america/"
+    ],
+    "TH": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://go.monomax.me/premierleague"
+    ],
+    "VN": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://bongdaplus.vn/ligue-1/lich-thi-dau-vong-2-ligue-1-2026-27-xem-truc-tiep-o-dau-kenh-nao-5147242608.html"
+    ],
+    "AE": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/media/bein-rides-to-ligue-1-rescue-again-with-late-deal-across-27-markets/",
+      "https://www.beinsports.com/en-mena/football/articles-video/european-football-returns-to-bein-sports-for-the-2026-27-season-2026-08-11"
+    ],
+    "SA": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/media/bein-rides-to-ligue-1-rescue-again-with-late-deal-across-27-markets/",
+      "https://www.beinsports.com/en-mena/football/articles-video/european-football-returns-to-bein-sports-for-the-2026-27-season-2026-08-11"
+    ],
+    "QA": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/media/bein-rides-to-ligue-1-rescue-again-with-late-deal-across-27-markets/",
+      "https://www.beinsports.com/en-mena/football/articles-video/european-football-returns-to-bein-sports-for-the-2026-27-season-2026-08-11"
+    ],
+    "EG": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/media/bein-rides-to-ligue-1-rescue-again-with-late-deal-across-27-markets/",
+      "https://www.beinsports.com/en-mena/football/articles-video/european-football-returns-to-bein-sports-for-the-2026-27-season-2026-08-11"
+    ],
+    "NG": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/newsletters/canal-cements-africa-dominance-as-multichoice-gains-ligue-1-rights"
+    ],
+    "ZA": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/newsletters/canal-cements-africa-dominance-as-multichoice-gains-ligue-1-rights"
+    ],
+    "KE": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/newsletters/canal-cements-africa-dominance-as-multichoice-gains-ligue-1-rights"
+    ],
+    "GH": [
+      "https://ligue1.com/en/international-broadcasters",
+      "https://www.sportcal.com/newsletters/canal-cements-africa-dominance-as-multichoice-gains-ligue-1-rights"
+    ]
+  },
+  "unverified": [
+    "GR",
+    "LK",
+    "AU",
+    "NZ",
+    "SG",
+    "MY",
+    "PH"
+  ]
+}

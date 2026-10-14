@@ -1,0 +1,360 @@
+{
+  "{n} match": [
+    "src/i18n/index.ts"
+  ],
+  "{n} matches": [
+    "src/i18n/index.ts"
+  ],
+  "A light tap on goals and actions": [
+    "src/pages/Settings.tsx"
+  ],
+  "About": [
+    "src/pages/Settings.tsx"
+  ],
+  "Add clubs": [
+    "src/pages/Settings.tsx"
+  ],
+  "Adds textures so charts don’t rely on colour": [
+    "src/pages/Settings.tsx"
+  ],
+  "Appearance": [
+    "src/App.tsx",
+    "src/pages/Settings.tsx"
+  ],
+  "Auto": [
+    "src/pages/Settings.tsx"
+  ],
+  "Automatic": [
+    "src/App.tsx"
+  ],
+  "Back": [
+    "src/components/Onboarding.tsx"
+  ],
+  "Back to scores": [
+    "src/pages/NotFound.tsx"
+  ],
+  "Bundesliga": [
+    "extra.json"
+  ],
+  "Champions League": [
+    "extra.json"
+  ],
+  "Change country": [
+    "src/components/watch.tsx"
+  ],
+  "Chart patterns": [
+    "src/pages/Settings.tsx"
+  ],
+  "Choose your clubs": [
+    "src/pages/Settings.tsx"
+  ],
+  "Choose your country in Settings to see broadcasters near you.": [
+    "src/components/watch.tsx"
+  ],
+  "Choose your language": [
+    "src/components/Onboarding.tsx"
+  ],
+  "Compare leagues": [
+    "src/pages/Leagues.tsx"
+  ],
+  "Compare players": [
+    "src/pages/Compare.tsx"
+  ],
+  "Competition": [
+    "src/components/prefs.tsx"
+  ],
+  "Competitions": [
+    "src/pages/Settings.tsx"
+  ],
+  "Continue": [
+    "src/components/Onboarding.tsx"
+  ],
+  "Country": [
+    "src/components/prefs.tsx",
+    "src/pages/Settings.tsx"
+  ],
+  "Dark": [
+    "src/App.tsx",
+    "src/pages/Settings.tsx"
+  ],
+  "Data": [
+    "src/pages/Settings.tsx"
+  ],
+  "Data: ESPN · Photos: TheSportsDB & Wikimedia Commons · Logos are trademarks of their owners": [
+    "src/App.tsx"
+  ],
+  "Defenders": [
+    "extra.json"
+  ],
+  "Done": [
+    "src/pages/Settings.tsx"
+  ],
+  "England": [
+    "extra.json"
+  ],
+  "Eredivisie": [
+    "extra.json"
+  ],
+  "Europa League": [
+    "extra.json"
+  ],
+  "Europe": [
+    "extra.json"
+  ],
+  "Finish": [
+    "src/components/Onboarding.tsx"
+  ],
+  "Follow {n} and finish": [
+    "src/components/Onboarding.tsx"
+  ],
+  "Followed clubs appear first on Scores and get goal alerts while Pitch is open.": [
+    "src/pages/Settings.tsx"
+  ],
+  "Following": [
+    "src/pages/Settings.tsx"
+  ],
+  "Football, beautifully": [
+    "src/lib/hooks.ts"
+  ],
+  "Football, beautifully.": [
+    "src/components/Onboarding.tsx"
+  ],
+  "Forwards": [
+    "extra.json"
+  ],
+  "France": [
+    "extra.json"
+  ],
+  "Free-to-air": [
+    "extra.json"
+  ],
+  "Full time": [
+    "src/i18n/index.ts"
+  ],
+  "Germany": [
+    "extra.json"
+  ],
+  "Get started": [
+    "src/components/Onboarding.tsx"
+  ],
+  "Goalkeepers": [
+    "extra.json"
+  ],
+  "Haptics": [
+    "src/pages/Settings.tsx"
+  ],
+  "Increase contrast": [
+    "src/pages/Settings.tsx"
+  ],
+  "India": [
+    "extra.json"
+  ],
+  "Indian Super League": [
+    "extra.json"
+  ],
+  "Insights": [
+    "src/pages/Insights.tsx"
+  ],
+  "ISL": [
+    "extra.json"
+  ],
+  "Italy": [
+    "extra.json"
+  ],
+  "Just now": [
+    "src/lib/format.ts"
+  ],
+  "LaLiga": [
+    "extra.json"
+  ],
+  "Language": [
+    "src/components/prefs.tsx",
+    "src/pages/Settings.tsx"
+  ],
+  "Liga Portugal": [
+    "extra.json"
+  ],
+  "Light": [
+    "src/App.tsx",
+    "src/pages/Settings.tsx"
+  ],
+  "Ligue 1": [
+    "extra.json"
+  ],
+  "Live football scores & analytics": [
+    "src/App.tsx"
+  ],
+  "Live scores, lineups, deep analytics and where to watch — for the competitions you love.": [
+    "src/components/Onboarding.tsx"
+  ],
+  "Midfielders": [
+    "extra.json"
+  ],
+  "MLS": [
+    "extra.json"
+  ],
+  "Netherlands": [
+    "extra.json"
+  ],
+  "News": [
+    "extra.json"
+  ],
+  "No matches": [
+    "src/components/prefs.tsx"
+  ],
+  "Not set": [
+    "src/components/prefs.tsx"
+  ],
+  "Off the pitch": [
+    "src/pages/NotFound.tsx"
+  ],
+  "Page not found": [
+    "src/pages/NotFound.tsx"
+  ],
+  "Pick your clubs": [
+    "src/components/Onboarding.tsx"
+  ],
+  "Pitch home": [
+    "src/App.tsx"
+  ],
+  "Player": [
+    "src/pages/Player.tsx"
+  ],
+  "Portugal": [
+    "extra.json"
+  ],
+  "Premier League": [
+    "extra.json"
+  ],
+  "Primary": [
+    "src/App.tsx"
+  ],
+  "Region": [
+    "src/pages/Settings.tsx"
+  ],
+  "Remove": [
+    "src/pages/Settings.tsx"
+  ],
+  "Reset all settings": [
+    "src/pages/Settings.tsx"
+  ],
+  "Reset all settings and followed clubs on this device?": [
+    "src/pages/Settings.tsx"
+  ],
+  "Rights for the {season} season. Coverage can vary by match.": [
+    "src/components/watch.tsx"
+  ],
+  "Scores": [
+    "extra.json"
+  ],
+  "Scores, events and stats from ESPN. Photos from TheSportsDB and Wikimedia Commons. Pitch xG is our own model based on shot location.": [
+    "src/pages/Settings.tsx"
+  ],
+  "Search countries": [
+    "src/components/prefs.tsx"
+  ],
+  "Serie A": [
+    "extra.json"
+  ],
+  "Set your country": [
+    "src/components/watch.tsx"
+  ],
+  "Settings": [
+    "src/App.tsx",
+    "src/pages/Settings.tsx"
+  ],
+  "Show welcome tour again": [
+    "src/pages/Settings.tsx"
+  ],
+  "Skip": [
+    "src/components/Onboarding.tsx"
+  ],
+  "Skip to content": [
+    "src/App.tsx"
+  ],
+  "Solid surfaces and stronger borders": [
+    "src/pages/Settings.tsx"
+  ],
+  "Spain": [
+    "extra.json"
+  ],
+  "Squad": [
+    "extra.json"
+  ],
+  "Stadium": [
+    "src/pages/Stadium.tsx"
+  ],
+  "Stats": [
+    "extra.json"
+  ],
+  "Streaming": [
+    "extra.json"
+  ],
+  "Tables": [
+    "extra.json"
+  ],
+  "Their matches appear first, with goal alerts while Pitch is open.": [
+    "src/components/Onboarding.tsx"
+  ],
+  "Theme": [
+    "src/pages/Settings.tsx"
+  ],
+  "This match": [
+    "src/components/watch.tsx"
+  ],
+  "This page doesn’t exist, or the link has moved.": [
+    "src/pages/NotFound.tsx"
+  ],
+  "Time format": [
+    "src/pages/Settings.tsx"
+  ],
+  "Today": [
+    "src/lib/format.ts"
+  ],
+  "Tomorrow": [
+    "src/lib/format.ts"
+  ],
+  "TV": [
+    "extra.json"
+  ],
+  "UCL": [
+    "extra.json"
+  ],
+  "UEL": [
+    "extra.json"
+  ],
+  "USA & Canada": [
+    "extra.json"
+  ],
+  "Used for where-to-watch listings. Kick-off times always follow your device’s time zone.": [
+    "src/pages/Settings.tsx"
+  ],
+  "Watch": [
+    "src/components/watch.tsx"
+  ],
+  "We don’t have a confirmed broadcaster for this competition in your country. Check local listings.": [
+    "src/components/watch.tsx"
+  ],
+  "We’ll show the broadcasters and streaming services available in your country.": [
+    "src/components/Onboarding.tsx"
+  ],
+  "Welcome to Pitch": [
+    "src/components/Onboarding.tsx"
+  ],
+  "Where are you watching from?": [
+    "src/components/Onboarding.tsx"
+  ],
+  "Where to watch": [
+    "src/components/watch.tsx",
+    "src/pages/Settings.tsx"
+  ],
+  "Widget": [
+    "src/pages/Widget.tsx"
+  ],
+  "Yesterday": [
+    "src/lib/format.ts"
+  ],
+  "Your country": [
+    "src/pages/Settings.tsx"
+  ]
+}

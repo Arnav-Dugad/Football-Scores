@@ -1,0 +1,222 @@
+{
+  "leagues": ["esp.1"],
+  "season": "2026-27",
+  "countries": {
+    "US": [
+      { "name": "ESPN+", "url": "https://www.espn.com/espnplus/", "type": "streaming", "domain": "espn.com", "note": "All 380 matches" },
+      { "name": "ESPN Deportes", "url": "https://espndeportes.espn.com/", "type": "tv", "domain": "espn.com", "note": "200+ matches, Spanish" }
+    ],
+    "CA": [
+      { "name": "TSN", "url": "https://www.tsn.ca/", "type": "streaming", "domain": "tsn.ca", "note": "All matches on TSN+" },
+      { "name": "RDS", "url": "https://www.rds.ca/", "type": "tv", "domain": "rds.ca", "note": "French-language" }
+    ],
+    "MX": [
+      { "name": "Sky Sports (Sky México)", "url": "https://www.sky.com.mx/", "type": "tv", "domain": "sky.com.mx", "note": "" }
+    ],
+    "BR": [
+      { "name": "CazéTV", "url": "https://www.youtube.com/@CazeTV", "type": "streaming", "domain": "youtube.com", "note": "Free on YouTube" }
+    ],
+    "AR": [
+      { "name": "ESPN", "url": "https://www.espn.com.ar/", "type": "tv", "domain": "espn.com.ar", "note": "190 matches per season" },
+      { "name": "Disney+ Premium", "url": "https://www.disneyplus.com/", "type": "streaming", "domain": "disneyplus.com", "note": "ESPN matches" },
+      { "name": "DSports", "url": "https://www.directvsports.com/", "type": "tv", "domain": "directvsports.com", "note": "Remaining matches" }
+    ],
+    "CO": [
+      { "name": "ESPN", "url": "https://www.espn.com.co/", "type": "tv", "domain": "espn.com.co", "note": "190 matches per season" },
+      { "name": "Disney+ Premium", "url": "https://www.disneyplus.com/", "type": "streaming", "domain": "disneyplus.com", "note": "ESPN matches" },
+      { "name": "DSports", "url": "https://www.directvsports.com/", "type": "tv", "domain": "directvsports.com", "note": "Remaining matches" }
+    ],
+    "CL": [
+      { "name": "ESPN", "url": "https://www.espn.cl/", "type": "tv", "domain": "espn.cl", "note": "190 matches per season" },
+      { "name": "Disney+ Premium", "url": "https://www.disneyplus.com/", "type": "streaming", "domain": "disneyplus.com", "note": "ESPN matches" },
+      { "name": "DSports", "url": "https://www.directvsports.com/", "type": "tv", "domain": "directvsports.com", "note": "Remaining matches" }
+    ],
+    "GB": [
+      { "name": "Premier Sports", "url": "https://www.premiersports.com/", "type": "tv", "domain": "premiersports.com", "note": "340+ matches" },
+      { "name": "Disney+", "url": "https://www.disneyplus.com/en-gb", "type": "streaming", "domain": "disneyplus.com", "note": "Saturday evening match" }
+    ],
+    "IE": [
+      { "name": "Premier Sports", "url": "https://www.premiersports.com/", "type": "tv", "domain": "premiersports.com", "note": "340+ matches" },
+      { "name": "Disney+", "url": "https://www.disneyplus.com/en-ie", "type": "streaming", "domain": "disneyplus.com", "note": "Saturday evening match" }
+    ],
+    "ES": [
+      { "name": "Movistar Plus+", "url": "https://www.movistarplus.es/", "type": "tv", "domain": "movistarplus.es", "note": "5 per matchday, 3 full" },
+      { "name": "DAZN", "url": "https://www.dazn.com/es-ES/home", "type": "streaming", "domain": "dazn.com", "note": "5 per matchday" }
+    ],
+    "PT": [
+      { "name": "DAZN", "url": "https://www.dazn.com/pt-PT/home", "type": "streaming", "domain": "dazn.com", "note": "" }
+    ],
+    "FR": [
+      { "name": "DAZN", "url": "https://www.dazn.com/fr-FR/home", "type": "streaming", "domain": "dazn.com", "note": "All 380 matches" },
+      { "name": "Disney+", "url": "https://www.disneyplus.com/fr-fr", "type": "streaming", "domain": "disneyplus.com", "note": "All 380 matches" }
+    ],
+    "DE": [
+      { "name": "DAZN", "url": "https://www.dazn.com/de-DE/home", "type": "streaming", "domain": "dazn.com", "note": "" }
+    ],
+    "AT": [
+      { "name": "DAZN", "url": "https://www.dazn.com/de-AT/home", "type": "streaming", "domain": "dazn.com", "note": "" }
+    ],
+    "CH": [
+      { "name": "DAZN", "url": "https://www.dazn.com/de-CH/home", "type": "streaming", "domain": "dazn.com", "note": "" }
+    ],
+    "IT": [
+      { "name": "DAZN", "url": "https://www.dazn.com/it-IT/home", "type": "streaming", "domain": "dazn.com", "note": "" },
+      { "name": "Canale 20 (Mediaset)", "url": "https://mediasetinfinity.mediaset.it/", "type": "free-tv", "domain": "mediaset.it", "note": "Six selected matches" }
+    ],
+    "NL": [
+      { "name": "Ziggo Sport", "url": "https://www.ziggosport.nl/", "type": "tv", "domain": "ziggosport.nl", "note": "" }
+    ],
+    "BE": [
+      { "name": "DAZN", "url": "https://www.dazn.com/nl-BE/home", "type": "streaming", "domain": "dazn.com", "note": "" }
+    ],
+    "DK": [
+      { "name": "Disney+", "url": "https://www.disneyplus.com/da-dk", "type": "streaming", "domain": "disneyplus.com", "note": "ESPN on Disney+" }
+    ],
+    "SE": [
+      { "name": "Disney+", "url": "https://www.disneyplus.com/sv-se", "type": "streaming", "domain": "disneyplus.com", "note": "ESPN on Disney+" }
+    ],
+    "NO": [
+      { "name": "TV 2 Play", "url": "https://play.tv2.no/", "type": "streaming", "domain": "tv2.no", "note": "" }
+    ],
+    "FI": [
+      { "name": "Disney+", "url": "https://www.disneyplus.com/fi-fi", "type": "streaming", "domain": "disneyplus.com", "note": "ESPN on Disney+" }
+    ],
+    "PL": [
+      { "name": "CANAL+", "url": "https://www.canalplus.com/pl/", "type": "tv", "domain": "canalplus.com", "note": "" }
+    ],
+    "TR": [
+      { "name": "S Sport Plus", "url": "https://www.ssportplus.com/", "type": "streaming", "domain": "ssportplus.com", "note": "" }
+    ],
+    "GR": [
+      { "name": "COSMOTE TV", "url": "https://www.cosmotetv.gr/", "type": "tv", "domain": "cosmotetv.gr", "note": "" }
+    ],
+    "IN": [
+      { "name": "FanCode", "url": "https://www.fancode.com/", "type": "streaming", "domain": "fancode.com", "note": "" }
+    ],
+    "PK": [
+      { "name": "BEGIN", "url": "https://begin.watch/", "type": "streaming", "domain": "begin.watch", "note": "" }
+    ],
+    "BD": [
+      { "name": "BEGIN", "url": "https://begin.watch/", "type": "streaming", "domain": "begin.watch", "note": "" }
+    ],
+    "LK": [
+      { "name": "BEGIN", "url": "https://begin.watch/", "type": "streaming", "domain": "begin.watch", "note": "" }
+    ],
+    "AU": [
+      { "name": "beIN SPORTS", "url": "https://www.beinsports.com/en-au", "type": "tv", "domain": "beinsports.com", "note": "" }
+    ],
+    "NZ": [
+      { "name": "beIN SPORTS", "url": "https://www.beinsports.com/en-nz", "type": "tv", "domain": "beinsports.com", "note": "" }
+    ],
+    "JP": [
+      { "name": "U-NEXT", "url": "https://video.unext.jp/", "type": "streaming", "domain": "unext.jp", "note": "" },
+      { "name": "DAZN", "url": "https://www.dazn.com/ja-JP/home", "type": "streaming", "domain": "dazn.com", "note": "" }
+    ],
+    "KR": [
+      { "name": "Coupang Play", "url": "https://www.coupangplay.com/", "type": "streaming", "domain": "coupangplay.com", "note": "" }
+    ],
+    "CN": [
+      { "name": "Migu", "url": "https://www.miguvideo.com/", "type": "streaming", "domain": "miguvideo.com", "note": "" }
+    ],
+    "SG": [
+      { "name": "beIN SPORTS", "url": "https://www.beinsports.com/en-asia", "type": "tv", "domain": "beinsports.com", "note": "" }
+    ],
+    "MY": [
+      { "name": "beIN SPORTS", "url": "https://www.beinsports.com/en-asia", "type": "tv", "domain": "beinsports.com", "note": "" }
+    ],
+    "ID": [
+      { "name": "beIN SPORTS", "url": "https://www.beinsports.com/en-asia", "type": "tv", "domain": "beinsports.com", "note": "" }
+    ],
+    "TH": [
+      { "name": "beIN SPORTS", "url": "https://www.beinsports.com/en-asia", "type": "tv", "domain": "beinsports.com", "note": "" }
+    ],
+    "VN": [
+      { "name": "SCTV", "url": "https://www.sctv.com.vn/", "type": "tv", "domain": "sctv.com.vn", "note": "" }
+    ],
+    "PH": [
+      { "name": "beIN SPORTS", "url": "https://www.beinsports.com/en-asia", "type": "tv", "domain": "beinsports.com", "note": "" }
+    ],
+    "AE": [
+      { "name": "beIN SPORTS", "url": "https://www.beinsports.com/en-mena", "type": "tv", "domain": "beinsports.com", "note": "" },
+      { "name": "TOD", "url": "https://www.tod.tv/", "type": "streaming", "domain": "tod.tv", "note": "beIN streaming app" }
+    ],
+    "SA": [
+      { "name": "beIN SPORTS", "url": "https://www.beinsports.com/en-mena", "type": "tv", "domain": "beinsports.com", "note": "" },
+      { "name": "TOD", "url": "https://www.tod.tv/", "type": "streaming", "domain": "tod.tv", "note": "beIN streaming app" }
+    ],
+    "QA": [
+      { "name": "beIN SPORTS", "url": "https://www.beinsports.com/en-mena", "type": "tv", "domain": "beinsports.com", "note": "" },
+      { "name": "TOD", "url": "https://www.tod.tv/", "type": "streaming", "domain": "tod.tv", "note": "beIN streaming app" }
+    ],
+    "EG": [
+      { "name": "beIN SPORTS", "url": "https://www.beinsports.com/en-mena", "type": "tv", "domain": "beinsports.com", "note": "" },
+      { "name": "TOD", "url": "https://www.tod.tv/", "type": "streaming", "domain": "tod.tv", "note": "beIN streaming app" }
+    ],
+    "NG": [
+      { "name": "DAZN", "url": "https://www.dazn.com/en-NG/home", "type": "streaming", "domain": "dazn.com", "note": "All 380 matches" },
+      { "name": "StarTimes", "url": "https://www.startimestv.com/", "type": "tv", "domain": "startimestv.com", "note": "Non-exclusive rights" }
+    ],
+    "ZA": [
+      { "name": "DAZN", "url": "https://www.dazn.com/en-ZA/home", "type": "streaming", "domain": "dazn.com", "note": "All 380 matches" }
+    ],
+    "KE": [
+      { "name": "DAZN", "url": "https://www.dazn.com/en-KE/home", "type": "streaming", "domain": "dazn.com", "note": "All 380 matches" },
+      { "name": "StarTimes", "url": "https://www.startimestv.com/", "type": "tv", "domain": "startimestv.com", "note": "Non-exclusive rights" }
+    ],
+    "GH": [
+      { "name": "DAZN", "url": "https://www.dazn.com/en-GH/home", "type": "streaming", "domain": "dazn.com", "note": "All 380 matches" },
+      { "name": "StarTimes", "url": "https://www.startimestv.com/", "type": "tv", "domain": "startimestv.com", "note": "Non-exclusive rights" }
+    ]
+  },
+  "sources": {
+    "US": ["https://www.laliga.com/en-CO/news/laliga-returns-to-espn-on-august-15-for-the-2026-27-season-after-leading-all-leagues-with-24-players-represented-in-the-world-cup-final"],
+    "CA": ["https://www.tsn.ca/soccer/article/la-liga-season-set-to-kickoff-european-league-seasons-on-tsn/", "https://www.livesoccertv.com/competitions/spain/primera-division/watch/canada/", "https://www.channelcanada.com/canadian-channels/specialty-tv/rds/tsn-and-rds-become-new-canadian-home-of-laliga-kicking-off-in-august/"],
+    "MX": ["https://www.mediotiempo.com/futbol/la-liga/liga-espanola-seguira-transmitiendose-sky-2032-mexico", "https://www.rpctv.com/futbol/sky-sports-seguira-2032-retransmitiendo-laliga-mexico-y-centroamerica-n5588972"],
+    "BR": ["https://www.laliga.com/en-GB/news/cazetv-transmitira-laliga-en-brasil-durante-las-proximas-seis-temporadas", "https://maquinadoesporte.com.br/midia/cazetv-exibira-laliga-com-exclusividade-no-mercado-brasileiro-ate-2031-2032/"],
+    "AR": ["https://www.insideworldfootball.com/2026/08/12/laliga-agrees-6-year-renewals-with-espn-and-dsports-in-south-america/", "https://senalnews.com/en/content/espn-and-laliga-closed-a-new-six-year-broadcast-rights-deal-for-south-america"],
+    "CO": ["https://www.insideworldfootball.com/2026/08/12/laliga-agrees-6-year-renewals-with-espn-and-dsports-in-south-america/", "https://senalnews.com/en/content/espn-and-laliga-closed-a-new-six-year-broadcast-rights-deal-for-south-america"],
+    "CL": ["https://www.insideworldfootball.com/2026/08/12/laliga-agrees-6-year-renewals-with-espn-and-dsports-in-south-america/", "https://senalnews.com/en/content/espn-and-laliga-closed-a-new-six-year-broadcast-rights-deal-for-south-america"],
+    "GB": ["https://www.laliga.com/en-GB/where-to-watch-laliga-easports", "https://www.sportcal.com/media/laliga-renews-premier-sports-adds-disney-to-uk-and-ireland-broadcast-mix/"],
+    "IE": ["https://www.sportcal.com/media/laliga-renews-premier-sports-adds-disney-to-uk-and-ireland-broadcast-mix/", "https://www.cordbusters.co.uk/disney-plus-laliga-deal-confirmed/"],
+    "ES": ["https://www.adslzone.net/noticias/operadores/oficial-canales-futbol-laliga-2026-2027/", "https://roams.es/actualidad/telefonia/movistar-plus-dazn-orange-tv-teledeporte-canales-laliga-2026-27/"],
+    "PT": ["https://dazngroup.com/press-room/dazn-extends-exclusive-laliga-live-broadcast-rights-in-italy-and-portugal/"],
+    "FR": ["https://www.france24.com/fr/info-en-continu/20260806-droits-tv-la-liga-%C3%A9chappe-%C3%A0-bein-sports-au-profit-de-dazn-et-disney", "https://www.eurosport.fr/football/la-liga/2026-2027/football-quatorze-ans-apres-bein-sports-perd-les-droits-de-la-liga-qui-sera-desormais-diffusee-par-dazn-et-disney_sto23325829/story.shtml"],
+    "DE": ["https://dazngroup.com/press-room/dazn-verlangert-mit-laliga-fur-die-saisons-2026-bis-2031-in-deutschland-osterreich-und-belgien-sowie-nun-auch-wieder-in-der-schweiz/"],
+    "AT": ["https://dazngroup.com/press-room/dazn-verlangert-mit-laliga-fur-die-saisons-2026-bis-2031-in-deutschland-osterreich-und-belgien-sowie-nun-auch-wieder-in-der-schweiz/"],
+    "CH": ["https://dazngroup.com/press-room/dazn-verlangert-mit-laliga-fur-die-saisons-2026-bis-2031-in-deutschland-osterreich-und-belgien-sowie-nun-auch-wieder-in-der-schweiz/"],
+    "IT": ["https://dazngroup.com/press-room/dazn-extends-exclusive-laliga-live-broadcast-rights-in-italy-and-portugal/", "https://www.insideworldfootball.com/2026/09/21/italys-mediaset-keeps-hold-of-laligas-biggest-games-with-renewed-dazn-deal/"],
+    "NL": ["https://www.ziggo.nl/entertainment/sport/voetbal/la-liga", "https://www.livesoccertv.com/channels/ziggo-sport-netherlands/"],
+    "BE": ["https://dazngroup.com/press-room/dazn-verlangert-mit-laliga-fur-die-saisons-2026-bis-2031-in-deutschland-osterreich-und-belgien-sowie-nun-auch-wieder-in-der-schweiz/"],
+    "DK": ["https://www.laliga.com/en-US/news/laliga-strengthens-nordic-broadcasting-strategy-with-disney-and-tv2"],
+    "SE": ["https://www.laliga.com/en-US/news/laliga-strengthens-nordic-broadcasting-strategy-with-disney-and-tv2"],
+    "NO": ["https://www.laliga.com/en-US/news/laliga-strengthens-nordic-broadcasting-strategy-with-disney-and-tv2"],
+    "FI": ["https://www.laliga.com/en-US/news/laliga-strengthens-nordic-broadcasting-strategy-with-disney-and-tv2"],
+    "PL": ["https://www.laliga.com/en-US/news/canal-becomes-the-exclusive-broadcaster-of-laliga-ea-sports-in-poland-for-the-next-five-seasons"],
+    "TR": ["https://www.aa.com.tr/tr/futbol/laliga-yayin-hakki-5-yil-boyunca-saran-media-groupta/2642336"],
+    "GR": ["https://digitaltvinfo.gr/eidiseis/pay-tv-news/i-laliga-ea-sports-gia-ta-epomena-tria-chronia-stin-cosmote-tv/", "https://www.sdna.gr/monimes-stiles/media/1457688_i-laliga-ea-sports-gia-ta-epomena-tria-hronia-stin-cosmote-tv"],
+    "IN": ["https://www.sportbusiness.com/news/exclusive-laliga-finally-pulls-plug-on-gxr-in-india/", "https://www.indianretailer.com/brandlicense/archives/news/fancode-inks-five-year-deal-laliga-exclusive-streaming-rights-india.n3908"],
+    "PK": ["https://www.laliga.com/en-GB/news/begin-becomes-the-exclusive-home-of-laliga-in-pakistan-bangladesh-and-sri-lanka"],
+    "BD": ["https://www.laliga.com/en-GB/news/begin-becomes-the-exclusive-home-of-laliga-in-pakistan-bangladesh-and-sri-lanka"],
+    "LK": ["https://www.laliga.com/en-GB/news/begin-becomes-the-exclusive-home-of-laliga-in-pakistan-bangladesh-and-sri-lanka"],
+    "AU": ["https://www.laliga.com/en-GB/news/bein-extends-exclusive-laliga-broadcast-rights-across-34-markets-in-mena-and-apac", "https://mumbrella.com.au/bein-extends-exclusive-la-liga-broadcast-rights-for-australia-ahead-of-season-kick-off-844416"],
+    "NZ": ["https://www.laliga.com/en-GB/news/bein-extends-exclusive-laliga-broadcast-rights-across-34-markets-in-mena-and-apac"],
+    "JP": ["https://www.laliga.com/en-GB/news/u-next-and-dazn-secure-laliga-rights-for-the-japanese-market"],
+    "KR": ["https://www.sportbusiness.com/news/coupang-play-acquires-laliga-rights-in-south-korea", "https://sporticos.com/en-gb/news/coupang-play-win-la-liga-rights-in-south-korea"],
+    "CN": ["https://www.laliga.com/en-DE/news/migu-becomes-laligas-exclusive-new-media-partner-in-mainland-china-through-2029-30"],
+    "SG": ["https://www.laliga.com/en-GB/news/bein-extends-exclusive-laliga-broadcast-rights-across-34-markets-in-mena-and-apac"],
+    "MY": ["https://www.laliga.com/en-GB/news/bein-extends-exclusive-laliga-broadcast-rights-across-34-markets-in-mena-and-apac"],
+    "ID": ["https://www.laliga.com/en-GB/news/bein-extends-exclusive-laliga-broadcast-rights-across-34-markets-in-mena-and-apac"],
+    "TH": ["https://www.laliga.com/en-GB/news/bein-extends-exclusive-laliga-broadcast-rights-across-34-markets-in-mena-and-apac"],
+    "VN": ["https://www.laliga.com/en-GB/news/sctv-secure-laliga-rights-for-the-vietnamese-market"],
+    "PH": ["https://www.laliga.com/en-GB/news/bein-extends-exclusive-laliga-broadcast-rights-across-34-markets-in-mena-and-apac"],
+    "AE": ["https://www.laliga.com/en-GB/news/bein-extends-exclusive-laliga-broadcast-rights-across-34-markets-in-mena-and-apac"],
+    "SA": ["https://www.laliga.com/en-GB/news/bein-extends-exclusive-laliga-broadcast-rights-across-34-markets-in-mena-and-apac"],
+    "QA": ["https://www.laliga.com/en-GB/news/bein-extends-exclusive-laliga-broadcast-rights-across-34-markets-in-mena-and-apac"],
+    "EG": ["https://www.laliga.com/en-GB/news/bein-extends-exclusive-laliga-broadcast-rights-across-34-markets-in-mena-and-apac"],
+    "NG": ["https://www.laliga.com/en-GB/news/dazn-expands-its-global-footprint-in-sub-saharan-africa-bringing-every-laliga-ea-sports-match-to-fans-in-the-region-through-2029", "https://kawowo.com/2024/04/22/la-liga-startimes-secure-non-exclusive-broadcast-rights-in-sub-saharan-region-for-next-5-seasons/"],
+    "ZA": ["https://www.laliga.com/en-GB/news/dazn-expands-its-global-footprint-in-sub-saharan-africa-bringing-every-laliga-ea-sports-match-to-fans-in-the-region-through-2029"],
+    "KE": ["https://www.laliga.com/en-GB/news/dazn-expands-its-global-footprint-in-sub-saharan-africa-bringing-every-laliga-ea-sports-match-to-fans-in-the-region-through-2029", "https://kawowo.com/2024/04/22/la-liga-startimes-secure-non-exclusive-broadcast-rights-in-sub-saharan-region-for-next-5-seasons/"],
+    "GH": ["https://www.laliga.com/en-GB/news/dazn-expands-its-global-footprint-in-sub-saharan-africa-bringing-every-laliga-ea-sports-match-to-fans-in-the-region-through-2029", "https://kawowo.com/2024/04/22/la-liga-startimes-secure-non-exclusive-broadcast-rights-in-sub-saharan-region-for-next-5-seasons/"]
+  },
+  "unverified": ["HK"]
+}

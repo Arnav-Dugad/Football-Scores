@@ -1,0 +1,231 @@
+{
+  "leagues": ["eng.1"],
+  "season": "2026-27",
+  "countries": {
+    "US": [
+      { "name": "Peacock", "url": "https://www.peacocktv.com/sports/premier-league", "type": "streaming", "domain": "peacocktv.com", "note": "" },
+      { "name": "NBC Sports", "url": "https://www.nbcsports.com/soccer/premier-league", "type": "tv", "domain": "nbcsports.com", "note": "NBC and USA Network" },
+      { "name": "Telemundo", "url": "https://www.telemundo.com/deportes", "type": "free-tv", "domain": "telemundo.com", "note": "Spanish; selected matches" }
+    ],
+    "CA": [
+      { "name": "Fubo", "url": "https://www.fubo.tv/ca/", "type": "streaming", "domain": "fubo.tv", "note": "" },
+      { "name": "DAZN", "url": "https://www.dazn.com/en-CA/home", "type": "streaming", "domain": "dazn.com", "note": "via Fubo Sports on DAZN" }
+    ],
+    "MX": [
+      { "name": "HBO Max", "url": "https://www.hbomax.com/mx/es", "type": "streaming", "domain": "hbomax.com", "note": "TNT Sports matches" },
+      { "name": "FOX ONE", "url": "https://www.foxone.mx/", "type": "streaming", "domain": "foxone.mx", "note": "FOX matches" }
+    ],
+    "BR": [
+      { "name": "Disney+", "url": "https://www.disneyplus.com/pt-br", "type": "streaming", "domain": "disneyplus.com", "note": "" },
+      { "name": "ESPN", "url": "https://www.espn.com.br/futebol/liga/_/nome/eng.1", "type": "tv", "domain": "espn.com.br", "note": "selected matches" },
+      { "name": "CazéTV", "url": "https://www.youtube.com/@CazeTV", "type": "free-tv", "domain": "youtube.com", "note": "one free match per round" }
+    ],
+    "AR": [
+      { "name": "Disney+", "url": "https://www.disneyplus.com/es-ar", "type": "streaming", "domain": "disneyplus.com", "note": "Premium plan" },
+      { "name": "ESPN", "url": "https://www.espn.com.ar/futbol/liga/_/nombre/eng.1", "type": "tv", "domain": "espn.com.ar", "note": "selected matches" }
+    ],
+    "CO": [
+      { "name": "Disney+", "url": "https://www.disneyplus.com/es-co", "type": "streaming", "domain": "disneyplus.com", "note": "Premium plan" },
+      { "name": "ESPN", "url": "https://www.espn.com.co/futbol/liga/_/nombre/eng.1", "type": "tv", "domain": "espn.com.co", "note": "selected matches" }
+    ],
+    "CL": [
+      { "name": "Disney+", "url": "https://www.disneyplus.com/es-cl", "type": "streaming", "domain": "disneyplus.com", "note": "Premium plan" },
+      { "name": "ESPN", "url": "https://www.espn.cl/futbol/liga/_/nombre/eng.1", "type": "tv", "domain": "espn.cl", "note": "selected matches" }
+    ],
+    "GB": [
+      { "name": "Sky Sports", "url": "https://www.skysports.com/premier-league", "type": "tv", "domain": "skysports.com", "note": "215+ live matches" },
+      { "name": "TNT Sports", "url": "https://www.tntsports.co.uk/football/premier-league", "type": "tv", "domain": "tntsports.co.uk", "note": "52 live matches" }
+    ],
+    "IE": [
+      { "name": "Sky Sports", "url": "https://www.skysports.com/premier-league", "type": "tv", "domain": "skysports.com", "note": "" },
+      { "name": "TNT Sports", "url": "https://www.tntsports.co.uk/football/premier-league", "type": "tv", "domain": "tntsports.co.uk", "note": "" },
+      { "name": "Premier Sports", "url": "https://premiersportsireland.com/uk-football/", "type": "tv", "domain": "premiersportsireland.com", "note": "Saturday 3pm match" }
+    ],
+    "ES": [
+      { "name": "DAZN", "url": "https://www.dazn.com/es-ES/home", "type": "streaming", "domain": "dazn.com", "note": "" },
+      { "name": "Movistar Plus+", "url": "https://www.movistarplus.es/", "type": "tv", "domain": "movistarplus.es", "note": "one match per round" }
+    ],
+    "PT": [
+      { "name": "DAZN", "url": "https://www.dazn.com/pt-PT/home", "type": "streaming", "domain": "dazn.com", "note": "" },
+      { "name": "LiveModeTV", "url": "https://www.youtube.com/@LiveModeTV", "type": "free-tv", "domain": "youtube.com", "note": "one free match per round" }
+    ],
+    "FR": [
+      { "name": "CANAL+", "url": "https://www.canalplus.com/", "type": "tv", "domain": "canalplus.com", "note": "" }
+    ],
+    "DE": [
+      { "name": "Sky Sport", "url": "https://sport.sky.de/fussball/premier-league", "type": "tv", "domain": "sky.de", "note": "" },
+      { "name": "WOW", "url": "https://www.wowtv.de/", "type": "streaming", "domain": "wowtv.de", "note": "Sky Sport streaming" }
+    ],
+    "AT": [
+      { "name": "Sky Sport Austria", "url": "https://www.sky.at/", "type": "tv", "domain": "sky.at", "note": "" }
+    ],
+    "CH": [
+      { "name": "Sky Sport Schweiz", "url": "https://www.sky.ch/de/sport", "type": "streaming", "domain": "sky.ch", "note": "German-language" },
+      { "name": "CANAL+ Suisse", "url": "https://www.canalplus.com/ch/", "type": "tv", "domain": "canalplus.com", "note": "French-language" }
+    ],
+    "IT": [
+      { "name": "Sky Sport", "url": "https://sport.sky.it/calcio/premier-league", "type": "tv", "domain": "sky.it", "note": "selected matches" },
+      { "name": "NOW", "url": "https://www.nowtv.it/", "type": "streaming", "domain": "nowtv.it", "note": "Sky Sport streaming" }
+    ],
+    "NL": [
+      { "name": "Viaplay", "url": "https://viaplay.com/nl-nl/", "type": "streaming", "domain": "viaplay.com", "note": "" },
+      { "name": "Prime Video", "url": "https://www.primevideo.com/", "type": "streaming", "domain": "primevideo.com", "note": "one match per round" }
+    ],
+    "BE": [
+      { "name": "Play Sports", "url": "https://www.playsports.be/", "type": "tv", "domain": "playsports.be", "note": "" }
+    ],
+    "DK": [
+      { "name": "Viaplay", "url": "https://viaplay.dk/dk-da/", "type": "streaming", "domain": "viaplay.dk", "note": "" },
+      { "name": "Prime Video", "url": "https://www.primevideo.com/", "type": "streaming", "domain": "primevideo.com", "note": "Saturday 13:30 match" }
+    ],
+    "SE": [
+      { "name": "Viaplay", "url": "https://viaplay.se/se-sv/", "type": "streaming", "domain": "viaplay.se", "note": "" },
+      { "name": "Prime Video", "url": "https://www.primevideo.com/", "type": "streaming", "domain": "primevideo.com", "note": "Saturday 13:30 match" }
+    ],
+    "NO": [
+      { "name": "Viaplay", "url": "https://viaplay.no/no-nb/", "type": "streaming", "domain": "viaplay.no", "note": "" }
+    ],
+    "FI": [
+      { "name": "Viaplay", "url": "https://viaplay.fi/fi-fi/", "type": "streaming", "domain": "viaplay.fi", "note": "" }
+    ],
+    "PL": [
+      { "name": "CANAL+", "url": "https://www.canalplus.com/pl/", "type": "tv", "domain": "canalplus.com", "note": "" }
+    ],
+    "TR": [
+      { "name": "beIN SPORTS", "url": "https://www.beinsports.com.tr/", "type": "tv", "domain": "beinsports.com.tr", "note": "" },
+      { "name": "TOD", "url": "https://www.todtv.com.tr/", "type": "streaming", "domain": "todtv.com.tr", "note": "" }
+    ],
+    "GR": [
+      { "name": "Novasports", "url": "https://www.novasports.gr/", "type": "tv", "domain": "novasports.gr", "note": "" }
+    ],
+    "IN": [
+      { "name": "JioHotstar", "url": "https://www.hotstar.com/in/sports/football", "type": "streaming", "domain": "hotstar.com", "note": "also Star Sports channels" }
+    ],
+    "PK": [
+      { "name": "myco", "url": "https://myco.io/", "type": "streaming", "domain": "myco.io", "note": "" }
+    ],
+    "BD": [
+      { "name": "Toffee", "url": "https://toffeelive.com/en", "type": "streaming", "domain": "toffeelive.com", "note": "" }
+    ],
+    "AU": [
+      { "name": "Stan Sport", "url": "https://www.stan.com.au/sport", "type": "streaming", "domain": "stan.com.au", "note": "" }
+    ],
+    "NZ": [
+      { "name": "Sky Sport", "url": "https://www.sky.co.nz/sports", "type": "tv", "domain": "sky.co.nz", "note": "" },
+      { "name": "Sky Sport Now", "url": "https://www.skysportnow.co.nz/", "type": "streaming", "domain": "skysportnow.co.nz", "note": "" }
+    ],
+    "JP": [
+      { "name": "U-NEXT", "url": "https://video.unext.jp/", "type": "streaming", "domain": "unext.jp", "note": "Soccer Pack required" }
+    ],
+    "KR": [
+      { "name": "Coupang Play", "url": "https://www.coupangplay.com/", "type": "streaming", "domain": "coupangplay.com", "note": "" }
+    ],
+    "CN": [
+      { "name": "Migu", "url": "https://www.miguvideo.com/", "type": "streaming", "domain": "miguvideo.com", "note": "" }
+    ],
+    "HK": [
+      { "name": "Now TV", "url": "https://www.nowtv.now.com/", "type": "tv", "domain": "now.com", "note": "" }
+    ],
+    "SG": [
+      { "name": "StarHub", "url": "https://www.starhub.com/", "type": "tv", "domain": "starhub.com", "note": "" },
+      { "name": "Premier League+", "url": "https://www.premierleague.com/en/subscribe-to-pl-plus", "type": "streaming", "domain": "premierleague.com", "note": "official league streaming service" }
+    ],
+    "MY": [
+      { "name": "Astro", "url": "https://www.astro.com.my/", "type": "tv", "domain": "astro.com.my", "note": "also Astro GO, sooka" }
+    ],
+    "ID": [
+      { "name": "Vidio", "url": "https://www.vidio.com/", "type": "streaming", "domain": "vidio.com", "note": "" },
+      { "name": "SCTV", "url": "https://www.sctv.co.id/", "type": "free-tv", "domain": "sctv.co.id", "note": "selected matches" }
+    ],
+    "TH": [
+      { "name": "Monomax", "url": "https://www.monomax.me/", "type": "streaming", "domain": "monomax.me", "note": "" }
+    ],
+    "VN": [
+      { "name": "FPT Play", "url": "https://fptplay.vn/", "type": "streaming", "domain": "fptplay.vn", "note": "" }
+    ],
+    "AE": [
+      { "name": "beIN SPORTS", "url": "https://www.beinsports.com/en-mena", "type": "tv", "domain": "beinsports.com", "note": "" },
+      { "name": "TOD", "url": "https://www.tod.tv/en", "type": "streaming", "domain": "tod.tv", "note": "" }
+    ],
+    "SA": [
+      { "name": "beIN SPORTS", "url": "https://www.beinsports.com/en-mena", "type": "tv", "domain": "beinsports.com", "note": "" },
+      { "name": "TOD", "url": "https://www.tod.tv/en", "type": "streaming", "domain": "tod.tv", "note": "" }
+    ],
+    "QA": [
+      { "name": "beIN SPORTS", "url": "https://www.beinsports.com/en-mena", "type": "tv", "domain": "beinsports.com", "note": "" },
+      { "name": "TOD", "url": "https://www.tod.tv/en", "type": "streaming", "domain": "tod.tv", "note": "" }
+    ],
+    "EG": [
+      { "name": "beIN SPORTS", "url": "https://www.beinsports.com/en-mena", "type": "tv", "domain": "beinsports.com", "note": "" },
+      { "name": "TOD", "url": "https://www.tod.tv/en", "type": "streaming", "domain": "tod.tv", "note": "" }
+    ],
+    "NG": [
+      { "name": "SuperSport", "url": "https://supersport.com/football", "type": "tv", "domain": "supersport.com", "note": "on DStv" },
+      { "name": "DStv Stream", "url": "https://www.dstv.com/", "type": "streaming", "domain": "dstv.com", "note": "" }
+    ],
+    "ZA": [
+      { "name": "SuperSport", "url": "https://supersport.com/football", "type": "tv", "domain": "supersport.com", "note": "on DStv" },
+      { "name": "DStv Stream", "url": "https://www.dstv.com/", "type": "streaming", "domain": "dstv.com", "note": "" },
+      { "name": "SABC Sport", "url": "https://sabc-plus.com/", "type": "free-tv", "domain": "sabc-plus.com", "note": "38 matches per season" }
+    ],
+    "KE": [
+      { "name": "SuperSport", "url": "https://supersport.com/football", "type": "tv", "domain": "supersport.com", "note": "on DStv" },
+      { "name": "DStv Stream", "url": "https://www.dstv.com/", "type": "streaming", "domain": "dstv.com", "note": "" }
+    ],
+    "GH": [
+      { "name": "SuperSport", "url": "https://supersport.com/football", "type": "tv", "domain": "supersport.com", "note": "on DStv" },
+      { "name": "DStv Stream", "url": "https://www.dstv.com/", "type": "streaming", "domain": "dstv.com", "note": "" }
+    ]
+  },
+  "sources": {
+    "_official": ["https://www.premierleague.com/en/news/3703577"],
+    "US": ["https://www.premierleague.com/en/news/3703577", "https://www.sportsmediawatch.com/tv-schedules/club-soccer/premier-league-tv-schedule/", "https://www.fourfourtwo.com/features/tottenham-vs-manchester-city-live-stream"],
+    "CA": ["https://www.sportcal.com/media/fubo-remains-home-of-premier-league-in-canada-through-2027-28/", "https://mobilesyrup.com/2026/08/27/how-to-watch-the-english-premier-league-on-fubo-in-canada/", "https://www.dazn.com/en-CA/news/soccer/premier-league-2026-27-matchday-1-schedule-fixtures-how-to-watch-on-dazn/iionyvka4grg1dbfjzjv8o7zc"],
+    "MX": ["https://www.premierleague.com/en/news/3703577", "https://www.cronica.com.mx/deportes/2026/08/20/quien-transmite-los-partidos-de-la-premier-league-fechas-y-horarios-de-la-jornada-1/", "https://www.publimetro.com.mx/deportes/2026/08/02/en-que-canal-podras-ver-la-premier-laliga-y-la-serie-a-ya-hay-respuesta-para-mexico/", "https://www.sportcal.com/newsletters/fox-and-wbd-take-over-mexican-epl-rights-from-paramount"],
+    "BR": ["https://www.premierleague.com/en/news/3703577", "https://www.diariodepernambuco.com.br/esportes-dp/internacional/2026/08/11721857-onde-assistir-a-premier-league-2026-27-veja-a-divisao-de-transmissoes.html"],
+    "AR": ["https://www.premierleague.com/en/news/3703577", "https://www.c5n.com/ratingcero/disney-confirmo-la-mejor-noticia-espn-argentina-renovo-su-licencia-mas-prestigiosa-n182494/amp"],
+    "CO": ["https://www.premierleague.com/en/news/3703577"],
+    "CL": ["https://www.premierleague.com/en/news/3703577"],
+    "GB": ["https://www.premierleague.com/en/news/3703577", "https://www.flashscore.co.uk/news/football-premier-league-where-to-watch-the-premier-league-in-2026-27-tv-broadcasters-and-highlights/Aslkj9O6/", "https://www.advanced-television.com/2026/06/19/sky-sports-to-air-6-matches-from-premier-league-2026-27-opening-weekend/"],
+    "IE": ["https://www.premierleague.com/en/news/3703577", "https://sportforbusiness.com/?p=93706"],
+    "ES": ["https://www.premierleague.com/en/news/3703577", "https://comparaiso.es/deportes/futbol/premier-league", "https://comparaiso.es/tv/movistar-plus/futbol"],
+    "PT": ["https://www.premierleague.com/en/news/3703577", "https://maquinadoesporte.com.br/midia/dazn-firma-parceria-com-livemodetv-em-portugal-para-champions-e-premier-legue/", "https://4gnews.pt/livemode-vai-transmitir-champions-league-e-premier-league-gratis-em-portugal-ja-sabemos-quando/"],
+    "FR": ["https://www.premierleague.com/en/news/3703577", "https://www.tv-direct.fr/actualites/regarder-premier-league-en-direct-chaine-streaming-prix-saison-2026-2027/"],
+    "DE": ["https://www.premierleague.com/en/news/3703577", "https://sport.sky.de/fussball/artikel/premier-league-live-auf-sky-fussball-uebertragung-im-tv-stream/12543485/34942", "https://www.sportcal.com/newsletters/sky-deutschland-takes-english-premier-league-rights-deal-through-2030-31"],
+    "AT": ["https://www.premierleague.com/en/news/3703577", "https://www.sportcal.com/newsletters/sky-deutschland-takes-english-premier-league-rights-deal-through-2030-31"],
+    "CH": ["https://www.premierleague.com/en/news/3703577", "https://www.sportcal.com/newsletters/canal-plus-retains-premier-league-rights-until-2027-28"],
+    "IT": ["https://www.premierleague.com/en/news/3703577", "https://www.sportcal.com/media/sky-italia-keeps-premier-league-rights-through-2027-28/"],
+    "NL": ["https://www.premierleague.com/en/news/3703577", "https://www.sportcal.com/news/prime-video-to-show-epl-in-netherlands-through-viaplay-deal/"],
+    "BE": ["https://www.premierleague.com/en/news/3703577", "https://press.telenet.be/play-sports-presents-belgiums-most-comprehensive-sports-offering"],
+    "DK": ["https://www.premierleague.com/en/news/3703577", "https://www.sportcal.com/media/amazon-to-show-premier-league-in-denmark-and-sweden-through-viaplay-deal/"],
+    "SE": ["https://www.premierleague.com/en/news/3703577", "https://www.sportcal.com/media/amazon-to-show-premier-league-in-denmark-and-sweden-through-viaplay-deal/"],
+    "NO": ["https://www.premierleague.com/en/news/3703577", "https://www.bytt.no/tv/tv-pakker/a-vmxb/hvem-sender-premier-league-pa-tv-her-er-oversikten-for-2026-27"],
+    "FI": ["https://www.premierleague.com/en/news/3703577"],
+    "PL": ["https://www.premierleague.com/en/news/3703577", "https://gsmonline.pl/artykuly/premier-league-wraca-tyle-zaplacisz-za-ogladanie"],
+    "TR": ["https://www.premierleague.com/en/news/3703577", "https://beinsports.com.tr/haber/ingiltere-premier-league-heyecani-3-sezon-daha-bein-sportsta?amp=1"],
+    "GR": ["https://www.premierleague.com/en/news/3703577", "https://sportbusiness.com/news/nova-finalises-premier-league-capture-for-six-seasons"],
+    "IN": ["https://www.premierleague.com/en/news/3703577", "https://www.deccanchronicle.com/sports/jiostar-bets-big-on-premier-league-signals-biggest-season-yet-1978657", "https://ianslive.in/when-and-where-to-watch-premier-league-2026-in-india-know-all-details--20260821154327"],
+    "PK": ["https://propakistani.pk/2026/10/02/ptml-partners-with-myco-to-bring-exclusive-epl-discounts-to-ufone-and-telenor-customers/"],
+    "BD": ["https://www.dhakatribune.com/business/418147/toffee-extends-world-cup-success-into-new-epl"],
+    "AU": ["https://www.premierleague.com/en/news/3703577", "https://www.stan.news/nine-extends-premier-league-rights-to-2034-live-and-exclusive-on-stan-sport"],
+    "NZ": ["https://www.premierleague.com/en/news/3703577"],
+    "JP": ["https://www.premierleague.com/en/news/3703577", "https://www.soccer-king.jp/news/world/eng/20260820/2194620.html"],
+    "KR": ["https://www.premierleague.com/en/news/3703577", "https://isplus.com/article/view/isp202508130019"],
+    "CN": ["https://www.premierleague.com/en/news/3703577", "https://www.news.cn/sports/20260821/8e2b5765c3a8429ba1b1277e9b1bc8e9/c.html"],
+    "HK": ["https://www.premierleague.com/en/news/3703577", "https://www.hkt.com/en/about-hkt/press-release/now-tv-secures-premier-league-and-emirates-fa-cup-exclusive-broadcast-rights-until-2030-31-bringing-leading-english-football-competitions-to-hong-kong-fans-for-the-next-five-consecutive-seasons/"],
+    "SG": ["https://www.premierleague.com/en/news/3703577", "https://mustsharenews.com/premier-league-launches/", "https://sportforbusiness.com/?p=93706"],
+    "MY": ["https://www.premierleague.com/en/news/3703577", "https://www.sportcal.com/news/astro-renews-with-english-premier-league-fa-cup-through-2027-28/"],
+    "ID": ["https://www.premierleague.com/en/news/3703577", "https://www.antaranews.com/berita/4802889/liga-inggris-kembali-teken-kontrak-penyiaran-dengan-vidio-hingga-2028", "https://www.bloombergtechnoz.com/detail-news/119797/cara-nonton-liga-inggris-musim-2026-2027-dari-hp-legal-terbaru/2"],
+    "TH": ["https://www.premierleague.com/en/news/3703577", "https://www.thaipost.net/sport-news/1052759/"],
+    "VN": ["https://www.premierleague.com/en/news/3703577", "https://nhandan.vn/fpt-play-so-huu-ban-quyen-ngoai-hang-anh-tu-nam-2026-post928807.html"],
+    "AE": ["https://www.premierleague.com/en/news/3703577", "https://www.beinsports.com/en-mena/football/articles-video/european-football-returns-to-bein-sports-for-the-2026-27-season-2026-08-11", "https://www.sportcal.com/media/bein-secures-bumper-premier-league-rights-renewal-across-mena-through-2028/"],
+    "SA": ["https://www.premierleague.com/en/news/3703577", "https://www.beinsports.com/en-mena/football/articles-video/european-football-returns-to-bein-sports-for-the-2026-27-season-2026-08-11"],
+    "QA": ["https://www.premierleague.com/en/news/3703577", "https://www.beinsports.com/en-mena/football/articles-video/european-football-returns-to-bein-sports-for-the-2026-27-season-2026-08-11"],
+    "EG": ["https://www.premierleague.com/en/news/3703577", "https://www.beinsports.com/en-mena/football/articles-video/european-football-returns-to-bein-sports-for-the-2026-27-season-2026-08-11"],
+    "NG": ["https://www.premierleague.com/en/news/3703577", "https://supersport.com/football/news/fc725cc9-ada3-4e09-b2d7-727ba75e8a7e/premier-league-2026-27-fixtures-results-table-broadcast-details"],
+    "ZA": ["https://www.premierleague.com/en/news/3703577", "https://supersport.com/football/news/fc725cc9-ada3-4e09-b2d7-727ba75e8a7e/premier-league-2026-27-fixtures-results-table-broadcast-details", "https://www.sabc.co.za/sabc/?p=18346"],
+    "KE": ["https://www.premierleague.com/en/news/3703577", "https://supersport.com/football/news/fc725cc9-ada3-4e09-b2d7-727ba75e8a7e/premier-league-2026-27-fixtures-results-table-broadcast-details"],
+    "GH": ["https://www.premierleague.com/en/news/3703577", "https://supersport.com/football/news/fc725cc9-ada3-4e09-b2d7-727ba75e8a7e/premier-league-2026-27-fixtures-results-table-broadcast-details"]
+  },
+  "unverified": ["LK", "PH"]
+}
