@@ -68,11 +68,13 @@ async function espnProxy(path: string, url: URL) {
 
 /* ------------------------------------------------------------- router --- */
 
+// Durable Objects live where they are first created. Pin them near ESPN's API
+// (eastern North America): from some regions upstream requests stall.
 function league(env: Env, slug: string) {
-  return env.LEAGUE.get(env.LEAGUE.idFromName(slug));
+  return env.LEAGUE.get(env.LEAGUE.idFromName(slug), { locationHint: "enam" });
 }
 function hub(env: Env) {
-  return env.LIVE.get(env.LIVE.idFromName("live"));
+  return env.LIVE.get(env.LIVE.idFromName("live-enam"), { locationHint: "enam" });
 }
 const list = (v: string | null) => (v ?? "").split(",").filter(Boolean);
 

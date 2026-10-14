@@ -212,7 +212,8 @@ export class LiveHub extends DurableObject<Env> {
         return JSON.stringify((data.events ?? []).map((e: any) => normaliseEvent(e, lg, league)));
       });
       return JSON.parse(body) as WireMatch[];
-    } catch {
+    } catch (err) {
+      console.error("board failed", league, date, err instanceof Error ? `${err.name}: ${err.message}` : String(err));
       return [];
     }
   }

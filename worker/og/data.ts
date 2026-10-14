@@ -66,7 +66,7 @@ export const LIVE_CLOCK = (m: Pick<MatchFacts, "state" | "clock" | "status">) =>
   m.state === "in" ? (m.status === "STATUS_HALFTIME" ? "HT" : m.clock || "LIVE") : "";
 
 export function hubStub(env: Env) {
-  return env.LIVE.get(env.LIVE.idFromName("live"));
+  return env.LIVE.get(env.LIVE.idFromName("live-enam"), { locationHint: "enam" });
 }
 export function leagueStub(env: Env, slug: string) {
   return env.LEAGUE.get(env.LEAGUE.idFromName(slug));
