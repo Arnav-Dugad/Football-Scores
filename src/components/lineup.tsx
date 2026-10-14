@@ -1,6 +1,7 @@
+import { t, tn } from "../i18n";
 import type { Lineup, LineupPlayer, Side } from "../lib/api";
 import { lastName, teamTint } from "../lib/format";
-import { IconArrowOut, IconBall, IconChevronRight } from "./Icons";
+import { IconArrowOut, IconArrowUp, IconBall, IconChevronRight } from "./Icons";
 import { Crest, PlayerAvatar } from "./ui";
 
 /* Positions arrive as ESPN codes (G, CD-L, RB, DM, AM-R, F…). Opta's
@@ -31,9 +32,7 @@ function lateral(pos: string): number {
 function lines(l: Lineup): { gk: LineupPlayer | null; rows: LineupPlayer[][] } {
   const starters = l.players.filter((p) => p.starter);
   const gk = starters.find((p) => depth(p.pos) === 0) ?? starters.find((p) => p.place === 1) ?? null;
-  const outfield = starters
-    .filter((p) => p !== gk)
-    .sort((a, b) => depth(a.pos) - depth(b.pos) || a.place - b.place);
+  const outfield = starters.filter((p) => p !== gk).sort((a, b) => depth(a.pos) - depth(b.pos) || a.place - b.place);
   const counts = l.formation.split("-").map(Number).filter((n) => n > 0);
   let rows: LineupPlayer[][] = [];
   if (counts.length && counts.reduce((a, b) => a + b, 0) === outfield.length) {
@@ -53,6 +52,16 @@ function lines(l: Lineup): { gk: LineupPlayer | null; rows: LineupPlayer[][] } {
 
 export type PickPlayer = (p: LineupPlayer, side: Side) => void;
 
+/** Incoming substitute for a starter (keyed by the outgoing player's id). */
+export interface Change {
+  id: string;
+  name: string;
+  jersey: string;
+  minute: string;
+}
+
+const shortMinute = (m: string | null | undefined) => (m ? m.replace(/'\+(\d+)'/, "+$1'").replace(/'.*$/, "'") : "");
+
 function Node({
   p,
   x,
@@ -61,6 +70,8 @@ function Node({
   color,
   delay,
   onPick,
+  change,
+  incoming,
 }: {
   p: LineupPlayer;
   x: number;
@@ -69,44 +80,84 @@ function Node({
   color: string;
   delay: number;
   onPick: PickPlayer;
+  change: Change | null;
+  incoming: LineupPlayer | null;
 }) {
+  const label = [
+    `${p.jersey ? `${p.jersey} ` : ""}${p.name}`,
+    p.posName,
+    p.goals > 0 ? tn(p.goals, "{n} goal", "{n} goals") : "",
+    p.red ? t("Red card") : p.yellow ? t("Yellow card") : "",
+    p.subbedOut && p.subMinute ? t("Substituted {min}", { min: shortMinute(p.subMinute) }) : "",
+  ]
+    .filter(Boolean)
+    .join(", ");
   return (
-    <button
-      className="pp"
-      style={{ left: `${x}%`, top: `${y}%`, animationDelay: `${delay}ms` }}
-      onClick={() => onPick(p, side)}
-      aria-label={`${p.name}, ${p.posName}`}
-    >
-      <div className="av">
-        <div className="ph">
-          <PlayerAvatar name={p.name} team={side.name} size={46} color={color} />
-        </div>
-        {(p.goals > 0 || p.yellow || p.red) && (
-          <div className="badges">
-            {Array.from({ length: Math.min(p.goals, 3) }, (_, i) => (
-              <span key={i}>
-                <IconBall />
-              </span>
-            ))}
-            {p.red ? <i className="c card-r" /> : p.yellow ? <i className="c card-y" /> : null}
+    <div className={`pp${change ? " changed" : ""}`} style={{ left: `${x}%`, top: `${y}%`, animationDelay: `${delay}ms` }}>
+      <button type="button" className="pp-btn" onClick={() => onPick(p, side)} aria-label={label}>
+        <div className="av">
+          <div className="ph">
+            <PlayerAvatar name={p.name} team={side.name} size={46} color={color} />
           </div>
-        )}
-        {p.subbedOut && p.subMinute && (
-          <span className="sub">
-            <IconArrowOut />
-            {p.subMinute.replace(/'.*$/, "'")}
+          {(p.goals > 0 || p.yellow || p.red) && (
+            <div className="badges">
+              {Array.from({ length: Math.min(p.goals, 3) }, (_, i) => (
+                <span key={i}>
+                  <IconBall />
+                </span>
+              ))}
+              {p.red ? <i className="c card-r" /> : p.yellow ? <i className="c card-y" /> : null}
+            </div>
+          )}
+          {p.subbedOut && p.subMinute && !change && (
+            <span className="sub">
+              <IconArrowOut />
+              {shortMinute(p.subMinute)}
+            </span>
+          )}
+        </div>
+        <span className="nm">
+          <span className="jn">{p.jersey}</span>
+          {lastName(p.name)}
+        </span>
+      </button>
+      {change && (
+        <button
+          type="button"
+          className="pp-in"
+          onClick={() => incoming && onPick(incoming, side)}
+          disabled={!incoming}
+          aria-label={t("{name} came on for {out}, {min}", { name: change.name, out: p.name, min: shortMinute(change.minute) })}
+        >
+          <span className="pp-in-arrow" aria-hidden>
+            <IconArrowUp />
           </span>
-        )}
-      </div>
-      <span className="nm">
-        <span className="jn">{p.jersey}</span>
-        {lastName(p.name)}
-      </span>
-    </button>
+          <PlayerAvatar name={change.name} team={side.name} size={20} color={color} />
+          <span className="pp-in-txt">
+            <b>{lastName(change.name)}</b>
+            <small>{shortMinute(change.minute)}</small>
+          </span>
+        </button>
+      )}
+    </div>
   );
 }
 
-export function Pitch({ home, away, lineups, onPick }: { home: Side; away: Side; lineups: Lineup[]; onPick: PickPlayer }) {
+export function Pitch({
+  home,
+  away,
+  lineups,
+  onPick,
+  changes,
+  showChanges = false,
+}: {
+  home: Side;
+  away: Side;
+  lineups: Lineup[];
+  onPick: PickPlayer;
+  changes?: Map<string, Change>;
+  showChanges?: boolean;
+}) {
   const hl = lineups.find((l) => l.teamId === home.id);
   const al = lineups.find((l) => l.teamId === away.id);
   const hc = teamTint(home.color, "#0a84ff");
@@ -119,10 +170,25 @@ export function Pitch({ home, away, lineups, onPick }: { home: Side; away: Side;
     const gkY = 93;
     const span = 37;
     let k = 0;
-    if (gk) {
-      const y = isHome ? gkY : 100 - gkY;
-      nodes.push(<Node key={gk.id} p={gk} x={50} y={y} side={side} color={color} delay={k++ * 30} onPick={onPick} />);
-    }
+    const byId = new Map(l.players.map((p) => [p.id, p]));
+    const node = (p: LineupPlayer, x: number, y: number) => {
+      const ch = showChanges && p.subbedOut ? changes?.get(p.id) ?? null : null;
+      return (
+        <Node
+          key={p.id}
+          p={p}
+          x={x}
+          y={y}
+          side={side}
+          color={color}
+          delay={k++ * 30}
+          onPick={onPick}
+          change={ch}
+          incoming={ch ? byId.get(ch.id) ?? null : null}
+        />
+      );
+    };
+    if (gk) nodes.push(node(gk, 50, isHome ? gkY : 100 - gkY));
     rows.forEach((row, ri) => {
       const yHome = gkY - ((ri + 1) * span) / rows.length;
       const y = isHome ? yHome : 100 - yHome;
@@ -130,14 +196,14 @@ export function Pitch({ home, away, lineups, onPick }: { home: Side; away: Side;
         let x = ((pi + 1) / (row.length + 1)) * 100;
         if (!isHome) x = 100 - x;
         x = 8 + x * 0.84;
-        nodes.push(<Node key={p.id} p={p} x={x} y={y} side={side} color={color} delay={k++ * 30} onPick={onPick} />);
+        nodes.push(node(p, x, y));
       });
     });
     return nodes;
   };
 
   return (
-    <div className="pitch">
+    <div className={`pitch${showChanges ? " show-changes" : ""}`} dir="ltr" role="group" aria-label={t("Starting line-ups on the pitch")}>
       <svg className="lines" viewBox="0 0 68 105" preserveAspectRatio="none" aria-hidden>
         <g fill="none" stroke="rgba(255,255,255,.38)" strokeWidth=".35">
           <rect x="2.5" y="2.5" width="63" height="100" rx="1" />
@@ -152,12 +218,12 @@ export function Pitch({ home, away, lineups, onPick }: { home: Side; away: Side;
         </g>
       </svg>
       <div className="pitch-team-label top">
-        <Crest src={away.logo} size={20} alt={away.name} />
-        {away.short} {al?.formation && <span style={{ opacity: 0.75 }}>· {al.formation}</span>}
+        <Crest src={away.logo} size={20} alt="" />
+        {away.short} {al?.formation && <span className="pitch-formation">· {al.formation}</span>}
       </div>
       <div className="pitch-team-label bottom">
-        <Crest src={home.logo} size={20} alt={home.name} />
-        {home.short} {hl?.formation && <span style={{ opacity: 0.75 }}>· {hl.formation}</span>}
+        <Crest src={home.logo} size={20} alt="" />
+        {home.short} {hl?.formation && <span className="pitch-formation">· {hl.formation}</span>}
       </div>
       {place(al, false, ac, away)}
       {place(hl, true, hc, home)}
@@ -165,41 +231,69 @@ export function Pitch({ home, away, lineups, onPick }: { home: Side; away: Side;
   );
 }
 
-export function Bench({ side, lineup, onPick, cls }: { side: Side; lineup?: Lineup; onPick: PickPlayer; cls: string }) {
+export function Bench({
+  side,
+  lineup,
+  onPick,
+  cls,
+  replaced,
+}: {
+  side: Side;
+  lineup?: Lineup;
+  onPick: PickPlayer;
+  cls: string;
+  /** Incoming player id → the starter they replaced. */
+  replaced?: Map<string, string>;
+}) {
   if (!lineup) return null;
   const subs = lineup.players
     .filter((p) => !p.starter)
-    .sort((a, b) => Number(b.subbedIn) - Number(a.subbedIn) || Number(a.jersey) - Number(b.jersey));
+    .sort((a, b) => Number(b.subbedIn) - Number(a.subbedIn) || (Number(a.jersey) || 99) - (Number(b.jersey) || 99));
   const color = teamTint(side.color, "#5e5ce6");
   return (
-    <div className={`bench ${cls}`}>
-      <h4>
-        <Crest src={side.logo} size={22} alt={side.name} />
-        Substitutes
+    <section className={`bench ${cls}`} aria-label={t("{team} substitutes", { team: side.short })}>
+      <h3 className="bench-head">
+        <Crest src={side.logo} size={22} alt="" />
+        {t("Substitutes")}
         <span className="formation subtle">{lineup.formation}</span>
-      </h4>
-      <div className="list glass">
-        {subs.map((p) => (
-          <div key={p.id} className="row clickable" onClick={() => onPick(p, side)} role="button" tabIndex={0}>
-            <PlayerAvatar name={p.name} team={side.name} size={36} color={color} />
-            <div className="grow">
-              <div className="title">
-                <span className="subtle num" style={{ marginRight: 6 }}>
-                  {p.jersey}
+      </h3>
+      <ul className="list glass bench-list">
+        {subs.map((p) => {
+          const forName = replaced?.get(p.id);
+          const caption = p.subbedIn
+            ? forName
+              ? t("On {min} for {name}", { min: shortMinute(p.subMinute), name: lastName(forName) })
+              : t("On {min}", { min: shortMinute(p.subMinute) })
+            : p.posName && !/^sub/i.test(p.posName)
+              ? p.posName
+              : t("Substitute");
+          return (
+            <li key={p.id}>
+              <button type="button" className="row clickable bench-row" onClick={() => onPick(p, side)}>
+                <PlayerAvatar name={p.name} team={side.name} size={36} color={color} />
+                <span className="grow">
+                  <span className="title">
+                    <span className="subtle num bench-jn">{p.jersey}</span>
+                    {p.name}
+                  </span>
+                  <span className="caption">
+                    {caption}
+                    {p.goals > 0 ? ` · ${tn(p.goals, "{n} goal", "{n} goals")}` : ""}
+                  </span>
                 </span>
-                {p.name}
-              </div>
-              <div className="caption">
-                {p.subbedIn && p.subMinute ? `On ${p.subMinute}` : p.posName || "Substitute"}
-                {p.goals > 0 ? ` · ${p.goals} goal${p.goals > 1 ? "s" : ""}` : ""}
-              </div>
-            </div>
-            {p.subbedIn && <span className="pill" style={{ color: "var(--good)" }}>In</span>}
-            <IconChevronRight className="chev" />
-          </div>
-        ))}
-        {!subs.length && <div className="row muted">No substitutes listed</div>}
-      </div>
-    </div>
+                {p.subbedIn && (
+                  <span className="pill bench-in">
+                    <IconArrowUp width={12} height={12} />
+                    {t("In")}
+                  </span>
+                )}
+                <IconChevronRight className="chev" />
+              </button>
+            </li>
+          );
+        })}
+        {!subs.length && <li className="row muted">{t("No substitutes listed")}</li>}
+      </ul>
+    </section>
   );
 }
