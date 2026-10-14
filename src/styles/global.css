@@ -771,7 +771,7 @@ button {
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   min-width: 24px;
-  text-align: right;
+  text-align: end;
   letter-spacing: -0.02em;
 }
 .mc-row.loser .mc-name,
@@ -917,7 +917,7 @@ button {
   color: var(--ink-2);
 }
 .league-head .link {
-  margin-left: auto;
+  margin-inline-start: auto;
 }
 
 /* --------------------------------------------------------- hero card ---- */
@@ -1210,7 +1210,7 @@ button {
 }
 .tl-ev.home {
   justify-content: flex-end;
-  text-align: right;
+  text-align: end;
 }
 .tl-ev .who {
   min-width: 0;
@@ -1393,7 +1393,7 @@ button {
   font-weight: 700;
 }
 .cmp-head .v:last-child {
-  text-align: right;
+  text-align: end;
 }
 .cmp-head .l {
   text-align: center;
@@ -1617,7 +1617,7 @@ button {
   font-weight: 650;
 }
 .bench .formation {
-  margin-left: auto;
+  margin-inline-start: auto;
   font-size: 12.5px;
 }
 
@@ -1640,8 +1640,8 @@ button {
   content: "";
   position: absolute;
   top: 0;
-  left: 60px;
-  right: 0;
+  inset-inline-start: 60px;
+  inset-inline-end: 0;
   height: 0.5px;
   background: var(--hairline);
 }
@@ -1738,7 +1738,7 @@ table.standings {
   top: 0;
 }
 .standings th.club {
-  text-align: left;
+  text-align: start;
 }
 .standings td {
   text-align: center;
@@ -1767,14 +1767,14 @@ table.standings {
 }
 .standings td.pos .zone {
   position: absolute;
-  left: 0;
+  inset-inline-start: 0;
   top: 10px;
   bottom: 10px;
   width: 3px;
   border-radius: 0 3px 3px 0;
 }
 .standings td.club {
-  text-align: left;
+  text-align: start;
   color: var(--ink);
   font-weight: 550;
   width: 100%;
@@ -1794,7 +1794,7 @@ table.standings {
   font-weight: 700;
   color: var(--ink);
   font-size: 15.5px;
-  padding-right: 18px;
+  padding-inline-end: 18px;
 }
 .standings .gd-pos {
   color: var(--good);
@@ -1808,8 +1808,7 @@ table.standings {
   }
   .standings td,
   .standings th {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-inline: 6px;
   }
   .standings td.club .inner {
     max-width: 52vw;
@@ -1936,7 +1935,7 @@ table.standings {
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--ink-2);
-  margin-left: 8px;
+  margin-inline-start: 8px;
 }
 .leader-hero .cut {
   align-self: end;
@@ -2333,7 +2332,7 @@ table.standings {
 .player-card .photo .jn {
   position: absolute;
   top: 10px;
-  left: 12px;
+  inset-inline-start: 12px;
   font-size: 26px;
   font-weight: 800;
   letter-spacing: -0.04em;
@@ -2446,7 +2445,7 @@ table.standings {
 .sheet-close {
   position: absolute;
   top: 14px;
-  right: 14px;
+  inset-inline-end: 14px;
   z-index: 3;
   width: 32px;
   height: 32px;
@@ -2477,8 +2476,8 @@ table.standings {
 }
 .ps-hero .num-bg {
   position: absolute;
-  right: 18px;
   top: 6px;
+  inset-inline-end: 18px;
   z-index: -1;
   font-size: 200px;
   font-weight: 800;
@@ -2575,16 +2574,16 @@ table.standings {
   font-size: 11.5px;
   font-weight: 600;
   color: var(--ink-3);
-  text-align: right;
+  text-align: end;
   padding: 6px 4px;
   text-transform: uppercase;
 }
 .mini-table th:first-child,
 .mini-table td:first-child {
-  text-align: left;
+  text-align: start;
 }
 .mini-table td {
-  text-align: right;
+  text-align: end;
   padding: 8px 4px;
   border-top: 0.5px solid var(--hairline);
 }
@@ -2923,4 +2922,19 @@ table.standings {
     animation: none;
     color: var(--good);
   }
+}
+
+/* ------------------------------------------------------------ RTL ------- */
+
+[dir="rtl"] .back svg,
+[dir="rtl"] .link svg,
+[dir="rtl"] .chev,
+[dir="rtl"] .btn svg.chev-dir {
+  transform: scaleX(-1);
+}
+/* Pitches, charts and maps are drawn left-to-right in every language. */
+[dir="rtl"] .pitch,
+[dir="rtl"] .chart,
+[dir="rtl"] .gd-bar {
+  direction: ltr;
 }
