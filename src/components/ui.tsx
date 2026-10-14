@@ -128,14 +128,14 @@ export function Segmented<T extends string>({
     return () => ro.disconnect();
   }, [value, options.length]);
   return (
-    <div className={`segmented${full ? " full" : ""}`} ref={wrap} role="tablist">
+    <div className={`segmented${full ? " full" : ""}`} ref={wrap} role="radiogroup">
       {thumb && <span className="thumb" style={{ width: thumb.w, transform: `translateX(${thumb.x - 3}px)`, left: 3 }} />}
       {options.map((o) => (
         <button
           key={o.value}
           data-v={o.value}
-          role="tab"
-          aria-selected={o.value === value}
+          role="radio"
+          aria-checked={o.value === value}
           className={o.value === value ? "active" : ""}
           onClick={() => onChange(o.value)}
         >

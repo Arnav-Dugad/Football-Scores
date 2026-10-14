@@ -49,7 +49,7 @@ export interface TableOptions {
   venue?: "home" | "away";
   /** Only each team's last N played matches. */
   lastN?: number;
-  /** Only matches before this ISO date (exclusive). */
+  /** Only matches kicking off before this instant (ISO string; exclusive). */
   before?: string;
   /** Extra matches to treat as finished (e.g. live scores) — `{...match, hs, as}`. */
   overrides?: SeasonMatch[];
@@ -62,7 +62,7 @@ export function table(season: SeasonData, opts: TableOptions = {}): Row[] {
   let games = season.matches
     .map((m) => override.get(m.id) ?? m)
     .filter((m) => (override.has(m.id) ? m.hs !== null && m.as !== null : isPlayed(m)))
-    .filter((m) => !opts.before || m.d < opts.before)
+    .filter((m) => !opts.before || Date.parse(m.d) < Date.parse(opts.before))
     .sort((a, b) => a.d.localeCompare(b.d));
   const ids = opts.teams ?? season.teams.map((t) => t.id);
   const rows = new Map<string, Row>(
@@ -185,11 +185,12 @@ export function rounds(season: SeasonData): Round[] {
 export function positionHistory(season: SeasonData): { rounds: Round[]; ranks: Map<string, number[]> } {
   const rs = rounds(season);
   const ranks = new Map<string, number[]>(season.teams.map((t) => [t.id, []]));
-  for (const r of rs) {
-    const cutoff = new Date(Date.parse(r.end) + 1).toISOString();
-    const tbl = table(season, { before: cutoff });
+  rs.forEach((_r, i) => {
+    // Everything up to (but not including) the next round; the last round includes all played games.
+    const next = rs[i + 1]?.start;
+    const tbl = next ? table(season, { before: next }) : table(season);
     for (const row of tbl) ranks.get(row.team)?.push(row.rank);
-  }
+  });
   return { rounds: rs, ranks };
 }
 
