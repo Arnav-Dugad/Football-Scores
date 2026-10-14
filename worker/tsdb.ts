@@ -224,17 +224,28 @@ export async function team(url: URL, env: Env, ctx: ExecutionContext) {
   const espnId = (url.searchParams.get("id") ?? "").replace(/\D/g, "");
   const name = (url.searchParams.get("name") ?? "").trim().slice(0, 80);
   if (!name) return json({ error: "name required" }, 0, 400);
-  return cached(env, ctx, `team3:${espnId}:${strip(name)}`, 7 * 86400, async () => {
+  return cached(env, ctx, `team4:${espnId}:${strip(name)}`, 7 * 86400, async () => {
     const search = async (q: string) =>
       ((await getJSON<any>(`${TSDB}/searchteams.php?t=${encodeURIComponent(q)}`)).teams ?? []).filter((t: any) => t.strSport === "Soccer");
+    // Senior men's sides only — searches also return women's, reserve and youth teams.
+    const senior = (list: any[]) =>
+      list.filter(
+        (t: any) =>
+          t.strGender !== "Female" &&
+          !/\b(women|wfc|ladies|femen|femin|frauen|u-?\d{2}|reserves?|ii|b team|academy|youth)\b/i.test(`${t.strTeam} ${t.strTeamAlternate ?? ""}`),
+      );
     let teams = await search(name);
-    if (!teams.length) {
-      const simple = name.replace(/\b(FC|AFC|CF|SC)\b/g, "").trim();
-      if (simple && simple !== name) teams = await search(simple);
+    const bare = (n: string) => n.replace(/\b(FC|AFC|CF|SC)\b/g, "").replace(/\s+/g, " ").trim();
+    for (const alt of [bare(name), bare(name.replace(/\s*&\s*/g, " and "))]) {
+      if (teams.some((x: any) => espnId && x.idESPN === espnId)) break;
+      if (alt && alt !== name) teams = [...teams, ...(await search(alt))];
     }
     const t =
-      teams.find((x: any) => espnId && x.idESPN === espnId) ?? teams.find((x: any) => strip(x.strTeam) === strip(name)) ?? teams[0];
-    if (!t) return { data: { found: false } };
+      teams.find((x: any) => espnId && x.idESPN === espnId) ??
+      senior(teams).find((x: any) => strip(x.strTeam) === strip(name)) ??
+      senior(teams).find((x: any) => String(x.strTeamAlternate ?? "").split(",").some((a: string) => strip(a) === strip(name)));
+    // No confident match: say so rather than show another club's imagery.
+    if (!t) return { data: { found: false }, ttl: 86400 };
 
     const [venueRes, kitRes] = await Promise.all([
       t.idVenue ? getJSON<any>(`${TSDB}/lookupvenue.php?id=${t.idVenue}`).catch(() => null) : null,
@@ -250,6 +261,7 @@ export async function team(url: URL, env: Env, ctx: ExecutionContext) {
       data: {
         found: true,
         tsdbId: t.idTeam ?? null,
+        idESPN: t.idESPN ?? null,
         name: t.strTeam,
         formed: t.intFormedYear || null,
         stadium: t.strStadium || venue?.strVenue || null,
