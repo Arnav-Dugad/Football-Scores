@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { IconCalendar, IconChevronRight } from "../components/Icons";
-import { MatchCard, MatchHero } from "../components/match";
+import { MatchHero } from "../components/hero";
+import { MatchCard } from "../components/match";
 import { NewsCard } from "../components/news";
 import { Empty, ErrorState, LeagueBadge, Skeleton, SkeletonGrid } from "../components/ui";
 import { endpoints, normaliseNews, type Match } from "../lib/api";

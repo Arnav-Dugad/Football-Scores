@@ -1,3 +1,6 @@
+import { t } from "../i18n";
+import { hour12, localeTag } from "./settings";
+
 /** Local calendar day helpers. ESPN buckets fixtures by US day, so a viewer's
  *  local day can straddle two ESPN days — we request both and filter locally. */
 
@@ -51,39 +54,66 @@ export function sameLocalDay(iso: string, day: Date): boolean {
   return isoDay(d) === isoDay(day);
 }
 
-const timeFmt = new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit" });
-const dayLongFmt = new Intl.DateTimeFormat(undefined, { weekday: "long", day: "numeric", month: "long" });
-const dayShortFmt = new Intl.DateTimeFormat(undefined, { weekday: "short", day: "numeric", month: "short" });
-const dowFmt = new Intl.DateTimeFormat(undefined, { weekday: "short" });
-const fullFmt = new Intl.DateTimeFormat(undefined, {
-  weekday: "short",
-  day: "numeric",
-  month: "short",
-  hour: "numeric",
-  minute: "2-digit",
-});
+/* Formatters follow the viewer's language and 12/24-hour preference. */
+const fmtCache = new Map<string, Intl.DateTimeFormat>();
+function dtf(kind: string, opts: Intl.DateTimeFormatOptions): Intl.DateTimeFormat {
+  const h = hour12();
+  const key = `${kind}|${localeTag()}|${h}`;
+  let f = fmtCache.get(key);
+  if (!f) {
+    f = new Intl.DateTimeFormat(localeTag(), { ...opts, ...(opts.hour ? { hour12: h } : {}) });
+    fmtCache.set(key, f);
+  }
+  return f;
+}
 
-export const fmtTime = (iso: string) => timeFmt.format(new Date(iso));
-export const fmtDayLong = (d: Date) => dayLongFmt.format(d);
-export const fmtDayShort = (d: Date | string) => dayShortFmt.format(typeof d === "string" ? new Date(d) : d);
-export const fmtDow = (d: Date) => dowFmt.format(d);
-export const fmtFull = (iso: string) => fullFmt.format(new Date(iso));
+export const fmtTime = (iso: string | Date) => dtf("time", { hour: "numeric", minute: "2-digit" }).format(new Date(iso));
+export const fmtDayLong = (d: Date) => dtf("long", { weekday: "long", day: "numeric", month: "long" }).format(d);
+export const fmtDayShort = (d: Date | string) =>
+  dtf("short", { weekday: "short", day: "numeric", month: "short" }).format(typeof d === "string" ? new Date(d) : d);
+export const fmtDow = (d: Date) => dtf("dow", { weekday: "short" }).format(d);
+export const fmtFull = (iso: string) =>
+  dtf("full", { weekday: "short", day: "numeric", month: "short", hour: "numeric", minute: "2-digit" }).format(new Date(iso));
+export const fmtDate = (d: Date | string) =>
+  dtf("date", { day: "numeric", month: "short", year: "numeric" }).format(typeof d === "string" ? new Date(d) : d);
+export const fmtMonth = (d: Date) => dtf("month", { month: "long", year: "numeric" }).format(d);
+/** Time in a specific IANA zone (e.g. the stadium's). */
+export const fmtTimeIn = (iso: string, timeZone: string) =>
+  new Intl.DateTimeFormat(localeTag(), { hour: "numeric", minute: "2-digit", hour12: hour12(), timeZone }).format(new Date(iso));
+
+const numCache = new Map<string, Intl.NumberFormat>();
+export function fmtNum(n: number, digits = 0): string {
+  const key = `${localeTag()}|${digits}`;
+  let f = numCache.get(key);
+  if (!f) {
+    f = new Intl.NumberFormat(localeTag(), { minimumFractionDigits: digits, maximumFractionDigits: digits });
+    numCache.set(key, f);
+  }
+  return f.format(n);
+}
+export const fmtPct = (p: number, digits = 0) => `${fmtNum(p * 100, digits)}%`;
 
 export function relativeDayLabel(d: Date): string | null {
   const today = startOfDay(new Date());
   const diff = Math.round((startOfDay(d).getTime() - today.getTime()) / 86400000);
-  if (diff === 0) return "Today";
-  if (diff === 1) return "Tomorrow";
-  if (diff === -1) return "Yesterday";
+  if (diff === 0) return t("Today");
+  if (diff === 1) return t("Tomorrow");
+  if (diff === -1) return t("Yesterday");
   return null;
 }
 
+const rtfCache = new Map<string, Intl.RelativeTimeFormat>();
 export function timeAgo(iso: string): string {
   const s = (Date.now() - new Date(iso).getTime()) / 1000;
-  if (s < 60) return "Just now";
-  if (s < 3600) return `${Math.floor(s / 60)}m ago`;
-  if (s < 86400) return `${Math.floor(s / 3600)}h ago`;
-  if (s < 86400 * 7) return `${Math.floor(s / 86400)}d ago`;
+  if (s < 60) return t("Just now");
+  let f = rtfCache.get(localeTag());
+  if (!f) {
+    f = new Intl.RelativeTimeFormat(localeTag(), { numeric: "auto", style: "short" });
+    rtfCache.set(localeTag(), f);
+  }
+  if (s < 3600) return f.format(-Math.floor(s / 60), "minute");
+  if (s < 86400) return f.format(-Math.floor(s / 3600), "hour");
+  if (s < 86400 * 7) return f.format(-Math.floor(s / 86400), "day");
   return fmtDayShort(iso);
 }
 

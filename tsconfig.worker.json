@@ -11,5 +11,5 @@
     "noEmit": true,
     "tsBuildInfoFile": "./node_modules/.tmp/worker.tsbuildinfo"
   },
-  "include": ["worker"]
+  "include": ["worker", "shared"]
 }

@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { IconBall, IconChevronLeft, IconPeople, IconPin, IconStats, IconSub, IconWhistle } from "../components/Icons";
 import { Bench, Pitch } from "../components/lineup";
-import { MatchHero } from "../components/match";
+import { MatchHero } from "../components/hero";
 import { PlayerSheet, type PlayerRef } from "../components/PlayerSheet";
 import { StandingsTable } from "../components/table";
 import { Crest, Empty, ErrorState, Segmented, Skeleton } from "../components/ui";

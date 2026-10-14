@@ -2880,3 +2880,47 @@ table.standings {
     background: var(--bg-elevated);
   }
 }
+
+/* ------------------------------------------------ team-colour accent ----- */
+
+:root[data-accent="on"] .orb.o1 {
+  background: radial-gradient(circle, var(--accent-orb-1), transparent 65%);
+  transition: background 1.2s var(--ease);
+}
+:root[data-accent="on"] .orb.o2 {
+  background: radial-gradient(circle, var(--accent-orb-2), transparent 65%);
+}
+:root[data-accent="on"] .orb {
+  opacity: calc(var(--orb-opacity) * 0.75);
+}
+
+/* ------------------------------------------------------- goal flash ------ */
+
+.goal-flash {
+  animation: goalFlash 2.6s var(--ease) both;
+  border-radius: 10px;
+}
+@keyframes goalFlash {
+  0% {
+    transform: scale(1);
+    color: inherit;
+  }
+  12% {
+    transform: scale(1.35);
+    color: var(--good);
+    text-shadow: 0 0 24px color-mix(in srgb, var(--good) 60%, transparent);
+  }
+  30% {
+    transform: scale(1);
+  }
+  100% {
+    color: inherit;
+    text-shadow: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .goal-flash {
+    animation: none;
+    color: var(--good);
+  }
+}

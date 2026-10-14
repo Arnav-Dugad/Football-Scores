@@ -1,49 +1,19 @@
 /* Typed access to the edge API (worker/index.ts) + ESPN payload normalisers. */
 
-export interface Side {
-  id: string;
-  name: string;
-  short: string;
-  abbr: string;
-  logo: string;
-  color: string | null;
-  altColor: string | null;
-  score: number | null;
-  shootout: number | null;
-  winner: boolean;
-  form: string;
-  record: string;
-}
+import type { WireDetail, WireMatch, WireSide } from "../../shared/scoreboard";
+import { fixText } from "../../shared/text";
+export { fixText };
 
-export interface MatchDetail {
-  kind: "goal" | "yellow" | "red";
-  clock: string;
-  teamId: string;
-  player: string;
-  penalty: boolean;
-  ownGoal: boolean;
-}
-
-export interface Match {
-  id: string;
-  league: { slug: string; name: string; abbr: string; logo: string };
-  date: string;
-  state: "pre" | "in" | "post";
-  completed: boolean;
-  status: string;
-  statusName: string;
-  clock: string;
-  period: number;
-  venue: string;
-  city: string;
-  note: string;
-  home: Side;
-  away: Side;
-  details: MatchDetail[];
-}
+export type Side = WireSide;
+export type MatchDetail = WireDetail;
+export type Match = WireMatch;
 
 export interface PlayerInfo {
   name: string;
+  tsdbId: string | null;
+  birthplace: string | null;
+  weight: string | null;
+  foot: string | null;
   cutout: string | null;
   photo: string | null;
   nationality: string | null;
@@ -58,6 +28,11 @@ export interface PlayerInfo {
 
 export interface TeamInfo {
   found: boolean;
+  tsdbId?: string | null;
+  venueId?: string | null;
+  kits?: { season: string; type: string; image: string }[];
+  website?: string | null;
+  jersey?: string | null;
   name?: string;
   formed?: string | null;
   stadium?: string | null;
@@ -90,21 +65,14 @@ export const endpoints = {
   player: (name: string, team?: string, full = false) =>
     `/api/player?name=${encodeURIComponent(name)}${team ? `&team=${encodeURIComponent(team)}` : ""}${full ? "&full=1" : ""}`,
   teamInfo: (id: string, name: string) => `/api/team?id=${id}&name=${encodeURIComponent(name)}`,
+  career: (tsdbId: string) => `/api/player/career?id=${tsdbId}`,
+  venue: (tsdbVenueId: string) => `/api/venue?id=${tsdbVenueId}`,
+  h2h: (league: string, a: string, b: string) => `/api/h2h/${league}?a=${a}&b=${b}`,
+  snapshot: () => `/api/live/snapshot`,
+  geo: () => `/api/geo`,
 };
 
 /* ------------------------------------------------------------ helpers -- */
-
-/** ESPN occasionally double-encodes UTF-8 ("AraÃºjo"). */
-export function fixText(s: string | undefined | null): string {
-  if (!s) return "";
-  if (!/[ÃÂ][\u0080-ÿ]/.test(s)) return s;
-  try {
-    const bytes = Uint8Array.from([...s].map((c) => c.charCodeAt(0) & 0xff));
-    return new TextDecoder("utf-8", { fatal: true }).decode(bytes);
-  } catch {
-    return s;
-  }
-}
 
 export function sized(url: string | undefined | null, size: number): string {
   if (!url) return "";
@@ -301,6 +269,9 @@ export function normaliseSummary(d: any, slug: string): SummaryData {
     home,
     away,
     details,
+    broadcasts: (d.broadcasts ?? [])
+      .map((b: any) => ({ name: b.media?.shortName || b.media?.name || "", region: String(b.region || "us").toLowerCase(), type: b.type?.shortName ?? "" }))
+      .filter((b: any) => b.name),
   };
 
   return {

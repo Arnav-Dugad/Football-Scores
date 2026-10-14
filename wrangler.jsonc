@@ -7,8 +7,18 @@
     "directory": "./dist",
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
-    "run_worker_first": ["/api/*"]
+    "run_worker_first": ["/api/*", "/match/*", "/team/*", "/player/*", "/tables*", "/stats*", "/news*", "/compare*", "/stadium/*"]
   },
   "kv_namespaces": [{ "binding": "PITCH_CACHE", "id": "56f5da65100447afb9b9f2c90d3e367d" }],
+  "durable_objects": {
+    "bindings": [
+      { "name": "LIVE", "class_name": "LiveHub" },
+      { "name": "LEAGUE", "class_name": "LeagueStore" },
+      { "name": "RENDERER", "class_name": "Renderer" },
+      { "name": "INSIGHTS", "class_name": "InsightsStore" }
+    ]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["LiveHub", "LeagueStore", "Renderer", "InsightsStore"] }],
+  "triggers": { "crons": ["*/15 * * * *"] },
   "observability": { "enabled": true }
 }

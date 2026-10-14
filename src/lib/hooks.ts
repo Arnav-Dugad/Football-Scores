@@ -1,10 +1,16 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { t } from "../i18n";
 import { endpoints, getJSON, type PlayerInfo } from "./api";
 
 /* ------------------------------------------------------------ useApi --- */
 
 const cache = new Map<string, { data: unknown; at: number }>();
 const inflight = new Map<string, Promise<unknown>>();
+const watchers = new Map<string, Set<() => void>>();
+
+function notify(path: string) {
+  watchers.get(path)?.forEach((fn) => fn());
+}
 
 function load<T>(path: string): Promise<T> {
   const existing = inflight.get(path);
@@ -12,6 +18,7 @@ function load<T>(path: string): Promise<T> {
   const p = getJSON<T>(path)
     .then((d) => {
       cache.set(path, { data: d, at: Date.now() });
+      notify(path);
       return d;
     })
     .finally(() => inflight.delete(path));
@@ -25,9 +32,35 @@ export function prefetch(path: string) {
   load(path).catch(() => undefined);
 }
 
+/** Read a cached response without fetching. */
+export function peekCache<T>(path: string): T | undefined {
+  return cache.get(path)?.data as T | undefined;
+}
+
+/**
+ * Patch cached responses in place (used by the live socket). `fn` returns the
+ * new data for an entry, or undefined to leave it untouched.
+ */
+export function mutateCache(fn: (path: string, data: unknown) => unknown | undefined) {
+  for (const [path, entry] of cache) {
+    const next = fn(path, entry.data);
+    if (next !== undefined && next !== entry.data) {
+      cache.set(path, { data: next, at: entry.at });
+      notify(path);
+    }
+  }
+}
+
+/** Re-fetch every cached path matching a predicate (pull-to-refresh). */
+export function revalidate(match: (path: string) => boolean = () => true): Promise<unknown> {
+  const paths = [...cache.keys()].filter(match);
+  return Promise.allSettled(paths.map((p) => load(p)));
+}
+
 /**
  * Stale-while-revalidate fetch. Cached data renders instantly on navigation;
- * `refresh` (ms) keeps polling while the tab is visible.
+ * `refresh` (ms) keeps polling while the tab is visible. Live patches pushed
+ * into the cache re-render subscribers immediately.
  */
 export function useApi<T>(path: string | null, opts: { refresh?: number | false } = {}) {
   const [state, setState] = useState<{ data: T | undefined; error: Error | null; loading: boolean; path: string | null }>(
@@ -54,6 +87,21 @@ export function useApi<T>(path: string | null, opts: { refresh?: number | false 
       (error: Error) => pathRef.current === p && setState((s) => ({ ...s, error, loading: false })),
     );
   }, []);
+
+  // Follow cache writes for this path (live patches, other components' fetches).
+  useEffect(() => {
+    if (!path) return;
+    let set = watchers.get(path);
+    if (!set) watchers.set(path, (set = new Set()));
+    const fn = () => {
+      const hit = cache.get(path);
+      if (hit && pathRef.current === path) setState({ data: hit.data as T, error: null, loading: false, path });
+    };
+    set.add(fn);
+    return () => {
+      set!.delete(fn);
+    };
+  }, [path]);
 
   useEffect(() => {
     if (!path) return;
@@ -241,6 +289,6 @@ export function useStored<T>(key: string, initial: T) {
 
 export function useDocumentTitle(title: string) {
   useEffect(() => {
-    document.title = title ? `${title} · Pitch` : "Pitch — Football, beautifully";
+    document.title = title ? `${title} · Pitch` : `Pitch — ${t("Football, beautifully")}`;
   }, [title]);
 }

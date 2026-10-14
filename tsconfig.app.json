@@ -13,5 +13,5 @@
     "noEmit": true,
     "tsBuildInfoFile": "./node_modules/.tmp/app.tsbuildinfo"
   },
-  "include": ["src"]
+  "include": ["src", "shared"]
 }
