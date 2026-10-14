@@ -11,9 +11,11 @@
     "typecheck": "tsc -b"
   },
   "dependencies": {
+    "@resvg/resvg-wasm": "2.6.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.28.0"
+    "react-router-dom": "^6.28.0",
+    "satori": "0.26.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20261006.1",
