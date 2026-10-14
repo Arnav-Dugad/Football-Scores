@@ -81,7 +81,7 @@ async function api(request: Request, env: Env, ctx: ExecutionContext): Promise<R
   const p = url.pathname;
 
   if (p === "/api/live") return hub(env).fetch(request);
-  if (request.method !== "GET" && !p.startsWith("/api/collect")) return json({ error: "method" }, 0, 405);
+  if (request.method !== "GET" && request.method !== "HEAD" && !p.startsWith("/api/collect")) return json({ error: "method" }, 0, 405);
 
   const platform = await handlePlatform(request, url, env, ctx);
   if (platform) return platform;
